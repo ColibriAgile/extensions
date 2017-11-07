@@ -1,0 +1,355 @@
+object subRelatorio: TppChildReport
+  AutoStop = False
+  DataPipeline = principal
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'rtm\database-tabelas.rtm'
+  PrinterSetup.Duplex = dpNone
+  PrinterSetup.PaperName = 'A4'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.SaveDeviceSettings = False
+  PrinterSetup.mmMarginBottom = 10000
+  PrinterSetup.mmMarginLeft = 10000
+  PrinterSetup.mmMarginRight = 10000
+  PrinterSetup.mmMarginTop = 10000
+  PrinterSetup.mmPaperHeight = 297000
+  PrinterSetup.mmPaperWidth = 210000
+  PrinterSetup.PaperSize = 9
+  Template.FileName = 
+    'C:\NCR Colibri\user\reports\reports-database\reports\rtm\databas' +
+    'e-tabelas.rtm'
+  Template.Format = ftASCII
+  Version = '18.01'
+  mmColumnWidth = 190000
+  DataPipelineName = 'principal'
+  object ppHeaderBand2: TppHeaderBand
+    Visible = False
+    Background.Brush.Style = bsClear
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object ppDetailBand2: TppDetailBand
+    Background1.Brush.Style = bsClear
+    Background2.Brush.Color = 15132390
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 4763
+    mmPrintPosition = 0
+    object ppDBText2: TppDBText
+      DesignLayer = ppDesignLayer1
+      UserName = 'DBText2'
+      Anchors = [atLeft, atRight]
+      DataField = 'column_name'
+      DataPipeline = principal
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Name = 'Ubuntu Condensed'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'principal'
+      mmHeight = 4318
+      mmLeft = 265
+      mmTop = 218
+      mmWidth = 45641
+      BandType = 4
+      LayerName = BandLayer2
+    end
+    object ppDBText3: TppDBText
+      DesignLayer = ppDesignLayer1
+      UserName = 'DBText3'
+      Anchors = [atLeft, atRight]
+      DataField = 'column_ord'
+      DataPipeline = principal
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Name = 'Ubuntu Condensed'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taCentered
+      Transparent = True
+      DataPipelineName = 'principal'
+      mmHeight = 4233
+      mmLeft = 46302
+      mmTop = 265
+      mmWidth = 8202
+      BandType = 4
+      LayerName = BandLayer2
+    end
+    object ppDBText4: TppDBText
+      DesignLayer = ppDesignLayer1
+      UserName = 'DBText4'
+      Anchors = [atLeft, atRight]
+      DataField = 'column_type'
+      DataPipeline = principal
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Name = 'Ubuntu Condensed'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'principal'
+      mmHeight = 4233
+      mmLeft = 55033
+      mmTop = 265
+      mmWidth = 21387
+      BandType = 4
+      LayerName = BandLayer2
+    end
+    object ppDBText5: TppDBText
+      DesignLayer = ppDesignLayer1
+      UserName = 'DBText5'
+      Anchors = [atLeft, atRight]
+      DataField = 'column_descr'
+      DataPipeline = principal
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Name = 'Ubuntu Condensed'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      WordWrap = True
+      DataPipelineName = 'principal'
+      mmHeight = 4318
+      mmLeft = 83123
+      mmTop = 218
+      mmWidth = 106054
+      BandType = 4
+      LayerName = BandLayer2
+    end
+    object myDBCheckBox1: TmyDBCheckBox
+      DesignLayer = ppDesignLayer1
+      UserName = 'DBCheckBox1'
+      CheckBoxColor = clBlack
+      BooleanFalse = 'False'
+      BooleanTrue = 'True'
+      DataPipeline = principal
+      DataField = 'column_notnull'
+      DataPipelineName = 'principal'
+      mmHeight = 4233
+      mmLeft = 77744
+      mmTop = 531
+      mmWidth = 3302
+      BandType = 4
+      LayerName = BandLayer2
+    end
+  end
+  object ppSummaryBand1: TppSummaryBand
+    Background.Brush.Style = bsClear
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'table_name_complete'
+    DataPipeline = principal
+    GroupFileSettings.NewFile = False
+    GroupFileSettings.EmailFile = False
+    PreventOrphans = True
+    OutlineSettings.CreateNode = True
+    StartOnOddPage = False
+    UserName = 'grupo_tipo'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'principal'
+    NewFile = False
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      Background.Brush.Style = bsClear
+      PrintHeight = phDynamic
+      mmBottomOffset = 0
+      mmHeight = 24606
+      mmPrintPosition = 0
+      object ppDBText1: TppDBText
+        DesignLayer = ppDesignLayer1
+        UserName = 'DBText1'
+        AutoSize = True
+        DataField = 'table_name_complete'
+        DataPipeline = principal
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Ubuntu Condensed'
+        Font.Size = 14
+        Font.Style = [fsBold]
+        Transparent = True
+        DataPipelineName = 'principal'
+        mmHeight = 6085
+        mmLeft = 265
+        mmTop = 6615
+        mmWidth = 65616
+        BandType = 3
+        GroupNo = 0
+        LayerName = BandLayer2
+      end
+      object ppDBMemo1: TppDBMemo
+        DesignLayer = ppDesignLayer1
+        UserName = 'descricaoTabela'
+        CharWrap = True
+        DataField = 'table_descr'
+        DataPipeline = principal
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Ubuntu Condensed'
+        Font.Size = 10
+        Font.Style = [fsItalic]
+        RemoveEmptyLines = False
+        Stretch = True
+        Transparent = True
+        DataPipelineName = 'principal'
+        mmHeight = 4498
+        mmLeft = 0
+        mmTop = 12700
+        mmWidth = 189674
+        BandType = 3
+        GroupNo = 0
+        LayerName = BandLayer2
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmMinHeight = 0
+        mmLeading = 0
+      end
+      object ppRegion1: TppRegion
+        DesignLayer = ppDesignLayer1
+        UserName = 'reg'
+        Caption = 'reg'
+        ParentWidth = True
+        Pen.Style = psClear
+        ShiftRelativeTo = ppDBMemo1
+        mmHeight = 6366
+        mmLeft = 0
+        mmTop = 17992
+        mmWidth = 190000
+        BandType = 3
+        GroupNo = 0
+        LayerName = BandLayer2
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmMinHeight = 0
+        object ppLabel1: TppLabel
+          DesignLayer = ppDesignLayer1
+          UserName = 'Label1'
+          Caption = 'Coluna'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Ubuntu Condensed'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          Transparent = True
+          mmHeight = 4498
+          mmLeft = 221
+          mmTop = 19545
+          mmWidth = 10319
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+        object ppLabel2: TppLabel
+          DesignLayer = ppDesignLayer1
+          UserName = 'Label2'
+          AutoSize = False
+          Caption = '#'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Ubuntu Condensed'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 4498
+          mmLeft = 46302
+          mmTop = 19545
+          mmWidth = 8202
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+        object ppLabel3: TppLabel
+          DesignLayer = ppDesignLayer1
+          UserName = 'Label3'
+          Caption = 'Tipo'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Ubuntu Condensed'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          Transparent = True
+          mmHeight = 4498
+          mmLeft = 55033
+          mmTop = 19545
+          mmWidth = 6615
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+        object ppLabel4: TppLabel
+          DesignLayer = ppDesignLayer1
+          UserName = 'Label4'
+          Caption = 'Obrig'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Ubuntu Condensed'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          Transparent = True
+          mmHeight = 4498
+          mmLeft = 72496
+          mmTop = 19591
+          mmWidth = 8467
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+        object ppLabel5: TppLabel
+          DesignLayer = ppDesignLayer1
+          UserName = 'Label5'
+          Caption = 'Descri'#231#227'o'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Ubuntu Condensed'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          Transparent = True
+          mmHeight = 4498
+          mmLeft = 83036
+          mmTop = 19545
+          mmWidth = 14552
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+        object ppLine1: TppLine
+          DesignLayer = ppDesignLayer1
+          UserName = 'Line1'
+          Pen.Width = 0
+          ParentWidth = True
+          Position = lpBottom
+          Weight = 0.250000000000000000
+          mmHeight = 794
+          mmLeft = 0
+          mmTop = 23170
+          mmWidth = 190000
+          BandType = 3
+          GroupNo = 0
+          LayerName = BandLayer2
+        end
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      Background.Brush.Style = bsClear
+      HideWhenOneDetail = False
+      mmBottomOffset = 0
+      mmHeight = 0
+      mmPrintPosition = 0
+    end
+  end
+  object raCodeModule1: TraCodeModule
+  end
+  object ppDesignLayers1: TppDesignLayers
+    object ppDesignLayer1: TppDesignLayer
+      UserName = 'BandLayer2'
+      LayerType = ltBanded
+      Index = 0
+    end
+  end
+end

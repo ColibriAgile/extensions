@@ -1,0 +1,14 @@
+{
+  "empresa": "NCR", 
+  "nome": "ncr-pos_db_doc", 
+  "arquivos": [
+    {
+      "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART", 
+      "destino": "client", 
+      "_pattern_nome": ".*\\.exe\\b"
+    }
+  ], 
+  "sigla_empresa": "ncr", 
+  "produto": "pos", 
+  "nome_exibicao": "NCR Colibri DB Doc"
+}

@@ -1,0 +1,17 @@
+{
+  filtros: [
+    {
+      "id": "db-tabelas",
+      "titulo": "Tabelas do banco de dados",
+      "tipo": "consulta",
+      "consulta": {
+        "sql": "sql\\filtro-tabelas.sql",
+        "campo-id": "ID",
+        "campos": [
+          "Tabelas"
+        ]
+      }
+    }  
+  
+  ]
+}
