@@ -1,8 +1,8 @@
-if (object_id('sp_gerar_descricao') is not null)
-  drop procedure sp_gerar_descricao
+if (object_id('doc.sp_gerar_doc') is not null)
+  drop procedure doc.sp_gerar_doc
 go
 
-create procedure sp_gerar_descricao (@objeto nvarchar(100) = '', @schema sysname = 'dbo')
+create procedure doc.sp_gerar_doc (@objeto nvarchar(100) = '', @schema sysname = 'dbo')
 as
 begin
   declare
@@ -13,7 +13,7 @@ begin
 --cursor para percorrer schemas
   declare cur_schemas cursor for
     select 
-      cmd = 'exec sp_descricao_schema '''+s.name+''', ''' +isnull(cast(p.value as varchar(1000)), '---')+''''
+      cmd = 'exec doc.sp_doc_schema '''+s.name+''', ''' +isnull(cast(p.value as varchar(1000)), '---')+''''
     from sys.schemas s
     left join sys.extended_properties p on
       p.class_desc = 'SCHEMA' and
@@ -61,7 +61,7 @@ begin
     print ' **********************************************/'
 
     select @texto =           
-      'exec sp_descricao_tabela ''' +                              -- procedure
+      'exec doc.sp_doc_tabela ''' +                              -- procedure
       @nome + ''', ''' +                                           -- nome da tabela
       cast(isnull(tp.value, '---') as nvarchar(1000)) + ''', ''' +  -- descrição da tabela
       @schema + ''''
@@ -75,12 +75,13 @@ begin
   --Cria o cursor para percorrer as colunas do objeto
     declare cur_coldescricoes cursor for
     select texto = 
-      'exec sp_descricao_campo  ''' +                     -- procedure
-      @nome + ''', ''' +                                  -- nome da tabela
-      cast(c.name as nvarchar(100)) + ''', ''' +          -- nome do campo
-      cast(
+      'exec doc.sp_doc_campo  ''' +                     -- procedure
+      @nome + ''', ''' +                                -- nome da tabela
+      cast(c.name as nvarchar(100)) + ''', ''' +        -- nome do campo
+      cast
+      (
         case 
-          when cp.value is null then '---'                   -- descrição do campo
+          when cp.value is null then '---'              -- descrição do campo
           when cp.value = '' then '---'
           else cp.value
         end as nvarchar(1000)
