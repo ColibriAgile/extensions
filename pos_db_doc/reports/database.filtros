@@ -1,5 +1,5 @@
 {
-  filtros: [
+  "filtros": [
     {
       "id": "db-tabelas",
       "titulo": "Tabelas do banco de dados",
@@ -12,6 +12,5 @@
         ]
       }
     }  
-  
   ]
 }
