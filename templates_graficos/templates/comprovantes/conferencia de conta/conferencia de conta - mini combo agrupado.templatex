@@ -1,0 +1,62 @@
+﻿{% extends "_relatorio-base.templatex" %}
+% do vars.update({'separa_por_combo': True})
+{#--#}
+{% from "_imprime_combo_agrupado.templatex" import imprimir_combo with context-%}
+{% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor with context-%}
+{% block cabecalho %}
+{{'CONFERÊNCIA DE CONTA'|b|t(3)}}
+{{2|l}}
+Mov: {{data_contabil}} {% filter d %}{{data}}-{{hora}}{% endfilter %}
+Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
+{%- endblock %}
+{% block corpo %}{%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}{%set agrupamento = (operacao.consumos|count > 1) -%}
+{%- for consumo in operacao.consumos %}{%if consumo %}{% set ticket = consumo.ticket %}{% set venda = consumo.venda %}
+{%- if agrupamento %}{{'\n'}}{{'=' * col}}{% endif %}
+{% filter t(1) -%}
+{% filter t(2) %}{{ticket.nome|capitalize}} - Venda {{venda.numero_venda}}{% endfilter %}
+{%- endfilter %}
+
+{{'Item'}}{{'Vl.unit        Total'|d}}
+{{1|l}}
+{#- Impressão dos itens -#}
+{%- set itens = venda.itens|consolidar(valido=true) %}{% set combo_indice = -1 %}{% set combos_indices = [] %}
+{%- for item in itens if item %}
+{%- set preco, qtd = item.preco, item.quantidade %}
+{%- set indicadorNaoCobraServico = '*' if not item.cobra_servico else '' %}
+{%- if item.combo_id > 0 %}
+{%- if combo_indice != item.indice and item.indice not in combos_indices -%}
+{% set combo_indice = item.indice %}{% do combos_indices.append(combo_indice) %}
+{%- set combos = venda.itens|consolidar(valido=True)|selectattr('indice', 'equalto', combo_indice)|list %}
+{{-imprimir_combo(combos)}}
+{%- endif %}
+{%- else %}
+{{qtd|quantidade}} {{item.descricao}}
+{{-indicadorNaoCobraServico}}{% filter d %}{{preco|valor}}{{item.valor|valor|direita(13)}}{% endfilter %}
+{%- if item.descricao_extra %}{{'\n'}}{{item.descricao_extra|t(2)}}{% endif %}
+{{1|l}}
+{%- endif %}
+{%- endfor %}
+{#- Fim da impressão dos itens #}
+{{-imprime_texto_valor('Subtotal', venda.subtotal_dos_itens, prefixo='')}}{% endif %}{% endfor %}
+{%- if agrupamento %}
+{{'=' * col}}
+{{-imprime_texto_valor('Subtotal geral', operacao.totais.subtotal)}}
+{%- endif -%}
+{%- include '_totais.templatex' -%}
+% do vars.update({'separa_por_combo': False})
+{%- include '_desconto_item.templatex'  with context-%}
+{%- include  "_pagamentos_parciais.templatex" %}
+{%- if qtd_pessoas > 1 %}
+{{-imprime_texto_com_valor('Qtd. de pessoas :', qtd_pessoas, inteiro=True)}}
+{{-imprime_texto_com_valor('Total por pessoa :', (operacao.totais.falta)/qtd_pessoas)}}
+{% endif -%}
+{{'   AGUARDE A EMISSÃO DO CUPOM FISCAL   '|t(1)|c|r}}
+{% include "_rodape-conferencia-RS.templatex" -%}
+
+{%- endblock %}
+
+{%- block assinatura -%}
+{{super()}}
+{% filter eject %}{% endfilter %}
+{%- endblock assinatura %}
+

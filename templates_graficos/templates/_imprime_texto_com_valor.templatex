@@ -1,0 +1,13 @@
+﻿{%-macro imprime_texto_valor(umTexto, umValor, alinhamento=13, destacado=False, prefixo='+')-%}
+{%- if umValor > 0 -%}
+{% if destacado -%}
+<t5:b>
+<dir>{{prefixo}} {{umTexto}} :{{umValor|valor|direita(alinhamento)}}
+</t5>
+{% else -%}
+<inc2>
+<dir>{{prefixo}} {{umTexto}} :{{umValor|valor|direita(alinhamento)}}
+</inc2>
+{% endif -%}
+{% endif -%}
+{% endmacro-%}

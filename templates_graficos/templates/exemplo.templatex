@@ -1,0 +1,36 @@
+﻿% set logo = '{images}mono\\NCR2.bmp' 
+<t5:b>Imagens</t5>
+
+<t1>Sem alinhamento </t1><img>{{logo}}</img>
+
+<t1>Centralizado</t1><imgc>{{logo}}</imgc>
+
+<t1>Alinhada à direita</t1><imgd>{{logo}}</imgd>
+
+<imge>{{logo}}</imge><t1> Alinhada à esquerda</t1>
+
+<t5>Títulos de 1 até 4</t5>
+
+<t1>Título 1</t1>
+<t2>Título 2</t2>
+<t3>Título 3</t3>
+<t4>Título 4</t4>
+
+<t5>Formatações</t5>
+
+<i>Itálico</i>  <b>Negrito</b>  <x>tachado</x>  <u>Sublinhado</u>    
+<t2><r> Reverso </r></t2>
+<t3><dir>Alinhado à direita</t3>
+<t3><center>Texto centralizado</t3>
+
+<t5>Linhas contínuas</t5>
+
+<l1:40>
+<l2:40>
+<l3:40>
+<l4:40>
+<l5:40>
+
+<lde><t1> Linha dupla esquerda</t1></lde>
+<ldd><t1>Linha dupla direita </t1></ldd>
+<ldc><t1> Linha texto centro </t1></ldc>

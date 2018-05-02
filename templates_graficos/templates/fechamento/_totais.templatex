@@ -1,0 +1,33 @@
+﻿<t1><b>Totais</b></t1>
+<dec5/>
+{% if confere_caixa -%}
+<b><div4>Meio</div><ver><div3><dir>Calculado</div3><ver><div2><dir>Informado</div><ver><dir>Diferença</b>
+{% else -%}
+<b><div2>Meio</div><ver><dir>Calculado</b>
+{% endif -%}
+<l3:5>
+{% for grouper, list in fechamento|groupby('grupo') -%}
+{% if grouper == 4 -%}
+<zebra>
+{% for item in list -%}
+{% if confere_caixa -%}
+<div4>{{item.col_1}}</div><ver><div3><dir>{{item.col_2|valor(2, '')}}</div><ver><div2><dir>{{item.col_3|valor(2, '')}}</div><ver><dir>{{item.col_4|valor(2, '')}}
+{% else -%}
+<div2>{{item.col_1}}</div><ver>
+{%- if item.mostrar_valores == 1 %}<dir>{{item.col_2|valor(2, '')}} {% endif %}
+{% endif -%}
+{% endfor -%}
+</zebra>
+<l3:5>
+{% if confere_caixa -%}
+<t1:b><div4>Total</div><ver><div3><dir>{{list|soma('col_2')|valor(2, '')}}</div><ver><div2><dir>{{list|soma('col_3')|valor(2, '')}}</div><ver><dir>{{list|soma('col_4')|valor(2, '')}}</t1>
+{% else -%}
+<t1:b><div2>Total</div><ver><dir>{{list|soma('col_2')|valor(2, '')}}</t1>
+{% endif -%}
+{% endif -%}
+{% if grouper == 5 and confere_caixa %}
+
+<r><t3><b><dir> {{list[0].col_1}} </b></t3></r>
+{% endif -%}
+{% endfor %}
+

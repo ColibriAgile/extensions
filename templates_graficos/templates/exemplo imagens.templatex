@@ -1,0 +1,17 @@
+﻿{% if monitor -%}
+{% include '_monitor-cabecalho.templatex' -%}
+{% endif -%}
+{{'{images}\\mono\\NCR1.png'|imgc}}
+
+{{'{images}\\mono\\NCR2.bmp'|imgc}}
+
+{{'{images}\\mono\\NCRAgile.png'|imgc}}
+
+{{'{images}\\mono\\NCRAgile2.png'|imgc}}
+
+{{'{images}\\mono\\NCRColibri.png'|imgc}}
+
+{{'{images}\\mono\\NCRColibri2.png'|imgc}}
+
+{{'{images}\\mono\\NCRFull.jpg'|imgc}}
+

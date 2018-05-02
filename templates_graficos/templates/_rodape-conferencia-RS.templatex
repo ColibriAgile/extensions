@@ -1,0 +1,8 @@
+﻿{% if uf == 'RS' -%}
+Favor informar CPF/CNPJ (facultativo) para constar no cupom fiscal. Lei estadual no 14.020 de 25 de julho de 2013 referente a Nota Fiscal Gaucha.
+
+CPF/CNPJ:<l1:60>
+
+Nome:<l1:60>
+{%- endif %}
+

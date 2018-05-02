@@ -1,0 +1,16 @@
+﻿<t1:b>Saiu do caixa</t1>
+<dec5/>
+<b><div4>Meio</div><ver><div3><dir>Troco</div3><ver><div2><dir>Repique</div><ver><dir>C.Vale</b>
+<l3:5>
+{% for grouper, list in fechamento|groupby('grupo') -%}
+{% if grouper == 2 -%}
+<zebra>
+{% for item in list -%}
+<div4>{{item.col_1}}</div><ver><div3><dir>{{item.col_2|valor(2, '')}}</div><ver><div2><dir>{{item.col_3|valor(2, '')}}</div><ver><dir>{{item.col_4|valor(2, '')}}
+{% endfor -%}
+</zebra>
+<l3:5>
+<t1:b><div4>Total</div><ver><div3><dir>{{list|soma('col_2')|valor(2, '')}}</div><ver><div2><dir>{{list|soma('col_3')|valor(2, '')}}</div><ver><dir>{{list|soma('col_4')|valor(2, '')}}</t1>
+{% endif -%}
+{% endfor %}  
+

@@ -1,0 +1,15 @@
+﻿{% extends "_templatebase.templatex" -%}
+{% block cabecalho -%}
+<t3><b>Encerramento de periodo<dir>{{movimento}}</b></t3>
+
+Abert : {{dt_abertura|data('%d/%m/%y %H:%M')}} {{operador_abriu}}
+Fech  : {{dt_fechamento|data('%d/%m/%y %H:%M')}} {{operador_fechou}}
+Impr  : {{data}} {{hora}} {{operador}}
+{% endblock %}
+{% block corpo -%}
+{% for nome, template, sql in rel -%}
+<l3:80>
+<t3:b>{{nome}}</t3>
+{% include template ignore missing -%}
+{% endfor %}
+{% endblock %}

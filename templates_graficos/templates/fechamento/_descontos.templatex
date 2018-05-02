@@ -1,0 +1,22 @@
+﻿{% if descontos %}
+{% for reg_func in descontos|groupby('func_recebeu') -%}
+<b><t1>Operador:  {{reg_func.grouper|capitalize}}</t1></b>
+{% for reg_mod in reg_func.list|groupby('modo_venda') -%}
+<dec5/>
+<inc2><b>{{reg_mod.grouper|capitalize}}</b></inc2>
+<b><div4>Descricao</divv><div3:d>Valor. $</divv><div3:d>Perc.</divv>Autorizou</b>
+<l3:5>
+<zebra>
+{% for reg in reg_mod.list -%}                                                 
+{% set descr = '(p/ valor)' if reg.descr == 'Desconto por valor' else reg.descr -%}
+<div4>{{descr}}</divv><div3:d>{{reg.vl|valor}}</divv><div3:d>{{reg.pct|valor}}%</divv>{{reg.func_autorizou|capitalize}}
+{% endfor %}
+</zebra>
+{% endfor -%}
+{% endfor -%}
+{% for tot in descontos|groupby('total') -%}
+<t2:b>Total de descontos: <r><dir> {{tot.grouper|valor|capitalize}} </t2></r>
+{% endfor -%}
+{% else %} {% include '_no_data.template' %} {% endif -%}
+
+

@@ -1,0 +1,109 @@
+{
+  "nome": "Templates gráficos",
+  "caixa": [
+    {
+      "ordem": 1,
+      "nome": "Faturamento",
+      "arquivo_template": "_GR-faturamento.template",
+      "arquivo_sql": "sql\\faturamento.sql"
+    },
+    {
+      "ordem": 2,
+      "nome": "Fechamento",
+      "arquivo_template": "_GR-fechamento.template",
+      "arquivo_sql": "sql\\fechamento.sql"
+    },
+    {
+      "ordem": 3,
+      "nome": "Cancelamentos",
+      "arquivo_template": "_GR-cancelamentos.template",
+      "arquivo_sql": "sql\\cancelamentos.sql"
+    },
+    {
+      "ordem": 4,
+      "nome": "Materiais",
+      "arquivo_template": "_GR-materiais.template",
+      "arquivo_sql": "sql\\materiais.sql"
+    },
+    {
+      "ordem": 5,
+      "nome": "Serviço",
+      "arquivo_template": "_GR-servico.template",
+      "arquivo_sql": "sql\\servico.sql"
+    },
+    {
+      "ordem": 6,
+      "nome": "Ticket médio",
+      "arquivo_template": "_GR-ticket_medio_analitico.template",
+      "arquivo_sql": "sql\\ticket_medio.sql"
+    },
+    {
+      "ordem": 7,
+      "nome": "Vendas sem comprovante",
+      "arquivo_template": "_GR-vendas_sem_comprovante.template",
+      "arquivo_sql": "sql\\vendas_sem_comprovante.sql"
+    }
+  ],
+  "periodo": [
+    {
+      "ordem": 1,
+      "nome": "Faturamento",
+      "arquivo_template": "_GR-faturamento.template",
+      "arquivo_sql": "sql\\faturamento.sql"
+    },
+    {
+      "ordem": 2,
+      "nome": "Descontos",
+      "arquivo_template": "_GR-descontos.template",
+      "arquivo_sql": "sql\\descontos.sql"
+    },
+    {
+      "ordem": 3,
+      "nome": "Cancelamentos",
+      "arquivo_template": "_GR-cancelamentos.template",
+      "arquivo_sql": "sql\\cancelamentos.sql"
+    },
+    {
+      "ordem": 4,
+      "nome": "Materiais",
+      "arquivo_template": "_GR-materiais.template",
+      "arquivo_sql": "sql\\materiais.sql"
+    },
+    {
+      "ordem": 5,
+      "nome": "Grupo materiais",
+      "arquivo_template": "_GR-grupo_materiais.template",
+      "arquivo_sql": "sql\\grupo_materiais.sql"
+    },
+    {
+      "ordem": 6,
+      "nome": "Serviço",
+      "arquivo_template": "_GR-servico.template",
+      "arquivo_sql": "sql\\servico.sql"
+    },
+    {
+      "ordem": 7,
+      "nome": "Ticket médio",
+      "arquivo_template": "_GR-ticket_medio_analitico.template",
+      "arquivo_sql": "sql\\ticket_medio.sql"
+    },
+    {
+      "ordem": 8,
+      "nome": "Transferencia",
+      "arquivo_template": "_GR-transferencia.template",
+      "arquivo_sql": "sql\\transferencia.sql"
+    },
+    {
+      "ordem": 9,
+      "nome": "Mesas com mais de um fechamento",
+      "arquivo_template": "_GR-mesas_com_mais_de_um_fechamento.template",
+      "arquivo_sql": "sql\\mesas_com_mais_de_um_fechamento.sql"
+    },
+    {
+      "ordem": 10,
+      "nome": "Entregas",
+      "arquivo_template": "_GR-entregas.template",
+      "arquivo_sql": "sql\\entregas.sql"
+    }
+  ]
+}

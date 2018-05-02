@@ -1,0 +1,33 @@
+﻿{% if transferencia -%}
+{% set ns = namespace(qtd_total = 0) -%}
+{% for func in transferencia|groupby('funcionario') -%}
+<dec3/>
+<t1:b>Operador: {{func.grouper|capitalize}}</t1>
+{% for modo in func.list|groupby('modo_venda') -%}
+<dec5/>
+{% for ticket_orig in modo.list|groupby('ticket_cod_origem') -%}
+{% for venda_orig in ticket_orig.list|groupby('venda_origem') -%}
+<t1:b>Da {{ticket_orig.grouper|lower}} <dir>Venda {{venda_orig.grouper}}</t1>
+<dec5/>
+<b><div2>Produto</divv><div2>Dest.(vda)</divv><div:d>Qtde<div></b>
+<l3:5>
+{% for destinos in venda_orig.list|groupby('ticket_cod') -%}
+{% for venda_destinos in destinos.list|groupby('numero_venda') -%}
+<zebra>
+{% for itens in venda_orig.list|groupby('material_descr') -%}
+{% set descr = itens.grouper -%}
+{% set qtd = itens.list|soma('qtde') -%}
+{% set ns.qtd_total = ns.qtd_total + qtd -%}
+{% set destino = destinos.grouper + ' (' + venda_destinos.grouper|string + ')' -%}
+<div2>{{descr}}</divv><div2>{{destino}}</divv><div:d>{{qtd|quantidade}}</div>
+{% endfor -%}
+</zebra>
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+<l3:5>
+<t1:b>Qtde de itens: <dir>{{ns.qtd_total}}</t1>
+{% else %} {% include '_no_data.template' %} {% endif -%}

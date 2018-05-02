@@ -1,0 +1,11 @@
+﻿{% if vendas_sem_comprovante %}
+<l0>
+<b><div4>Ticket</divv><div3>Venda</divv><div2:d>Hora</divv><dir>Valor</b>
+<l3:5>
+<zebra>
+{% for item in vendas_sem_comprovante -%}
+<div4>{{item.ticket}}</divv><div3>{{item.numero_venda}}</divv><div2:d>{{item.dt_hr_encerramento|data('%H:%M', '%Y%m%d %H:%M:%S')}}</divv><dir>{{item.vl_total|valor}}
+</zebra>
+{% endfor -%}
+{% else %} {% include '_no_data.template' %} {% endif %}
+

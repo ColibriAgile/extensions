@@ -1,0 +1,18 @@
+﻿{% set modo_grafico = 1 %}{% block monitor -%}
+{% if monitor -%}
+{% include '_monitor-cabecalho.templatex' -%}
+{% endif -%}
+{% endblock monitor -%}
+{% block relatorio -%}
+{% block cabecalho scoped -%}
+{% endblock cabecalho -%}
+{% block corpo -%}
+{% endblock corpo -%}
+{% block rodape -%}
+{% endblock rodape -%}
+{% if not sem_base -%}
+{% block assinatura -%}
+{% include '_aplicativo.templatex' %}
+{%- endblock assinatura -%}
+{% endif -%}
+{% endblock relatorio -%}

@@ -1,0 +1,16 @@
+﻿
+<b><div3>Entregador</divv><div3:d>Vl.venda</divv><div2:d>Qtd.</divv><dir>Tx.entrega</b>
+<l3:5>
+<zebra>
+{% for reg in entregas|sort(attribute='entregador') -%}
+{%set entregador = reg.entregador|capitalize -%}
+{%set vl_venda = reg.vl_venda|valor(2, '') -%}
+{%set qtd = reg.qtd -%}
+{%set vl_entrega = reg.vl_entrega|valor(2, '') -%}
+<div3>{{entregador}}</divv><div3:d>{{vl_venda}}</divv><div2:d>{{qtd}}</divv><dir>{{vl_entrega}}
+{% if loop.last %}<l3:5>{% endif -%}
+{% endfor -%}
+</zebra>
+<b><div3>Total</divv><div3:d>{{entregas|soma('vl_venda')|valor(2, '')}}</divv><div2:d>{{entregas|soma('qtd')}}</divv><dir>{{entregas|soma('vl_entrega')|valor(2, '')}}
+
+

@@ -1,0 +1,75 @@
+﻿% extends "_templatebase.templatex"
+% macro render_obs(observacoes)
+{%- for obs in observacoes %}
+<dec2><i>  {{obs}}</i></dec2>
+{%- endfor -%}
+{% endmacro -%}
+
+{% macro render_item(item) -%}
+{% set qtde = item.quantidade|fracao(10) if item.descricao_do_combo else item.quantidade|quantidade -%}<t4>
+<zebraini>{% if item.cancelado %}(CANCELADO) {% endif %}{{qtde}} {{item.descricao_producao}}
+{%- if ns and ns.imprimir_descr_extra and item.descricao and (item.descricao != item.descricao_producao) %}\n{{item.descricao}} {% endif -%}
+{{- render_obs(item.observacao) }}<zebrafim>
+</t4>
+<dec5/>
+{%- endmacro -%}
+
+{% set atendente = consumos[0].ticket.atendente.nome|capitalize|trim if consumos[0].ticket.atendente %}
+
+{%- block cabecalho %}
+<t3:b>{{'Cupom da boqueta'|upper}}</t3>
+<l2>
+Mov: {{movimento}} <dir>{{data}} {{hora}}
+Ope: {{sessao.funcionario.nome|capitalize}}{% if atendente -%}<dir>Atend: {{atendente}}{% endif %}
+Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
+{% if cliente %}Cliente: {{cliente.nome}}{% endif %}
+<l0>
+<dec3/>
+{% if consumos and consumos|length == 1 %}{% set venda = consumos[0].venda -%}
+<t3:b>{{venda.nome_amigavel|capitalize}} <dir>Venda {{venda.numero_venda}}</t3>
+{% endif -%}
+{%- if usa_local_de_entrega and local_entrega -%}
+<dec5/>
+<t3:b>{{texto_para_local_de_entrega}} <dir><r> {{local_entrega}} </r></t3>
+{%- endif -%}
+{% endblock cabecalho -%}
+
+{% block corpo -%}
+{% for consumo in consumos|sort(attribute='ticket.codigo') %}{% set venda, ticket = consumo.venda, consumo.ticket %}
+{%- if consumos and consumos|length > 1 %}
+{%- set ticket_nome = ticket.nome %}
+<l2:50>
+<t3:b>{{ticket_nome|capitalize}}<dir>Venda {{venda.numero_venda}}</t3>
+<dec2/>
+{%- endif -%}
+{%- set ns = namespace(indice_anterior = 0, era_combo = false) -%}
+{%- set itens = consumo.venda.itens %}
+{%- set itens = itens|selectattr('impresso', 'equalto', False) %}
+{%- set itens = itens|selectattr('local_producao_apelido') -%}
+{%- set itens = itens|selectattr('cancelado', 'equalto', False) %}
+{%- for reg in itens|groupby('local_producao_apelido') %}
+<dec5/>
+<l4:50>
+<t6:b:c>Produção <dir>{{reg.grouper|default('(NENHUM)')|capitalize}}</t6>
+<dec5/>
+<zebra>
+{%- for item in reg.list|sort(attribute='indice') if not item.impresso %}
+{%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice %}{% set ns.era_combo = true %}
+<zebraoff><t4:b>{{item.descricao_do_combo}}
+<zebraoff>{{- render_obs(item.observacoes_do_combo) }}{% endif -%}</t4>
+{% if ns.era_combo and item.descricao_do_combo == '' %}
+<zebraoff><l0><zebra>
+<dec2/>
+{%- set ns.era_combo = false -%}
+{% endif -%}
+{{- render_item(item) }}
+{%- set ns.indice_anterior = item.indice %}
+{%- endfor %}
+</zebra>
+{%- endfor -%}
+{%- if venda.numero_chamada > 0 %}
+<t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{venda.numero_chamada}}</t5>
+{%- endif -%}
+{% include '_primeiracompra.templatex' %}
+{% endfor %}
+{% endblock corpo %}

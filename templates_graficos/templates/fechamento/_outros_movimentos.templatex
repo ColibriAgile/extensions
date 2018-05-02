@@ -1,0 +1,15 @@
+﻿<t1:b>Outros movimentos</t1>
+<dec5/>
+<b><div2>Meio</div><ver><div2><dir>Sangria</div><ver><dir>Suprimento</b>
+<l3:5>
+{% for grouper, list in fechamento|groupby('grupo') -%}
+{% if grouper == 3 -%}
+<zebra>
+{% for item in list -%}
+<div2>{{item.col_1}}</div2><ver><div2><dir>{{item.col_3|valor(2, '')}}</div><ver><dir>{{item.col_4|valor(2, '')}}
+{% endfor -%}
+</zebra>
+<l3:5>
+<t1:b><div2>Total</div2><ver><div2><dir>{{list|soma('col_3')|valor(2, '')}}</div><ver><dir>{{list|soma('col_4')|valor(2, '')}}</t1>
+{% endif -%}
+{%endfor%}

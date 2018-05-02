@@ -1,0 +1,16 @@
+﻿{% extends "_templatebase.templatex" -%}
+{% block cabecalho -%}
+<t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
+
+Turno : {{turno_id}} {{turno_operador|capitalize}}
+Abert : {{dt_abertura|data('%d/%m/%Y %H:%M')}}
+Fech  : {{dt_fechamento|data('%d/%m/%Y %H:%M')}}
+Impr  : {{data}} {{hora}} {{operador|capitalize}}
+{% endblock %}
+{% block corpo %}
+{% for nome, template, sql in rel -%}
+<l3:80>
+<t3:b>{{nome}}</t3>
+{% include template ignore missing %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,2 @@
+﻿%set ns = namespace(imprimir_descr_extra = true)
+%include "cupom da boqueta.templatex"

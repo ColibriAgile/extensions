@@ -1,0 +1,23 @@
+﻿{%- from "_imprime_texto_com_valor.templatex" import imprime_texto_valor %}
+{%if pgto_parciais %}{%- block pgto_parcial %}
+<t2:b>Pagamentos efetuados</t1>
+
+<b><div2>Identificacao</divv><div3><dir>Hora</divv><div2><dir>Canc.</divv><dir>Valor</b>
+<l0>
+<zebra>
+{%- for item in pgto_parciais if item -%}
+{% set contador = '(' + loop.index|string + ') ' %}      
+{%- set canc = item.hora_cancelamento if item.cancelado else ' ' %}
+{% if item.cancelado -%}
+<div2><x>{{contador}}{{item.identificacao|default('Sem Ident.', true)}}</x></divv><div3><dir>{{item.hora_recebimento}}</divv><div2><dir>{{canc}}</divv><dir><x>{{item.valor|valor}}</x>
+{%- else -%}
+<div2>{{contador}}{{item.identificacao|default('Sem Ident.', true)}}</divv><div3><dir>{{item.hora_recebimento}}</divv><div2><dir>{{canc}}</divv><dir>{{item.valor|valor}}
+{%- endif -%}
+{%- endfor %}
+</zebra>
+<l0>
+{{imprime_texto_valor('Pago', pago_parcial, destacado=destacado|default(true), prefixo='-')}}
+{{-imprime_texto_valor('A pagar', operacao.totais.total-pago_parcial, destacado=destacado|default(true))}}
+<l0>
+{%- endblock %}
+{%- endif %}

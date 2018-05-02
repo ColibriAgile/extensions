@@ -1,0 +1,23 @@
+﻿{% extends "_relatorio-base.templatex" %}
+{% block monitor -%}{% if not sem_base -%}{{ super() }}{%endif%}{%endblock%}
+{% block cabecalho -%}
+{% if not sem_base -%}
+<t1:b>{{aplicativo}}</t1>
+Mov: {{movimento}} <dir>{{data}} {{hora}}
+Ope: {{operador|capitalize}} 
+<center>{{nome}}
+<t1:b><center>{{'(Parcial)'}}</t1>
+<ld>
+{% else %}
+
+<center><t1:b>{{nome}}</t1>
+<ld>
+{% endif -%}
+{%- endblock %}
+{%- block corpo %}
+{% endblock -%}
+{% if not sem_base %}
+{% block assinatura -%}
+{% include '_aplicativo.templatex' %}
+{%- endblock -%}
+{% endif %}

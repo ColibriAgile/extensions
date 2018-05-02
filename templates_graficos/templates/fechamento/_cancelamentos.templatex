@@ -1,0 +1,19 @@
+﻿{% if cancelamentos %}
+{% for modo in cancelamentos|groupby('modo_venda') -%}
+{%- for prod in modo.list|groupby('producao') %}
+<t1:b>{{modo.grouper|capitalize}} <dir>{{prod.grouper|capitalize}}</t1>
+<dec5/>
+<b><div3>Material</divv><div4:d>Venda</divv><div3:d>Op</divv><div2>{{modo.grouper|capitalize}}</divv><dir>Qtd</b>
+<l3:5><zebra>
+{%- for reg in prod.list %}
+<div3>{{reg.material_descr}}</divv><div4:d>{{reg.numero_venda}}</divv><div3:d>{{reg.garcon_id}}</divv><div2>{{reg.cod_ticket}}</divv><dir>{{reg.qtde|quantidade}}
+{%- endfor %}
+<l3:5>
+</zebra>
+{% set vl = prod.list|soma('vl_total')|valor(2) -%}
+<dec5/>
+<t1:b>Sub-total<dir>{{vl}}</t1>
+{% endfor -%}
+{% endfor %}
+<t1:b>Total geral <dir><r> {{cancelamentos|sum('vl_total')|valor}} </r></t1>
+{% else %} {% include '_no_data.template' %} {% endif -%}

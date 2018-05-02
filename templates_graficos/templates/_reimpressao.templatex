@@ -1,0 +1,3 @@
+﻿{%- if eh_reimpressao or ehreimpressao -%}
+<center><t2><r> REIMPRESSÃO </r></t2>
+{%- endif %}

@@ -1,0 +1,3 @@
+﻿TEMPLATE={{template}};DISPOSITIVO={{configuracao.dispositivo_nome}};GRAFICO=1
+PORT1={{configuracao.porta|default('não configurado')}};
+PORT2={{configuracao.porta_backup|default('não configurado')}};

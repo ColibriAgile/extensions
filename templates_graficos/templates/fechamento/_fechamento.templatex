@@ -1,0 +1,5 @@
+﻿{% include "fechamento\\_GR-entrou_no_caixa.template" %}
+{% include "fechamento\\_GR-saiu_do_caixa.template" %}
+{% include "fechamento\\_GR-outros_movimentos.template" %}
+{% include "fechamento\\_GR-totais.template" %}
+

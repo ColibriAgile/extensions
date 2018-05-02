@@ -1,0 +1,9 @@
+﻿% for reg in faturamento|groupby('grupo') if reg.grouper == 1
+% set ns = namespace(valores ='') 
+% for item in reg.list|sort(attribute='valor', reverse=True) if item.valor
+% set vl = item.valor|valor|replace('.', '')
+% set ns.valores = ns.valores + item.descricao + '=' + vl + ';'
+% endfor
+<pie>{{ns.valores}}</pie:2>
+% endfor
+
