@@ -1,7 +1,0 @@
-﻿{%- if (operacao and operacao.consumos 
-  and operacao.consumos[0].ticket.cliente
-  and (operacao.consumos[0].ticket.cliente.data_primeira_compra == operacao.consumos[0].ticket.cliente.dt_ultima_compra))
-  or (cliente and cliente.data_primeira_compra == cliente.dt_ultima_compra) -%}
-\n
-<center><t2><r> PRIMEIRA COMPRA DO CLIENTE </r></t2>
-{%- endif %}
