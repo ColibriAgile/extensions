@@ -1,10 +1,22 @@
 ﻿{% extends "_relatorio-base.templatex" %}
 % do vars.update({'separa_por_combo': True})
+
+{%- macro imprimir_combo(combos) %}
+{%- for combo, itens in combos|groupby('descricao_do_combo') %}
+{%- set vl = itens|sum('valor')|valor %}
+<t1:b><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1>
+{%- set itens_consolidados = itens|consolidar(soma_fracionado=True) %}
+{%- for item  in itens_consolidados %}
+{%- set max_denominador = 12 %} #diminua esse valor se aparecerem frações muito grandes
+  {{item.quantidade|fracao(max_denominador)}} {{item.descricao}}
+{%- endfor %}
+{%- endfor %}
+{%- endmacro %}
+
 {#--#}
-{% from "_imprime_combo_agrupado.templatex" import imprimir_combo with context-%}
 {% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor with context-%}
 {% block cabecalho %}
-{{'CONFERÊNCIA DE CONTA'|b|t(3)}}
+<t3:b>CONFERÊNCIA DE CONTA</t3>
 {{2|l}}
 Mov: {{data_contabil}} {% filter d %}{{data}}-{{hora}}{% endfilter %}
 Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
@@ -16,26 +28,30 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {% filter t(2) %}{{ticket.nome|capitalize}} - Venda {{venda.numero_venda}}{% endfilter %}
 {%- endfilter %}
 
-{{'Item'}}{{'Vl.unit        Total'|d}}
-{{1|l}}
+<b><div2>Item</div><div2><dir>Vl.unit</div><dir>Total
+<l0>
 {#- Impressão dos itens -#}
-{%- set itens = venda.itens|consolidar(valido=true) %}{% set combo_indice = -1 %}{% set combos_indices = [] %}
+{%- set itens = venda.itens|consolidar(valido=true) -%}
+{% set combo_indice = -1 -%}
+{% set combos_indices = [] -%}
+<l0>
+<zebra>
 {%- for item in itens if item %}
 {%- set preco, qtd = item.preco, item.quantidade %}
 {%- set indicadorNaoCobraServico = '*' if not item.cobra_servico else '' %}
 {%- if item.combo_id > 0 %}
 {%- if combo_indice != item.indice and item.indice not in combos_indices -%}
-{% set combo_indice = item.indice %}{% do combos_indices.append(combo_indice) %}
+{% set combo_indice = item.indice -%}
+{% do combos_indices.append(combo_indice) -%}
 {%- set combos = venda.itens|consolidar(valido=True)|selectattr('indice', 'equalto', combo_indice)|list %}
 {{-imprimir_combo(combos)}}
 {%- endif %}
 {%- else %}
-{{qtd|quantidade}} {{item.descricao}}
-{{-indicadorNaoCobraServico}}{% filter d %}{{preco|valor}}{{item.valor|valor|direita(13)}}{% endfilter %}
+<div2>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
 {%- if item.descricao_extra %}{{'\n'}}{{item.descricao_extra|t(2)}}{% endif %}
-{{1|l}}
 {%- endif %}
 {%- endfor %}
+</zebra>
 {#- Fim da impressão dos itens #}
 {{-imprime_texto_valor('Subtotal', venda.subtotal_dos_itens, prefixo='')}}{% endif %}{% endfor %}
 {%- if agrupamento %}
