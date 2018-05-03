@@ -1,9 +1,0 @@
-﻿{% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor with context-%}
-{{-imprime_texto_valor(txt_consumacao, operacao.totais.diferenca_de_consumacao)}}
-{{-imprime_texto_valor(txt_arredondamento, operacao.totais.arredondamento)}}
-{{-imprime_texto_valor(txt_entrada, operacao.totais.entrada)}}
-{{-imprime_texto_valor(txt_servico, operacao.totais.servico)}}
-{{-imprime_texto_valor(txt_entrega, operacao.totais.taxa_de_entrega)}}
-{{-imprime_texto_valor('Desconto', operacao.totais.desconto, prefixo='-')}}
-{{-imprime_texto_valor('Total', operacao.totais.total, destacado=True, prefixo='=')}}
-

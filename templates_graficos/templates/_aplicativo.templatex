@@ -1,2 +1,0 @@
-﻿{% set sistema = ' ' + sistema -%}
-{{sistema|t(1)|lde}}
