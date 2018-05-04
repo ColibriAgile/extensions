@@ -4,7 +4,7 @@
 {%- macro imprimir_combo(combos) %}
 {%- for combo, itens in combos|groupby('descricao_do_combo') %}
 {%- set vl = itens|sum('valor')|valor %}
-<t1:b><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1>
+<t1><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1>
 {%- set itens_consolidados = itens|consolidar(soma_fracionado=True) %}
 {%- for item  in itens_consolidados %}
 {%- set max_denominador = 12 %} #diminua esse valor se aparecerem frações muito grandes
@@ -69,8 +69,8 @@ Ope: {{operador|trim|capitalize}} <dir>Atend: {{atendente.nome|trim|capitalize}}
 {%- include '_desconto_item.templatex'  with context-%}
 {%- include '_pagamentos_parciais.templatex' -%}
 {%- if qtd_pessoas > 1 -%}
-{{-imprime_texto_valor_div('Pessoas', qtd_pessoas, inteiro=True, prefixo='')}}
-{{-imprime_texto_valor_div('P/ pessoa', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}
+{{-imprime_texto_valor_div('Qtd de pessoas', qtd_pessoas, inteiro=True, prefixo='')}}
+{{-imprime_texto_valor_div('Total por pessoa', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}
 {% endif -%}
 <t1><r><center>   AGUARDE A EMISSÃO DO CUPOM FISCAL   </t1></r>
 {% include "_rodape-conferencia-RS.templatex" -%}
