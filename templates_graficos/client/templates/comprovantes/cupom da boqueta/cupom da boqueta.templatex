@@ -69,7 +69,8 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {%- endfor -%}
 {%- if venda.numero_chamada > 0 %}
 <t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{venda.numero_chamada}}</t5>
-{%- endif -%}
+{%- endif %}
+<dec2/>
 {% include '_primeiracompra.templatex' %}
 {% endfor %}
 {% endblock corpo %}
