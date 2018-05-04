@@ -1,4 +1,6 @@
-﻿{% extends "_relatorio-base.templatex" %}{% set pag = impressao_numero %}{% set tot = impressao_total%}
+﻿{% extends "_relatorio-base.templatex" -%}
+{% set pag = impressao_numero -%}
+{% set tot = impressao_total%}
 {% set ns = namespace(indice_anterior = 0) %}
 
 {%- macro render_cancelado() -%}
@@ -41,14 +43,15 @@
   {% set tot = copias -%}
 {% endif -%}
 {% block cabecalho scoped %}
-{% include '_primeiracompra.templatex' %}
+{%- include '_primeiracompra.templatex' %}
 {% include '_reimpressao.templatex' %}
 <l0>
 Mov: {{data_contabil}} <dir>{{data}} {{hora}}h
 Term: {{maquina}}  <dir>Modo: {{modo_venda}}
 Cxa: {{caixa}} <dir>Atend: {{atendente|trim}}
 {%- if cliente %}
-Cliente: {{cliente.nome}}{% endif %}
+Cliente: {{cliente.nome}}
+{%- endif %}
 <l0>
 {% if qtd_vendas == 1 %}
 <t5:b>{{ticket}} <dir>Venda {{venda.numero_venda}} </t5>
@@ -57,7 +60,8 @@ Cliente: {{cliente.nome}}{% endif %}
 {%- block corpo -%}
 {{- render_cancelado() }}
 {%- for venda in itens|groupby('ticket') -%}
-{% if qtd_vendas > 1 %}{% set txtvenda = 'Venda ' + venda.list[0].venda + ' ' -%}
+{% if qtd_vendas > 1 -%}
+{% set txtvenda = 'Venda ' + venda.list[0].venda + ' ' -%}
 {% set txtticket = ' ' + venda.grouper|capitalize -%}
 {% if loop.index > 1 -%}
 {{'\n'}}{{8|l}}<dec1>\n\n
@@ -85,6 +89,8 @@ Cliente: {{cliente.nome}}{% endif %}
 </t5>
 <l3>
 {% endblock rodape %}
-{% block assinatura %}{{ super() }}{% endblock assinatura %}
+{% block assinatura -%}
+{{ super() }}
+{%- endblock assinatura %}
 {%- endfor %}
 {% endblock relatorio %}
