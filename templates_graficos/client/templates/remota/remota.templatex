@@ -1,0 +1,96 @@
+﻿{% extends "_relatorio-base.templatex" -%}
+{% set pag = impressao_numero -%}
+{% set tot = impressao_total%}
+{% set ns = namespace(indice_anterior = 0) %}
+
+{%- macro render_cancelado() -%}
+{% if cancelados -%}
+<t4:b><center><r> {{'*' * 6}} CANCELADO {{'*' * 6}} </r></t4>
+{% endif -%}
+{% endmacro -%}
+
+{% macro render_obs(observacoes) -%}
+{% for obs in observacoes if obs -%}
+<t3><i>{{'  » '}}{{obs}}</t3></i>{{'\n'}}
+{%- endfor -%}
+{% endmacro -%}
+
+{% macro render_item(item) -%}
+{% set marcha = ' marcha ' if item.marcha else '' -%}
+<t1><r>{{marcha}}</t1></r><t5>{{item.qtd}} {{item.descricao}}</t5>
+{{render_obs(item.observacoes)}}
+{%- endmacro -%}
+
+{% macro render_itens(itens,marcha=False) -%}
+{% for item in itens|sort(attribute='indice') -%}
+{%- set charsep = (item.descricao_do_combo == '' or ns.indice_anterior != item.indice) %}
+{%- if charsep %}
+<l2:20>
+{% endif -%}
+{% if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
+{% filter t(8) %}{{item.descricao_do_combo|b}}{% endfilter %}       
+{{ render_obs(item.observacoes_do_combo) }}
+{%- endif %}
+{{- render_item(item) }}
+{%- set ns.indice_anterior = item.indice -%}
+{%- endfor -%}
+{%- endmacro %}
+
+{%- block relatorio -%}
+{% for i in range(0, copias) -%}
+{% if copias > 1 -%}
+  {% set pag = i+1 -%}
+  {% set tot = copias -%}
+{% endif -%}
+{% block cabecalho scoped %}
+{%- include '_primeiracompra.templatex' %}
+{% include '_reimpressao.templatex' %}
+<l0>
+Mov: {{data_contabil}} <dir>{{data}} {{hora}}h
+Term: {{maquina}}  <dir>Modo: {{modo_venda}}
+Cxa: {{caixa}} <dir>Atend: {{atendente|trim}}
+{%- if cliente %}
+Cliente: {{cliente.nome}}
+{%- endif %}
+<l0>
+{% if qtd_vendas == 1 %}
+<t5:b>{{ticket}} <dir>Venda {{venda.numero_venda}} </t5>
+{%- endif -%}
+{%- endblock cabecalho %}
+{%- block corpo -%}
+{{- render_cancelado() }}
+{%- for venda in itens|groupby('ticket') -%}
+{% if qtd_vendas > 1 -%}
+{% set txtvenda = 'Venda ' + venda.list[0].venda + ' ' -%}
+{% set txtticket = ' ' + venda.grouper|capitalize -%}
+{% if loop.index > 1 -%}
+{{'\n'}}{{8|l}}<dec1>\n\n
+{%- endif -%}
+<t5:b>{{txtticket}}<dir>{{txtvenda}}</t5>
+{%- endif -%}
+{{render_itens(venda.list|rejectattr('marcha'))-}}
+{{render_itens(venda.list|selectattr('marcha'), marcha=True)-}}
+{% endfor -%}
+{{- render_cancelado() }}
+{%- endblock corpo %}
+{%- block rodape %}
+{%- if venda.numero_chamada > 0 or (usa_local_de_entrega and local_entrega) -%}
+{{'\n\n'}}
+<l3>
+<t5:b>
+{% if venda.numero_chamada -%}
+<center>{{texto_numero_de_chamada|default(modo_venda, true)}}: {{venda.numero_chamada}}
+{% endif -%}
+{% if (usa_local_de_entrega and local_entrega) -%}
+<center>
+{{texto_para_local_de_entrega}}: {{local_entrega}}
+{% endif -%}
+{% endif -%}
+</t5>
+<l3>
+{% endblock rodape %}
+{% block assinatura -%}
+{{ super() }}
+{%- endblock assinatura %}
+{%- endfor %}
+{% endblock relatorio %}

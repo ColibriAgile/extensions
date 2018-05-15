@@ -1,0 +1,67 @@
+﻿{% extends "_templatebase.templatex" -%}
+
+{% macro render_obs(observacoes) -%}
+{% if observacoes is string %}
+>> {% filter compexp -%}{{observacoes}}{% endfilter -%}
+{% else -%}
+{%- for obs in observacoes %}
+>> {% filter compexp -%}{{obs}}{% endfilter -%}
+{%- endfor -%}{% endif %}
+
+{%- endmacro %}
+{% macro render_item(item) -%}
+{% set espaco = '  <zebraoff>' if item.descricao_do_combo else '' %}
+{%- if item.cancelado -%}
+(CANCELADO) 
+{%- endif -%}
+{{espaco}}<t2>{{item.quantidade|fracao if item.combo_id else item.quantidade|quantidade}} {{item.descricao_producao}}</t2>
+{{render_obs(item.observacao)}}
+{%- endmacro -%}
+
+{%- block cabecalho -%}
+{%- include '_primeiracompra.template' %}
+
+{% include '_reimpressao.templatex' %}
+<t3:b>CUPOM MONTADOR</t3>
+<l2>
+Mov.: {{movimento}} <dir>{{data}} {{hora}}h
+PDV: {{maquina}}
+Cxa: {{sessao.funcionario.nome}}  
+{%- if operacao.consumos[0].ticket.atendente -%}
+<dir>Atendente: {{operacao.consumos[0].ticket.atendente.nome|capitalize}} 
+{%- endif %}
+<t2:b>{{operacao.consumos[0].ticket.modo_de_venda}} {{operacao.consumos[0].ticket.codigo}} <dir>Venda: {{operacao.consumos[0].venda.numero_venda}}</t2>
+{% include '_dados-cliente.templatex' %}
+{%- if usa_local_de_entrega -%}
+<dec5/>
+<t2:b>{{texto_para_local_de_entrega}}: {{local_entrega}}</t2>
+<dec5/>
+{%- endif %}
+{%- endblock cabecalho -%}
+{% block corpo -%}
+{%- set ns = namespace(indice_anterior = 0) -%}
+{# Cupom montador NÃO usa itens consolidados. A observação é importante! -#}
+{% set itens = operacao.consumos[0].venda.itens|selectattr('local_producao_apelido') %}
+{%- for reg in itens|groupby('local_producao_apelido') %}
+<l0>
+{% if reg.grouper == '' -%}
+<t6:b:c>Produção <dir>(NENHUM)</t6>
+{%- else -%}
+<t6:b:c>Produção <dir>{{reg.grouper|capitalize}}</t6>
+{%- endif %}
+<zebra>
+{%- for item in reg.list %}
+{%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
+<t3>{{item.descricao_do_combo}}</t3>
+{{- render_obs(item.observacoes_do_combo) }}
+{%- endif -%}
+<dec5/>
+{{ render_item(item) -}}
+{%- set ns.indice_anterior = item.indice %}
+{%- endfor -%}
+</zebra>
+{{'\n'}}{%- endfor -%}
+{%- if operacao.consumos[0].venda.numero_chamada > 0 %}
+<t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{operacao.consumos[0].venda.numero_chamada}}</t5>
+{% endif %}
+{% endblock corpo %}
