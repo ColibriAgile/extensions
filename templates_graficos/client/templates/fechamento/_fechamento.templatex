@@ -1,5 +1,5 @@
-﻿{% include "fechamento\\_GR-entrou_no_caixa.template" %}
-{% include "fechamento\\_GR-saiu_do_caixa.template" %}
-{% include "fechamento\\_GR-outros_movimentos.template" %}
-{% include "fechamento\\_GR-totais.template" %}
+﻿{% include "fechamento\\_entrou_no_caixa.templatex" %}
+{% include "fechamento\\_saiu_do_caixa.templatex" %}
+{% include "fechamento\\_outros_movimentos.templatex" %}
+{% include "fechamento\\_totais.templatex" %}
 

@@ -19,14 +19,14 @@
 {% endif -%}
 {% endfor -%}
 {% if reg.grouper == 1 %}
-{% include  'fechamento\\_GR-pizza_faturamento.template' ignore missing %}{% endif %}
+{% include  'fechamento\\_pizza_faturamento.templatex' ignore missing %}{% endif %}
 </zebra>
 {% if exibirTotal -%}
 <l3:5>
 <t1:b>Total <dir>{{reg.list|soma('valor')|valor}}</t1>
 {% endif -%}
 {% if exibirTotFat %}
-<t1:b>Total do faturamento <dir>{{faturamento[0].total_faturamento|valor(2, '')}}</t1>
+<t3:b><r>Faturamento <dir>{{faturamento[0].total_faturamento|valor(2, '')}}</r></t3>
 {% endif -%}
 {% endfor -%}
 
