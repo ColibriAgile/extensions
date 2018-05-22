@@ -8,7 +8,7 @@
 {% macro render_item(item) -%}
 {% set qtde = item.quantidade|fracao(10) if item.descricao_do_combo else item.quantidade|quantidade -%}<t4>
 <zebraini>{% if item.cancelado %}(CANCELADO) {% endif %}{{qtde}} {{item.descricao_producao}}
-{%- if ns and ns.imprimir_descr_extra and item.descricao and (item.descricao != item.descricao_producao) %}\n{{item.descricao}} {% endif -%}
+{%- if ns and ns.imprimir_descr_extra and item.descricao_extra and (item.descricao_extra != item.descricao_producao) %}\n{{item.descricao_extra}} {% endif -%}
 {{- render_obs(item.observacao) }}<zebrafim>
 </t4>
 <dec5/>
