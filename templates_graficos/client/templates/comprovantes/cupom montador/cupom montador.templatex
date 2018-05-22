@@ -2,10 +2,10 @@
 
 {% macro render_obs(observacoes) -%}
 {% if observacoes is string %}
->> {% filter compexp -%}{{observacoes}}{% endfilter -%}
+>> <t1><i>{{observacoes}}</i></t1>
 {% else -%}
 {%- for obs in observacoes %}
->> {% filter compexp -%}{{obs}}{% endfilter -%}
+>> <t1><i>{{obs}}</i></t1>
 {%- endfor -%}{% endif %}
 
 {%- endmacro %}
