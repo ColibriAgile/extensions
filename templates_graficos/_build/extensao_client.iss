@@ -20,8 +20,9 @@ Uninstallable=no
 UsePreviousAppDir=no
 SourceDir=..
 
+[InstallDelete]
+Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}\templates"
+
+
 [Files]
-Source: "client\*"; DestDir: "{app}\plugins\{#ExtensionName}\"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "leia-me.txt"
-Source: reports\*; DestDir: "{app}\plugins\{#ExtensionName}\reports"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
-Source: templates\*; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
-Source: extras\*; DestDir: "{app}\plugins\{#ExtensionName}"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
+Source: "client\templates\*"; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "leia-me.txt"
