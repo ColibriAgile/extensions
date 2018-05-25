@@ -4,17 +4,21 @@
 {%- macro imprimir_combo(combos) %}
 {%- for combo, itens in combos|groupby('descricao_do_combo') %}
 {%- set vl = itens|sum('valor')|valor %}
-<t1:b><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1>
+<t1:b><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1> </b>>
+{%- if itens[0].descricao_do_combo_extra and itens[0].descricao_do_combo_extra != itens[0].descricao_do_combo %}
+  <t1:i>{{itens[0].descricao_do_combo_extra}}</t1> {% endif %}
 {%- set itens_consolidados = itens|consolidar(soma_fracionado=True) %}
 {%- for item  in itens_consolidados %}
 {%- set max_denominador = 12 %} #diminua esse valor se aparecerem frações muito grandes
   {{item.quantidade|fracao(max_denominador)}} {{item.descricao}}
+  {%- if item.descricao_extra and item.descricao_extra != item.descricao %}
+  {{item.descricao_extra|i}} {% endif %}
 {%- endfor %}
 {%- endfor %}
 {%- endmacro %}
 
 {#--#}
-{% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor with context-%}
+{% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div with context-%}
 {% block cabecalho %}
 <t3:b>CONFERÊNCIA DE CONTA</t3>
 {{2|l}}
@@ -23,9 +27,9 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {%- endblock %}
 {% block corpo %}{%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}{%set agrupamento = (operacao.consumos|count > 1) -%}
 {%- for consumo in operacao.consumos %}{%if consumo %}{% set ticket = consumo.ticket %}{% set venda = consumo.venda %}
-{%- if agrupamento %}{{'\n'}}{{'=' * col}}{% endif %}
+{%- if agrupamento %}{{'\n'}}<ld>{% endif %}
 {% filter t(1) -%}
-{% filter t(2) %}{{ticket.nome|capitalize}} - Venda {{venda.numero_venda}}{% endfilter %}
+{% filter t(2) %}{{ticket.nome|capitalize|b}} {{'- Venda '|b}} {{venda.numero_venda|b}}{% endfilter %}
 {%- endfilter %}
 
 <b><div2>Item</div><div2><dir>Vl.unit</div><dir>Total
@@ -48,23 +52,24 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {%- endif %}
 {%- else %}
 <div2>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
-{%- if item.descricao_extra %}{{'\n'}}{{item.descricao_extra|t(2)}}{% endif %}
+{%- if item.descricao_extra %}
+{{item.descricao_extra|i}}{% endif %}
 {%- endif %}
 {%- endfor %}
 </zebra>
 {#- Fim da impressão dos itens #}
-{{-imprime_texto_valor('Subtotal', venda.subtotal_dos_itens, prefixo='')}}{% endif %}{% endfor %}
+{{-imprime_texto_valor_div('Subtotal', venda.subtotal_dos_itens, prefixo='')}}{% endif %}{% endfor %}
 {%- if agrupamento %}
 {{'=' * col}}
-{{-imprime_texto_valor('Subtotal geral', operacao.totais.subtotal)}}
+{{-imprime_texto_valor_div('Subtotal geral', operacao.totais.subtotal)}}
 {%- endif -%}
 {%- include '_totais.templatex' -%}
 % do vars.update({'separa_por_combo': False})
 {%- include '_desconto_item.templatex'  with context-%}
-{%- include  "_pagamentos_parciais.templatex" %}
+{%- include '_pagamentos_parciais.templatex' %}
 {%- if qtd_pessoas > 1 %}
-{{-imprime_texto_com_valor('Qtd. de pessoas :', qtd_pessoas, inteiro=True)}}
-{{-imprime_texto_com_valor('Total por pessoa :', (operacao.totais.falta)/qtd_pessoas)}}
+{{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
+{{-imprime_texto_valor_div('Total por pessoa ', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}
 {% endif -%}
 {{'   AGUARDE A EMISSÃO DO CUPOM FISCAL   '|t(1)|c|r}}
 {% include "_rodape-conferencia-RS.templatex" -%}

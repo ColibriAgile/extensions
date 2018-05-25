@@ -1,14 +1,14 @@
 ﻿{% extends "_templatebase.templatex" -%}
 
 {% macro render_obs(observacoes) -%}
-{% if observacoes is string %}
+{% if observacoes is string -%}
 >> <t1><i>{{observacoes}}</i></t1>
 {% else -%}
-{%- for obs in observacoes %}
+{% for obs in observacoes -%}
 >> <t1><i>{{obs}}</i></t1>
-{%- endfor -%}{% endif %}
-
+{% endfor -%}{% endif %}  
 {%- endmacro %}
+
 {% macro render_item(item) -%}
 {% set espaco = '  <zebraoff>' if item.descricao_do_combo else '' %}
 {%- if item.cancelado -%}
@@ -39,7 +39,6 @@ Cxa: {{sessao.funcionario.nome}}
 {%- endif %}
 {%- endblock cabecalho -%}
 {% block corpo -%}
-{%- set ns = namespace(indice_anterior = 0) -%}
 {# Cupom montador NÃO usa itens consolidados. A observação é importante! -#}
 {% set itens = operacao.consumos[0].venda.itens|selectattr('local_producao_apelido') %}
 {%- for reg in itens|groupby('local_producao_apelido') %}
@@ -50,11 +49,11 @@ Cxa: {{sessao.funcionario.nome}}
 <t6:b:c>Produção <dir>{{reg.grouper|capitalize}}</t6>
 {%- endif %}
 <zebra>
+{%- set ns = namespace(indice_anterior = 0) -%}
 {%- for item in reg.list %}
-{%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
+{%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice %}
 <t3>{{item.descricao_do_combo}}</t3>
-{{- render_obs(item.observacoes_do_combo) }}
-{%- endif -%}
+{{ render_obs(item.observacoes_do_combo) }}{% endif -%}
 <dec5/>
 {{ render_item(item) -}}
 {%- set ns.indice_anterior = item.indice %}
