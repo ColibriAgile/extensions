@@ -12,7 +12,7 @@
 {%- set max_denominador = 12 %} #diminua esse valor se aparecerem frações muito grandes
   {{item.quantidade|fracao(max_denominador)}} {{item.descricao}}
   {%- if item.descricao_extra and item.descricao_extra != item.descricao %}
-  {{item.descricao_extra}} {% endif %}
+  {{item.descricao_extra|i}} {% endif %}
 {%- endfor %}
 {%- endfor %}
 {%- endmacro %}
@@ -27,9 +27,9 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {%- endblock %}
 {% block corpo %}{%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}{%set agrupamento = (operacao.consumos|count > 1) -%}
 {%- for consumo in operacao.consumos %}{%if consumo %}{% set ticket = consumo.ticket %}{% set venda = consumo.venda %}
-{%- if agrupamento %}{{'\n'}}{{'=' * col}}{% endif %}
+{%- if agrupamento %}{{'\n'}}<ld>{% endif %}
 {% filter t(1) -%}
-{% filter t(2) %}{{ticket.nome|capitalize}} - Venda {{venda.numero_venda}}{% endfilter %}
+{% filter t(2) %}{{ticket.nome|capitalize|b}} {{'- Venda '|b}} {{venda.numero_venda|b}}{% endfilter %}
 {%- endfilter %}
 
 <b><div2>Item</div><div2><dir>Vl.unit</div><dir>Total
@@ -52,7 +52,8 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {%- endif %}
 {%- else %}
 <div2>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
-{%- if item.descricao_extra %}{{'\n'}}{{item.descricao_extra|t(2)}}{% endif %}
+{%- if item.descricao_extra %}
+{{item.descricao_extra|i}}{% endif %}
 {%- endif %}
 {%- endfor %}
 </zebra>
@@ -65,7 +66,7 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 {%- include '_totais.templatex' -%}
 % do vars.update({'separa_por_combo': False})
 {%- include '_desconto_item.templatex'  with context-%}
-{%- include  "_pagamentos_parciais.templatex" %}
+{%- include '_pagamentos_parciais.templatex' %}
 {%- if qtd_pessoas > 1 %}
 {{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
 {{-imprime_texto_valor_div('Total por pessoa ', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}

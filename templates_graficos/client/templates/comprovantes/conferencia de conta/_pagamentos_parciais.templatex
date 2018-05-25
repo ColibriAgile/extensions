@@ -1,8 +1,8 @@
-﻿{%- from "_imprime_texto_com_valor.templatex" import imprime_texto_valor -%}
+﻿{%- from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div -%}
 {%if pgto_parciais -%}
 {% block pgto_parcial -%}
 <t2:b>Pagamentos efetuados</t1>
-
+<l>
 <b><div2>Identificacao</divv><div3><dir>Hora</divv><div2><dir>Canc.</divv><dir>Valor</b>
 <l0>
 <zebra>
@@ -17,8 +17,8 @@
 {%- endfor %}
 </zebra>
 <l0>
-{{imprime_texto_valor('Pago', pago_parcial, destacado=destacado|default(true), prefixo='-')}}
-{{-imprime_texto_valor('A pagar', operacao.totais.total-pago_parcial, destacado=destacado|default(true))}}
+{{imprime_texto_valor_div('Pago', pago_parcial, destacado=destacado|default(true), prefixo='-')}}
+{{-imprime_texto_valor_div('A pagar', operacao.totais.total-pago_parcial, destacado=destacado|default(true))}}
 <l0>
 {%- endblock %}
 {%- endif %}
