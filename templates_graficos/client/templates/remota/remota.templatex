@@ -18,6 +18,8 @@
 {% macro render_item(item) -%}
 {% set marcha = ' marcha ' if item.marcha else '' -%}
 <t1><r>{{marcha}}</t1></r><t5>{{item.qtd}} {{item.descricao}}</t5>
+{%- if item.descricao_extra and item.descricao_extra != item.descricao %}
+<t2><r> {{item.descricao_extra}} </r></t2>{% endif %}
 {{render_obs(item.observacoes)}}
 {%- endmacro -%}
 
@@ -28,7 +30,9 @@
 <l2:20>
 {% endif -%}
 {% if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
-{% filter t(8) %}{{item.descricao_do_combo|b}}{% endfilter %}       
+<t8>{{item.descricao_do_combo|b}}</t8>
+{%- if item.descricao_do_combo_extra and item.descricao_do_combo_extra != item.descricao_do_combo %}
+<t3><r> {{item.descricao_do_combo_extra}} </r></t3> {% endif %}
 {{ render_obs(item.observacoes_do_combo) }}
 {%- endif %}
 {{- render_item(item) }}
