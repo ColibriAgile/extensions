@@ -1,6 +1,7 @@
 ﻿{%- from "_imprime_texto_com_valor.templatex" import imprime_texto_valor -%}
 {%if pgto_parciais -%}
 {% block pgto_parcial -%}
+<l1>
 <t2:b>Pagamentos efetuados</t1>
 
 <b><div2>Identificacao</divv><div3><dir>Hora</divv><div2><dir>Canc.</divv><dir>Valor</b>
