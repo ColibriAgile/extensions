@@ -8,7 +8,8 @@
 {% macro render_item(item) -%}
 {% set qtde = item.quantidade|fracao(10) if item.descricao_do_combo else item.quantidade|quantidade -%}<t4>
 <zebraini>{% if item.cancelado %}(CANCELADO) {% endif %}{{qtde}} {{item.descricao_producao}}
-{%- if item.descricao_extra and (item.descricao_extra != item.descricao_producao) %}\n{{item.descricao_extra}} {% endif -%}
+{%- if item.descricao_extra and (item.descricao_extra != item.descricao_producao) %}
+<t2>{{item.descricao_extra}}</t2> {% endif -%}
 {{- render_obs(item.observacao) }}<zebrafim>
 </t4>
 <dec5/>
@@ -55,7 +56,9 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <zebra>
 {%- for item in reg.list|sort(attribute='indice') if not item.impresso %}
 {%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice %}{% set ns.era_combo = true %}
-<zebraoff><t4:b>{{item.descricao_do_combo}}
+<zebraoff><t4:b>{{item.descricao_do_combo}}</t4>
+{%- if item.descricao_do_combo_extra and (item.descricao_do_combo_extra != item.descricao_do_combo) %}
+<t1><r> {{item.descricao_do_combo_extra}} </r></t1> {% endif -%}
 <zebraoff>{{- render_obs(item.observacoes_do_combo) }}{% endif -%}</t4>
 {% if ns.era_combo and item.descricao_do_combo == '' %}
 <zebraoff><l0><zebra>
