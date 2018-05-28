@@ -43,7 +43,6 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <t3:b>{{ticket_nome|capitalize}}<dir>Venda {{venda.numero_venda}}</t3>
 <dec2/>
 {%- endif -%}
-{%- set ns = namespace(indice_anterior = 0, era_combo = false) -%}
 {%- set itens = consumo.venda.itens %}
 {%- set itens = itens|selectattr('impresso', 'equalto', False) %}
 {%- set itens = itens|selectattr('local_producao_apelido') -%}
@@ -54,6 +53,7 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <t6:b:c>Produção <dir>{{reg.grouper|default('(NENHUM)')|capitalize}}</t6>
 <dec5/>
 <zebra>
+{%- set ns = namespace(indice_anterior = 0, era_combo = false) -%}
 {%- for item in reg.list|sort(attribute='indice') if not item.impresso %}
 {%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice %}{% set ns.era_combo = true %}
 <zebraoff><t4:b>{{item.descricao_do_combo}}</t4>
