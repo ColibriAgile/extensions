@@ -78,6 +78,5 @@ Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
 
 {%- block assinatura -%}
 {{super()}}
-{% filter eject %}{% endfilter %}
 {%- endblock assinatura %}
 
