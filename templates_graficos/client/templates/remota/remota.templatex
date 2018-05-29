@@ -96,6 +96,6 @@ Cliente: {{cliente.nome}}
 {% block assinatura -%}
 {{ super() }}
 {%- endblock assinatura %}
-{% if copias > 1 && i < (copias-1) -%}{% filter eject %}{% endfilter %}{% endif -%}
+{% if copias > 1 and i < (copias-1) -%}{% filter eject %}{% endfilter %}{% endif -%}
 {%- endfor %}
 {% endblock relatorio %}
