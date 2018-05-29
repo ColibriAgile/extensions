@@ -96,5 +96,6 @@ Cliente: {{cliente.nome}}
 {% block assinatura -%}
 {{ super() }}
 {%- endblock assinatura %}
+{% filter eject %}{% endfilter %}
 {%- endfor %}
 {% endblock relatorio %}
