@@ -1,0 +1,27 @@
+﻿{% if ticket_médio %}
+{% for vendas in ticket_médio|groupby('tipo') -%}
+{% for modo in vendas.list|groupby('modo_venda') -%}
+<dec4/>
+<t1:b>{{modo.grouper|capitalize}}</t1>
+<dec5/>
+<b><div3>Funcionário</divv><div2:d>Total $</divv><div3:d>{{vendas.grouper|capitalize|dir(4)}}</divv><dir>Vl. medio</b>
+<l3:5>
+<zebra>
+{% for item in modo.list -%}
+{% set qtd_pessoas = item.qtd_pessoas|quantidade -%}
+<div3>{{item.funcionario|capitalize}}</divv><div2:d>{{item.total|valor}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{item.ticket_medio|valor}}
+{% endfor -%}
+</zebra>
+{% set qtd_pessoas = modo.list|sum('qtd_pessoas')|quantidade -%}
+{% set total = 'Total '+modo.grouper|capitalize -%}
+{% set vl_medio = (modo.list|sum('total') / qtd_pessoas|int)|round(2,'floor')|valor -%}
+<l3:5>
+<b><inc1><div3>{{total}}</divv><div2:d>{{modo.list|sum('total')|valor}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{vl_medio}}</inc1></b>
+{% endfor -%}
+{% endfor -%}
+{% set qtd_pessoas = ticket_médio|soma('qtd_pessoas')|quantidade -%}
+{% set tk_medio_total = ticket_médio|soma('total')|valor -%}
+{% set tk_medio = (ticket_médio|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor %}
+<l3:5>
+<t1:b><div3>Total geral</divv><div2:d>{{tk_medio_total}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{tk_medio}}</t1>
+{% else %} {% include '_no_data.template' %} {% endif -%}
