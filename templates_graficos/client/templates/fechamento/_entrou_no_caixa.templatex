@@ -8,10 +8,10 @@
 {% for item in list -%}
 <div2>{{item.col_1}}</divv>
 {%- if item.mostrar_valores == 1 -%}  
-<div2:d>{{item.col_3|valor(2, '')}}</divv><dir>{{item.col_4|valor(2, '')}}{% endif %}
+<div2:d>{{item.col_3|valor}}</divv><dir>{{item.col_4|valor}}{% endif %}
 {% endfor -%}
 </zebra>
 <l3:5>
-<t1:b><div2>Total</divv><div2:d>{{list|soma('col_3')|valor(2, '')}}</divv><dir>{{list|soma('col_4')|valor(2, '')}}</t1>
+<t1:b><div2>Total</divv><div2:d>{{list|soma('col_3')|valor}}</divv><dir>{{list|soma('col_4')|valor}}</t1>
 {% endif -%}
 {%endfor%}
