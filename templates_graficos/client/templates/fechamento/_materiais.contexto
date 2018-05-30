@@ -1,0 +1,260 @@
+﻿{
+  "materiais": [
+    {
+      "codigo": "401",
+      "descricao": "brôtó calâbresa",
+      "qtde": 4,
+      "total": 20,
+      "faturamento_pct": 0.32,
+      "pctParaCalculo": 0.0032
+    },
+    {
+      "codigo": "403",
+      "descricao": "broto mineira",
+      "qtde": 14,
+      "total": 611,
+      "faturamento_pct": 9.79,
+      "pctParaCalculo": 0.0979
+    },
+    {
+      "codigo": "402",
+      "descricao": "broto mussarela",
+      "qtde": 12,
+      "total": 237,
+      "faturamento_pct": 3.8,
+      "pctParaCalculo": 0.038
+    },
+    {
+      "codigo": "302",
+      "descricao": "calabreza",
+      "qtde": 12,
+      "total": 326,
+      "faturamento_pct": 5.22,
+      "pctParaCalculo": 0.0522
+    },
+    {
+      "codigo": "514",
+      "descricao": "cerveja 838 pale ale",
+      "qtde": 2,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "511",
+      "descricao": "cerveja amstel",
+      "qtde": 7,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "503",
+      "descricao": "cerveja antárctica",
+      "qtde": 22,
+      "total": 210,
+      "faturamento_pct": 3.36,
+      "pctParaCalculo": 0.0336
+    },
+    {
+      "codigo": "515",
+      "descricao": "cerveja aura lager",
+      "qtde": 4,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "509",
+      "descricao": "cerveja bavaria",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "508",
+      "descricao": "cerveja bohemia",
+      "qtde": 3,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "502",
+      "descricao": "cerveja brahma",
+      "qtde": 9,
+      "total": 85,
+      "faturamento_pct": 1.36,
+      "pctParaCalculo": 0.0136
+    },
+    {
+      "codigo": "516",
+      "descricao": "cerveja budweiser",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "506",
+      "descricao": "cerveja kaiser",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "501",
+      "descricao": "cerveja skol",
+      "qtde": 4,
+      "total": 37,
+      "faturamento_pct": 0.59,
+      "pctParaCalculo": 0.0059
+    },
+    {
+      "codigo": "301",
+      "descricao": "fritas",
+      "qtde": 5,
+      "total": 116,
+      "faturamento_pct": 1.86,
+      "pctParaCalculo": 0.0186
+    },
+    {
+      "codigo": "303",
+      "descricao": "picanha",
+      "qtde": 24,
+      "total": 750,
+      "faturamento_pct": 12.02,
+      "pctParaCalculo": 0.1202
+    },
+    {
+      "codigo": "256",
+      "descricao": "pizza 4 queijos",
+      "qtde": 6.334,
+      "total": 97.5293,
+      "faturamento_pct": 1.56,
+      "pctParaCalculo": 0.0156
+    },
+    {
+      "codigo": "257",
+      "descricao": "pizza 5 queijos",
+      "qtde": 3.334,
+      "total": 97.5293,
+      "faturamento_pct": 1.56,
+      "pctParaCalculo": 0.0156
+    },
+    {
+      "codigo": "258",
+      "descricao": "pizza 6 queijos",
+      "qtde": 2.334,
+      "total": 97.5293,
+      "faturamento_pct": 1.56,
+      "pctParaCalculo": 0.0156
+    },
+    {
+      "codigo": "210",
+      "descricao": "pizza alho",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "211",
+      "descricao": "pizza alho poró",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "219",
+      "descricao": "pizza banana canela",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "235",
+      "descricao": "pizza basca",
+      "qtde": 1,
+      "total": 0,
+      "faturamento_pct": 0,
+      "pctParaCalculo": 0
+    },
+    {
+      "codigo": "201",
+      "descricao": "pizzá calabrêsa",
+      "qtde": 4.996,
+      "total": 117.9894,
+      "faturamento_pct": 1.89,
+      "pctParaCalculo": 0.0189
+    },
+    {
+      "codigo": "204",
+      "descricao": "pizza frango ao requeijao",
+      "qtde": 32,
+      "total": 354,
+      "faturamento_pct": 5.67,
+      "pctParaCalculo": 0.0567
+    },
+    {
+      "codigo": "205",
+      "descricao": "pizza margherita",
+      "qtde": 5,
+      "total": 70,
+      "faturamento_pct": 1.12,
+      "pctParaCalculo": 0.0112
+    },
+    {
+      "codigo": "203",
+      "descricao": "pizza mineira",
+      "qtde": 31.002,
+      "total": 1125.5813,
+      "faturamento_pct": 18.05,
+      "pctParaCalculo": 0.1805
+    },
+    {
+      "codigo": "202",
+      "descricao": "pizza mussarela",
+      "qtde": 17,
+      "total": 515.8393,
+      "faturamento_pct": 8.27,
+      "pctParaCalculo": 0.0827
+    },
+    {
+      "codigo": "700",
+      "descricao": "rodíziô pízzâ",
+      "qtde": 6,
+      "total": 561.58,
+      "faturamento_pct": 9,
+      "pctParaCalculo": 0.09
+    },
+    {
+      "codigo": "101",
+      "descricao": "suco laranjá",
+      "qtde": 10,
+      "total": 85.12,
+      "faturamento_pct": 1.36,
+      "pctParaCalculo": 0.0136
+    },
+    {
+      "codigo": "102",
+      "descricao": "suco limão",
+      "qtde": 19,
+      "total": 238.18,
+      "faturamento_pct": 3.82,
+      "pctParaCalculo": 0.0382
+    },
+    {
+      "codigo": "103",
+      "descricao": "suco maracújâ",
+      "qtde": 26,
+      "total": 482.06,
+      "faturamento_pct": 7.73,
+      "pctParaCalculo": 0.0773
+    }
+  ]
+}

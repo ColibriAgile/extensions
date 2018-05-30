@@ -1,0 +1,263 @@
+﻿{
+  "faturamento": [
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Dinheiro",
+      "valor": 3681.3,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Cartãocréditosemtef",
+      "valor": 371.1,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Cheque",
+      "valor": 1123.56,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Conta assinada",
+      "valor": 305.32,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Credito cliente",
+      "valor": 817.89,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Créditô ncr",
+      "valor": 147.85,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Débitô ncr",
+      "valor": 96.84,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto09",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto105",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto106",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto107",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto108",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto109",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto110",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto111",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto112",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto113",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto114",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto115",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto116",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto117",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto118",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto119",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Meiopagto120",
+      "valor": 0,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 1,
+      "sessao": "Receitas de venda",
+      "descricao": "Vôuchér ncr",
+      "valor": 158.57,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 2,
+      "sessao": "Saídas",
+      "descricao": "Repique",
+      "valor": -26.6,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 2,
+      "sessao": "Saídas",
+      "descricao": "Serviço",
+      "valor": -1286.25,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 2,
+      "sessao": "Saídas",
+      "descricao": "Troco",
+      "valor": -50.3,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Consumação",
+      "valor": 198,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Crédito cliente emitido",
+      "valor": -19.95,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Crédito cliente recebido",
+      "valor": 817.89,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Descontos",
+      "valor": 1283.53,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Entradas",
+      "valor": 150,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Pgto contas assinadas",
+      "valor": 113.87,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Sangria",
+      "valor": 3,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Suprimento",
+      "valor": 336.97,
+      "total_faturamento": 5339.28
+    },
+    {
+      "grupo": 3,
+      "sessao": "Indicadores",
+      "descricao": "Taxa de entrega",
+      "valor": 20,
+      "total_faturamento": 5339.28
+    }
+  ]
+}

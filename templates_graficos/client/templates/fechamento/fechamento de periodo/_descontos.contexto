@@ -1,0 +1,67 @@
+﻿{
+  "descontos": [
+    {
+      "modo_venda": "BALCÃO",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "Desconto por valor",
+      "vl": 41.25,
+      "pct": 3.21,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "BALCÃO",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "pízzâs",
+      "vl": 104.51,
+      "pct": 8.14,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "BALCÃO",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "vípê30",
+      "vl": 160.2,
+      "pct": 12.48,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "MESA",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "vípê60",
+      "vl": 661.19,
+      "pct": 51.51,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "MESA",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "vípê30",
+      "vl": 46.2,
+      "pct": 3.6,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "MESA",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "vípê15",
+      "vl": 247.19,
+      "pct": 19.26,
+      "total": 1283.53
+    },
+    {
+      "modo_venda": "FICHA",
+      "func_recebeu": "atendênté0101",
+      "func_autorizou": "atendênté0101",
+      "descr": "Desconto por valor",
+      "vl": 22.99,
+      "pct": 1.79,
+      "total": 1283.53
+    }
+  ]
+}
