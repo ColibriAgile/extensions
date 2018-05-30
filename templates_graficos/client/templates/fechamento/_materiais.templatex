@@ -1,12 +1,12 @@
 ﻿{% if materiais %}
-<b><div2>Produto</divv><div3:d>Qtd</divv><dir>Total item</b>
+<b><div2>Produto</divv><div2:d>Qtd</divv><dir>Total item</b>
 <l3:5>
 <zebra>
 {% for item in materiais -%}
-<div2>{{item.descricao}}</divv><div3:d>{{item.qtde|quantidade}}</divv><dir>{{item.total|valor}}
+<div2>{{item.descricao}}</divv><div2:d>{{item.qtde|quantidade}}</divv><dir>{{item.total|valor}}
 {% endfor -%}
 </zebra>
 <l3:5>
-<t1:b><div2>Total</divv><div3:d>{{materiais|soma('qtde')|quantidade}}</divv><dir>{{materiais|soma('total')|valor}}</t1>
+<t1:b><div2>Total</divv><div2:d>{{materiais|soma('qtde')|quantidade}}</divv><dir>{{materiais|soma('total')|valor}}</t1>
 {% else %} {% include '_no_data.template' %} {% endif -%}
 
