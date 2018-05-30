@@ -2,7 +2,7 @@
 <b><div2>Grupo</divv><div2:d>Qtde</divv><dir>Tot Item $</b>
 <l3:5><zebra>
 {% for item in grupo_materiais -%}
-<div2>{{item.grupo_descr}}</divv><div2:d>{{item.qtde}}</divv><dir>{{item.vl_total|valor}}
+<div2>{{item.grupo_descr}}</divv><div2:d>{{item.qtde|quantidade}}</divv><dir>{{item.vl_total|valor}}
 {% endfor -%}
 <l3:5>
 <t1:b><div2>Total</divv><div2:d>{{grupo_materiais|soma('qtde')|quantidade}}</divv><dir>{{grupo_materiais|soma('vl_total')|valor}}</t1>
