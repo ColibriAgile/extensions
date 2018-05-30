@@ -1,5 +1,5 @@
-﻿{% if ticket_medio_analitico %}
-{% for vendas in ticket_medio_analitico|groupby('tipo') -%}
+﻿{% if ticket_médio_analítico %}
+{% for vendas in ticket_médio_analítico|groupby('tipo') -%}
 {% for modo in vendas.list|groupby('modo_venda') -%}
 <dec4/>
 <t1:b>{{modo.grouper|capitalize}}</t1>
@@ -19,9 +19,9 @@
 <b><inc1><div3>{{total}}</divv><div2:d>{{modo.list|sum('total')|valor}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{vl_medio}}</inc1></b>
 {% endfor -%}
 {% endfor -%}
-{% set qtd_pessoas = ticket_medio_analitico|soma('qtd_pessoas')|quantidade -%}
-{% set tk_medio_total = ticket_medio_analitico|soma('total')|valor -%}
-{% set tk_medio = (ticket_medio_analitico|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor %}
+{% set qtd_pessoas = ticket_médio_analítico|soma('qtd_pessoas')|quantidade -%}
+{% set tk_medio_total = ticket_médio_analítico|soma('total')|valor -%}
+{% set tk_medio = (ticket_médio_analítico|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor %}
 <l3:5>
 <t1:b><div3>Total geral</divv><div2:d>{{tk_medio_total}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{tk_medio}}</t1>
 {% else %} {% include '_no_data.template' %} {% endif -%}

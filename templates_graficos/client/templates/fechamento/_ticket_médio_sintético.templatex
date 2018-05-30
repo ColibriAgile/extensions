@@ -1,19 +1,19 @@
-﻿{% if ticket_medio_sintetico %}
+﻿{% if ticket_médio_sintético %}
 <l0>
 <b><div5>Modo</divv><div3:d>Total $</divv><div2:d>Qtd.</divv><dir>Vl. médio</b>
 <l3:5>
-{% for vendas in ticket_medio_sintetico|groupby('tipo') -%}
+{% for vendas in ticket_médio_sintético|groupby('tipo') -%}
 <zebra>
 {% for modos in vendas.list|groupby('modo_venda') -%}
 {% set qtd_pessoas = modos.list|sum('qtd_pessoas')|quantidade -%}
 {% set total = modos.list|sum('total')|valor -%}
-{% set ticket_medio_sintetico = modos.list|sum('ticket_medio')|valor -%}
-<div5>{{modos.grouper|capitalize}}</divv><div3:d>{{total}}</divv><div2:d>{{qtd_pessoas}} {{vendas.grouper|dir(4)}}.</divv><dir>{{ticket_medio_sintetico}}
+{% set ticket_médio_sintético = modos.list|sum('ticket_medio')|valor -%}
+<div5>{{modos.grouper|capitalize}}</divv><div3:d>{{total}}</divv><div2:d>{{qtd_pessoas}} {{vendas.grouper|dir(4)}}.</divv><dir>{{ticket_médio_sintético}}
 {% endfor -%}
 </zebra>
 {% endfor -%}
-{% set qtd_pessoas = ticket_medio_sintetico|soma('qtd_pessoas')|quantidade -%}
-{% set vl_medio = (ticket_medio_sintetico|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor -%}
+{% set qtd_pessoas = ticket_médio_sintético|soma('qtd_pessoas')|quantidade -%}
+{% set vl_medio = (ticket_médio_sintético|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor -%}
 <l3:5>
-<t1:b><div5>Total</divv><div3:d>{{ticket_medio_sintetico|soma('total')|valor}}</divv><div2:d>{{qtd_pessoas}}</divv><dir>{{vl_medio}}</t1>
+<t1:b><div5>Total</divv><div3:d>{{ticket_médio_sintético|soma('total')|valor}}</divv><div2:d>{{qtd_pessoas}}</divv><dir>{{vl_medio}}</t1>
 {% else %} {% include '_no_data.template' %} {% endif -%}
