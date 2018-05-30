@@ -7,5 +7,5 @@
 <div4>{{item.ticket}}</divv><div3>{{item.numero_venda}}</divv><div2:d>{{item.dt_hr_encerramento|data('%H:%M', '%Y%m%d %H:%M:%S')}}</divv><dir>{{item.vl_total|valor}}
 </zebra>
 {% endfor -%}
-{% else %} {% include '_no_data.template' %} {% endif %}
+{% else %} {% include '_no_data.templatex' %} {% endif %}
 

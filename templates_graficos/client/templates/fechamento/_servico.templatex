@@ -2,18 +2,18 @@
 {% for reg in servico|groupby('modo_venda') %}
 <t1:b>{{reg.grouper|capitalize}}</t1>
 <dec5/>
-<b><div3>Funcionário</divv><div3:d>Venda</divv><div2:d>Calculado</divv><dir>Recebido</b>
+<b><div7:2>Funcionário</divv><div5:d:2>Venda</divv><div2:d>Calculado</divv><dir>Recebido</b>
 <l3:5>
 <zebra>
 {% for func in reg.list -%}
 {%set funcionario = func.funcionario|capitalize -%}
-{%set vl_venda = func.valor_venda|valor(2, '') -%}
-{%set serv_calc = func.servico_calculado|valor(2, '') -%}
-{%set serv_rec = func.servico_recebido|valor(2, '') -%}
-<div3>{{funcionario}}</divv><div3:d>{{vl_venda}}</divv><div2:d>{{serv_calc}}</divv><dir>{{serv_rec}}
+{%set vl_venda = func.valor_venda|valor -%}
+{%set serv_calc = func.servico_calculado|valor -%}
+{%set serv_rec = func.servico_recebido|valor -%}
+<div7:2>{{funcionario}}</divv><div5:d:2>{{vl_venda}}</divv><div2:d>{{serv_calc}}</divv><dir>{{serv_rec}}
 {% endfor -%}
 </zebra>
 {% endfor %}
 <l3:5>
-<t1:b><div3>Total</divv><div3:d>{{servico|soma('valor_venda')|valor(2, '')}}</divv><div2:d>{{servico|soma('servico_calculado')|valor(2, '')}}</divv><dir>{{servico|soma('servico_recebido')|valor(2, '')}}</t1>
-{% else %} {% include '_no_data.template' %} {% endif -%}
+<t1:b><div7:2>Total</divv><div5:d:2>{{servico|soma('valor_venda')|valor}}</divv><div2:d>{{servico|soma('servico_calculado')|valor}}</divv><dir>{{servico|soma('servico_recebido')|valor}}</t1>
+{% else %} {% include '_no_data.templatex' %} {% endif -%}
