@@ -1,0 +1,39 @@
+﻿{
+  "grupo_materiais": [
+    {
+      "grupo_id": 1,
+      "grupo_descr": "sucôs",
+      "qtde": 55,
+      "vl_total": 805.36,
+      "percentual": 12.91705026
+    },
+    {
+      "grupo_id": 2,
+      "grupo_descr": "pizzás",
+      "qtde": 136,
+      "vl_total": 3343.92,
+      "percentual": 53.63263971
+    },
+    {
+      "grupo_id": 3,
+      "grupo_descr": "porções",
+      "qtde": 41,
+      "vl_total": 1192,
+      "percentual": 19.1183122
+    },
+    {
+      "grupo_id": 4,
+      "grupo_descr": "cervejâs",
+      "qtde": 54,
+      "vl_total": 332,
+      "percentual": 5.32489904
+    },
+    {
+      "grupo_id": 6,
+      "grupo_descr": "rodíziô",
+      "qtde": 6,
+      "vl_total": 561.58,
+      "percentual": 9.0070988
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "entregas": [
+    {
+      "entregador": "entrégadôr0301",
+      "qtd": 1,
+      "vl_entrega": 4,
+      "vl_venda": 68.8
+    },
+    {
+      "entregador": "entrégadôr0303",
+      "qtd": 1,
+      "vl_entrega": 4,
+      "vl_venda": 72.4
+    },
+    {
+      "entregador": "entregador304",
+      "qtd": 1,
+      "vl_entrega": 8,
+      "vl_venda": 291.2
+    },
+    {
+      "entregador": "entregador306",
+      "qtd": 1,
+      "vl_entrega": 4,
+      "vl_venda": 68.8
+    }
+  ]
+}

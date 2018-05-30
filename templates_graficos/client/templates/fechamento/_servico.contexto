@@ -1,0 +1,36 @@
+﻿{
+  "servico": [
+    {
+      "modo_venda": "BALCÃO",
+      "codigo": 101,
+      "funcionario": "Operador de Teste",
+      "valor_venda": 2162.9679,
+      "servico_calculado": 216.291,
+      "servico_recebido": 216.2856
+    },
+    {
+      "modo_venda": "ENTREGA",
+      "codigo": 101,
+      "funcionario": "Operador de Teste",
+      "valor_venda": 401,
+      "servico_calculado": 80.2,
+      "servico_recebido": 80.2
+    },
+    {
+      "modo_venda": "FICHA",
+      "codigo": 101,
+      "funcionario": "Operador de Teste",
+      "valor_venda": 487,
+      "servico_calculado": 80.8,
+      "servico_recebido": 80.8
+    },
+    {
+      "modo_venda": "MESA",
+      "codigo": 101,
+      "funcionario": "Operador de Teste",
+      "valor_venda": 3183.97,
+      "servico_calculado": 908.985,
+      "servico_recebido": 908.9759
+    }
+  ]
+}

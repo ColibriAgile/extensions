@@ -1,0 +1,308 @@
+﻿{
+  "fechamento": [
+    {
+      "grupo": 1,
+      "col_1": "Dinheiro",
+      "col_2": "",
+      "col_3": "3681.30",
+      "col_4": "113.87",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Cheque",
+      "col_2": "",
+      "col_3": "1123.56",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Credito cliente",
+      "col_2": "",
+      "col_3": "817.89",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Conta assinada",
+      "col_2": "",
+      "col_3": "305.32",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Créditô ncr",
+      "col_2": "",
+      "col_3": "147.85",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Débitô ncr",
+      "col_2": "",
+      "col_3": "96.84",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Vôuchér ncr",
+      "col_2": "",
+      "col_3": "158.57",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 1,
+      "col_1": "Cartãocréditosemtef",
+      "col_2": "",
+      "col_3": "371.10",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 2,
+      "col_1": "Dinheiro",
+      "col_2": "-50.30",
+      "col_3": "-26.60",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 2,
+      "col_1": "Credito cliente",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "-19.95",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Dinheiro",
+      "col_2": "",
+      "col_3": "-1.00",
+      "col_4": "336.97",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Cheque",
+      "col_2": "",
+      "col_3": "-2.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Dinheiro",
+      "col_2": "4054.24",
+      "col_3": "0.00",
+      "col_4": "-4054.24",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Cheque",
+      "col_2": "1121.56",
+      "col_3": "0.00",
+      "col_4": "-1121.56",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Credito cliente",
+      "col_2": "817.89",
+      "col_3": "0.00",
+      "col_4": "-817.89",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Conta assinada",
+      "col_2": "305.32",
+      "col_3": "0.00",
+      "col_4": "-305.32",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Créditô ncr",
+      "col_2": "147.85",
+      "col_3": "147.85",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Débitô ncr",
+      "col_2": "96.84",
+      "col_3": "96.84",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Vôuchér ncr",
+      "col_2": "158.57",
+      "col_3": "158.57",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Cartãocréditosemtef",
+      "col_2": "371.10",
+      "col_3": "0.00",
+      "col_4": "-371.10",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto09",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto105",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto106",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto107",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto108",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto109",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto110",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto111",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto112",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto113",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto114",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto115",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto116",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto117",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto118",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto119",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Meiopagto120",
+      "col_2": "0.00",
+      "col_3": "0.00",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 5,
+      "col_1": "FALTA ====> -6670.11",
+      "col_2": "",
+      "col_3": "",
+      "col_4": "",
+      "mostrar_valores": 1
+    }
+  ]
+}

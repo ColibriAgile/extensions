@@ -1,0 +1,46 @@
+﻿{
+  "vendas_sem_comprovante": [
+    {
+      "ticket": "balcão 4",
+      "numero_venda": 8,
+      "dt_hr_encerramento": "20180302 16:27:17",
+      "vl_total": 101.2
+    },
+    {
+      "ticket": "balcão 4",
+      "numero_venda": 10,
+      "dt_hr_encerramento": "20180302 16:30:00",
+      "vl_total": 249.7
+    },
+    {
+      "ticket": "entrega 1",
+      "numero_venda": 13,
+      "dt_hr_encerramento": "20180302 16:34:33",
+      "vl_total": 68.8
+    },
+    {
+      "ticket": "ficha 1",
+      "numero_venda": 12,
+      "dt_hr_encerramento": "20180302 16:32:19",
+      "vl_total": 335
+    },
+    {
+      "ticket": "mesa 1/1",
+      "numero_venda": 11,
+      "dt_hr_encerramento": "20180302 16:30:49",
+      "vl_total": 228.8
+    },
+    {
+      "ticket": "mesa 2/1",
+      "numero_venda": 16,
+      "dt_hr_encerramento": "20180302 16:57:07",
+      "vl_total": 1647.96
+    },
+    {
+      "ticket": "mesa 3/1",
+      "numero_venda": 17,
+      "dt_hr_encerramento": "20180302 16:57:31",
+      "vl_total": 2142.34
+    }
+  ]
+}
