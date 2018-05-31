@@ -4,9 +4,33 @@
       "data": "20180302 00:00:00",
       "codigo": "1/1",
       "numero_venda": 15,
-      "func_nome": "atendênté0101",
+      "func_nome": "Atendente 1",
       "qtd_fechamentos": 2,
       "vl_total": 1101.99
+    },
+    {
+      "data": "20180302 00:00:00",
+      "codigo": "1/2",
+      "numero_venda": 16,
+      "func_nome": "Atendente 1",
+      "qtd_fechamentos": 3,
+      "vl_total": 101.52
+    },
+    {
+      "data": "20180302 00:00:00",
+      "codigo": "2/2",
+      "numero_venda": 18,
+      "func_nome": "Atendente 2",
+      "qtd_fechamentos": 2,
+      "vl_total": 201.71
+    },
+    {
+      "data": "20180302 00:00:00",
+      "codigo": "3/2",
+      "numero_venda": 19,
+      "func_nome": "Atendente 3",
+      "qtd_fechamentos": 5,
+      "vl_total": 23.52
     }
   ]
 }
