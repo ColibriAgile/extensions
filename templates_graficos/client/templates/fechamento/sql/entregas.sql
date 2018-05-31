@@ -1,4 +1,4 @@
-select
+﻿select
   entregador = isnull(f.nome, '(nenhum)'),
   qtd = count(ov.operacao_id),
   vl_entrega = sum(ov.vl_taxa_de_entrega),
