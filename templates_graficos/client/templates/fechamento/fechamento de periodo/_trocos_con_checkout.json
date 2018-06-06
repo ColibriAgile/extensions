@@ -1,0 +1,13 @@
+﻿{
+	"trocos_no_checkout": [
+		{
+			"meio": "Crédito de cliente",
+			"valor": 27
+		},
+		{
+			"meio": "Repique",
+			"valor": 7
+		}
+	],
+	"sistema": "NCR Colibri"
+}
