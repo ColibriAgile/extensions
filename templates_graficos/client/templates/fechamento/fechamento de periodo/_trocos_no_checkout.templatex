@@ -5,5 +5,5 @@
 {% if loop.last %}<l3:5>{% endif -%}
 {% endfor -%}
 </zebra>
-<dir><b>Total : {{trocos_no_checkout|sum('valor')|valor}}</b></dir>
-{% else %} {% include '_no_data.template' %} {% endif -%}
+<t1:b><div2>Total</divv><dir> {{trocos_no_checkout|sum('valor')|valor}}</t1>
+{% else %} {% include '_no_data.templatex' %} {% endif -%}
