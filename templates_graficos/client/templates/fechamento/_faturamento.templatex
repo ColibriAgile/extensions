@@ -11,7 +11,7 @@
 {% endif -%}
 <l3:5>
 <zebra>
-{% for item in reg.list -%}
+{% for item in reg.list|sort(attribute='valor', reverse=True) if item.valor -%}
 {% if not alinharValorDireita -%}
 <div2>{{item.descricao}}</divv><div2:d>{{item.valor|valor}}</divv>
 {% else -%}
@@ -19,7 +19,7 @@
 {% endif -%}
 {% endfor -%}
 {% if reg.grouper == 1 %}
-{% include  'fechamento\\_pizza_faturamento.templatex' ignore missing %}{% endif %}
+{% include 'fechamento\\_pizza_faturamento.templatex' ignore missing %}{% endif %}
 </zebra>
 {% if exibirTotal -%}
 <l3:5>

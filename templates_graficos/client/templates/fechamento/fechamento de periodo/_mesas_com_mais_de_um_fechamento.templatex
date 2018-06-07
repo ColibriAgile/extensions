@@ -6,9 +6,9 @@
 <b><div5:d>Mesa</divv><div4:d>Venda</divv><div2:d>Fechamentos</divv><dir>Valor $</b>
 <l3:5>
 <zebra>
-{% for item in reg_func.list -%}
+{% for item in reg_func.list|sort(attribute='qtd_fechamentos', reverse=True) -%}
 <div5:d>{{item.codigo}}</divv><div4:d>{{item.numero_venda|quantidade}}</divv><div2:d>{{item.qtd_fechamentos|quantidade}}</divv><dir>{{item.vl_total|valor}}
 {% endfor -%}
 </zebra>
 {% endfor %}
-{% else -%} {%include '_no_data.template' %} {% endif %}
+{% else -%} {%include '_no_data.templatex' %} {% endif %}
