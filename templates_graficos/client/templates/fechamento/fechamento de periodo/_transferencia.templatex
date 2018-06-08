@@ -7,6 +7,7 @@
 <dec5/>
 {% for ticket_orig in modo.list|groupby('ticket_cod_origem') -%}
 {% for venda_orig in ticket_orig.list|groupby('venda_origem') -%}
+<dec5/>
 <t1:b>Da {{ticket_orig.grouper|lower}} <dir>Venda {{venda_orig.grouper}}</t1>
 <dec5/>
 <b><div2>Produto</divv><div2>Dest.(vda)</divv><div:d>Qtde<div></b>
@@ -30,4 +31,4 @@
 {% endfor -%}
 <l3:5>
 <t1:b>Qtde de itens: <dir>{{ns.qtd_total|quantidade}}</t1>
-{% else %} {% include '_no_data.template' %} {% endif -%}
+{% else %} {% include '_no_data.templatex' %} {% endif -%}

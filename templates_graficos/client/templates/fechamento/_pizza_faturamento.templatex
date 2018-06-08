@@ -1,12 +1,17 @@
 ﻿% for reg in faturamento|groupby('grupo') if reg.grouper == 1
-% set ns = namespace(valores ='') 
+% set ns = namespace(valores = '', outros = 0, outrostxt = '') 
 % for item in reg.list|sort(attribute='valor', reverse=True) if item.valor
-% if loop.index > 5
-% break
+% if loop.index > 4
+% set ns.outros = ns.outros + item.valor
+% set ns.outrostxt = ns.outrostxt + item.descricao
+% set ns.outrostxt = ns.outrostxt + ', ' if not loop.last else ns.outrostxt
+% continue
 % endif
 % set vl = item.valor|valor|replace('.', '')
 % set ns.valores = ns.valores + item.descricao + '=' + vl + ';'
 % endfor
+% set ns.valores = ns.valores + 'Outros *' + '=' + ns.outros|valor|replace('.', '') + ';'
 <pie>{{ns.valores}}</pie:2>
+<zebraoff><dec><b>* {{ns.outrostxt}}</b></dec>
 % endfor
 

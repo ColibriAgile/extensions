@@ -2,67 +2,62 @@
   "servico": [
     {
       "modo_venda": "BALCÃO",
-      "codigo": 101,
-      "funcionario": "Atentende 1",
-      "valor_venda": 2162.9679,
-      "servico_calculado": 216.291,
-      "servico_recebido": 216.2856
+      "codigo": 7,
+      "funcionario": "Jefferson",
+      "valor_venda": 763.726,
+      "servico_calculado": 0,
+      "servico_recebido": 0
     },
     {
       "modo_venda": "ENTREGA",
-      "codigo": 101,
-      "funcionario": "Atentende 1",
-      "valor_venda": 401,
-      "servico_calculado": 80.2,
-      "servico_recebido": 80.2
-    },
-    {
-      "modo_venda": "FICHA",
-      "codigo": 101,
-      "funcionario": "Atentende 1",
-      "valor_venda": 487,
-      "servico_calculado": 80.8,
-      "servico_recebido": 80.8
-    },
-    {
-      "modo_venda": "MESA",
-      "codigo": 101,
-      "funcionario": "Atentende 1",
-      "valor_venda": 3183.97,
-      "servico_calculado": 908.985,
-      "servico_recebido": 908.9759
-    },
-    {
-      "modo_venda": "BALCÃO",
-      "codigo": 101,
-      "funcionario": "Atendente 2",
-      "valor_venda": 4163.99,
-      "servico_calculado": 416.39,
-      "servico_recebido": 416.39
+      "codigo": 7,
+      "funcionario": "Jefferson",
+      "valor_venda": 2101.066,
+      "servico_calculado": 0,
+      "servico_recebido": 0
     },
     {
       "modo_venda": "ENTREGA",
-      "codigo": 101,
-      "funcionario": "Atendente 2",
-      "valor_venda": 100,
-      "servico_calculado": 10,
-      "servico_recebido": 10
+      "codigo": 99,
+      "funcionario": "Leandro",
+      "valor_venda": 48.5,
+      "servico_calculado": 0,
+      "servico_recebido": 0
     },
     {
       "modo_venda": "FICHA",
-      "codigo": 101,
-      "funcionario": "Atendente 2",
-      "valor_venda": 850,
-      "servico_calculado": 85.0,
-      "servico_recebido": 85.0
+      "codigo": 7,
+      "funcionario": "Jefferson",
+      "valor_venda": 450.542,
+      "servico_calculado": 45.05,
+      "servico_recebido": 52.5505
     },
     {
       "modo_venda": "MESA",
-      "codigo": 101,
-      "funcionario": "Atendente 2",
-      "valor_venda": 2500.97,
-      "servico_calculado": 250.09,
-      "servico_recebido": 250.09
+      "codigo": 7,
+      "funcionario": "Jefferson",
+      "valor_venda": 944.407,
+      "servico_calculado": 31.078,
+      "servico_recebido": 31.0802
+    },
+    {
+      "modo_venda": "MESA",
+      "codigo": 99,
+      "funcionario": "Leandro",
+      "valor_venda": 35.2,
+      "servico_calculado": 3.52,
+      "servico_recebido": 3.52
+    },
+    {
+      "modo_venda": "MESA",
+      "codigo": 1,
+      "funcionario": "André",
+      "valor_venda": 634.12,
+      "servico_calculado": 61.908,
+      "servico_recebido": 61.91
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

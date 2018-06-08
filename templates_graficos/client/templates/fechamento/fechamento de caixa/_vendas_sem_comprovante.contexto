@@ -42,5 +42,8 @@
       "dt_hr_encerramento": "20180302 16:57:31",
       "vl_total": 2142.34
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

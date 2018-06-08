@@ -16,4 +16,4 @@
 {% set vl_medio = (ticket_médio_sintético|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor -%}
 <l3:5>
 <t1:b><div5>Total</divv><div3:d>{{ticket_médio_sintético|soma('total')|valor}}</divv><div2:d>{{qtd_pessoas}}</divv><dir>{{vl_medio}}</t1>
-{% else %} {% include '_no_data.template' %} {% endif -%}
+{% else %} {% include '_no_data.templatex' %} {% endif -%}

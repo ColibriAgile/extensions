@@ -4,12 +4,12 @@
 {% for reg_mod in reg_func.list|groupby('modo_venda') -%}
 <dec5/>
 <inc2><b>{{reg_mod.grouper|capitalize}}</b></inc2>
-<b><div4>Descricao</divv><div3:d>Valor. $</divv><div3:d>Perc.</divv>Autorizou</b>
+<b><div9:3>Descrição</divv><div3:d>Valor. $</divv><div3:d>%</divv>Autorizou</b>
 <l3:5>
 <zebra>
-{% for reg in reg_mod.list -%}                                                 
+{% for reg in reg_mod.list|sort(attribute='vl', reverse=True) -%}                                                 
 {% set descr = '(p/ valor)' if reg.descr == 'Desconto por valor' else reg.descr -%}
-<div4>{{descr}}</divv><div3:d>{{reg.vl|valor}}</divv><div3:d>{{reg.pct|valor}}%</divv>{{reg.func_autorizou|capitalize}}
+<div9:3>{{descr}}</divv><div3:d>{{reg.vl|valor}}</divv><div3:d>{{reg.pct|valor}}</divv>{{reg.func_autorizou|capitalize}}
 {% endfor %}
 </zebra>
 {% endfor -%}
@@ -17,6 +17,6 @@
 {% for tot in descontos|groupby('total') -%}
 <t2:b>Total de descontos: <r><dir> {{tot.grouper|valor|capitalize}} </t2></r>
 {% endfor -%}
-{% else %} {% include '_no_data.template' %} {% endif -%}
+{% else %} {% include '_no_data.templatex' %} {% endif -%}
 
 
