@@ -26,11 +26,22 @@
     },
     {
       "data": "20180302 00:00:00",
+      "codigo": "2/3",
+      "numero_venda": 21,
+      "func_nome": "Bruno",
+      "qtd_fechamentos": 3,
+      "vl_total": 20.1
+    },
+    {
+      "data": "20180302 00:00:00",
       "codigo": "3/2",
       "numero_venda": 19,
       "func_nome": "Pedro",
       "qtd_fechamentos": 5,
       "vl_total": 23.52
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

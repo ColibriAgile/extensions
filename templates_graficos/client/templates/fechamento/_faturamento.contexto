@@ -245,5 +245,8 @@
       "valor": 156,
       "total_faturamento": 4708.07
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

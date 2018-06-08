@@ -2,93 +2,96 @@
   "descontos": [
     {
       "modo_venda": "BALCÃO",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 80%",
+      "func_recebeu": "Jefferson",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 80%",
       "vl": 46.32,
       "pct": 7.73,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 80%",
+      "func_recebeu": "Alexandre",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 80%",
       "vl": 161.54,
       "pct": 26.97,
       "total": 599.07
     },
     {
       "modo_venda": "MESA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 80%",
+      "func_recebeu": "André",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 80%",
       "vl": 196.84,
       "pct": 32.86,
       "total": 599.07
     },
     {
       "modo_venda": "FICHA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 80%",
+      "func_recebeu": "Leandro",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 80%",
       "vl": 112.17,
       "pct": 18.72,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "Desconto por valor",
+      "func_recebeu": "Pedro",
+      "func_autorizou": "Patrícia",
+      "descr": "Desconto Por Valor",
       "vl": 3.4,
       "pct": 0.57,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 10%",
+      "func_recebeu": "Luis Augusto",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 10%",
       "vl": 6,
       "pct": 1,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "REDE SOCIAL10%",
+      "func_recebeu": "Jefferson",
+      "func_autorizou": "Patrícia",
+      "descr": "Rede Social10%",
       "vl": 12.28,
       "pct": 2.05,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 20%",
+      "func_recebeu": "Pedro",
+      "func_autorizou": "Jefferson",
+      "descr": "Desconto 20%",
       "vl": 22.44,
       "pct": 3.75,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 15%",
+      "func_recebeu": "Alexandre",
+      "func_autorizou": "Marcelo",
+      "descr": "Desconto 15%",
       "vl": 11.08,
       "pct": 1.85,
       "total": 599.07
     },
     {
       "modo_venda": "ENTREGA",
-      "func_recebeu": "JEFERSON",
-      "func_autorizou": "JEFERSON",
-      "descr": "DESCONTO 30%",
+      "func_recebeu": "Jefferson",
+      "func_autorizou": "Marcelo",
+      "descr": "Desconto 30%",
       "vl": 27,
       "pct": 4.51,
       "total": 599.07
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

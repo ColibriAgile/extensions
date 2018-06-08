@@ -2,101 +2,104 @@
   "grupo_materiais": [
     {
       "grupo_id": 48,
-      "grupo_descr": "BEBIDAS NÃO ALCÓLICAS",
+      "grupo_descr": "Bebidas Não Alcólicas",
       "qtde": 1,
       "vl_total": 3.5,
       "percentual": 0.07031883
     },
     {
       "grupo_id": 54,
-      "grupo_descr": "COUVERT",
+      "grupo_descr": "Couvert",
       "qtde": 13,
       "vl_total": 184.7,
       "percentual": 3.71082488
     },
     {
       "grupo_id": 55,
-      "grupo_descr": "SALADAS",
+      "grupo_descr": "Saladas",
       "qtde": 8,
       "vl_total": 131.2,
       "percentual": 2.6359514
     },
     {
       "grupo_id": 59,
-      "grupo_descr": "MOLHOS",
+      "grupo_descr": "Molhos",
       "qtde": 3,
       "vl_total": 54,
       "percentual": 1.08491902
     },
     {
       "grupo_id": 60,
-      "grupo_descr": "ACOMPANHAMENTOS",
+      "grupo_descr": "Acompanhamentos",
       "qtde": 2,
       "vl_total": 18.9,
       "percentual": 0.37972166
     },
     {
       "grupo_id": 62,
-      "grupo_descr": "SANDUÍCHES",
+      "grupo_descr": "Sanduíches",
       "qtde": 4,
       "vl_total": 60,
       "percentual": 1.20546558
     },
     {
       "grupo_id": 63,
-      "grupo_descr": "PETISCOS",
+      "grupo_descr": "Petiscos",
       "qtde": 8,
       "vl_total": 152.8,
       "percentual": 3.06991901
     },
     {
       "grupo_id": 64,
-      "grupo_descr": "SALGADOS",
+      "grupo_descr": "Salgados",
       "qtde": 38,
       "vl_total": 498,
       "percentual": 10.00536432
     },
     {
       "grupo_id": 65,
-      "grupo_descr": "DOCES",
+      "grupo_descr": "Doces",
       "qtde": 31.666,
       "vl_total": 352.79,
       "percentual": 7.08793671
     },
     {
       "grupo_id": 67,
-      "grupo_descr": "CAFÉS GELADOS",
+      "grupo_descr": "Cafés Gelados",
       "qtde": 1,
       "vl_total": 16.7,
       "percentual": 0.33552125
     },
     {
       "grupo_id": 68,
-      "grupo_descr": "SUCOS",
+      "grupo_descr": "Sucos",
       "qtde": 49,
       "vl_total": 735,
       "percentual": 14.76695337
     },
     {
       "grupo_id": 109,
-      "grupo_descr": "TORTARELLI SEASONS",
+      "grupo_descr": "Tortarelli Seasons",
       "qtde": 6,
       "vl_total": 92.8,
       "percentual": 1.86445343
     },
     {
       "grupo_id": 134,
-      "grupo_descr": "PIZZA MUSSARELA",
+      "grupo_descr": "Pizza Mussarela",
       "qtde": 68.33,
       "vl_total": 2666.94,
       "percentual": 53.58173961
     },
     {
       "grupo_id": 138,
-      "grupo_descr": "picole sortido",
+      "grupo_descr": "Picole Sortido",
       "qtde": 1,
       "vl_total": 10,
       "percentual": 0.20091093
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

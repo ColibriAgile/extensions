@@ -17,6 +17,21 @@
       "qtd": 2,
       "vl_entrega": 20,
       "vl_venda": 220.28
+    },
+    {
+      "entregador": "Alexandre",
+      "qtd": 1,
+      "vl_entrega": 10,
+      "vl_venda": 22.80
+    },
+    {
+      "entregador": "Luis Augusto",
+      "qtd": 3,
+      "vl_entrega": 30,
+      "vl_venda": 250.78
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }
