@@ -4,71 +4,47 @@
       "grupo": 1,
       "col_1": "Dinheiro",
       "col_2": "",
-      "col_3": "3681.30",
-      "col_4": "113.87",
+      "col_3": "3245.76",
+      "col_4": "112.98",
       "mostrar_valores": 1
     },
     {
       "grupo": 1,
       "col_1": "Cheque",
       "col_2": "",
-      "col_3": "1123.56",
-      "col_4": "0.00",
+      "col_3": "385.81",
+      "col_4": "3.99",
       "mostrar_valores": 1
     },
     {
       "grupo": 1,
       "col_1": "Credito cliente",
       "col_2": "",
-      "col_3": "817.89",
-      "col_4": "0.00",
+      "col_3": "325.81",
+      "col_4": "2.99",
       "mostrar_valores": 1
     },
     {
       "grupo": 1,
       "col_1": "Conta assinada",
       "col_2": "",
-      "col_3": "305.32",
+      "col_3": "119.90",
       "col_4": "0.00",
       "mostrar_valores": 1
     },
     {
       "grupo": 1,
-      "col_1": "Créditô ncr",
+      "col_1": "Visa",
       "col_2": "",
-      "col_3": "147.85",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 1,
-      "col_1": "Débitô ncr",
-      "col_2": "",
-      "col_3": "96.84",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 1,
-      "col_1": "Vôuchér ncr",
-      "col_2": "",
-      "col_3": "158.57",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 1,
-      "col_1": "Cartãocréditosemtef",
-      "col_2": "",
-      "col_3": "371.10",
-      "col_4": "0.00",
+      "col_3": "65.92",
+      "col_4": "1.99",
       "mostrar_valores": 1
     },
     {
       "grupo": 2,
       "col_1": "Dinheiro",
-      "col_2": "-50.30",
-      "col_3": "-26.60",
+      "col_2": "-40.85",
+      "col_3": "-38.45",
       "col_4": "0.00",
       "mostrar_valores": 1
     },
@@ -77,92 +53,100 @@
       "col_1": "Credito cliente",
       "col_2": "0.00",
       "col_3": "0.00",
-      "col_4": "-19.95",
+      "col_4": "-28.83",
       "mostrar_valores": 1
     },
     {
       "grupo": 3,
       "col_1": "Dinheiro",
       "col_2": "",
-      "col_3": "-1.00",
-      "col_4": "336.97",
+      "col_3": "-5.97",
+      "col_4": "112.97",
       "mostrar_valores": 1
     },
     {
       "grupo": 3,
       "col_1": "Cheque",
       "col_2": "",
-      "col_3": "-2.00",
+      "col_3": "-2.99",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Credito cliente",
+      "col_2": "",
+      "col_3": "-3.99",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Ticket ref. pap",
+      "col_2": "",
+      "col_3": "-10.99",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Permuta",
+      "col_2": "",
+      "col_3": "-12.99",
+      "col_4": "0.00",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 3,
+      "col_1": "Voucher",
+      "col_2": "",
+      "col_3": "-102.99",
       "col_4": "0.00",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
       "col_1": "Dinheiro",
-      "col_2": "4054.24",
-      "col_3": "0.00",
-      "col_4": "-4054.24",
+      "col_2": "3386.44",
+      "col_3": "3385.51",
+      "col_4": "-0.93",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
       "col_1": "Cheque",
-      "col_2": "1121.56",
-      "col_3": "0.00",
-      "col_4": "-1121.56",
+      "col_2": "386.81",
+      "col_3": "385.50",
+      "col_4": "-1.31",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
       "col_1": "Credito cliente",
-      "col_2": "817.89",
-      "col_3": "0.00",
-      "col_4": "-817.89",
+      "col_2": "324.81",
+      "col_3": "324.00",
+      "col_4": "-0.81",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
       "col_1": "Conta assinada",
-      "col_2": "305.32",
+      "col_2": "119.90",
       "col_3": "0.00",
-      "col_4": "-305.32",
+      "col_4": "-119.90",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
-      "col_1": "Créditô ncr",
-      "col_2": "147.85",
-      "col_3": "147.85",
+      "col_1": "Visa",
+      "col_2": "67.91",
+      "col_3": "67.91",
       "col_4": "0.00",
       "mostrar_valores": 1
     },
     {
       "grupo": 4,
-      "col_1": "Débitô ncr",
-      "col_2": "96.84",
-      "col_3": "96.84",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 4,
-      "col_1": "Vôuchér ncr",
-      "col_2": "158.57",
-      "col_3": "158.57",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 4,
-      "col_1": "Cartãocréditosemtef",
-      "col_2": "371.10",
-      "col_3": "0.00",
-      "col_4": "-371.10",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 4,
-      "col_1": "Meiopagto09",
+      "col_1": "Visa electron",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -170,7 +154,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto105",
+      "col_1": "Mastercard",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -178,7 +162,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto106",
+      "col_1": "Redeshop",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -186,7 +170,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto107",
+      "col_1": "Amex",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -194,7 +178,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto108",
+      "col_1": "Visa vale",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -202,7 +186,15 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto109",
+      "col_1": "Ticket ref. pap",
+      "col_2": "-10.99",
+      "col_3": "9.85",
+      "col_4": "20.84",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Ticket ref. ele",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -210,7 +202,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto110",
+      "col_1": "Cielo credito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -218,7 +210,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto111",
+      "col_1": "Cielo debito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -226,7 +218,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto112",
+      "col_1": "Redecard credito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -234,7 +226,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto113",
+      "col_1": "Redecard debito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -242,7 +234,15 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto114",
+      "col_1": "Permuta",
+      "col_2": "-12.99",
+      "col_3": "0.00",
+      "col_4": "12.99",
+      "mostrar_valores": 1
+    },
+    {
+      "grupo": 4,
+      "col_1": "Hipercard",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -250,7 +250,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto115",
+      "col_1": "Sodexho",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -258,7 +258,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto116",
+      "col_1": "Nutricash",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -266,7 +266,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto117",
+      "col_1": "Debito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -274,7 +274,7 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto118",
+      "col_1": "Credito",
       "col_2": "0.00",
       "col_3": "0.00",
       "col_4": "0.00",
@@ -282,27 +282,23 @@
     },
     {
       "grupo": 4,
-      "col_1": "Meiopagto119",
-      "col_2": "0.00",
+      "col_1": "Voucher",
+      "col_2": "-102.99",
       "col_3": "0.00",
-      "col_4": "0.00",
-      "mostrar_valores": 1
-    },
-    {
-      "grupo": 4,
-      "col_1": "Meiopagto120",
-      "col_2": "0.00",
-      "col_3": "0.00",
-      "col_4": "0.00",
+      "col_4": "102.99",
       "mostrar_valores": 1
     },
     {
       "grupo": 5,
-      "col_1": "FALTA ====> -6670.11",
+      "col_1": "SOBRA ====> 13.87",
       "col_2": "",
       "col_3": "",
       "col_4": "",
       "mostrar_valores": 1
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46,
+  "confere_caixa": true
 }

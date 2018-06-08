@@ -1,9 +1,9 @@
 ﻿{% if grupo_materiais %}
 <b><div2>Grupo</divv><div2:d>Qtde</divv><dir>Tot Item $</b>
 <l3:5><zebra>
-{% for item in grupo_materiais -%}
+{% for item in grupo_materiais|sort(attribute='vl_total', reverse=True) -%}
 <div2>{{item.grupo_descr}}</divv><div2:d>{{item.qtde|quantidade}}</divv><dir>{{item.vl_total|valor}}
 {% endfor -%}
 <l3:5>
 <t1:b><div2>Total</divv><div2:d>{{grupo_materiais|soma('qtde')|quantidade}}</divv><dir>{{grupo_materiais|soma('vl_total')|valor}}</t1>
-</zebra>{% else -%} {%include '_no_data.template' %} {% endif %}
+</zebra>{% else -%} {%include '_no_data.templatex' %} {% endif %}

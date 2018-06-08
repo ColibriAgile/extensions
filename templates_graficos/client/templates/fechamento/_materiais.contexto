@@ -1,260 +1,623 @@
 ﻿{
   "materiais": [
     {
-      "codigo": "401",
-      "descricao": "brôtó calâbresa",
+      "codigo": "230",
+      "descricao": "Agua Sem Gas",
+      "qtde": 1,
+      "total": 3.5,
+      "faturamento_pct": 0.07,
+      "pctParaCalculo": 0.0007
+    },
+    {
+      "codigo": "3115",
+      "descricao": "Arroz C/ Brocolis",
+      "qtde": 1,
+      "total": 10,
+      "faturamento_pct": 0.2,
+      "pctParaCalculo": 0.002
+    },
+    {
+      "codigo": "4286",
+      "descricao": "Arroz Int Legumes",
+      "qtde": 1,
+      "total": 9,
+      "faturamento_pct": 0.18,
+      "pctParaCalculo": 0.0018
+    },
+    {
+      "codigo": "2111",
+      "descricao": "Baby Maca C/ Sorvet",
       "qtde": 4,
-      "total": 20,
-      "faturamento_pct": 0.32,
-      "pctParaCalculo": 0.0032
+      "total": 60,
+      "faturamento_pct": 1.2,
+      "pctParaCalculo": 0.012
     },
     {
-      "codigo": "403",
-      "descricao": "broto mineira",
-      "qtde": 14,
-      "total": 611,
-      "faturamento_pct": 9.79,
-      "pctParaCalculo": 0.0979
-    },
-    {
-      "codigo": "402",
-      "descricao": "broto mussarela",
-      "qtde": 12,
-      "total": 237,
-      "faturamento_pct": 3.8,
-      "pctParaCalculo": 0.038
-    },
-    {
-      "codigo": "302",
-      "descricao": "calabreza",
-      "qtde": 12,
-      "total": 326,
-      "faturamento_pct": 5.22,
-      "pctParaCalculo": 0.0522
-    },
-    {
-      "codigo": "514",
-      "descricao": "cerveja 838 pale ale",
+      "codigo": "2514",
+      "descricao": "Balsamico Reduzido",
       "qtde": 2,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
+      "total": 34,
+      "faturamento_pct": 0.68,
+      "pctParaCalculo": 0.0068
     },
     {
-      "codigo": "511",
-      "descricao": "cerveja amstel",
-      "qtde": 7,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "503",
-      "descricao": "cerveja antárctica",
-      "qtde": 22,
-      "total": 210,
-      "faturamento_pct": 3.36,
-      "pctParaCalculo": 0.0336
-    },
-    {
-      "codigo": "515",
-      "descricao": "cerveja aura lager",
-      "qtde": 4,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "509",
-      "descricao": "cerveja bavaria",
+      "codigo": "3757",
+      "descricao": "Batata Frita-porcao",
       "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
     },
     {
-      "codigo": "508",
-      "descricao": "cerveja bohemia",
-      "qtde": 3,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "502",
-      "descricao": "cerveja brahma",
-      "qtde": 9,
-      "total": 85,
-      "faturamento_pct": 1.36,
-      "pctParaCalculo": 0.0136
-    },
-    {
-      "codigo": "516",
-      "descricao": "cerveja budweiser",
+      "codigo": "2086",
+      "descricao": "Beirute",
       "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
     },
     {
-      "codigo": "506",
-      "descricao": "cerveja kaiser",
+      "codigo": "2397",
+      "descricao": "Bola De Sorvete",
       "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
     },
     {
-      "codigo": "501",
-      "descricao": "cerveja skol",
-      "qtde": 4,
-      "total": 37,
-      "faturamento_pct": 0.59,
-      "pctParaCalculo": 0.0059
-    },
-    {
-      "codigo": "301",
-      "descricao": "fritas",
-      "qtde": 5,
-      "total": 116,
-      "faturamento_pct": 1.86,
-      "pctParaCalculo": 0.0186
-    },
-    {
-      "codigo": "303",
-      "descricao": "picanha",
-      "qtde": 24,
-      "total": 750,
-      "faturamento_pct": 12.02,
-      "pctParaCalculo": 0.1202
-    },
-    {
-      "codigo": "256",
-      "descricao": "pizza 4 queijos",
-      "qtde": 6.334,
-      "total": 97.5293,
-      "faturamento_pct": 1.56,
-      "pctParaCalculo": 0.0156
-    },
-    {
-      "codigo": "257",
-      "descricao": "pizza 5 queijos",
-      "qtde": 3.334,
-      "total": 97.5293,
-      "faturamento_pct": 1.56,
-      "pctParaCalculo": 0.0156
-    },
-    {
-      "codigo": "258",
-      "descricao": "pizza 6 queijos",
-      "qtde": 2.334,
-      "total": 97.5293,
-      "faturamento_pct": 1.56,
-      "pctParaCalculo": 0.0156
-    },
-    {
-      "codigo": "210",
-      "descricao": "pizza alho",
+      "codigo": "2108",
+      "descricao": "Bolinho Bacalhau Fri",
       "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
     },
     {
-      "codigo": "211",
-      "descricao": "pizza alho poró",
-      "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "219",
-      "descricao": "pizza banana canela",
-      "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "235",
-      "descricao": "pizza basca",
-      "qtde": 1,
-      "total": 0,
-      "faturamento_pct": 0,
-      "pctParaCalculo": 0
-    },
-    {
-      "codigo": "201",
-      "descricao": "pizzá calabrêsa",
-      "qtde": 4.996,
-      "total": 117.9894,
-      "faturamento_pct": 1.89,
-      "pctParaCalculo": 0.0189
-    },
-    {
-      "codigo": "204",
-      "descricao": "pizza frango ao requeijao",
-      "qtde": 32,
-      "total": 354,
-      "faturamento_pct": 5.67,
-      "pctParaCalculo": 0.0567
-    },
-    {
-      "codigo": "205",
-      "descricao": "pizza margherita",
-      "qtde": 5,
-      "total": 70,
-      "faturamento_pct": 1.12,
-      "pctParaCalculo": 0.0112
-    },
-    {
-      "codigo": "203",
-      "descricao": "pizza mineira",
-      "qtde": 31.002,
-      "total": 1125.5813,
-      "faturamento_pct": 18.05,
-      "pctParaCalculo": 0.1805
-    },
-    {
-      "codigo": "202",
-      "descricao": "pizza mussarela",
-      "qtde": 17,
-      "total": 515.8393,
-      "faturamento_pct": 8.27,
-      "pctParaCalculo": 0.0827
-    },
-    {
-      "codigo": "700",
-      "descricao": "rodíziô pízzâ",
+      "codigo": "919",
+      "descricao": "Boliviano",
       "qtde": 6,
-      "total": 561.58,
-      "faturamento_pct": 9,
-      "pctParaCalculo": 0.09
+      "total": 90,
+      "faturamento_pct": 1.8,
+      "pctParaCalculo": 0.018
     },
     {
-      "codigo": "101",
-      "descricao": "suco laranjá",
-      "qtde": 10,
-      "total": 85.12,
-      "faturamento_pct": 1.36,
-      "pctParaCalculo": 0.0136
+      "codigo": "4256",
+      "descricao": "Bolo Chifon 2 Caldas",
+      "qtde": 1,
+      "total": 9.8,
+      "faturamento_pct": 0.19,
+      "pctParaCalculo": 0.0019
     },
     {
-      "codigo": "102",
-      "descricao": "suco limão",
+      "codigo": "4255",
+      "descricao": "Bolo Embrulhado Coco",
+      "qtde": 9,
+      "total": 56.7,
+      "faturamento_pct": 1.13,
+      "pctParaCalculo": 0.0113
+    },
+    {
+      "codigo": "4159",
+      "descricao": "Bolo Mole Calda",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "4097",
+      "descricao": "Brigad.colher Explos",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2551",
+      "descricao": "Brigad.colher Tradic",
+      "qtde": 3,
+      "total": 45,
+      "faturamento_pct": 0.9,
+      "pctParaCalculo": 0.009
+    },
+    {
+      "codigo": "4098",
+      "descricao": "Brigad.explos Branco",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "4103",
+      "descricao": "Brigad.explos. Preto",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "4099",
+      "descricao": "Brigadeiro Caviar",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "4102",
+      "descricao": "Brigadeiro Dueto",
+      "qtde": 3,
+      "total": 12.3,
+      "faturamento_pct": 0.24,
+      "pctParaCalculo": 0.0024
+    },
+    {
+      "codigo": "2113",
+      "descricao": "Brigadeiro Gourmet",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "4135",
+      "descricao": "Brownie Coffee",
+      "qtde": 1,
+      "total": 16.7,
+      "faturamento_pct": 0.33,
+      "pctParaCalculo": 0.0033
+    },
+    {
+      "codigo": "2089",
+      "descricao": "Brusccheta Caprese",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2090",
+      "descricao": "Brusccheta Cogumelos",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2222",
+      "descricao": "Caesar Salad",
+      "qtde": 1,
+      "total": 32.9,
+      "faturamento_pct": 0.66,
+      "pctParaCalculo": 0.0066
+    },
+    {
+      "codigo": "2110",
+      "descricao": "Cam.empanado Unidade",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "4215",
+      "descricao": "Camarão Apimentado",
+      "qtde": 1,
+      "total": 29.9,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "2001",
+      "descricao": "Couvert",
+      "qtde": 6,
+      "total": 90,
+      "faturamento_pct": 1.8,
+      "pctParaCalculo": 0.018
+    },
+    {
+      "codigo": "952",
+      "descricao": "Cupcake Amendoa",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "920",
+      "descricao": "Empada De Bacalhau",
+      "qtde": 6,
+      "total": 90,
+      "faturamento_pct": 1.8,
+      "pctParaCalculo": 0.018
+    },
+    {
+      "codigo": "921",
+      "descricao": "Empada De Queijo",
+      "qtde": 4,
+      "total": 60,
+      "faturamento_pct": 1.2,
+      "pctParaCalculo": 0.012
+    },
+    {
+      "codigo": "2043",
+      "descricao": "Empada Frango",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "3189",
+      "descricao": "Empada Queijo Damasc",
+      "qtde": 3,
+      "total": 45,
+      "faturamento_pct": 0.9,
+      "pctParaCalculo": 0.009
+    },
+    {
+      "codigo": "2339",
+      "descricao": "Empanada De Carne",
+      "qtde": 2,
+      "total": 15.6,
+      "faturamento_pct": 0.31,
+      "pctParaCalculo": 0.0031
+    },
+    {
+      "codigo": "2340",
+      "descricao": "Empanada De Queijo",
+      "qtde": 2,
+      "total": 15.6,
+      "faturamento_pct": 0.31,
+      "pctParaCalculo": 0.0031
+    },
+    {
+      "codigo": "2341",
+      "descricao": "Empanada Int Caprese",
+      "qtde": 6,
+      "total": 46.8,
+      "faturamento_pct": 0.94,
+      "pctParaCalculo": 0.0094
+    },
+    {
+      "codigo": "2221",
+      "descricao": "Entrada C Mini Pao",
+      "qtde": 4,
+      "total": 74,
+      "faturamento_pct": 1.48,
+      "pctParaCalculo": 0.0148
+    },
+    {
+      "codigo": "629",
+      "descricao": "Fatia Pudim De Leite",
+      "qtde": 0.666,
+      "total": 3.996,
+      "faturamento_pct": 0.08,
+      "pctParaCalculo": 0.0008
+    },
+    {
+      "codigo": "3825",
+      "descricao": "Fetuccine Seasons",
+      "qtde": 1,
+      "total": 23.9,
+      "faturamento_pct": 0.48,
+      "pctParaCalculo": 0.0048
+    },
+    {
+      "codigo": "600",
+      "descricao": "Frango Marinado",
+      "qtde": 1,
+      "total": 28.9,
+      "faturamento_pct": 0.58,
+      "pctParaCalculo": 0.0058
+    },
+    {
+      "codigo": "4069",
+      "descricao": "Hambueguer C Salada",
+      "qtde": 1,
+      "total": 19.3,
+      "faturamento_pct": 0.38,
+      "pctParaCalculo": 0.0038
+    },
+    {
+      "codigo": "2145",
+      "descricao": "Limonada Suica",
       "qtde": 19,
-      "total": 238.18,
-      "faturamento_pct": 3.82,
-      "pctParaCalculo": 0.0382
+      "total": 285,
+      "faturamento_pct": 5.72,
+      "pctParaCalculo": 0.0572
     },
     {
-      "codigo": "103",
-      "descricao": "suco maracújâ",
-      "qtde": 26,
-      "total": 482.06,
-      "faturamento_pct": 7.73,
-      "pctParaCalculo": 0.0773
+      "codigo": "945",
+      "descricao": "Manteiga Arromatizad",
+      "qtde": 1,
+      "total": 20,
+      "faturamento_pct": 0.4,
+      "pctParaCalculo": 0.004
+    },
+    {
+      "codigo": "627",
+      "descricao": "Mini Quiche Season",
+      "qtde": 1,
+      "total": 10,
+      "faturamento_pct": 0.2,
+      "pctParaCalculo": 0.002
+    },
+    {
+      "codigo": "4146",
+      "descricao": "Mini Salada Verde",
+      "qtde": 1,
+      "total": 10,
+      "faturamento_pct": 0.2,
+      "pctParaCalculo": 0.002
+    },
+    {
+      "codigo": "2085",
+      "descricao": "Misto Quente",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "4042",
+      "descricao": "Mousse Seasons",
+      "qtde": 1,
+      "total": 10,
+      "faturamento_pct": 0.2,
+      "pctParaCalculo": 0.002
+    },
+    {
+      "codigo": "2461",
+      "descricao": "Pão Couvert Extra",
+      "qtde": 3,
+      "total": 20.7,
+      "faturamento_pct": 0.41,
+      "pctParaCalculo": 0.0041
+    },
+    {
+      "codigo": "392",
+      "descricao": "Paozinho",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "2832",
+      "descricao": "Pc Mini Quibe",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "10001",
+      "descricao": "Pizza Gr Mussarela",
+      "qtde": 12.926,
+      "total": 401.0154,
+      "faturamento_pct": 8.05,
+      "pctParaCalculo": 0.0805
+    },
+    {
+      "codigo": "1003",
+      "descricao": "Pizza Marguerita",
+      "qtde": 12.578,
+      "total": 417.6378,
+      "faturamento_pct": 8.39,
+      "pctParaCalculo": 0.0839
+    },
+    {
+      "codigo": "1002",
+      "descricao": "Pizza Peperonni",
+      "qtde": 31.908,
+      "total": 1395.2028,
+      "faturamento_pct": 28.03,
+      "pctParaCalculo": 0.2803
+    },
+    {
+      "codigo": "1004",
+      "descricao": "Pizza Portuguesa",
+      "qtde": 4.918,
+      "total": 93.709,
+      "faturamento_pct": 1.88,
+      "pctParaCalculo": 0.0188
+    },
+    {
+      "codigo": "4216",
+      "descricao": "Polvo Com Paprica",
+      "qtde": 1,
+      "total": 32.9,
+      "faturamento_pct": 0.66,
+      "pctParaCalculo": 0.0066
+    },
+    {
+      "codigo": "2097",
+      "descricao": "Porcao Cam. Empanado",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2360",
+      "descricao": "Porcao Extra",
+      "qtde": 1,
+      "total": 9.9,
+      "faturamento_pct": 0.19,
+      "pctParaCalculo": 0.0019
+    },
+    {
+      "codigo": "2182",
+      "descricao": "Q.salada Bacalhau",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2188",
+      "descricao": "Q.salada Fgo Natas",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2183",
+      "descricao": "Q.salada Funghi",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2190",
+      "descricao": "Q.salada Palmito",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2109",
+      "descricao": "Quibe",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2177",
+      "descricao": "Ram.camarao",
+      "qtde": 2,
+      "total": 30,
+      "faturamento_pct": 0.6,
+      "pctParaCalculo": 0.006
+    },
+    {
+      "codigo": "2180",
+      "descricao": "Ram.ceb.bacon",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2179",
+      "descricao": "Ram.sufle",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "1000",
+      "descricao": "Rodizio Pizza",
+      "qtde": 6,
+      "total": 359.4,
+      "faturamento_pct": 7.22,
+      "pctParaCalculo": 0.0722
+    },
+    {
+      "codigo": "2521",
+      "descricao": "Salada De Folhas Ver",
+      "qtde": 2,
+      "total": 19,
+      "faturamento_pct": 0.38,
+      "pctParaCalculo": 0.0038
+    },
+    {
+      "codigo": "2099",
+      "descricao": "Sticks Coalho Melaco",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2174",
+      "descricao": "Suco Abacaxi",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2141",
+      "descricao": "Suco Abacaxi Hortela",
+      "qtde": 5,
+      "total": 75,
+      "faturamento_pct": 1.5,
+      "pctParaCalculo": 0.015
+    },
+    {
+      "codigo": "2142",
+      "descricao": "Suco Framboesa",
+      "qtde": 3,
+      "total": 45,
+      "faturamento_pct": 0.9,
+      "pctParaCalculo": 0.009
+    },
+    {
+      "codigo": "2143",
+      "descricao": "Suco Laranja",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2144",
+      "descricao": "Suco Lima",
+      "qtde": 1,
+      "total": 15,
+      "faturamento_pct": 0.3,
+      "pctParaCalculo": 0.003
+    },
+    {
+      "codigo": "2146",
+      "descricao": "Suco Maracuja Gengib",
+      "qtde": 4,
+      "total": 60,
+      "faturamento_pct": 1.2,
+      "pctParaCalculo": 0.012
+    },
+    {
+      "codigo": "2175",
+      "descricao": "Suco Morango",
+      "qtde": 5,
+      "total": 75,
+      "faturamento_pct": 1.5,
+      "pctParaCalculo": 0.015
+    },
+    {
+      "codigo": "2147",
+      "descricao": "Suco Morango Laranja",
+      "qtde": 4,
+      "total": 60,
+      "faturamento_pct": 1.2,
+      "pctParaCalculo": 0.012
+    },
+    {
+      "codigo": "2148",
+      "descricao": "Suco Uva Verde",
+      "qtde": 6,
+      "total": 90,
+      "faturamento_pct": 1.8,
+      "pctParaCalculo": 0.018
+    },
+    {
+      "codigo": "4162",
+      "descricao": "Torta Hawai",
+      "qtde": 1,
+      "total": 10,
+      "faturamento_pct": 0.2,
+      "pctParaCalculo": 0.002
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

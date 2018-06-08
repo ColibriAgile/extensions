@@ -1,28 +1,37 @@
 ﻿{
   "entregas": [
     {
-      "entregador": "entrégadôr0301",
-      "qtd": 1,
-      "vl_entrega": 4,
-      "vl_venda": 68.8
+      "entregador": "Antonio Caio",
+      "qtd": 2,
+      "vl_entrega": 20,
+      "vl_venda": 145.82
     },
     {
-      "entregador": "entrégadôr0303",
-      "qtd": 1,
-      "vl_entrega": 4,
-      "vl_venda": 72.4
+      "entregador": "Jair Silva",
+      "qtd": 12,
+      "vl_entrega": 116,
+      "vl_venda": 1695.62
     },
     {
-      "entregador": "entregador304",
-      "qtd": 1,
-      "vl_entrega": 8,
-      "vl_venda": 291.2
+      "entregador": "Pedro Lima",
+      "qtd": 2,
+      "vl_entrega": 20,
+      "vl_venda": 220.28
     },
     {
-      "entregador": "entregador306",
+      "entregador": "Alexandre",
       "qtd": 1,
-      "vl_entrega": 4,
-      "vl_venda": 68.8
+      "vl_entrega": 10,
+      "vl_venda": 22.80
+    },
+    {
+      "entregador": "Luis Augusto",
+      "qtd": 3,
+      "vl_entrega": 30,
+      "vl_venda": 250.78
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }

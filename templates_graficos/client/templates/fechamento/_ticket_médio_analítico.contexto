@@ -3,38 +3,68 @@
     {
       "modo_venda_id": 1,
       "modo_venda": "BALCÃO",
-      "funcionario": "atendênté0101 alexandre silva",
+      "funcionario": "Jefferson",
       "qtd_pessoas": 8,
-      "total": 47516.94,
+      "total": 717.37,
       "tipo": "atendimentos",
-      "ticket_medio": 5939.61
+      "ticket_medio": 89.67
     },
     {
       "modo_venda_id": 2,
       "modo_venda": "ENTREGA",
-      "funcionario": "atendênté0101 alexandre silva",
-      "qtd_pessoas": 8,
-      "total": 13015.7,
+      "funcionario": "Leandro",
+      "qtd_pessoas": 15,
+      "total": 2003.22,
       "tipo": "atendimentos",
-      "ticket_medio": 1626.96
+      "ticket_medio": 133.54
+    },
+    {
+      "modo_venda_id": 2,
+      "modo_venda": "ENTREGA",
+      "funcionario": "André",
+      "qtd_pessoas": 1,
+      "total": 58.5,
+      "tipo": "atendimentos",
+      "ticket_medio": 58.5
     },
     {
       "modo_venda_id": 4,
       "modo_venda": "FICHA",
-      "funcionario": "atendênté0101 alexandre silva",
-      "qtd_pessoas": 15,
-      "total": 7613.59,
+      "funcionario": "Alexandre",
+      "qtd_pessoas": 6,
+      "total": 545.9,
       "tipo": "pessoas",
-      "ticket_medio": 507.57
+      "ticket_medio": 90.98
     },
     {
       "modo_venda_id": 3,
       "modo_venda": "MESA",
-      "funcionario": "atendênté0101 alexandre silva",
-      "qtd_pessoas": 204,
-      "total": 11164.55,
+      "funcionario": "Leandro",
+      "qtd_pessoas": 2,
+      "total": 166.21,
       "tipo": "pessoas",
-      "ticket_medio": 54.72
+      "ticket_medio": 83.1
+    },
+    {
+      "modo_venda_id": 3,
+      "modo_venda": "MESA",
+      "funcionario": "Alexandre",
+      "qtd_pessoas": 7,
+      "total": 568.52,
+      "tipo": "pessoas",
+      "ticket_medio": 81.21
+    },
+    {
+      "modo_venda_id": 3,
+      "modo_venda": "MESA",
+      "funcionario": "Jefferson",
+      "qtd_pessoas": 33,
+      "total": 778.6,
+      "tipo": "pessoas",
+      "ticket_medio": 23.59
     }
-  ]
+  ],
+  "monitor": true,
+  "modo_grafico": true,
+  "col": 46
 }
