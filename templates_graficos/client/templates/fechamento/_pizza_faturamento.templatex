@@ -1,17 +1,17 @@
 ﻿% for reg in faturamento|groupby('grupo') if reg.grouper == 1
 % set ns = namespace(valores = '', outros = 0, outrostxt = '') 
-% for item in reg.list|sort(attribute='valor', reverse=True) if item.valor > 0
-% if loop.index > 4
-% set ns.outros = ns.outros + item.valor
-% set ns.outrostxt = ns.outrostxt + item.descricao
-% set ns.outrostxt = ns.outrostxt + ', ' if not loop.last else ns.outrostxt
-% continue
-% endif
-% set vl = item.valor|valor|replace('.', '')
-% set ns.valores = ns.valores + item.descricao + '=' + vl + ';'
+% for item in reg.list|selectattr('valor','gt', 0)|sort(attribute='valor', reverse=True)
+  % if (loop.index > 4) and (loop.length > 5)
+    % set ns.outros = ns.outros + item.valor
+    % set ns.outrostxt = ns.outrostxt + item.descricao
+    % set ns.outrostxt = ns.outrostxt + ', ' if not loop.last else ns.outrostxt
+    % continue
+  % endif
+  % set vl = item.valor|valor|replace('.', '')
+  % set ns.valores = ns.valores + item.descricao + '=' + vl + ';'
 % endfor
 % if ns.outros
-% set ns.valores = ns.valores + 'Outros *' + '=' + ns.outros|valor|replace('.', '') + ';'
+  % set ns.valores = ns.valores + 'Outros *' + '=' + ns.outros|valor|replace('.', '') + ';'
 % endif
 <pie>{{ns.valores}}</pie:2>
 % if ns.outros
