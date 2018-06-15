@@ -1,22 +1,46 @@
 ﻿% extends "_templatebase.templatex"
-% macro render_obs(observacoes)
+% set ns = namespace(indices_impressos = [])
+#---------------------------------
+#- Impressão das observações
+#---------------------------------
+{%- macro render_obs(observacoes) -%}
 <dec2>{%- for obs in observacoes %}
-<t1><i>  {{obs}}</i></t1>
-{%- endfor -%}</dec2>
-{% endmacro -%}
-
+<t1><i>  » {{obs}}</i></t1>
+{%- endfor -%}
+{%- endmacro -%}
+#---------------------------------
+#- Impressão de um item
+#---------------------------------
 {% macro render_item(item) -%}
-{% set qtde = item.quantidade|fracao(10) if item.descricao_do_combo else item.quantidade|quantidade -%}<t4>
-<zebraini>{% if item.cancelado %}(CANCELADO) {% endif %}{{qtde}} {{item.descricao_producao}}
+{% set qtde = item.quantidade|fracao(10) if item.descricao_do_combo else item.quantidade|quantidade -%}
+<t4>
+{%- if item.cancelado %} (CANCELADO) {% endif -%}
+{{qtde}} {{item.descricao_producao}}
 {%- if item.descricao_extra and (item.descricao_extra != item.descricao_producao) %}
-<t2>{{item.descricao_extra}}</t2> {% endif -%}
-{{- render_obs(item.observacao) }}<zebrafim>
+<t2>{{item.descricao_extra}}</t2> 
+{%- endif -%}
 </t4>
-<dec5/>
+{{- render_obs(item.observacao) -}}
+{%- endmacro -%}
+#---------------------------------
+#- Impressão de um combo
+#---------------------------------
+{% macro render_combo(item, itens) -%}
+{% do ns.indices_impressos.append(item.indice) -%}
+<center><t6:b:c>{{item.descricao_do_combo}}</t6>
+{%- if item.descricao_do_combo_extra and (item.descricao_do_combo_extra != item.descricao_do_combo) %}
+<t2> {{item.descricao_do_combo_extra}} </t2> 
+{%- endif -%}
+{{- render_obs(item.observacoes_do_combo) }}
+{% for it in itens|selectattr('indice', 'eq', item.indice) %}
+{{- render_item(it) }}
+{% endfor -%}
 {%- endmacro -%}
 
 {% set atendente = consumos[0].ticket.atendente.nome|capitalize|trim if consumos[0].ticket.atendente %}
-
+#---------------------------------
+#- Impressão do cabeçalho
+#---------------------------------
 {%- block cabecalho %}
 <t3:b>{{'Cupom da boqueta'|upper}}</t3>
 <l2>
@@ -26,7 +50,8 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {% if cliente %}Cliente: {{cliente.nome}}{% endif %}
 <l0>
 <dec3/>
-{% if consumos and consumos|length == 1 %}{% set venda = consumos[0].venda -%}
+{% if consumos and consumos|length == 1 -%}
+{% set venda = consumos[0].venda -%}
 <t3:b>{{venda.nome_amigavel|capitalize}} <dir>Venda {{venda.numero_venda}}</t3>
 {% endif -%}
 {%- if usa_local_de_entrega and local_entrega -%}
@@ -34,9 +59,12 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <t3:b>{{texto_para_local_de_entrega}} <dir><r> {{local_entrega}} </r></t3>
 {%- endif -%}
 {% endblock cabecalho -%}
-
+#---------------------------------
+#- Impressão do corpo
+#---------------------------------
 {% block corpo -%}
-{% for consumo in consumos|sort(attribute='ticket.codigo') %}{% set venda, ticket = consumo.venda, consumo.ticket %}
+{% for consumo in consumos|sort(attribute='ticket.codigo') -%}
+{% set venda, ticket = consumo.venda, consumo.ticket %}
 {%- if consumos and consumos|length > 1 %}
 {%- set ticket_nome = ticket.nome %}
 <l2:50>
@@ -47,33 +75,41 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {%- set itens = itens|selectattr('impresso', 'equalto', False) %}
 {%- set itens = itens|selectattr('local_producao_apelido') -%}
 {%- set itens = itens|selectattr('cancelado', 'equalto', False) %}
-{%- for reg in itens|groupby('local_producao_apelido') %}
+#---------------------------------
+#- Impressão dos itens e combos
+#---------------------------------
+{%- for reg in itens|groupby('local_producao_apelido') -%}
 <dec5/>
 <l4:50>
 <t6:b:c>Produção <dir>{{reg.grouper|default('(NENHUM)')|capitalize}}</t6>
 <dec5/>
 <zebra>
-{%- set ns = namespace(indice_anterior = 0, era_combo = false) -%}
-{%- for item in reg.list|sort(attribute='indice') if not item.impresso %}
-{%- if item.descricao_do_combo != '' and ns.indice_anterior != item.indice %}{% set ns.era_combo = true %}
-<zebraoff><t4:b>{{item.descricao_do_combo}}</t4>
-{%- if item.descricao_do_combo_extra and (item.descricao_do_combo_extra != item.descricao_do_combo) %}
-<t1><r> {{item.descricao_do_combo_extra}} </r></t1> {% endif -%}
-<zebraoff>{{- render_obs(item.observacoes_do_combo) }}{% endif -%}</t4>
-{% if ns.era_combo and item.descricao_do_combo == '' %}
-<zebraoff><l0><zebra>
-<dec2/>
-{%- set ns.era_combo = false -%}
+{% set itens = reg.list|sort(attribute='indice') %}
+{%- for item in itens if not item.impresso %}
+#---------------------------------
+#- Impressão dos combos
+#---------------------------------
+{%- if item.descricao_do_combo != '' -%}
+{% if not item.indice in ns.indices_impressos -%}
+<zebraini>
+{{- render_combo(item, itens) -}}
+<zebrafim>
 {% endif -%}
-{{- render_item(item) }}
-{%- set ns.indice_anterior = item.indice %}
-{%- endfor %}
+{% else -%}
+#---------------------------------
+#- Impressão dos itens
+#---------------------------------
+<zebraini>
+{{- render_item(item) }}<dec5>
+<zebrafim>
+{% endif -%}
+{% endfor -%}
 </zebra>
 {%- endfor -%}
 {%- if venda.numero_chamada > 0 %}
+<dec2/>
 <t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{venda.numero_chamada}}</t5>
 {%- endif %}
-<dec2/>
+{%- endfor %}
 {% include '_primeiracompra.templatex' %}
-{% endfor %}
 {% endblock corpo %}

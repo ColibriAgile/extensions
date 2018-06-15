@@ -1,28 +1,36 @@
 ﻿{% extends "_relatorio-base.templatex" -%}
 {% set pag = impressao_numero -%}
-{% set tot = impressao_total%}
-{% set ns = namespace(indice_anterior = 0) %}
-
+{% set tot = impressao_total -%}
+{% set ns = namespace(indice_anterior = 0) -%}
+#---------------------------------
+#- Impressão dos itens cancelados
+#---------------------------------
 {%- macro render_cancelado() -%}
 {% if cancelados -%}
 <t4:b><center><r> {{'*' * 6}} CANCELADO {{'*' * 6}} </r></t4>
 {% endif -%}
 {% endmacro -%}
-
+#---------------------------------
+#- Impressão das observações
+#---------------------------------
 {% macro render_obs(observacoes) -%}
 {% for obs in observacoes if obs -%}
 <t3><i>{{'  » '}}{{obs}}</t3></i>{{'\n'}}
 {%- endfor -%}
 {% endmacro -%}
-
+#---------------------------------
+#- Impressão do item
+#---------------------------------
 {% macro render_item(item) -%}
 {% set marcha = ' marcha ' if item.marcha else '' -%}
 <t1><r>{{marcha}}</t1></r><t5>{{item.qtd}} {{item.descricao}}</t5>
 {%- if item.descricao_extra and item.descricao_extra != item.descricao %}
-<t2><r> {{item.descricao_extra}} </r></t2>{% endif %}
+<t2> {{item.descricao_extra}} </t2>{% endif %}
 {{render_obs(item.observacoes)}}
 {%- endmacro -%}
-
+#---------------------------------
+#- Impressão dos itens
+#---------------------------------
 {% macro render_itens(itens,marcha=False) -%}
 {% for item in itens|sort(attribute='indice') -%}
 {%- set charsep = (item.descricao_do_combo == '' or ns.indice_anterior != item.indice) %}
@@ -30,29 +38,34 @@
 <l2:20>
 {% endif -%}
 {% if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
-<t8>{{item.descricao_do_combo|b}}</t8>
+<t8:b>{{item.descricao_do_combo}}</t8>
 {%- if item.descricao_do_combo_extra and item.descricao_do_combo_extra != item.descricao_do_combo %}
-<t3><r> {{item.descricao_do_combo_extra}} </r></t3> {% endif %}
+<t3> {{item.descricao_do_combo_extra}} </t3> {% endif %}
 {{ render_obs(item.observacoes_do_combo) }}
 {%- endif %}
 {{- render_item(item) }}
 {%- set ns.indice_anterior = item.indice -%}
 {%- endfor -%}
 {%- endmacro %}
-
+#---------------------------------
+#- Início do relatório
+#---------------------------------
 {%- block relatorio -%}
 {% for i in range(0, copias) -%}
 {% if copias > 1 -%}
   {% set pag = i+1 -%}
   {% set tot = copias -%}
 {% endif -%}
-{% block cabecalho scoped %}
+#---------------------------------
+#- Impressão do cabeçalho
+#---------------------------------
+{%- block cabecalho scoped %}
 {%- include '_primeiracompra.templatex' %}
-{% include '_reimpressao.templatex' %}
+{%- include '_reimpressao.templatex' %}
 <l0>
-Mov: {{data_contabil}} <dir>{{data}} {{hora}}h
+Mov:  {{data_contabil}} <dir>{{data}} {{hora}}h
 Term: {{maquina}}  <dir>Modo: {{modo_venda}}
-Cxa: {{caixa}} <dir>Atend: {{atendente|trim}}
+Cxa:  {{caixa}} <dir>Atend: {{atendente|trim}}
 {%- if cliente %}
 Cliente: {{cliente.nome}}
 {%- endif %}
@@ -61,6 +74,9 @@ Cliente: {{cliente.nome}}
 <t5:b>{{ticket}} <dir>Venda {{venda.numero_venda}} </t5>
 {%- endif -%}
 {%- endblock cabecalho %}
+#---------------------------------
+#- Impressão do corpo
+#---------------------------------
 {%- block corpo -%}
 {{- render_cancelado() }}
 {%- for venda in itens|groupby('ticket') -%}
@@ -68,7 +84,7 @@ Cliente: {{cliente.nome}}
 {% set txtvenda = 'Venda ' + venda.list[0].venda + ' ' -%}
 {% set txtticket = ' ' + venda.grouper|capitalize -%}
 {% if loop.index > 1 -%}
-{{'\n'}}{{8|l}}<dec1>\n\n
+{{'\n'}}<l8><dec1>\n\n
 {%- endif -%}
 <t5:b>{{txtticket}}<dir>{{txtvenda}}</t5>
 {%- endif -%}
@@ -77,6 +93,9 @@ Cliente: {{cliente.nome}}
 {% endfor -%}
 {{- render_cancelado() }}
 {%- endblock corpo %}
+#---------------------------------
+#- Impressão do rodapé
+#---------------------------------
 {%- block rodape %}
 {%- if venda.numero_chamada > 0 or (usa_local_de_entrega and local_entrega) -%}
 {{'\n\n'}}
@@ -93,6 +112,9 @@ Cliente: {{cliente.nome}}
 </t5>
 <l3>
 {% endblock rodape %}
+#---------------------------------
+#- Impressão da assinatura
+#---------------------------------
 {% block assinatura -%}
 {{ super() }}
 {%- endblock assinatura %}
