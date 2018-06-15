@@ -31,7 +31,11 @@
 {% if ns.diferenca > 0 -%}
 <r><t3><b> SOBRA <dir> {{ns.diferenca|valor}} </b></t3></r>
 {% else -%}
+{% if ns.diferenca == 0 -%}
+<r><t3><dir><b> FECHAMENTO OK </b></t3></r>
+{% else -%}
 <r><t3><b> FALTA <dir> {{ns.diferenca|valor}} </b></t3></r>
+{% endif -%}
 {% endif -%}
 {% endif -%}
 {% endfor %}
