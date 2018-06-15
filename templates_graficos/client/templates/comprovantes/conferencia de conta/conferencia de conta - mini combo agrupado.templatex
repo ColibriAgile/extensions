@@ -1,81 +1,111 @@
 ﻿{% extends "_relatorio-base.templatex" %}
 % do vars.update({'separa_por_combo': True})
-
+#---------------------------------
+#- Impressão dos combos
+#---------------------------------
 {%- macro imprimir_combo(combos) %}
 {%- for combo, itens in combos|groupby('descricao_do_combo') %}
 {%- set vl = itens|sum('valor')|valor %}
-<t1:b><div2>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1> </b>>
+<t1:b><div5:3>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1> </b>>
 {%- if itens[0].descricao_do_combo_extra and itens[0].descricao_do_combo_extra != itens[0].descricao_do_combo %}
-  <t1:i>{{itens[0].descricao_do_combo_extra}}</t1> {% endif %}
+<t1>{{itens[0].descricao_do_combo_extra}}</t1> {% endif %}
 {%- set itens_consolidados = itens|consolidar(soma_fracionado=True) %}
 {%- for item  in itens_consolidados %}
 {%- set max_denominador = 12 %} #diminua esse valor se aparecerem frações muito grandes
   {{item.quantidade|fracao(max_denominador)}} {{item.descricao}}
   {%- if item.descricao_extra and item.descricao_extra != item.descricao %}
-  {{item.descricao_extra|i}} {% endif %}
+  {{item.descricao_extra}} {% endif %}
 {%- endfor %}
 {%- endfor %}
 {%- endmacro %}
 
-{#--#}
 {% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div with context-%}
+#---------------------------------
+#- Impressão do cabeçalho
+#---------------------------------
 {% block cabecalho %}
 <t3:b>CONFERÊNCIA DE CONTA</t3>
-{{2|l}}
-Mov: {{data_contabil}} {% filter d %}{{data}}-{{hora}}{% endfilter %}
-Ope: {{operador}} {% filter d %}Atend: {{atendente.nome|trim}}{% endfilter %}
+<l2>
+Mov: {{data_contabil}} <dir>{{data}}-{{hora}}
+Ope: {{operador}} <dir>Atend: {{atendente.nome|trim}}
 {%- endblock %}
-{% block corpo %}{%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}{%set agrupamento = (operacao.consumos|count > 1) -%}
-{%- for consumo in operacao.consumos %}{%if consumo %}{% set ticket = consumo.ticket %}{% set venda = consumo.venda %}
+{% block corpo -%}
+{%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}
+{%set agrupamento = (operacao.consumos|count > 1) -%}
+{%- for consumo in operacao.consumos -%}
+{%if consumo -%}
+{% set ticket = consumo.ticket -%}
+{% set venda = consumo.venda -%}
 {%- if agrupamento %}{{'\n'}}<ld>{% endif %}
-{% filter t(1) -%}
-{% filter t(2) %}{{ticket.nome|capitalize|b}} {{'- Venda '|b}} {{venda.numero_venda|b}}{% endfilter %}
-{%- endfilter %}
-
-<b><div2>Item</div><div2><dir>Vl.unit</div><dir>Total
-<l0>
-{#- Impressão dos itens -#}
-{%- set itens = venda.itens|consolidar(valido=true) -%}
-{% set combo_indice = -1 -%}
-{% set combos_indices = [] -%}
+<t2:b>{{ticket.nome|capitalize}} {{'- Venda '}} {{venda.numero_venda}}</t2>
+<dec2/>
+#---------------------------------
+#- Impressão dos itens
+#---------------------------------
+{%- set itens = venda.itens|consolidar(valido=true) %}
+{%- set ns = namespace(combo_indice = -1, combos_indices = []) %}
+<dec5/>
+<t1:b><div5:3>Item</div><div2><dir>Vl.unit</div><dir>Total</t1>
 <l0>
 <zebra>
 {%- for item in itens if item %}
 {%- set preco, qtd = item.preco, item.quantidade %}
 {%- set indicadorNaoCobraServico = '*' if not item.cobra_servico else '' %}
 {%- if item.combo_id > 0 %}
-{%- if combo_indice != item.indice and item.indice not in combos_indices -%}
-{% set combo_indice = item.indice -%}
-{% do combos_indices.append(combo_indice) -%}
-{%- set combos = venda.itens|consolidar(valido=True)|selectattr('indice', 'equalto', combo_indice)|list %}
+{%- if ns.combo_indice != item.indice and item.indice not in ns.combos_indices -%}
+{% set ns.combo_indice = item.indice -%}
+{% do ns.combos_indices.append(ns.combo_indice) -%}
+{%- set combos = venda.itens|consolidar(valido=True)|selectattr('indice', 'equalto', ns.combo_indice)|list %}
+<dec5/>
+<zebraini>
 {{-imprimir_combo(combos)}}
+<zebrafim>
 {%- endif %}
 {%- else %}
-<div2>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
+<zebraini>
+<div5:3>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
 {%- if item.descricao_extra %}
-{{item.descricao_extra|i}}{% endif %}
+{{item.descricao_extra}}
+<zebrafim>
+{%- endif %}
 {%- endif %}
 {%- endfor %}
 </zebra>
-{#- Fim da impressão dos itens #}
-{{-imprime_texto_valor_div('Subtotal', venda.subtotal_dos_itens, prefixo='')}}{% endif %}{% endfor %}
+#---------------------------------
+#- Impressão dos totais
+#---------------------------------
+<dec5/>
+{{imprime_texto_valor_div('Subtotal', venda.subtotal_dos_itens, prefixo='')}}
+{%- endif %}
+{%- endfor %}
 {%- if agrupamento %}
 {{'=' * col}}
 {{-imprime_texto_valor_div('Subtotal geral', operacao.totais.subtotal)}}
 {%- endif -%}
 {%- include '_totais.templatex' -%}
 % do vars.update({'separa_por_combo': False})
-{%- include '_desconto_item.templatex'  with context-%}
+#---------------------------------
+#- Impressão dos descontos
+#---------------------------------
+{%- include '_desconto_item.templatex'  with context %}
+<dec2/>
+#---------------------------------
+#- Impressão dos pagamentos 
+#---------------------------------
 {%- include '_pagamentos_parciais.templatex' %}
 {%- if qtd_pessoas > 1 %}
+<dec1>
 {{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
 {{-imprime_texto_valor_div('Total por pessoa ', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}
+</dec1>
 {% endif -%}
-{{'   AGUARDE A EMISSÃO DO CUPOM FISCAL   '|t(1)|c|r}}
+<t1><center><r>   AGUARDE A EMISSÃO DO CUPOM FISCAL   </t1></r>
 {% include "_rodape-conferencia-RS.templatex" -%}
 
 {%- endblock %}
-
+#---------------------------------
+#- Impressão da assinatura
+#---------------------------------
 {%- block assinatura -%}
 {{super()}}
 {%- endblock assinatura %}
