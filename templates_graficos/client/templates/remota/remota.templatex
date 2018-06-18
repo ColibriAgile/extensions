@@ -61,17 +61,17 @@
 #---------------------------------
 {%- block cabecalho scoped %}
 {%- include '_primeiracompra.templatex' %}
-{%- include '_reimpressao.templatex' %}
+{% include '_reimpressao.templatex' %}
 <l0>
 Mov:  {{data_contabil}} <dir>{{data}} {{hora}}h
 Term: {{maquina}}  <dir>Modo: {{modo_venda}}
 Cxa:  {{caixa}} <dir>Atend: {{atendente|trim}}
 {%- if cliente %}
-Cliente: {{cliente.nome}}
+Cli: {{cliente.nome}}
 {%- endif %}
 <l0>
 {% if qtd_vendas == 1 %}
-<t5:b>{{ticket}} <dir>Venda {{venda.numero_venda}} </t5>
+<t5:b:c>{{ticket}} - Venda {{venda.numero_venda}}<dir>{{pag}}/{{tot}}</t5>
 {%- endif -%}
 {%- endblock cabecalho %}
 #---------------------------------
@@ -86,7 +86,7 @@ Cliente: {{cliente.nome}}
 {% if loop.index > 1 -%}
 {{'\n'}}<l8><dec1>\n\n
 {%- endif -%}
-<t5:b>{{txtticket}}<dir>{{txtvenda}}</t5>
+<t5:b:c>{{ticket}} - {{txtvenda}}<dir>{{pag}}/{{tot}}</t5>
 {%- endif -%}
 {{render_itens(venda.list|rejectattr('marcha'))-}}
 {{render_itens(venda.list|selectattr('marcha'), marcha=True)-}}
