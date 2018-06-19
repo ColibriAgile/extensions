@@ -86,6 +86,7 @@ Cxa: {{sessao.funcionario.nome}}
 {%- endif -%}
 {% endfor -%}
 </zebra>
+{% do ns.indices_impressos.clear() %}
 {%- endfor -%}
 #---------------------------------
 #- Impressão do número de chamada
