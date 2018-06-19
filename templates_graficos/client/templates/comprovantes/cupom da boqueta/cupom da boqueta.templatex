@@ -6,7 +6,7 @@
 {%- macro render_obs(observacoes) -%}
 <dec2>{%- for obs in observacoes %}
 <t1><i>  » {{obs}}</i></t1>
-{%- endfor -%}
+{%- endfor -%}</dec2>
 {%- endmacro -%}
 #---------------------------------
 #- Impressão de um item
@@ -112,5 +112,5 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{venda.numero_chamada}}</t5>
 {%- endif %}
 {%- endfor %}
-{% include '_primeiracompra.templatex' %}
+{% include '_primeiracompra.templatex' -%}
 {% endblock corpo %}

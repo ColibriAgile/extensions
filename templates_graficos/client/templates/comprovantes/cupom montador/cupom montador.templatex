@@ -6,7 +6,7 @@
 {%- macro render_obs(observacoes) -%}
 <dec2>{%- for obs in observacoes %}
 <t1><i>  » {{obs}}</i></t1>
-{%- endfor -%}
+{%- endfor -%}</dec2>
 {%- endmacro -%}
 #---------------------------------
 #- Impressão de um item
@@ -65,14 +65,15 @@ Cxa: {{sessao.funcionario.nome}}
 <t6:b:c>Produção <dir>(NENHUM)</t6>
 {%- else -%}
 <t6:b:c>Produção <dir>{{reg.grouper|capitalize}}</t6>
-{%- endif -%}
+{%- endif %}
+<dec2/>
 {%- set itens = reg.list|sort(attribute='indice') -%}
 #---------------------------------
 #- Impressão dos combos
 #---------------------------------
 <zebra>
 {%- for item in itens if not item.indice in ns.indices_impressos -%}   
-{%- if item.descricao_do_combo != '' %}
+{%- if item.descricao_do_combo != '' -%}
 <zebraini>
 {{ render_combo(item, itens) -}}
 <zebrafim>
@@ -86,12 +87,12 @@ Cxa: {{sessao.funcionario.nome}}
 {%- endif -%}
 {% endfor -%}
 </zebra>
-{% do ns.indices_impressos.clear() %}
+{%- do ns.indices_impressos.clear() %}
 {%- endfor -%}
 #---------------------------------
 #- Impressão do número de chamada
 #---------------------------------
-{% if operacao.consumos[0].venda.numero_chamada > 0 -%}
+{%- if operacao.consumos[0].venda.numero_chamada > 0 -%}
 <t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{operacao.consumos[0].venda.numero_chamada}}</t5>
 {%- endif %}
 {% endblock corpo -%}
