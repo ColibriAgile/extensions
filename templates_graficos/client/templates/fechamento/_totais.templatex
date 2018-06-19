@@ -28,10 +28,10 @@
 {% endif -%}
 {% endif -%}
 {% if grouper == 5 and confere_caixa %}
-{% if ns.diferenca > 0 -%}
+{% if ns.diferenca|round > 0.0 -%}
 <r><t3><b> SOBRA <dir> {{ns.diferenca|valor}} </b></t3></r>
 {% else -%}
-{% if ns.diferenca == 0 -%}
+{% if ns.diferenca|round == 0.0 -%}
 <r><t3><dir><b> FECHAMENTO OK </b></t3></r>
 {% else -%}
 <r><t3><b> FALTA <dir> {{ns.diferenca|valor}} </b></t3></r>
