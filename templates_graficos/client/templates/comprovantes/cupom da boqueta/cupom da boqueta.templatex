@@ -99,12 +99,13 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 #---------------------------------
 #- Impressão dos itens
 #---------------------------------
-<zebraini>
+<zebraini> 
 {{- render_item(item) }}<dec5>
 <zebrafim>
 {% endif -%}
 {% endfor -%}
 </zebra>
+{% do ns.indices_impressos.clear() %}
 {%- endfor -%}
 {%- if venda.numero_chamada > 0 %}
 <dec2/>
