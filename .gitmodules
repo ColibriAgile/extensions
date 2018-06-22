@@ -1,0 +1,4 @@
+[submodule "CheckinExtended/_ncr-agile-lib"]
+	path = CheckinExtended/_ncr-agile-lib
+	url = https://andreysantanna@bitbucket.org/colibriagile/ncr-agile-lib.git
+	branch = master

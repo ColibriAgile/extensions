@@ -57,11 +57,9 @@ namespace CheckinExtended
     public static string ObterDadosFabricante()
     {
       DadosDoFabricante dados = new DadosDoFabricante();
-      dados.fabricante.empresa = "Nome da Empresa";
-      dados.fabricante.desenvolvedor = "Equipe";
-      dados.fabricante.termos_da_licenca = "blablabla";
-      dados.suporte.email = "suporte@email.com";
-      dados.suporte.telefone = "98745-6547";
+      dados.fabricante.empresa = "NCR";
+      dados.fabricante.desenvolvedor = "NCR labs";
+      dados.suporte.email = "colibri.agile@gmail.com";
       return dados.ToJson();
     }
 
