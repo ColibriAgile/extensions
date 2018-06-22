@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 
 // O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
@@ -91,8 +94,9 @@ namespace CheckinExtended
     }
     public static string Notificar(string sEvento, string sContexto)
     {
-      Colibri.MostrarMensagem("Teste", Colibri.TipoMensagem.aviso);
       // Aqui você é notificado dos eventos
+      dynamic contexto = JObject.Parse(sContexto);
+
       return "";
     }
     public static void RegistrarAssinaturas()
