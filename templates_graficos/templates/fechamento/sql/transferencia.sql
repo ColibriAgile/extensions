@@ -1,6 +1,9 @@
 ﻿select
   modo_venda = i.modo_venda_descr,
-  producao = case when i.imprimiu = 1 then 'Depois da produção' else 'Antes da Produção' end,
+  producao = case 
+    when i.imprimiu = 1 then 'Depois da produção' 
+    else 'Antes da Produção'
+  end,
   ticket_cod = i.ticket_cod,
   ticket_cod_origem = i.ticket_origem,
   i.venda_origem,
@@ -45,6 +48,3 @@ order by i.imprimiu
   codigo do material=i.material_cod
   nome do material=i.material_descr
 */
-
-
-

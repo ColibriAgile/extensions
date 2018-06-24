@@ -1,6 +1,6 @@
 ﻿{% extends "_templatebase.templatex" -%}
 {% block cabecalho -%}
-<t3><b>Encerramento de periodo<dir>{{movimento}}</b></t3>
+<t3><b>Fechamento do dia<dir>{{movimento}}</b></t3>
 
 Abert : {{dt_abertura|data('%d/%m/%y %H:%M')}} {{operador_abriu}}
 Fech  : {{dt_fechamento|data('%d/%m/%y %H:%M')}} {{operador_fechou}}
