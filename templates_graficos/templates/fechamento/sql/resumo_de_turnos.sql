@@ -2,7 +2,7 @@
 
 declare 
   @dt_contabil datetime = (select valor from cache.data_contabil),
-  @dt datetime = ''/*macro:data*/
+  @dt datetime = /*macro:dataini*/+''
 
 
 declare @turnos table 
@@ -21,7 +21,7 @@ select
   dt_hr_fechamento
 from dbo.turno t
 left join dbo.funcionario f on f.id = t.func_id
-where t.dt_contabil = '2018-06-16'
+--where t.dt_contabil = '2018-06-16'
 /*macro:filtro*/
 
 /* do dia */
@@ -45,11 +45,10 @@ else
     dt_hr_ini = min(t.dt_hr_abertura),
     dt_hr_fim = min(t.dt_hr_fechamento),
     total= sum(isnull(mc.vl_recebido,0))
-  from @turnos t
+  from @turnos t  
   left join dbo.movimento_caixa_geral mc on mc.turno_id = t.turno_id
   where mc.cancelado = 0
   group by t.turno_id
-
 
 /*mapeamentos
   periodo=t.dt_contabil

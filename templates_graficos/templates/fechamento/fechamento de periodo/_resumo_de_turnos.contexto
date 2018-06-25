@@ -1,0 +1,39 @@
+﻿{
+    "resumo_de_turnos": [
+        {
+            "turno": 1914,
+            "oper": "Flavia Maria Da Silva",
+            "dt_hr_ini": "2018-06-16T13:16:00",
+            "dt_hr_fim": "2018-06-16T20:14:36",
+            "total": 22066.71
+        },
+        {
+            "turno": 1915,
+            "oper": "Vanessa Macedo",
+            "dt_hr_ini": "2018-06-16T15:16:00",
+            "dt_hr_fim": "2018-06-16T22:22:22",
+            "total": 23522.88
+        },
+        {
+            "turno": 1916,
+            "oper": "Andreia Brandet",
+            "dt_hr_ini": "2018-06-16T18:33:00",
+            "dt_hr_fim": "2018-06-17T02:52:52",
+            "total": 15131.55
+        },
+        {
+            "turno": 1917,
+            "oper": "Lana Silva",
+            "dt_hr_ini": "2018-06-16T20:19:00",
+            "dt_hr_fim": "2018-06-17T03:38:13",
+            "total": 12881.74
+        },
+        {
+            "turno": 1918,
+            "oper": "Jessica Dutra",
+            "dt_hr_ini": "2018-06-16T20:34:00",
+            "dt_hr_fim": "2018-06-17T03:48:51",
+            "total": 11370.02
+        }
+    ]
+}

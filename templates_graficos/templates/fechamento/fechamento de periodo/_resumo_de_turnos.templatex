@@ -1,0 +1,11 @@
+﻿
+<b><div7>Turno</divv><div5:2>Oper</divv><div4>Ini</divv><div3>Fim</divv><dir>Total</b> 
+<l2:5>
+<zebra>
+{% for linha in resumo_de_turnos -%}
+<div7>{{linha.turno}}\n</divv><div5:2>{{linha.oper}}</divv><dec1><div4>{{linha.dt_hr_ini|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv><div3>{{linha.dt_hr_fim|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv></dec1><dir>{{linha.total|valor}}
+{% endfor -%}
+</zebra>
+<t3:b>{{resumo_de_turnos|count}} turnos<dir> {{resumo_de_turnos|sum(attribute='total')|valor}}</t3>
+
+# Total: {{ items|sum(attribute='price') }}
