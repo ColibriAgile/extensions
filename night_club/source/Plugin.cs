@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Reflection;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
@@ -42,6 +43,9 @@ namespace PluginNightClub
 
   public class Plugin
   {
+    const string EVENTO_CHECKIN_REALIZADO = "EventoDeTicket.CheckInRealizado";
+    public static SqlConnection conexao;
+
     /******************************************
      * 
      * Funções obrigatórias
@@ -62,7 +66,7 @@ namespace PluginNightClub
       DadosDoFabricante dados = new DadosDoFabricante();
       dados.fabricante.empresa = "NCR";
       dados.fabricante.desenvolvedor = "NCR Labs";
-      dados.suporte.email = "";
+      dados.suporte.email = "colibri.agile@gmail.com";
       return dados.ToJson();
     }
 
@@ -73,15 +77,23 @@ namespace PluginNightClub
      ******************************************/
     public static void Configurar(string maquinas)
     {
-      Colibri.MostrarMensagem("teste", Colibri.TipoMensagem.aviso, "Titulo", "sim", "direita");
-      FormConfig testDialog = new FormConfig();
-      testDialog.ShowDialog();
-      testDialog.Dispose();
+      FormConfig formCfg = new FormConfig();
+      formCfg.conexao = conexao;
+      formCfg.ShowDialog();
+      formCfg.Dispose();
     }
 
     public static void ConfigurarDB(string servidor, string banco, string usuario, string senha, string provedor)
     {
+      SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder()
+      {
+        DataSource = servidor,
+        InitialCatalog = banco,
+        UserID = usuario,
+        Password = senha,
+      };
 
+      conexao = new SqlConnection(builder.ConnectionString);
     }
     public static void Ativar(int umaMaquina)
     {
@@ -97,12 +109,18 @@ namespace PluginNightClub
       // Aqui você é notificado dos eventos
       dynamic contexto = JObject.Parse(sContexto);
 
+      if (sEvento == EVENTO_CHECKIN_REALIZADO)
+      {
+        if (contexto["perfil"] == 2)
+          Colibri.MostrarMensagem("teste", Colibri.TipoMensagem.aviso, "Titulo", "perfil 2", "direita");
+      }
+
       return "";
     }
     public static void RegistrarAssinaturas()
     {
       // Aqui você assina os eventos
-      Colibri.AssinarEvento("EventoDeSistema.PluginsCarregados");
+      Colibri.AssinarEvento(EVENTO_CHECKIN_REALIZADO);
     }
 
     public static string RegistrarPermissoes()

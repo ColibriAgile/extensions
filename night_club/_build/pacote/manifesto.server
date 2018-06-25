@@ -6,9 +6,9 @@
       "_pattern_nome": ".*client\\.exe\\b"
     }
   ],
-  "nome": "ncrlab-checkin_extended",
+  "nome": "ncrlab-night_club",
   "produto": "pos",
   "sigla_empresa": "ncrlab",
   "empresa": "NCR Lab",
-  "nome_exibicao": "NCR Lab - Checkin Extended"
+  "nome_exibicao": "NCR Lab - Night Club"
 }
