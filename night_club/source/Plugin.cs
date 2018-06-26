@@ -43,8 +43,11 @@ namespace PluginNightClub
 
   public class Plugin
   {
+    const string PERM_PODE_AUMENTAR = "4131a855-cc3e-45ce-8b7b-6e4e02082504";
     const string EVENTO_CHECKIN_REALIZADO = "EventoDeTicket.CheckInRealizado";
-    public static SqlConnection conexao;
+    const string EVENTO_CHECKIN_INICIADO = "EventoDeTicket.AoIniciarCheckin";
+    public static DadosPerfil dados;
+    public static List<PerfilLimite> limites = null;
 
     /******************************************
      * 
@@ -78,7 +81,7 @@ namespace PluginNightClub
     public static void Configurar(string maquinas)
     {
       FormConfig formCfg = new FormConfig();
-      formCfg.conexao = conexao;
+      formCfg.dados = dados;
       formCfg.ShowDialog();
       formCfg.Dispose();
     }
@@ -93,9 +96,10 @@ namespace PluginNightClub
         Password = senha,
       };
 
-      conexao = new SqlConnection(builder.ConnectionString);
-    }
-    public static void Ativar(int umaMaquina)
+    SqlConnection conexao = new SqlConnection(builder.ConnectionString);
+    dados = new DadosPerfil(conexao);
+  }
+  public static void Ativar(int umaMaquina)
     {
     }
     public static void Desativar(int umaMaquina)
@@ -104,15 +108,29 @@ namespace PluginNightClub
     public static void ObterMacro(string umaMacro)
     {
     }
+    private static bool ObterPermissaoCheckin()
+    {
+      return true;
+    }
     public static string Notificar(string sEvento, string sContexto)
     {
       // Aqui você é notificado dos eventos
       dynamic contexto = JObject.Parse(sContexto);
 
-      if (sEvento == EVENTO_CHECKIN_REALIZADO)
+      if (sEvento == EVENTO_CHECKIN_INICIADO)
       {
-        if (contexto["perfil"] == 2)
-          Colibri.MostrarMensagem("teste", Colibri.TipoMensagem.aviso, "Titulo", "perfil 2", "direita");
+        
+        if (!dados.DentroLimiteCheckin(contexto["perfil"]) || Colibri.VerificarPermissao(PERM_PODE_AUMENTAR, 1) == 0)
+        {
+          dynamic ret = new JObject();
+          ret.erro = "Limite de usos excedido para o perfil!";
+          ret.acao = "abort";
+          return ((JObject)ret).ToString();
+        }
+      }
+      else if (sEvento == EVENTO_CHECKIN_REALIZADO)
+      {
+        dados.IncrementarCheckin(contexto["perfil"]);
       }
 
       return "";
@@ -125,7 +143,18 @@ namespace PluginNightClub
 
     public static string RegistrarPermissoes()
     {
-      return "";
+      dynamic ret = new JObject();
+      ret.descricao_plugin = "Night Club";
+      ret.id = "02a40248-83ea-4fe4-b9a6-a70c0a1da384";
+      ret.permissoes = new JArray() as dynamic;
+      dynamic permissao = new JObject();
+      permissao.descricao = "Exceder o limite de Check in de um perfil";
+      permissao.id = PERM_PODE_AUMENTAR;
+      permissao.grupos_liberados = new JArray() as dynamic;
+      permissao.grupos_liberados.Add(-1);
+      permissao.modo_venda = 4;
+      ret.permissoes.Add(permissao);
+      return ((JObject)ret).ToString();
     }
   }
 }
