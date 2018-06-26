@@ -43,6 +43,7 @@ namespace PluginNightClub
 
   public class Plugin
   {
+    const string PERM_RAIZ = "02a40248-83ea-4fe4-b9a6-a70c0a1da384";
     const string PERM_PODE_AUMENTAR = "4131a855-cc3e-45ce-8b7b-6e4e02082504";
     const string EVENTO_CHECKIN_REALIZADO = "EventoDeTicket.CheckInRealizado";
     const string EVENTO_CHECKIN_INICIADO = "EventoDeTicket.AoIniciarCheckin";
@@ -98,8 +99,8 @@ namespace PluginNightClub
 
     SqlConnection conexao = new SqlConnection(builder.ConnectionString);
     dados = new DadosPerfil(conexao);
-  }
-  public static void Ativar(int umaMaquina)
+    }
+    public static void Ativar(int umaMaquina)
     {
     }
     public static void Desativar(int umaMaquina)
@@ -107,10 +108,6 @@ namespace PluginNightClub
     }
     public static void ObterMacro(string umaMacro)
     {
-    }
-    private static bool ObterPermissaoCheckin()
-    {
-      return true;
     }
     public static string Notificar(string sEvento, string sContexto)
     {
@@ -137,7 +134,7 @@ namespace PluginNightClub
     }
     public static void RegistrarAssinaturas()
     {
-      // Aqui você assina os eventos
+      Colibri.AssinarEvento(EVENTO_CHECKIN_INICIADO);
       Colibri.AssinarEvento(EVENTO_CHECKIN_REALIZADO);
     }
 
@@ -145,7 +142,7 @@ namespace PluginNightClub
     {
       dynamic ret = new JObject();
       ret.descricao_plugin = "Night Club";
-      ret.id = "02a40248-83ea-4fe4-b9a6-a70c0a1da384";
+      ret.id = PERM_RAIZ;
       ret.permissoes = new JArray() as dynamic;
       dynamic permissao = new JObject();
       permissao.descricao = "Exceder o limite de Check in de um perfil";
