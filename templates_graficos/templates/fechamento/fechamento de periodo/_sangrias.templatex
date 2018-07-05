@@ -1,0 +1,8 @@
+﻿{% if sangrias %}
+<b><div7>Turno</divv><div4>Oper</divv><div4>Hora</divv><div5:3>Motivo</divv><dir>Valor</b>
+<l3:5><zebra>
+{% for sangria in sangrias -%}
+<div7>{{sangria.turno}}</divv><div4>{{sangria.oper}}</divv><div4>{{sangria.hora|data('%d/%m %H:%M')}}</divv><div5:3>{{sangria.motivo}}</divv><dir>{{sangria.valor|valor}}
+{% endfor %}<l3:5></zebra>
+<t1:b>Total <dir><r> {{sangrias|sum('valor')|valor}} </r></t1>
+{% else %} {% include '_no_data.templatex' %} {% endif -%}
