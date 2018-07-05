@@ -1,0 +1,25 @@
+﻿{
+    "sangrias": [
+        {
+            "turno": 87,
+            "oper": "SUPER USUARIO",
+            "hora": "16:01",
+            "motivo": "Alcool gel",
+            "valor": 50
+        },
+        {
+            "turno": 87,
+            "oper": "SUPER USUARIO",
+            "hora": "16:02",
+            "motivo": "Gasolina",
+            "valor": 180
+        },
+        {
+            "turno": 87,
+            "oper": "SUPER USUARIO",
+            "hora": "16:02",
+            "motivo": "Vale",
+            "valor": 50
+        }
+    ]
+}
