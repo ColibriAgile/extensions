@@ -1,8 +1,8 @@
 ﻿{
     "sangrias": [
         {
-            "turno": 87,
-            "oper": "ALEXANDRE",
+            "turno": 86,
+            "oper": "ANDRE",
             "hora": "16:01",
             "motivo": "Alcool gel",
             "valor": 50
@@ -10,14 +10,21 @@
         {
             "turno": 87,
             "oper": "ALEXANDRE",
-            "hora": "16:02",
+            "hora": "18:22",
             "motivo": "Gasolina",
             "valor": 180
         },
         {
             "turno": 87,
             "oper": "ALEXANDRE",
-            "hora": "16:02",
+            "hora": "19:00",
+            "motivo": "Vale",
+            "valor": 60
+        },
+        {
+            "turno": 88,
+            "oper": "DOUGLAS",
+            "hora": "20:10",
             "motivo": "Vale",
             "valor": 50
         }
