@@ -1,5 +1,4 @@
 ﻿{% if vendas_sem_comprovante %}
-<l0>
 <b><div2>Ticket (venda)</divv><div5:d:3>Data hora</divv><dir>Valor</b>
 <l3:5>
 <zebra>

@@ -7,5 +7,3 @@
 {% endfor -%}
 </zebra>
 <t3:b>{{resumo_de_turnos|count}} turnos<dir> {{resumo_de_turnos|sum(attribute='total')|valor}}</t3>
-
-# Total: {{ items|sum(attribute='price') }}
