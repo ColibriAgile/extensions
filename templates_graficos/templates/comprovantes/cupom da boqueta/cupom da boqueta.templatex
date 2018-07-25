@@ -36,7 +36,7 @@
 {{- render_item(it) }}
 {% endfor -%}
 {%- endmacro -%}
-
+  
 {% set atendente = consumos[0].ticket.atendente.nome|capitalize|trim if consumos[0].ticket.atendente %}
 #---------------------------------
 #- Impressão do cabeçalho
@@ -69,7 +69,6 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {%- set ticket_nome = ticket.nome %}
 <l2:50>
 <t3:b>{{ticket_nome|capitalize}}<dir>Venda {{venda.numero_venda}}</t3>
-<dec2/>
 {%- endif -%}
 {%- set itens = consumo.venda.itens %}
 {%- set itens = itens|selectattr('impresso', 'equalto', False) %}
@@ -78,13 +77,12 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 #---------------------------------
 #- Impressão dos itens e combos
 #---------------------------------
-{%- for reg in itens|groupby('local_producao_apelido') -%}
-<dec5/>
+{%- for reg in itens|groupby('local_producao_apelido') %}
 <l4:50>
 <t6:b:c>Produção <dir>{{reg.grouper|default('(NENHUM)')|capitalize}}</t6>
-<dec5/>
+<inicio><dec5/>
 <zebra>
-{% set itens = reg.list|sort(attribute='indice') %}
+{%- set itens = reg.list|sort(attribute='indice') %}
 {%- for item in itens if not item.impresso %}
 #---------------------------------
 #- Impressão dos combos
@@ -100,12 +98,12 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 #- Impressão dos itens
 #---------------------------------
 <zebraini> 
-{{- render_item(item) }}<dec5>
+{{- render_item(item) }}
 <zebrafim>
-{% endif -%}
+{%- endif -%}
 {% endfor -%}
 </zebra>
-{% do ns.indices_impressos.clear() %}
+{%- do ns.indices_impressos.clear() %}
 {%- endfor -%}
 {%- if venda.numero_chamada > 0 %}
 <dec2/>
@@ -114,3 +112,5 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {%- endfor %}
 {% include '_primeiracompra.templatex' -%}
 {% endblock corpo %}
+{%- block rodape %}
+{% endblock rodape %}
