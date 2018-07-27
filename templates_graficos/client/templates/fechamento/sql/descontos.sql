@@ -6,6 +6,7 @@ from vw_movimento_caixa m with (nolock)
 left join desconto d with (nolock) on d.id = m.desconto_id
 where m.vl_desconto > 0
   and cancelada = 0
+  and func_recebeu_id > 0  
 /*macro:filtro+*/
 
 select
@@ -19,6 +20,7 @@ select
 from vw_movimento_caixa with (nolock)
 where vl_desconto > 0
   and cancelada = 0
+  and func_recebeu_id > 0
 /*macro:filtro+*/
 group by 
   dt_hr_pagamento,
