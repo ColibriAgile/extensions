@@ -1,5 +1,4 @@
 ﻿{% if ticket_médio_sintético %}
-<l0>
 <b><div5>Modo</divv><div3:d>Total $</divv><div2:d>Qtd.</divv><dir>Vl. médio</b>
 <l3:5>
 {% for vendas in ticket_médio_sintético|groupby('tipo') -%}

@@ -12,8 +12,18 @@ where modo_venda_id = 3
   and cancelado = 0
   and transferido = 0
   /*macro:filtro+*/
-group by vw.dt_contabil, f.nome, vw.ticket_codigo, vw.numero_venda, vw.qtd_fechamentos
-order by vw.dt_contabil, f.nome, vw.qtd_fechamentos desc, vw.ticket_codigo desc, vw.numero_venda asc
+group by 
+  vw.dt_contabil, 
+  f.nome, 
+  vw.ticket_codigo, 
+  vw.numero_venda, 
+  vw.qtd_fechamentos
+order by 
+  vw.dt_contabil, 
+  f.nome, 
+  vw.qtd_fechamentos desc, 
+  vw.ticket_codigo desc, 
+  vw.numero_venda asc
 
 /*mapeamentos
 funcionario=vw.funcionario_terminou_id

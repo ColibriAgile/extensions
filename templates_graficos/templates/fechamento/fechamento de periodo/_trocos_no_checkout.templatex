@@ -1,0 +1,9 @@
+﻿{% if trocos_no_checkout %}
+<zebra>
+{% for reg in trocos_no_checkout -%}
+<div2>{{reg.meio}}</divv><div:d>{{reg.valor|valor}}</div>
+{% if loop.last %}<l3:5>{% endif -%}
+{% endfor -%}
+</zebra>
+<t1:b><div2>Total</divv><dir> {{trocos_no_checkout|sum('valor')|valor}}</t1>
+{% else %} {% include '_no_data.templatex' %} {% endif -%}

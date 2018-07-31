@@ -25,4 +25,4 @@ Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}\templates"
 
 
 [Files]
-Source: "templates\*"; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "leia-me.txt"
+Source: "client\templates\*"; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "leia-me.txt"
