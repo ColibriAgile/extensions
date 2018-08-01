@@ -1,8 +1,9 @@
-select * from (
+﻿select * from (
   select
     turno = m.turno_id,
     oper = f.nome,
     hora = max(substring(convert(varchar, m.dt_hr_pagamento, 108),1,5)),
+    data = max(m.dt_hr_pagamento),
     motivo = isnull(max(descricao), '-'),
     valor = abs(sum(m.vl_recebido))
   from operacao o
@@ -10,14 +11,15 @@ select * from (
   join funcionario f on f.id = m.func_recebeu_id
   where tipo = 'sangria'
     and o.dt_contabil = /*macro:dataini*/
-  group by m.turno_id, o.operacao_id, f.nome 
+  group by m.turno_id, o.operacao_id, f.nome
 
-  union 
+  union
 
   select
     turno = m.turno_id,
     oper = f.nome,
     hora = max(substring(convert(varchar, m.dt_hr_pagamento, 108),1,5)),
+    data = max(m.dt_hr_pagamento),
     motivo = isnull(max(descricao), '-'),
     valor = abs(sum(m.vl_recebido))
   from operacao_geral o
@@ -25,6 +27,7 @@ select * from (
   join funcionario f on f.id = m.func_recebeu_id
   where tipo = 'sangria'
     and o.dt_contabil = /*macro:dataini*/
-  group by m.turno_id, o.operacao_id, f.nome 
+  group by m.turno_id, o.operacao_id, f.nome
 ) x
 order by turno, hora
+
