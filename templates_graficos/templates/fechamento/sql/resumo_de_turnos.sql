@@ -1,6 +1,4 @@
-
-
-declare 
+﻿declare 
   @dt datetime = /*macro:dataini*/+''
 
 
@@ -20,8 +18,8 @@ select
   dt_hr_fechamento
 from dbo.turno t
 left join dbo.funcionario f on f.id = t.func_id
---where t.dt_contabil = '2018-06-16'
-/*macro:filtro*/
+where t.func_id > 0
+/*macro:filtro+*/
 
   select 
     turno = t.turno_id,
