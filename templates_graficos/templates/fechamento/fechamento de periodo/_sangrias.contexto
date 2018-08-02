@@ -4,6 +4,7 @@
             "turno": 86,
             "oper": "ANDRE",
             "hora": "16:01",
+            "dt_hr": "20180802 16:01:00",
             "motivo": "Alcool gel",
             "valor": 50
         },
@@ -11,6 +12,7 @@
             "turno": 87,
             "oper": "ALEXANDRE",
             "hora": "18:22",
+            "dt_hr": "20180802 18:22:00",
             "motivo": "Gasolina",
             "valor": 180
         },
@@ -18,6 +20,7 @@
             "turno": 87,
             "oper": "ALEXANDRE",
             "hora": "19:00",
+            "dt_hr": "20180802 19:00:00",
             "motivo": "Vale",
             "valor": 60
         },
@@ -25,6 +28,7 @@
             "turno": 88,
             "oper": "DOUGLAS",
             "hora": "20:10",
+            "dt_hr": "20180802 20:10:00",
             "motivo": "Vale",
             "valor": 50
         }

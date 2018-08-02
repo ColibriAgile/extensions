@@ -2,7 +2,7 @@
 <b><div7>Turno</divv><div4>Oper</divv><div5>Data</divv><div5:3>Motivo</divv><dir>Valor</b>
 <l3:5><zebra>
 {% for sangria in sangrias -%}
-<div7>{{sangria.turno}}\n</divv><div4>{{sangria.oper}}</divv><div5>{{sangria.data|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv><div5:3>{{sangria.motivo}}</divv><dir>{{sangria.valor|valor}}
+<div7>{{sangria.turno}}\n</divv><div4>{{sangria.oper}}</divv><div5>{{sangria.dt_hr|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv><div5:3>{{sangria.motivo}}</divv><dir>{{sangria.valor|valor}}
 {% endfor %}<l3:5></zebra>
 <dec5/>
 <t1:b>Total<dir>{{sangrias|sum('valor')|valor}}</t1>
