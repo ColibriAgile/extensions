@@ -1,0 +1,9 @@
+﻿
+<b><div7>Turno</divv><div7:2>Operador</divv><div4>Hora</divv><div2>Cliente</divv><dir>Valor</b> 
+<l2:5>
+<zebra>
+{% for linha in resumo_de_conta_assinada -%}
+<div7>{{linha.turno}}\n</divv><div7:2>{{linha.operador}}</divv><dec1><div4>{{linha.hora|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv><div2>{{linha.cliente}}</divv></dec1><dir>{{linha.valor|valor}}
+{% endfor -%}
+</zebra>
+<t3:b>{{resumo_de_conta_assinada|count}} penduras<dir> R$ {{resumo_de_conta_assinada|sum(attribute='valor')|valor}}</t3>

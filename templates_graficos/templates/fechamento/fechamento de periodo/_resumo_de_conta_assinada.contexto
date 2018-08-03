@@ -1,0 +1,93 @@
+﻿{
+    "resumo_de_conta_assinada": [
+        {
+            "cliente": "Alexandre",
+            "hora": "20180803 13:33:17",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 4,
+            "valor": 41
+        },
+        {
+            "cliente": "Alexandre",
+            "hora": "20180803 13:52:02",
+            "dt_contabil": "20180803",
+            "operador": "Frederico",
+            "turno": 4,
+            "valor": 43
+        },
+        {
+            "cliente": "Alexandre",
+            "hora": "20180803 13:55:12",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 4,
+            "valor": 60
+        },
+        {
+            "cliente": "Pedro",
+            "hora": "20180803 14:12:12",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 5,
+            "valor": 40
+        },
+        {
+            "cliente": "Pedro",
+            "hora": "20180803 14:54:17",
+            "dt_contabil": "20180803",
+            "operador": "Frederico",
+            "turno": 5,
+            "valor": 7
+        },
+        {
+            "cliente": "Pedro",
+            "hora": "20180803 14:58:06",
+            "dt_contabil": "20180803",
+            "operador": "Frederico",
+            "turno": 5,
+            "valor": 11
+        },
+        {
+            "cliente": "Alexandre",
+            "hora": "20180803 15:19:27",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 6,
+            "valor": 80.3
+        },
+        {
+            "cliente": "Alexandre",
+            "hora": "20180803 15:40:07",
+            "dt_contabil": "20180803",
+            "operador": "Frederico",
+            "turno": 6,
+            "valor": 50.5
+        },
+        {
+            "cliente": "André",
+            "hora": "20180803 16:08:26",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 7,
+            "valor": 40
+        },
+        {
+            "cliente": "André",
+            "hora": "20180803 19:18:09",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 7,
+            "valor": 30
+        },
+        {
+            "cliente": "André",
+            "hora": "20180803 19:23:32",
+            "dt_contabil": "20180803",
+            "operador": "João",
+            "turno": 7,
+            "valor": 40
+        }
+    ]
+}
+
