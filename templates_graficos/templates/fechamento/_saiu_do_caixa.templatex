@@ -1,6 +1,6 @@
 ﻿<t1:b>Saiu do caixa</t1>
 <dec5/>
-<b><div4>Meio</div><ver><div3><dir>Troco</div3><ver><div2><dir>Repique</div><ver><dir>C.Vale</b>
+<b><div4>Meio</div><ver><div3><dir>Troco</div3><ver><div2><dir>Repique</div><ver><dir>Cred.Cli</b>
 <l3:5>
 {% for grouper, list in fechamento|groupby('grupo') -%}
 {% if grouper == 2 -%}
