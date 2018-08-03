@@ -13,7 +13,7 @@ from
   where func_recebeu_id < 0
     /*macro:filtro+*/       
   
-  union 
+  union all 
   
   select meio_pagamento_id, vl_recebido 
   from movimento_caixa_geral mcg
