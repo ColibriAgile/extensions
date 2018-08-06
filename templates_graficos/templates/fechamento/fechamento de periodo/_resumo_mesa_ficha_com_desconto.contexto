@@ -1,0 +1,70 @@
+﻿{
+	"resumo_mesa_ficha_com_desconto": [
+		{
+			"turno": 201,
+			"oper": "Frederico",
+			"venda": "mesa 1",
+			"hora": "20180806 11:51:56",
+			"desconto": 6.99,
+			"desconto_nome": "Desconto por valor",
+			"pct_desconto": 0,
+			"vl_recebido": 0.01,
+			"operacao_id": "683BE51D-8899-E811-9DA1-28F10EFCEDE6"
+		},
+		{
+			"turno": 201,
+			"oper": "Frederico",
+			"venda": "mesa 2",
+			"hora": "20180806 11:52:38",
+			"desconto": 13.99,
+			"desconto_nome": "VIP 100%",
+			"pct_desconto": 100,
+			"vl_recebido": 0.01,
+			"operacao_id": "9253D348-8899-E811-9DA1-28F10EFCEDE6"
+		},
+		{
+			"turno": 201,
+			"oper": "Frederico",
+			"venda": "mesa 3",
+			"hora": "20180806 11:53:54",
+			"desconto": 46.79,
+			"desconto_nome": "Desconto por valor",
+			"pct_desconto": 0,
+			"vl_recebido": 141.97,
+			"operacao_id": "28654879-8899-E811-9DA1-28F10EFCEDE6"
+		},
+		{
+			"turno": 200,
+			"oper": "Alexandre",
+			"venda": "mesa 4",
+			"hora": "20180806 11:54:41",
+			"desconto": 58.99,
+			"desconto_nome": "Desconto por valor",
+			"pct_desconto": 0,
+			"vl_recebido": 0.01,
+			"operacao_id": "CBD5CB93-8899-E811-9DA1-28F10EFCEDE6"
+		},
+		{
+			"turno": 201,
+			"oper": "Frederico",
+			"venda": "ficha 1",
+			"hora": "20180806 11:55:24",
+			"desconto": 299.99,
+			"desconto_nome": "Desconto por valor",
+			"pct_desconto": 0,
+			"vl_recebido": 50.01,
+			"operacao_id": "FB93EE95-7096-E811-9EA3-28F10EFCED80"
+		},
+		{
+			"turno": 200,
+			"oper": "Alexandre",
+			"venda": "ficha 10999",
+			"hora": "20180806 11:56:49",
+			"desconto": 7.99,
+			"desconto_nome": "VIP 80%",
+			"pct_desconto": 80,
+			"vl_recebido": 242.01,
+			"operacao_id": "03314C5A-7596-E811-9EA3-28F10EFCED80"
+		}
+	]
+}
