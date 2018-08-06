@@ -1,0 +1,28 @@
+﻿{
+	"atendimento_mesas_por_atendente": [
+		{
+			"atendente": "Alexandre",
+			"qtd_mesas": 1,
+			"qtd_pessoas": 3,
+			"total": 10.01,
+			"media_mesa": 10.01,
+			"media_cliente": 3.346666666666667
+		},
+		{
+			"atendente": "Frederico",
+			"qtd_mesas": 3,
+			"qtd_pessoas": 4,
+			"total": 141.99,
+			"media_mesa": 47.33,
+			"media_cliente": 35.4975
+		},
+		{
+			"atendente": "Pedro",
+			"qtd_mesas": 5,
+			"qtd_pessoas": 8,
+			"total": 371.99,
+			"media_mesa": 74.398,
+			"media_cliente": 46.49875
+		}
+	]
+}
