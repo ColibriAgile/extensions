@@ -1,0 +1,41 @@
+﻿% if resumo_mesa_ficha_com_desconto
+  % set por_valor = resumo_mesa_ficha_com_desconto|rejectattr('pct_desconto')|sort(attribute='hora')
+  % set por_perc = resumo_mesa_ficha_com_desconto|selectattr('pct_desconto')|sort(attribute='hora')
+% endif
+% if por_valor|count > 0 or por_perc|count > 0
+#---------------------------------
+#- Descontos por valor
+#---------------------------------
+% if por_valor|count > 0 
+<t1:b>Por valor</t1>
+<dec2/>
+<b><div8>Turno</divv><div4>Operador</divv><div5>Venda</divv><div4>Hora</divv><div2><dir>Vl.Rec.</divv><dir>Desconto</b> 
+<l2:5>
+<zebra>
+{% for linha in por_valor -%}
+<div8>{{linha.turno}}\n</divv><div4>{{linha.oper}}</divv><div5>{{linha.venda|capitalize}}</divv><dec1><div4>{{linha.hora|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv></dec1><div2><dir>{{linha.vl_recebido|valor}}</divv><dir>{{linha.desconto|valor}}
+{% endfor -%}
+</zebra>
+<t2:b>{{por_valor|count}} contas<dir> R$ {{por_valor|sum(attribute='desconto')|valor}}</t3>
+% endif
+#---------------------------------
+#- Desconto por percentual
+#---------------------------------
+% if por_perc|count > 0 
+<t1:b>Por percentual</t1>
+<dec2/>
+<b><div8>Turno</divv><div4>Operador</divv><div5>Venda</divv><div4>Hora</divv><div2>Nome</divv><dir>Desconto</b> 
+<l2:5>
+<zebra>
+{% for linha in por_perc -%}
+<div8>{{linha.turno}}\n</divv><div4>{{linha.oper}}</divv><div5>{{linha.venda|capitalize}}</divv><dec1><div4>{{linha.hora|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv></dec1><dec1><div2>{{linha.desconto_nome}} ({{linha.pct_desconto}}%)</divv></dec1><dir>{{linha.desconto|valor}}
+{% endfor -%}
+</zebra>
+<t2:b>{{por_perc|count}} contas<dir> R$ {{por_perc|sum(attribute='desconto')|valor}}</t3>
+% endif
+<dec2/>
+#---------------------------------
+#- Total geral
+#---------------------------------
+<t3:b>{{por_valor|count + por_perc|count}} contas<dir> R$ {{(por_valor|sum(attribute='desconto') + por_perc|sum(attribute='desconto'))|valor}}</t3>
+% endif
