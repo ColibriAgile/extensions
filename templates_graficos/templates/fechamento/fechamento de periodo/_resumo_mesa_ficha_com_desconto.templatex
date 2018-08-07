@@ -37,5 +37,7 @@
 #---------------------------------
 #- Total geral
 #---------------------------------
+% if por_valor|count > 0 and por_perc|count > 0
 <t3:b>{{por_valor|count + por_perc|count}} contas<dir> R$ {{(por_valor|sum(attribute='desconto') + por_perc|sum(attribute='desconto'))|valor}}</t3>
+% endif
 % endif
