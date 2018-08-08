@@ -18,8 +18,16 @@
 </zebra>
 <l0>
 {{imprime_texto_valor_div('Pago', pago_parcial, destacado=destacado|default(false), prefixo='')}}
+% if pago_parcial == operacao.totais.total
+<center><t4:b><r> Não há saldo a pagar </r><t4>
+% endif
+% if pago_parcial < operacao.totais.total
 <center><t4:b><r> O valor a pagar é R$ {{(operacao.totais.total-pago_parcial)|valor}} </r></t4>
-
+% endif
+% if pago_parcial > operacao.totais.total
+<center><t4:b><r> Você ainda pode gastar R$ {{(pago_parcial - operacao.totais.total)|valor}} </r></t4>
+% endif
+<dec5/>
 <l1>
-{%- endblock %}
+{% endblock %}
 {%- endif %}
