@@ -98,7 +98,7 @@ Ope: {{operador}} <dir>Atend: {{atendente.nome|trim}}
 {{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
 {{-imprime_texto_valor_div('Total por pessoa ', (operacao.totais.falta)/qtd_pessoas, prefixo='')}}
 </dec1>
-{% endif -%}
+{% endif %}
 <t1><center><r>   AGUARDE A EMISSÃO DO CUPOM FISCAL   </t1></r>
 {% include "_rodape-conferencia-RS.templatex" -%}
 
