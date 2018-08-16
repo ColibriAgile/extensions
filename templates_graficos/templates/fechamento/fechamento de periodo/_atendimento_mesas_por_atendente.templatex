@@ -1,11 +1,10 @@
 ﻿% if atendimento_mesas_por_atendente
 <dec2/>
-<b><div9:2>Atendente\n</divv><div6><center>Qtd\nmesas</divv><div4><center>Qtd\npessoas</divv><div3>Total</divv><div2><dir>Média\nmesa</divv><dir>Média\npessoa</b> 
-<l2:5>
-<zebra>
+<b><div9:2>Atendente\n</divv><div5><center><dec2>mesas/\npessoas</dec2></center></divv><div3><dir>Total</dir></divv><div2><dir>Média\nmesa</divv><dir>Média\npessoa</b> 
+<l2:3><zebra>
 {% for linha in atendimento_mesas_por_atendente|sort(attribute='atendente') -%}
-<div9:2>{{linha.atendente|capitalize}}\n</divv><div6><dir>{{linha.qtd_mesas}}</divv><div4><dir>{{linha.qtd_pessoas}}</divv><dec1><div3>{{linha.total}}</divv></dec1><div2><dir>{{linha.media_mesa|valor}}</divv><dir>{{linha.media_cliente|valor}}
+<div9:2>{{linha.atendente|capitalize}}\n</divv><div5><center>{{linha.qtd_mesas}}/{{linha.qtd_pessoas}}</center></divv><dec1><div3><dir>{{linha.total|valor(separador_grupo='')}}</divv></dec1><div2><dir><dec1>{{linha.media_mesa|valor(separador_grupo='')}}</dec1></divv><dir>{{linha.media_cliente|valor(separador_grupo='')}}
 {% endfor -%}
-</zebra>
-<t2:b>{{atendimento_mesas_por_atendente|sum('qtd_mesas')}} mesas<dir> R$ {{atendimento_mesas_por_atendente|sum(attribute='total')|valor}}</t3>
+</zebra><l3>
+<t1:b>{{atendimento_mesas_por_atendente|sum('qtd_mesas')}} mesas<dir> R$ {{atendimento_mesas_por_atendente|sum(attribute='total')|valor}}</t1>
 % endif
