@@ -21,6 +21,7 @@ type
   procedure ConfigurarDB (const umServidor, umBanco, umUsuario, umaSenha, umProvedor: PChar); stdcall;
   procedure Desativar(umaMaquina:Integer); stdcall; export;
   procedure RegistrarAssinaturas(AssinarEvento: ProcAssinarEvento); stdcall; export;
+  procedure RegistrarAssinaturasServer(AssinarEvento: ProcAssinarEvento); stdcall; export;
 
 //Não exportadas
   function Notificar(evento, contexto: PChar): PChar; stdcall;
@@ -56,6 +57,7 @@ var
   LiberarBuffer: ProcLiberarBuffer;
   ObterConfigs: ProcObterConfigs;
   ObterFuncao: ProcObterFuncao;
+  ModoServer: Boolean = False;
 
 implementation
 
@@ -97,6 +99,9 @@ begin
   {$else}
   TFile.AppendAllText(LogFilename, DateTimeToStr(Now()) + ' ' + string(evento) + ^j^m + stringList.Text);
   {$endif}
+
+  if ModoServer then
+    Exit(AlocarBuffer(PChar('{}')));
 
   ultimoErro := '';
   naoExibir := False;
@@ -153,7 +158,10 @@ begin
   {$ifndef USAR_CODESITE}
   LogFilename := ObterCaminhoDoPlugin() + 'log';
   ForceDirectories(LogFilename);
-  LogFilename := IncludeTrailingPathDelimiter(LogFilename) + 'eventos.log';
+  if ModoServer then
+    LogFilename := IncludeTrailingPathDelimiter(LogFilename) + 'eventos_server.log'
+  else
+    LogFilename := IncludeTrailingPathDelimiter(LogFilename) + 'eventos.log';
   {$endif}
 
   // Obtenho os params no arquivo de config
@@ -177,6 +185,12 @@ begin
     obj := nil;
     item := nil;
   end;
+end;
+
+procedure RegistrarAssinaturasServer(AssinarEvento: ProcAssinarEvento); stdcall; export;
+begin
+  ModoServer := True;
+  RegistrarAssinaturas(AssinarEvento);
 end;
 
 procedure AtribuirObtencaoDeFuncoes(_ObterFuncao: ProcObterFuncao); stdcall; export;

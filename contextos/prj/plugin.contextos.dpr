@@ -30,6 +30,7 @@ exports
   ObterNome,
   ObterVersao,
   RegistrarAssinaturas,
+  RegistrarAssinaturasServer,
   VerificarVersao;
 
 var
