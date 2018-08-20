@@ -44,25 +44,6 @@ def obter_parametros_delphi():
         unit_scope='System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;Data.win;'
     )
 
-
-def __obter_versao_ini(build=None):
-    try:
-        versao_ini = 'versao.ini'
-        with open(versao_ini, 'r') as vi:
-            config = RawConfigParser()
-            config.read_file(vi)
-            if config.has_section('versaoinfo'):
-                itens = dict(config.items('versaoinfo'))
-                if build is not None:
-                    itens['build'] = build
-                elif itens.get('build') in [None, '*']:
-                    itens['build'] = 0
-                return itens
-    except Exception as e:
-        print(str(e))
-    print(f'===> Não foi possível obter a versão do "versao.ini"')
-
-
 def _setversion(versao, dll, plugin):
     with prefix(WORKON):
         local(
@@ -75,13 +56,12 @@ def _setversion(versao, dll, plugin):
         )
 
 @task
-def compilar_plugin_delphi(plugin='.', build_number=None):
-    path = obter_caminho(plugin)
+def compilar_plugin_delphi(versao):
+    path = obter_caminho('.')
     p = obter_parametros_delphi()
     p['pasta_dcu'] = '{path}\\dcu\\'.format(path=path)
     p['pasta_saida']= '{path}\\_build\\'.format(path=path)
-    versao = '{majorversion}.{minorversion}.{release}.{build}'.format(**__obter_versao_ini(build_number))
-    
+
     # cria a pasta dcu
     if not os.path.exists(p['pasta_dcu']):
         os.makedirs(p['pasta_dcu'])
@@ -96,9 +76,7 @@ def compilar_plugin_delphi(plugin='.', build_number=None):
     _setversion(
         versao,
         os.path.join(
-            p['pasta_saida'], "plugin.contextos.col".format(
-                plugin=plugin
-            )
+            p['pasta_saida'], "plugin.contextos.col"
         ),
-        plugin
+        'Contextos'
     )
