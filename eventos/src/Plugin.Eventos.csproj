@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Colibri.cs" />
+    <Compile Include="TipoMensagem.cs" />
     <Compile Include="ui\FormConfig.cs">
       <SubType>Form</SubType>
     </Compile>

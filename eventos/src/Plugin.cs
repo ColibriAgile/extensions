@@ -7,48 +7,55 @@ namespace PluginEventos
 {
     internal class DadosDoFabricante
     {
-        public class Fabricante
-        {
-            public string empresa = "NCR";
-            public string desenvolvedor = "NCR Colibri";
-            public string termos_da_licenca = "";
-            public string direitos_de_copia = "";
-            public string marcas_registradas = "";
-        }
-
-        public class Suporte
-        {
-            public string email = "";
-            public string url = "";
-            public string telefone = "";
-        }
 
         public Fabricante fabricante;
         public Suporte suporte;
 
+        public class Fabricante
+        {
+            public string desenvolvedor = "NCR Colibri";
+            public string direitos_de_copia = string.Empty;
+            public string empresa = "NCR";
+            public string marcas_registradas = string.Empty;
+            public string termos_da_licenca = string.Empty;
+        }
+
+        public class Suporte
+        {
+            public string email = string.Empty;
+            public string telefone = string.Empty;
+            public string url = string.Empty;
+        }
+
+        #region Construtor
         public DadosDoFabricante()
         {
             fabricante = new Fabricante();
             suporte = new Suporte();
         }
+        #endregion
 
+        #region Metodos
         public string ToJson()
         {
             var serializer = new JavaScriptSerializer();
             return serializer.Serialize(this);
         }
+        #endregion
     }
 
-    public class Plugin    {
+    public class Plugin
+    {
+        #region Metodos
         /******************************************
           * 
           * Funções obrigatórias
           * 
           ******************************************/
-        public static string ObterNome() 
+        public static string ObterNome()
             => "Eventos";
 
-        public static string ObterVersao() 
+        public static string ObterVersao()
             => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public static string ObterDadosFabricante()
@@ -93,16 +100,15 @@ namespace PluginEventos
         {
             Colibri.MostrarMensagem("Teste", Colibri.TipoMensagem.aviso);
             // Aqui você é notificado dos eventos
-            return "";
+            return string.Empty;
         }
 
-        public static void RegistrarAssinaturas()
-        {
+        public static void RegistrarAssinaturas() =>
             // Aqui você assina os eventos
             Colibri.AssinarEvento("EventoDeSistema.PluginsCarregados");
-        }
 
-        public static string RegistrarPermissoes() 
-            => "";
+        public static string RegistrarPermissoes()
+            => string.Empty;
+        #endregion
     }
 }
