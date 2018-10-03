@@ -1,0 +1,14 @@
+{
+  "arquivos": [
+    {
+      "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
+      "destino": "client",
+      "_pattern_nome": ".*\\.exe\\b"
+    }
+  ],
+  "nome": "Eventos",
+  "produto": "pos",
+  "sigla_empresa": "NCR",
+  "empresa": "NCR",
+  "nome_exibicao": "Plugin de Eventos"
+}
