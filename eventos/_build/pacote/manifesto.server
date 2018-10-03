@@ -7,8 +7,9 @@
     }
   ],
   "nome": "Eventos",
+  "nome": "ncrlab-monitor_eventos",
   "produto": "pos",
-  "sigla_empresa": "NCR",
-  "empresa": "NCR",
-  "nome_exibicao": "Plugin de Eventos"
+  "sigla_empresa": "ncrlab",
+  "empresa": "NCR Lab",
+  "nome_exibicao": "NCR Lab - Monitor de Eventos"
 }
