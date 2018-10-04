@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Web.Script.Serialization;
 
 // O assembly do plugin deve ser Plugin.[NomeDoPlugin]
@@ -15,16 +16,16 @@ namespace PluginEventos
         {
             public string desenvolvedor = "NCR Colibri";
             public string direitos_de_copia = string.Empty;
-            public string empresa = "NCR";
+            public string empresa = "NCRLabs";
             public string marcas_registradas = string.Empty;
             public string termos_da_licenca = string.Empty;
         }
 
         public class Suporte
         {
-            public string email = string.Empty;
-            public string telefone = string.Empty;
-            public string url = string.Empty;
+            public string email = "colibri.agile@ncr.com";
+            public string telefone = "";
+            public string url = "www.colibri.com.br";
         }
 
         #region Construtor
@@ -53,7 +54,7 @@ namespace PluginEventos
           * 
           ******************************************/
         public static string ObterNome()
-            => "Eventos";
+            => "MonitorDeEventos";
 
         public static string ObterVersao()
             => Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -61,7 +62,7 @@ namespace PluginEventos
         public static string ObterDadosFabricante()
         {
             var dados = new DadosDoFabricante();
-            dados.fabricante.empresa = "NCR";
+            dados.fabricante.empresa = "NCRLabs";
             dados.fabricante.desenvolvedor = "NCR Labs";
             return dados.ToJson();
         }
@@ -73,10 +74,9 @@ namespace PluginEventos
          ******************************************/
         public static void Configurar(string maquinas)
         {
-            Colibri.MostrarMensagem("teste", Colibri.TipoMensagem.aviso, "Titulo", "sim", "direita");
-            var testDialog = new FormConfig();
-            testDialog.ShowDialog();
-            testDialog.Dispose();
+            var frmConfig = new FormConfig();
+            frmConfig.ShowDialog();
+            frmConfig.Dispose();
         }
 
         public static void ConfigurarDB(string servidor, string banco, string usuario, string senha, string provedor)
@@ -98,14 +98,21 @@ namespace PluginEventos
 
         public static string Notificar(string sEvento, string sContexto)
         {
-            Colibri.MostrarMensagem("Teste", Colibri.TipoMensagem.aviso);
+            //Colibri.MostrarMensagem("Teste", Colibri.TipoMensagem.aviso);
             // Aqui você é notificado dos eventos
             return string.Empty;
         }
 
-        public static void RegistrarAssinaturas() =>
-            // Aqui você assina os eventos
-            Colibri.AssinarEvento("EventoDeSistema.PluginsCarregados");
+        public static void RegistrarAssinaturas()
+        {
+            var config = new Configuracoes();
+            List<string> eventos = config.ObterEventosMarcados();
+            foreach (string evento in eventos)
+            {
+                string nome = evento.Replace("_", ".");
+                Colibri.AssinarEvento(nome);
+            }
+        }
 
         public static string RegistrarPermissoes()
             => string.Empty;
