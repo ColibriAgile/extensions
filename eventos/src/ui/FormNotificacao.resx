@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnEnviarErroInterromper.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAARdEVYdFRpdGxlAEJ1ZztSZXBvcnQ7sbAXPQAAAOZJ
+        REFUOE+dkSEOAjEQRRezHrUnQKGA7A2waAQSxTVIuAJYTkCCQxDCMTBgV4HFkJT5zZ/SltJsEG9nOv/P
+        3yYtjDGWy3wcMxC6ZMiZQ/dyAWehT9AHepuAl3Ai6AP9K4AhRkWpD57BPeUBrvHEqdATrjyDG2fQxPrZ
+        iQOsQWhYfXQGz88AsKUxBTTrCwImy8PIMz29PsZp2HEBnqEVx8XM1iCAt6jVlKHWGwcBAmrFPkelO36A
+        oq+Qw74CiAN0ec2aYsPqntJ+GKJCR9jz7IMZNP1RMkBvUworYUfQl/Q5bxDwH6Z4Aw8KWtAHjii0AAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnContinuarIgnorar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAcdEVYdFRpdGxlAEhpZGU7UmVtb3ZlO0RlbGV0ZTtl
+        eWV4CY0tAAABkUlEQVQ4T6WTv0rDUBTG+xqOuvkAQnFxcVIE0UcoKFjcHMRRAhE3QQpFhbj6ZxCLFDcp
+        EhpKksZWbHVwFkNNQUptwvF8x9zWaoaiBz5y7z3n9+Xcm5sUEf1LQ5OHzOxI8lbmDvFMNNA0bZp1kMvl
+        SNd1Ec+bWEOusrZ4wnVUXZ0/GjLg5Djr2jAMchyHfN+nMAxFGGOt/XRPgM3s8tVQBwzOsFqmafKUyHv2
+        ab9Qo8zeDe2cudTphhQ0awK3H+soaYHhZwrwJOutXpeEwOv5W1rYLtKmUabgvUu+VxE4aNxJDWrBgIVB
+        0bIsSSDw5iTYr1rSiQowYGHQ6fV68TJJ20kw5rvnblxFBAbsLwPsOQneOrbEXMV3gwt1eAi0mQRjW9ie
+        CuY2wMJggvXqul/tqdP+CeNgccAI1IIBqz7jFBLqO8MEnWDPaBtvVnCpVAL8EjODi1TOLl0Cxne2bVsu
+        TxRFIoyxxpDJKrDGuHZwkXAtAfM1PeVkmpVnNVgfsTDGWhqgUt8AE/WDjCpwfYO/i1KfnT3dy1uoB14A
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnCopiar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAldEVYdFRpdGxlAENvcHk7QmFycztSaWJib247U3Rh
+        bmRhcmQ7Q2xvbmVtDt9bAAAAb0lEQVQ4T+2OwQ2AIBAE6ckW700HlOaXIny4cgbIokE5w9NNJhC4HXAA
+        GkQEHfa8LjzflBUd6kXvvPcrS8yClI0ltfREjFGLt3PtDr0aQqiSEpNAc5WYBExJ3r8LOL9gkoBJ+fSD
+        s1OYJxiFywDcAUEvVDi/LQTFAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnEnviarErro.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAARdEVYdFRpdGxlAEJ1ZztSZXBvcnQ7sbAXPQAAAOZJ
+        REFUOE+dkSEOAjEQRRezHrUnQKGA7A2waAQSxTVIuAJYTkCCQxDCMTBgV4HFkJT5zZ/SltJsEG9nOv/P
+        3yYtjDGWy3wcMxC6ZMiZQ/dyAWehT9AHepuAl3Ai6AP9K4AhRkWpD57BPeUBrvHEqdATrjyDG2fQxPrZ
+        iQOsQWhYfXQGz88AsKUxBTTrCwImy8PIMz29PsZp2HEBnqEVx8XM1iCAt6jVlKHWGwcBAmrFPkelO36A
+        oq+Qw74CiAN0ec2aYsPqntJ+GKJCR9jz7IMZNP1RMkBvUworYUfQl/Q5bxDwH6Z4Aw8KWtAHjii0AAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnContinuar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAhdEVYdFRpdGxlAEFwcGx5O09LO0NoZWNrO0JhcnM7
+        UmliYm9uO2RjyGgAAACqSURBVDhPpc6xDcJADAXQRFS0SJmARSiDREV2oWEQRmATsgINUyAkqJz/pTPy
+        6ewoB8XT3Tn5X25E5C/usEYxOF0vS7R6/6Wghxts+K4tYPgNAiO0NQU2zHMP+QYYrDh0uGGy4S3cYacf
+        kzBMGl7DA/jTC7RkNkx2gwE+oCVnsGGWZWH6FqSSI2iJCsOUFTglPIu1La+AWPKEQ3qHogLqzD1UFNRy
+        h8tJMwFYUmCqbEZGpQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="TxtContexto.Text" xml:space="preserve">
+    <value>{
+    "monitor": true,
+    "devolver_impressao": true,
+    "configuracao": "TJSONObject",
+    "num": 11,
+    "col": 40,
+    "consumacao": 0,
+    "sistema": "NCR Colibri",
+    "total_da_conta": 6.5,
+    "txt_consumacao": "Consumação",
+    "operador": "SUPER USUARIO",
+    "operacao": {
+      "consumidor": null,
+      "dataExpedicao": -2209154400000,
+      "totais": {
+        "taxaDeEntregaCalculada": 0,
+        "subtotalParaDesconto": 5,
+        "consumacao": 0,
+        "servicoInformado": -1,
+        "entradaMaxima": 0,
+        "desconto": 0,
+        "servico": 0.5,
+        "outros": 0,
+        "descontoInfo": {
+          "valores": null,
+          "percentual": 0,
+          "fixo": 0
+        },
+        "subtotal": 5,
+        "subtotalParaServico": 5,
+        "entrada": 0,
+        "troco": 0,
+        "total": 0,
+        "acrescimo": 0,
+        "taxaDeEntrega": 1,
+        "pago": 0,
+        "pctServico": 10,
+        "consumacaoMaxima": 0,
+        "diferencaDeConsumacao": 0,
+        "percentualDeDesconto": 0,
+        "taxaDeEntregaInformada": 1
+      },
+      "numeroDePessoas": 1,
+      "funcionarioExpedicao": null,
+      "itensDoMovimento": {
+        "itens": {
+          "itens": [],
+          "quantidade": 0
+        },
+        "tipodeItens": 1
+      },
+      "operacaoID": {
+        "valor": "9B5E36F6-7892-E411-BEBE-4C80935C7997"
+      },
+      "itensConsolidadosDaOperacao": {
+        "itens": [
+          {
+            "local_producao": 0,
+            "dummyalterado": 0,
+            "combo_id": 0,
+            "DataCancelamento": -2209154400000,
+            "ValorDoServico": 0.5,
+            "VendaDeOrigem": 0,
+            "Transferido": false,
+            "FuncionarioLancou": 1,
+            "Contador": 1,
+            "unidade": "UN    ",
+            "AceitaDesconto": true,
+            "canceladoAntesDaProducao": false,
+            "Impresso": true,
+            "permiteQtdFracionada": false,
+            "MotivoDeCancelamentoID": -1,
+            "LocalDeEntrega": "",
+            "id": 1,
+            "codigo": "1001",
+            "FuncionarioTransferiu": 0,
+            "DataLancamento": 1420200896000,
+            "ticketOrigem": "",
+            "quantidade": 1,
+            "canceladoDepoisDaProducao": false,
+            "cobraServico": true,
+            "Enviado": true,
+            "observacao": "",
+            "FuncionarioAutorizou": 0,
+            "descricao": "AGUA COM GAS",
+            "item_id": {
+              "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+            },
+            "Indice": 1,
+            "preco": 5,
+            "FuncionarioCancelou": 0
+          }
+        ],
+        "quantidade": 1
+      },
+      "COOConferencia": 0,
+      "consumos": {
+        "itens": [
+          {
+            "_Flags": 0,
+            "venda": null,
+            "ticket": {
+              "DataDeAbertura": -2209154400000,
+              "localDeEntrega": "",
+              "percentualDeServico": 10,
+              "garcom": null,
+              "CodigoDoPai": 0,
+              "ticketPaiID": {
+                "valor": "00000000-0000-0000-0000-000000000000"
+              },
+              "venda": {
+                "nome_amigavel": "Ficha 7",
+                "subtotalParaDesconto": 5,
+                "VendaID": {
+                  "valor": "9C5E36F6-7892-E411-BEBE-4C80935C7997"
+                },
+                "Transferida": false,
+                "FuncionarioQueAbriu": 0,
+                "operacaoIDOrigem": {
+                  "valor": "00000000-0000-0000-0000-000000000000"
+                },
+                "NumeroDeFechamentos": 0,
+                "itens": {
+                  "itens": [
+                    {
+                      "local_producao": 0,
+                      "dummyalterado": 1,
+                      "combo_id": 0,
+                      "DataCancelamento": -2209154400000,
+                      "ValorDoServico": 0.5,
+                      "VendaDeOrigem": 0,
+                      "Transferido": false,
+                      "FuncionarioLancou": 1,
+                      "Contador": 1,
+                      "unidade": "UN    ",
+                      "AceitaDesconto": true,
+                      "canceladoAntesDaProducao": false,
+                      "Impresso": true,
+                      "permiteQtdFracionada": false,
+                      "MotivoDeCancelamentoID": -1,
+                      "LocalDeEntrega": "",
+                      "id": 1,
+                      "codigo": "1001",
+                      "FuncionarioTransferiu": 0,
+                      "DataLancamento": 1420200896000,
+                      "ticketOrigem": "",
+                      "quantidade": 1,
+                      "canceladoDepoisDaProducao": false,
+                      "cobraServico": true,
+                      "Enviado": true,
+                      "observacao": "com mostarda\r\nsem cebola",
+                      "FuncionarioAutorizou": 0,
+                      "descricao": "AGUA COM GAS",
+                      "item_id": {
+                        "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+                      },
+                      "Indice": 1,
+                      "preco": 5,
+                      "FuncionarioCancelou": 0
+                    }
+                  ],
+                  "quantidade": 1
+                },
+                "operacaoID": {
+                  "valor": "9B5E36F6-7892-E411-BEBE-4C80935C7997"
+                },
+                "subtotalDosItens": 5,
+                "NumeroDeChamada": 0,
+                "subtotalParaServico": 5,
+                "Cancelada": false,
+                "PerfilID": 0,
+                "data_abertura": 1420200896000,
+                "itensConsolidados": {
+                  "itens": [
+                    {
+                      "local_producao": 0,
+                      "dummyalterado": 0,
+                      "combo_id": 0,
+                      "DataCancelamento": -2209154400000,
+                      "ValorDoServico": 0.5,
+                      "VendaDeOrigem": 0,
+                      "Transferido": false,
+                      "FuncionarioLancou": 1,
+                      "Contador": 1,
+                      "unidade": "UN    ",
+                      "AceitaDesconto": true,
+                      "canceladoAntesDaProducao": false,
+                      "Impresso": true,
+                      "permiteQtdFracionada": false,
+                      "MotivoDeCancelamentoID": -1,
+                      "LocalDeEntrega": "",
+                      "id": 1,
+                      "codigo": "1001",
+                      "FuncionarioTransferiu": 0,
+                      "DataLancamento": 1420200896000,
+                      "ticketOrigem": "",
+                      "quantidade": 1,
+                      "canceladoDepoisDaProducao": false,
+                      "cobraServico": true,
+                      "Enviado": true,
+                      "observacao": "",
+                      "FuncionarioAutorizou": 0,
+                      "descricao": "AGUA COM GAS",
+                      "item_id": {
+                        "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+                      },
+                      "Indice": 1,
+                      "preco": 5,
+                      "FuncionarioCancelou": 0
+                    }
+                  ],
+                  "quantidade": 1
+                },
+                "numeroDaVenda": 45,
+                "codDoTicket": "7",
+                "LimiteDeConsumo": 0,
+                "ticketID": {
+                  "valor": "3A813A3A-FE00-E311-A612-782BCBBEF5EF"
+                },
+                "observacao": "trazer cardÃ¡pio",
+                "cliente": {
+                  "valor": "00000000-0000-0000-0000-000000000000"
+                }
+              },
+              "ModoDeVenda": 4,
+              "PerfilID": 0,
+              "codigo": 7,
+              "estado": "consumindo",
+              "codigoBarra": "\u00007",
+              "nome": "ficha 7",
+              "apelido": "",
+              "vendaID": {
+                "valor": "9C5E36F6-7892-E411-BEBE-4C80935C7997"
+              },
+              "LimiteDeConsumo": 0,
+              "ticketID": {
+                "valor": "3A813A3A-FE00-E311-A612-782BCBBEF5EF"
+              },
+              "cliente": null,
+              "ativo": true,
+              "praca": 0
+            }
+          }
+        ],
+        "quantidade": 1
+      },
+      "troco": {
+        "valorMaximoEmContraVale": 0,
+        "formasDisponiveis": 0,
+        "valorMaximoEmRepique": 0,
+        "repique": 0,
+        "valorMaximoEmDinheiro": 0,
+        "contraVale": 0,
+        "dinheiro": 0,
+        "totalDoTroco": 0
+      },
+      "entregador": null,
+      "ECFConferencia": 0,
+      "descricao": ""
+    },
+    "versao": "1.0.1.12",
+    "garcom": "SUPER USUARIO",
+    "gerencial": "Conf. de conta",
+    "pgtoparciais": {
+      "itens": {
+        "itens": [],
+        "quantidade": 0
+      },
+      "tipodeItens": 1
+    },
+    "desconto": 0,
+    "servico": 0.5,
+    "maquina": "MATRIX-NOTE",
+    "subtotal_da_operacao": 5,
+    "UF": "SP",
+    "entrega": 1,
+    "entrada": 0,
+    "txt_servico": "Serviço",
+    "dataContabil": "14/08/14",
+    "numero": 1,
+    "saldo": 6.5,
+    "selecao": "*sem filtro*",
+    "loja": "CIRQUE DU SOLEIL",
+    "hora": "10:15",
+    "data": "02/01/15",
+    "relatorio_id": "1/11",
+    "movimento": "14/08/14",
+    "aplicativo": "colibriServer",
+    "operacao_id": "{9B5E36F6-7892-E411-BEBE-4C80935C7997}",
+    "pagoParcial": 0,
+    "diasemana": "sexta-feira",
+    "txt_entrega": "Entrega",
+    "txt_entrada": "Entrada"
+ }</value>
+  </data>
+  <data name="TabContexto.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAKdEVYdFRpdGxlAFRhZzsckXHbAAAAsElEQVQ4T32P
+        sRECMQwE3cmnzEDmlAEaoAkS+qAB2qExYqED6Tm/JQXrt/Xak91E5Mv18YroihT0KiCTn8pi358cBFST
+        F+tHyD+AQli+0d6Jb2ABLO8V1E5Um8gmu+xclEF0qskr1nNW3soYoAvLB2WQAT3xqEwBqUwic1fc6Sj4
+        Ibs6w7fFvm2L4ROMSQbRz53VmFAGWROHpDKeuB6MbUgqgygAsJTKIAsA5WRHRNoHmSYN+sN+8D0AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="TxtModificadores.Text" xml:space="preserve">
+    <value>{
+    "monitor": true,
+    "devolver_impressao": true,
+    "configuracao": "TJSONObject",
+    "num": 11,
+    "col": 40,
+    "consumacao": 0,
+    "sistema": "NCR Colibri",
+    "total_da_conta": 6.5,
+    "txt_consumacao": "Consumação",
+    "operador": "SUPER USUARIO",
+    "operacao": {
+      "consumidor": null,
+      "dataExpedicao": -2209154400000,
+      "totais": {
+        "taxaDeEntregaCalculada": 0,
+        "subtotalParaDesconto": 5,
+        "consumacao": 0,
+        "servicoInformado": -1,
+        "entradaMaxima": 0,
+        "desconto": 0,
+        "servico": 0.5,
+        "outros": 0,
+        "descontoInfo": {
+          "valores": null,
+          "percentual": 0,
+          "fixo": 0
+        },
+        "subtotal": 5,
+        "subtotalParaServico": 5,
+        "entrada": 0,
+        "troco": 0,
+        "total": 0,
+        "acrescimo": 0,
+        "taxaDeEntrega": 1,
+        "pago": 0,
+        "pctServico": 10,
+        "consumacaoMaxima": 0,
+        "diferencaDeConsumacao": 0,
+        "percentualDeDesconto": 0,
+        "taxaDeEntregaInformada": 1
+      },
+      "numeroDePessoas": 1,
+      "funcionarioExpedicao": null,
+      "itensDoMovimento": {
+        "itens": {
+          "itens": [],
+          "quantidade": 0
+        },
+        "tipodeItens": 1
+      },
+      "operacaoID": {
+        "valor": "9B5E36F6-7892-E411-BEBE-4C80935C7997"
+      },
+      "itensConsolidadosDaOperacao": {
+        "itens": [
+          {
+            "local_producao": 0,
+            "dummyalterado": 0,
+            "combo_id": 0,
+            "DataCancelamento": -2209154400000,
+            "ValorDoServico": 0.5,
+            "VendaDeOrigem": 0,
+            "Transferido": false,
+            "FuncionarioLancou": 1,
+            "Contador": 1,
+            "unidade": "UN    ",
+            "AceitaDesconto": true,
+            "canceladoAntesDaProducao": false,
+            "Impresso": true,
+            "permiteQtdFracionada": false,
+            "MotivoDeCancelamentoID": -1,
+            "LocalDeEntrega": "",
+            "id": 1,
+            "codigo": "1001",
+            "FuncionarioTransferiu": 0,
+            "DataLancamento": 1420200896000,
+            "ticketOrigem": "",
+            "quantidade": 1,
+            "canceladoDepoisDaProducao": false,
+            "cobraServico": true,
+            "Enviado": true,
+            "observacao": "",
+            "FuncionarioAutorizou": 0,
+            "descricao": "AGUA COM GAS",
+            "item_id": {
+              "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+            },
+            "Indice": 1,
+            "preco": 5,
+            "FuncionarioCancelou": 0
+          }
+        ],
+        "quantidade": 1
+      },
+      "COOConferencia": 0,
+      "consumos": {
+        "itens": [
+          {
+            "_Flags": 0,
+            "venda": null,
+            "ticket": {
+              "DataDeAbertura": -2209154400000,
+              "localDeEntrega": "",
+              "percentualDeServico": 10,
+              "garcom": null,
+              "CodigoDoPai": 0,
+              "ticketPaiID": {
+                "valor": "00000000-0000-0000-0000-000000000000"
+              },
+              "venda": {
+                "nome_amigavel": "Ficha 7",
+                "subtotalParaDesconto": 5,
+                "VendaID": {
+                  "valor": "9C5E36F6-7892-E411-BEBE-4C80935C7997"
+                },
+                "Transferida": false,
+                "FuncionarioQueAbriu": 0,
+                "operacaoIDOrigem": {
+                  "valor": "00000000-0000-0000-0000-000000000000"
+                },
+                "NumeroDeFechamentos": 0,
+                "itens": {
+                  "itens": [
+                    {
+                      "local_producao": 0,
+                      "dummyalterado": 1,
+                      "combo_id": 0,
+                      "DataCancelamento": -2209154400000,
+                      "ValorDoServico": 0.5,
+                      "VendaDeOrigem": 0,
+                      "Transferido": false,
+                      "FuncionarioLancou": 1,
+                      "Contador": 1,
+                      "unidade": "UN    ",
+                      "AceitaDesconto": true,
+                      "canceladoAntesDaProducao": false,
+                      "Impresso": true,
+                      "permiteQtdFracionada": false,
+                      "MotivoDeCancelamentoID": -1,
+                      "LocalDeEntrega": "",
+                      "id": 1,
+                      "codigo": "1001",
+                      "FuncionarioTransferiu": 0,
+                      "DataLancamento": 1420200896000,
+                      "ticketOrigem": "",
+                      "quantidade": 1,
+                      "canceladoDepoisDaProducao": false,
+                      "cobraServico": true,
+                      "Enviado": true,
+                      "observacao": "com mostarda\r\nsem cebola",
+                      "FuncionarioAutorizou": 0,
+                      "descricao": "AGUA COM GAS",
+                      "item_id": {
+                        "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+                      },
+                      "Indice": 1,
+                      "preco": 5,
+                      "FuncionarioCancelou": 0
+                    }
+                  ],
+                  "quantidade": 1
+                },
+                "operacaoID": {
+                  "valor": "9B5E36F6-7892-E411-BEBE-4C80935C7997"
+                },
+                "subtotalDosItens": 5,
+                "NumeroDeChamada": 0,
+                "subtotalParaServico": 5,
+                "Cancelada": false,
+                "PerfilID": 0,
+                "data_abertura": 1420200896000,
+                "itensConsolidados": {
+                  "itens": [
+                    {
+                      "local_producao": 0,
+                      "dummyalterado": 0,
+                      "combo_id": 0,
+                      "DataCancelamento": -2209154400000,
+                      "ValorDoServico": 0.5,
+                      "VendaDeOrigem": 0,
+                      "Transferido": false,
+                      "FuncionarioLancou": 1,
+                      "Contador": 1,
+                      "unidade": "UN    ",
+                      "AceitaDesconto": true,
+                      "canceladoAntesDaProducao": false,
+                      "Impresso": true,
+                      "permiteQtdFracionada": false,
+                      "MotivoDeCancelamentoID": -1,
+                      "LocalDeEntrega": "",
+                      "id": 1,
+                      "codigo": "1001",
+                      "FuncionarioTransferiu": 0,
+                      "DataLancamento": 1420200896000,
+                      "ticketOrigem": "",
+                      "quantidade": 1,
+                      "canceladoDepoisDaProducao": false,
+                      "cobraServico": true,
+                      "Enviado": true,
+                      "observacao": "",
+                      "FuncionarioAutorizou": 0,
+                      "descricao": "AGUA COM GAS",
+                      "item_id": {
+                        "valor": "750AE1A8-2A06-4EC1-A2A8-BFF6AAEB14BC"
+                      },
+                      "Indice": 1,
+                      "preco": 5,
+                      "FuncionarioCancelou": 0
+                    }
+                  ],
+                  "quantidade": 1
+                },
+                "numeroDaVenda": 45,
+                "codDoTicket": "7",
+                "LimiteDeConsumo": 0,
+                "ticketID": {
+                  "valor": "3A813A3A-FE00-E311-A612-782BCBBEF5EF"
+                },
+                "observacao": "trazer cardÃ¡pio",
+                "cliente": {
+                  "valor": "00000000-0000-0000-0000-000000000000"
+                }
+              },
+              "ModoDeVenda": 4,
+              "PerfilID": 0,
+              "codigo": 7,
+              "estado": "consumindo",
+              "codigoBarra": "\u00007",
+              "nome": "ficha 7",
+              "apelido": "",
+              "vendaID": {
+                "valor": "9C5E36F6-7892-E411-BEBE-4C80935C7997"
+              },
+              "LimiteDeConsumo": 0,
+              "ticketID": {
+                "valor": "3A813A3A-FE00-E311-A612-782BCBBEF5EF"
+              },
+              "cliente": null,
+              "ativo": true,
+              "praca": 0
+            }
+          }
+        ],
+        "quantidade": 1
+      },
+      "troco": {
+        "valorMaximoEmContraVale": 0,
+        "formasDisponiveis": 0,
+        "valorMaximoEmRepique": 0,
+        "repique": 0,
+        "valorMaximoEmDinheiro": 0,
+        "contraVale": 0,
+        "dinheiro": 0,
+        "totalDoTroco": 0
+      },
+      "entregador": null,
+      "ECFConferencia": 0,
+      "descricao": ""
+    },
+    "versao": "1.0.1.12",
+    "garcom": "SUPER USUARIO",
+    "gerencial": "Conf. de conta",
+    "pgtoparciais": {
+      "itens": {
+        "itens": [],
+        "quantidade": 0
+      },
+      "tipodeItens": 1
+    },
+    "desconto": 0,
+    "servico": 0.5,
+    "maquina": "MATRIX-NOTE",
+    "subtotal_da_operacao": 5,
+    "UF": "SP",
+    "entrega": 1,
+    "entrada": 0,
+    "txt_servico": "Serviço",
+    "dataContabil": "14/08/14",
+    "numero": 1,
+    "saldo": 6.5,
+    "selecao": "*sem filtro*",
+    "loja": "CIRQUE DU SOLEIL",
+    "hora": "10:15",
+    "data": "02/01/15",
+    "relatorio_id": "1/11",
+    "movimento": "14/08/14",
+    "aplicativo": "colibriServer",
+    "operacao_id": "{9B5E36F6-7892-E411-BEBE-4C80935C7997}",
+    "pagoParcial": 0,
+    "diasemana": "sexta-feira",
+    "txt_entrega": "Entrega",
+    "txt_entrada": "Entrada"
+ }</value>
+  </data>
+  <data name="TabModificadores.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAANdEVYdFRpdGxlAFNjcmlwdDsgc5ViAAAA1UlEQVQ4
+        T7WRPQrCQBCFc6ecw9LOI1h6AglY2YvgPQKCnfgD1v5hJRiSRlRQsPC5s+zoZJ38ND547Mzsvm+zJABg
+        HUURSvzyZ5zLAeqqEnBIruiM5q6DrWnGqgRQwAfIvhLQHkxd9ZWc/RcwjNd21ST3zHkdkJ7vaPUntpai
+        2e3xxP50QaMbs8MfAEl7Qrw6fsISUghYbDPXActd5t9MDgsBs02KZm/sOmhhtv4EqbKwsf4bpeiw9vlm
+        KzBrHuCbxCEBsWFyDuDbAKwZwGEKSavh+kbwBirLHdyFNr+6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="TabErro.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAARdEVYdFRpdGxlAEJ1ZztSZXBvcnQ7sbAXPQAAAOZJ
+        REFUOE+dkSEOAjEQRRezHrUnQKGA7A2waAQSxTVIuAJYTkCCQxDCMTBgV4HFkJT5zZ/SltJsEG9nOv/P
+        3yYtjDGWy3wcMxC6ZMiZQ/dyAWehT9AHepuAl3Ai6AP9K4AhRkWpD57BPeUBrvHEqdATrjyDG2fQxPrZ
+        iQOsQWhYfXQGz88AsKUxBTTrCwImy8PIMz29PsZp2HEBnqEVx8XM1iCAt6jVlKHWGwcBAmrFPkelO36A
+        oq+Qw74CiAN0ec2aYsPqntJ+GKJCR9jz7IMZNP1RMkBvUworYUfQl/Q5bxDwH6Z4Aw8KWtAHjii0AAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAldEVYdFRpdGxlAENvcHk7QmFycztSaWJib247U3Rh
+        bmRhcmQ7Q2xvbmVtDt9bAAAAb0lEQVQ4T+2OwQ2AIBAE6ckW700HlOaXIny4cgbIokE5w9NNJhC4HXAA
+        GkQEHfa8LjzflBUd6kXvvPcrS8yClI0ltfREjFGLt3PtDr0aQqiSEpNAc5WYBExJ3r8LOL9gkoBJ+fSD
+        s1OYJxiFywDcAUEvVDi/LQTFAAAAAElFTkSuQmCC
+</value>
+  </data>
+</root>

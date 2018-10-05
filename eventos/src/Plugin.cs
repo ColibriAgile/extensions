@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using static PluginEventos.FormNotificacao;
 
 // O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
@@ -47,12 +49,8 @@ namespace PluginEventos
 
     public class Plugin
     {
+        private static readonly List<string> _ignoreList = new List<string>();
         #region Metodos
-        /******************************************
-          * 
-          * Funções obrigatórias
-          * 
-          ******************************************/
         public static string ObterNome()
             => "MonitorDeEventos";
 
@@ -67,11 +65,6 @@ namespace PluginEventos
             return dados.ToJson();
         }
 
-        /******************************************
-         * 
-         * Funções opcionais
-         * 
-         ******************************************/
         public static void Configurar(string maquinas)
         {
             var frmConfig = new FormConfig();
@@ -98,9 +91,28 @@ namespace PluginEventos
 
         public static string Notificar(string sEvento, string sContexto)
         {
-            //Colibri.MostrarMensagem("Teste", Colibri.TipoMensagem.aviso);
-            // Aqui você é notificado dos eventos
-            return string.Empty;
+            if (_ignoreList.Contains(sEvento))
+                return string.Empty;
+
+            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto);
+
+            if (retorno is null)
+                return string.Empty;
+
+            var ret = retorno.Value;
+
+            if (ret.Ignorar)
+                _ignoreList.Add(sEvento);
+
+
+            var json = JObject.Parse(ret.Modificadores);
+            if (!ret.Acao.IsEmptyOrNull())
+                json["acao"] = ret.Acao;
+
+            if (!ret.Erro.IsEmptyOrNull())
+                json["erro"] = ret.Erro;
+
+            return json.ToString();
         }
 
         public static void RegistrarAssinaturas()

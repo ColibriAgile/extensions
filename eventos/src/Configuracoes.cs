@@ -5,22 +5,25 @@ namespace PluginEventos
 {
     public class Configuracoes
     {
-        private readonly JObject config;
+        #region Fields
+        private readonly JObject config; 
+        #endregion
 
+        #region Constructor
         public Configuracoes()
         {
-            JObject arqConfig = JObject.Parse(Colibri.ObterConfigs(0));
+            var arqConfig = JObject.Parse(Colibri.ObterConfigs(0));
             if (arqConfig != null && arqConfig.TryGetValue("configs", out JToken confs) && (confs is JObject))
                 config = (JObject) confs;
-        }
+        } 
+        #endregion
 
+        #region Metodos
         public bool EstaAtivado(string nome)
-        {
-            return config != null && config.TryGetValue(nome, out JToken token) &&
+            => config != null && config.TryGetValue(nome, out JToken token) &&
                 ((JObject) token).GetValue("valor").ToString().Equals("1");
-        }
 
-        public void GravarConfiguracao(string nome, bool valor) 
+        public void GravarConfiguracao(string nome, bool valor)
             => Colibri.GravarConfig(nome, 0, valor ? "1" : null);
 
         public List<string> ObterEventosMarcados()
@@ -38,6 +41,7 @@ namespace PluginEventos
                     eventos.Add(item.Key);
             }
             return eventos;
-        }
+        } 
+        #endregion
     }
 }

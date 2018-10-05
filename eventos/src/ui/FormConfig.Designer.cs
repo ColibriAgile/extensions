@@ -28,33 +28,20 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
-            this.BtnFechar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
             this.label1 = new System.Windows.Forms.Label();
             this.PnlBotoes = new System.Windows.Forms.Panel();
-            this.BtnAplicar = new System.Windows.Forms.Button();
-            this.eventosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ChkMostrarNotificacao = new DevExpress.XtraEditors.CheckEdit();
             this.Tree = new DevExpress.XtraTreeList.TreeList();
             this.colValor = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.BtnMarcarTodos = new System.Windows.Forms.Button();
-            this.BtnDesmarcarTodos = new System.Windows.Forms.Button();
-            this.ChkMostrarNotificacao = new DevExpress.XtraEditors.CheckEdit();
+            this.BtnFechar = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnAplicar = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnMarcarTodos = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnDesmarcarTodos = new DevExpress.XtraEditors.SimpleButton();
             this.PnlBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkMostrarNotificacao.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnFechar.Location = new System.Drawing.Point(798, 12);
-            this.BtnFechar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(100, 28);
-            this.BtnFechar.TabIndex = 0;
-            this.BtnFechar.Text = "&Fechar";
-            this.BtnFechar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -69,31 +56,29 @@
             // 
             // PnlBotoes
             // 
-            this.PnlBotoes.Controls.Add(this.ChkMostrarNotificacao);
             this.PnlBotoes.Controls.Add(this.BtnDesmarcarTodos);
             this.PnlBotoes.Controls.Add(this.BtnMarcarTodos);
             this.PnlBotoes.Controls.Add(this.BtnAplicar);
             this.PnlBotoes.Controls.Add(this.BtnFechar);
+            this.PnlBotoes.Controls.Add(this.ChkMostrarNotificacao);
             this.PnlBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlBotoes.Location = new System.Drawing.Point(0, 683);
             this.PnlBotoes.Name = "PnlBotoes";
             this.PnlBotoes.Size = new System.Drawing.Size(911, 53);
             this.PnlBotoes.TabIndex = 2;
             // 
-            // BtnAplicar
+            // ChkMostrarNotificacao
             // 
-            this.BtnAplicar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnAplicar.Location = new System.Drawing.Point(690, 12);
-            this.BtnAplicar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnAplicar.Name = "BtnAplicar";
-            this.BtnAplicar.Size = new System.Drawing.Size(100, 28);
-            this.BtnAplicar.TabIndex = 1;
-            this.BtnAplicar.Text = "&Aplicar";
-            this.BtnAplicar.UseVisualStyleBackColor = true;
-            this.BtnAplicar.Click += new System.EventHandler(this.BtnAplicar_Click);
+            this.ChkMostrarNotificacao.Location = new System.Drawing.Point(271, 17);
+            this.ChkMostrarNotificacao.Name = "ChkMostrarNotificacao";
+            this.ChkMostrarNotificacao.Properties.Caption = "Mostrar notificação";
+            this.ChkMostrarNotificacao.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(208, 19);
+            this.ChkMostrarNotificacao.TabIndex = 4;
             // 
             // Tree
             // 
+            this.Tree.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.Tree.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colValor});
             this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -119,43 +104,65 @@
             this.colValor.Visible = true;
             this.colValor.VisibleIndex = 0;
             // 
+            // BtnFechar
+            // 
+            this.BtnFechar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.BtnFechar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnFechar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnContinuar.ImageOptions.Image")));
+            this.BtnFechar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            this.BtnFechar.Location = new System.Drawing.Point(785, 7);
+            this.BtnFechar.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnFechar.Name = "BtnFechar";
+            this.BtnFechar.Size = new System.Drawing.Size(117, 38);
+            this.BtnFechar.TabIndex = 5;
+            this.BtnFechar.Text = "Fechar";
+            // 
+            // BtnAplicar
+            // 
+            this.BtnAplicar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.BtnAplicar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnAplicar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image2")));
+            this.BtnAplicar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            this.BtnAplicar.Location = new System.Drawing.Point(658, 7);
+            this.BtnAplicar.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnAplicar.Name = "BtnAplicar";
+            this.BtnAplicar.Size = new System.Drawing.Size(117, 38);
+            this.BtnAplicar.TabIndex = 6;
+            this.BtnAplicar.Text = "Aplicar";
+            this.BtnAplicar.Click += new System.EventHandler(this.BtnAplicar_Click);
+            // 
             // BtnMarcarTodos
             // 
-            this.BtnMarcarTodos.Location = new System.Drawing.Point(13, 12);
-            this.BtnMarcarTodos.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMarcarTodos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.BtnMarcarTodos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnMarcarTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.BtnMarcarTodos.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            this.BtnMarcarTodos.Location = new System.Drawing.Point(9, 7);
+            this.BtnMarcarTodos.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMarcarTodos.Name = "BtnMarcarTodos";
-            this.BtnMarcarTodos.Size = new System.Drawing.Size(100, 28);
-            this.BtnMarcarTodos.TabIndex = 2;
-            this.BtnMarcarTodos.Text = "&Marcar todos";
-            this.BtnMarcarTodos.UseVisualStyleBackColor = true;
+            this.BtnMarcarTodos.Size = new System.Drawing.Size(117, 38);
+            this.BtnMarcarTodos.TabIndex = 7;
+            this.BtnMarcarTodos.Text = "Marcar todos";
             this.BtnMarcarTodos.Click += new System.EventHandler(this.BtnMarcarTodos_Click);
             // 
             // BtnDesmarcarTodos
             // 
-            this.BtnDesmarcarTodos.Location = new System.Drawing.Point(121, 12);
-            this.BtnDesmarcarTodos.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnDesmarcarTodos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.BtnDesmarcarTodos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnDesmarcarTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.BtnDesmarcarTodos.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
+            this.BtnDesmarcarTodos.Location = new System.Drawing.Point(134, 7);
+            this.BtnDesmarcarTodos.Margin = new System.Windows.Forms.Padding(0);
             this.BtnDesmarcarTodos.Name = "BtnDesmarcarTodos";
-            this.BtnDesmarcarTodos.Size = new System.Drawing.Size(133, 28);
-            this.BtnDesmarcarTodos.TabIndex = 3;
-            this.BtnDesmarcarTodos.Text = "&Desmarcar todos";
-            this.BtnDesmarcarTodos.UseVisualStyleBackColor = true;
+            this.BtnDesmarcarTodos.Size = new System.Drawing.Size(117, 38);
+            this.BtnDesmarcarTodos.TabIndex = 8;
+            this.BtnDesmarcarTodos.Text = "Desmarcar todos";
             this.BtnDesmarcarTodos.Click += new System.EventHandler(this.BtnDesmarcarTodos_Click);
-            // 
-            // ChkMostrarNotificacao
-            // 
-            this.ChkMostrarNotificacao.Location = new System.Drawing.Point(271, 17);
-            this.ChkMostrarNotificacao.Name = "ChkMostrarNotificacao";
-            this.ChkMostrarNotificacao.Properties.Caption = "Mostrar notificação";
-            this.ChkMostrarNotificacao.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(208, 19);
-            this.ChkMostrarNotificacao.TabIndex = 4;
             // 
             // FormConfig
             // 
-            this.AcceptButton = this.BtnAplicar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BtnFechar;
             this.ClientSize = new System.Drawing.Size(911, 736);
             this.Controls.Add(this.Tree);
             this.Controls.Add(this.PnlBotoes);
@@ -168,24 +175,21 @@
             this.Text = "Monitor de Eventos e Contextos";
             this.Shown += new System.EventHandler(this.FormConfig_Shown);
             this.PnlBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkMostrarNotificacao.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree)).EndInit();
             this.ResumeLayout(false);
 
     }
 
     #endregion
-
-    private System.Windows.Forms.Button BtnFechar;
     private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlBotoes;
-        private System.Windows.Forms.Button BtnAplicar;
-        private System.Windows.Forms.BindingSource eventosBindingSource;
         private DevExpress.XtraTreeList.TreeList Tree;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colValor;
-        private System.Windows.Forms.Button BtnDesmarcarTodos;
-        private System.Windows.Forms.Button BtnMarcarTodos;
         private DevExpress.XtraEditors.CheckEdit ChkMostrarNotificacao;
+        private DevExpress.XtraEditors.SimpleButton BtnAplicar;
+        private DevExpress.XtraEditors.SimpleButton BtnFechar;
+        private DevExpress.XtraEditors.SimpleButton BtnDesmarcarTodos;
+        private DevExpress.XtraEditors.SimpleButton BtnMarcarTodos;
     }
 }
