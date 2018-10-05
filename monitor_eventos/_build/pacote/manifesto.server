@@ -3,13 +3,12 @@
     {
       "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
       "destino": "client",
-      "_pattern_nome": ".*\\.exe\\b"
+      "_pattern_nome": ".*client\\.exe\\b"
     }
   ],
-  "nome": "Eventos",
-  "nome": "ncrlab-monitor_eventos",
+  "nome": "NCRLabs-Monitor_Eventos",
   "produto": "pos",
-  "sigla_empresa": "ncrlab",
-  "empresa": "NCR Lab",
-  "nome_exibicao": "NCR Lab - Monitor de Eventos"
+  "sigla_empresa": "NCRLabs",
+  "empresa": "NCRLabs",
+  "nome_exibicao": "Monitor de Eventos"
 }
