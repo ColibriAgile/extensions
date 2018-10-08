@@ -6,7 +6,7 @@ namespace PluginEventos
     public class Configuracoes
     {
         #region Fields
-        private readonly JObject config; 
+        private readonly JObject config;
         #endregion
 
         #region Constructor
@@ -15,7 +15,7 @@ namespace PluginEventos
             var arqConfig = JObject.Parse(Colibri.ObterConfigs(0));
             if (arqConfig != null && arqConfig.TryGetValue("configs", out JToken confs) && (confs is JObject))
                 config = (JObject) confs;
-        } 
+        }
         #endregion
 
         #region Metodos
@@ -41,7 +41,7 @@ namespace PluginEventos
                     eventos.Add(item.Key);
             }
             return eventos;
-        } 
+        }
         #endregion
     }
 }

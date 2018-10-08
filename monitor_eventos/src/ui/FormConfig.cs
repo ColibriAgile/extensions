@@ -19,7 +19,7 @@ namespace PluginEventos.ui
         {
             InitializeComponent();
             CarregarTreeList();
-        } 
+        }
         #endregion
 
         #region Eventos
@@ -50,7 +50,7 @@ namespace PluginEventos.ui
                 _config.GravarConfiguracao(ObterNomeEvento(node), node.Checked);
             }
             _config.GravarConfiguracao(MOSTRA_EVENTO, ChkMostrarNotificacao.Checked);
-        } 
+        }
         #endregion
 
         #region Metodos

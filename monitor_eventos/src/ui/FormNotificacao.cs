@@ -38,7 +38,7 @@ namespace PluginEventos.ui
             {
                 string arqNome = modoServer ? "eventos_server.log" : "eventos.log";
                 _logConfig = new LoggingConfiguration();
-                _target = new FileTarget 
+                _target = new FileTarget
                 {
                     Name = "eventos",
                     FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), arqNome),
@@ -66,7 +66,7 @@ namespace PluginEventos.ui
             frm.CarregarEvento(evento, contexto);
             frm.StartPosition = FormStartPosition.CenterScreen;
             DialogResult ret = frm.ShowDialog();
-            var retorno = new Retorno 
+            var retorno = new Retorno
             {
                 Ignorar = ret == DialogResult.Abort,
                 Modificadores = frm.ObterModificadores(),
@@ -138,9 +138,9 @@ namespace PluginEventos.ui
                 Erro = TxtMensagemErro.Text;
                 DialogResult = DialogResult.Abort;
             }
-            else            
+            else
                 ValidarAbaErroSelecionada();
-            
+
         }
         #endregion
     }

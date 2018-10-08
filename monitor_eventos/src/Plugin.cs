@@ -19,7 +19,7 @@ namespace PluginEventos
         {
             public string desenvolvedor = "NCR Colibri";
             public string direitos_de_copia = string.Empty;
-            public string empresa = "NCRLabs";
+            public string empresa = "NCR Labs";
             public string marcas_registradas = string.Empty;
             public string termos_da_licenca = string.Empty;
         }
@@ -54,18 +54,13 @@ namespace PluginEventos
         private static bool _modoServer;
         #region Metodos
         public static string ObterNome()
-            => "MonitorDeEventos";
+            => "Monitor de eventos";
 
         public static string ObterVersao()
             => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public static string ObterDadosFabricante()
-        {
-            var dados = new DadosDoFabricante();
-            dados.fabricante.empresa = "NCRLabs";
-            dados.fabricante.desenvolvedor = "NCR Labs";
-            return dados.ToJson();
-        }
+            => new DadosDoFabricante().ToJson();
 
         public static void Configurar(string maquinas)
         {
@@ -119,6 +114,7 @@ namespace PluginEventos
             RegistrarAssinaturas();
             _modoServer = true;
         }
+
         public static string RegistrarPermissoes()
             => string.Empty;
         #endregion

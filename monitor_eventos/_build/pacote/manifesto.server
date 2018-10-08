@@ -6,9 +6,9 @@
       "_pattern_nome": ".*client\\.exe\\b"
     }
   ],
-  "nome": "NCRLabs-Monitor_Eventos",
+  "nome": "ncrlab-Monitor_Eventos",
   "produto": "pos",
-  "sigla_empresa": "NCRLabs",
-  "empresa": "NCRLabs",
-  "nome_exibicao": "Monitor de Eventos"
+  "sigla_empresa": "ncrlab",
+  "empresa": "NCR Lab",
+  "nome_exibicao": "NCR Lab - Monitor de Eventos"
 }
