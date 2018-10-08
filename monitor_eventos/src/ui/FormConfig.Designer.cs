@@ -1,4 +1,4 @@
-﻿namespace PluginEventos
+﻿namespace PluginEventos.ui
 {
   partial class FormConfig
   {

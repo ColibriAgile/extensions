@@ -7,7 +7,7 @@ using DevExpress.XtraTreeList.Nodes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace PluginEventos
+namespace PluginEventos.ui
 {
     public partial class FormConfig: Form
     {

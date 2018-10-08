@@ -9,7 +9,7 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 
-namespace PluginEventos
+namespace PluginEventos.ui
 {
     public partial class FormNotificacao: Form
     {
@@ -17,8 +17,8 @@ namespace PluginEventos
         private static Target _target;
         private static Logger _logger;
         public struct Retorno
-        {    
-            public bool Ignorar { get ; set ; }
+        {
+            public bool Ignorar { get; set; }
             public string Modificadores { get; set; }
             public string Erro { get; set; }
             public string Acao { get; set; }
@@ -29,20 +29,19 @@ namespace PluginEventos
         public string Erro { get; set; }
         #endregion
 
-        public FormNotificacao()
-        {
-            InitializeComponent();            
-        }
+        public FormNotificacao() => InitializeComponent();
 
         #region Metodos
-        private static void Logar(string evento, string contexto)
+        private static void Logar(string evento, string contexto, bool modoServer)
         {
             if (_logger is null)
             {
+                string arqNome = modoServer ? "eventos_server.log" : "eventos.log";
                 _logConfig = new LoggingConfiguration();
-                _target = new FileTarget {
+                _target = new FileTarget 
+                {
                     Name = "eventos",
-                    FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "eventos.log"),
+                    FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), arqNome),
                     ArchiveEvery = FileArchivePeriod.Day,
                     ArchiveNumbering = ArchiveNumberingMode.DateAndSequence,
                     ArchiveOldFileOnStartup = true,
@@ -57,17 +56,18 @@ namespace PluginEventos
             _logger.Info($"{evento} -> {contexto}");
         }
 
-        public static Retorno? Executar(string evento, string contexto)
+        public static Retorno? Executar(string evento, string contexto, bool modoServer)
         {
-            Logar(evento, contexto);
+            Logar(evento, contexto, modoServer);
             var conf = new Configuracoes();
-            if (!conf.EstaAtivado("MostrarEvento"))
+            if (modoServer || !conf.EstaAtivado("MostrarEvento"))
                 return null;
             var frm = new FormNotificacao();
             frm.CarregarEvento(evento, contexto);
             frm.StartPosition = FormStartPosition.CenterScreen;
-            var ret = frm.ShowDialog();
-            var retorno = new Retorno {
+            DialogResult ret = frm.ShowDialog();
+            var retorno = new Retorno 
+            {
                 Ignorar = ret == DialogResult.Abort,
                 Modificadores = frm.ObterModificadores(),
                 Acao = frm.Acao,
@@ -124,9 +124,7 @@ namespace PluginEventos
                 DialogResult = DialogResult.OK;
             }
             else
-            {
                 ValidarAbaErroSelecionada();
-            }
         }
 
         private void TxtEvento_Properties_ButtonClick(object sender, ButtonPressedEventArgs e)
@@ -137,14 +135,13 @@ namespace PluginEventos
             if (Tabs.SelectedTabPage == TabErro)
             {
                 Acao = "abort";
-                Erro = TxtMensagemErro.Text;                
+                Erro = TxtMensagemErro.Text;
                 DialogResult = DialogResult.Abort;
             }
-            else
-            {
+            else            
                 ValidarAbaErroSelecionada();
-            }
-        } 
+            
+        }
         #endregion
     }
 }

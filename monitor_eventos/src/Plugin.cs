@@ -2,7 +2,8 @@
 using System.Reflection;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
-using static PluginEventos.FormNotificacao;
+using PluginEventos.ui;
+using static PluginEventos.ui.FormNotificacao;
 
 // O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
@@ -50,6 +51,7 @@ namespace PluginEventos
     public class Plugin
     {
         private static readonly List<string> _ignoreList = new List<string>();
+        private static bool _modoServer;
         #region Metodos
         public static string ObterNome()
             => "MonitorDeEventos";
@@ -72,38 +74,24 @@ namespace PluginEventos
             frmConfig.Dispose();
         }
 
-        public static void ConfigurarDB(string servidor, string banco, string usuario, string senha, string provedor)
-        {
-
-        }
-
-        public static void Ativar(int umaMaquina)
-        {
-        }
-
-        public static void Desativar(int umaMaquina)
-        {
-        }
-
-        public static void ObterMacro(string umaMacro)
-        {
-        }
 
         public static string Notificar(string sEvento, string sContexto)
         {
-            if (_ignoreList.Contains(sEvento))
-                return string.Empty;
+            if (!_modoServer)
+            {
+                if (!(_ignoreList is null) && _ignoreList.Contains(sEvento))
+                    return string.Empty;
+            }
 
-            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto);
+            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto, _modoServer);
 
             if (retorno is null)
                 return string.Empty;
 
-            var ret = retorno.Value;
+            Retorno ret = retorno.Value;
 
-            if (ret.Ignorar)
-                _ignoreList.Add(sEvento);
-
+            if ((!_modoServer) && ret.Ignorar)
+                _ignoreList?.Add(sEvento);
 
             var json = JObject.Parse(ret.Modificadores);
             if (!ret.Acao.IsEmptyOrNull())
@@ -126,6 +114,11 @@ namespace PluginEventos
             }
         }
 
+        public static void RegistrarAssinaturasServer()
+        {
+            RegistrarAssinaturas();
+            _modoServer = true;
+        }
         public static string RegistrarPermissoes()
             => string.Empty;
         #endregion
