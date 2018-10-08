@@ -28,6 +28,9 @@
 <l2>
 Mov: {{data_contabil}} <dir>{{data}}-{{hora}}
 Ope: {{operador}} <dir>Atend: {{atendente.nome|trim}}
+Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
+
+<l0>
 {%- endblock %}
 {% block corpo -%}
 {%set qtd_pessoas = (operacao.qtd_pessoas or 1) -%}
@@ -37,7 +40,8 @@ Ope: {{operador}} <dir>Atend: {{atendente.nome|trim}}
 {% set ticket = consumo.ticket -%}
 {% set venda = consumo.venda -%}
 {%- if agrupamento %}{{'\n'}}<ld>{% endif %}
-<t2:b>{{ticket.nome|capitalize}} {{'- Venda '}} {{venda.numero_venda}}</t2>
+
+<t2:b>{{ticket.nome|capitalize}} <dir>Venda {{venda.numero_venda}}</t2>
 <dec2/>
 #---------------------------------
 #- Impressão dos itens
