@@ -13,37 +13,26 @@ using NLog.Targets;
 namespace PluginEventos.ui
 {
     public partial class FormNotificacao: Form
-    {
-        #region Private static fields
-
-        private static LoggingConfiguration _logConfig;
-        private static Target _target;
-        private static Logger _logger;
-
-        #endregion
-
-        #region Struct
-
+    {        
         public struct Retorno
         {
+            #region Propriedades
+            public string Acao { get; set; }
+            public string Erro { get; set; }
             public bool Ignorar { get; set; }
             public string Modificadores { get; set; }
-            public string Erro { get; set; }
-            public string Acao { get; set; }
+            #endregion
         }
-
-        #endregion
 
         #region Propriedades
         public string Acao { get; set; }
         public string Erro { get; set; }
         #endregion
 
-        #region Constructors
+        #region Construtores
 
         public FormNotificacao()
             => InitializeComponent();
-
         #endregion
 
         #region Metodos
@@ -77,7 +66,7 @@ namespace PluginEventos.ui
             Logar(evento, contexto, modoServer);
             var conf = new Configuracoes();
 
-            if (modoServer || !conf.EstaAtivado("MostrarEvento"))
+            if (modoServer || (!conf.EstaAtivado("MostrarEvento")))
                 return null;
 
             using (var frm = new FormNotificacao())
@@ -124,9 +113,6 @@ namespace PluginEventos.ui
             TxtEvento.Text = evento;
 
         }
-        #endregion
-
-        #region Eventos
         private void BtnCopiar_Click(object sender, EventArgs e)
             => Clipboard.SetText(TxtContexto.Text);
 
@@ -146,5 +132,14 @@ namespace PluginEventos.ui
             DialogResult = DialogResult.OK;
         }
         #endregion
+
+        #region Private static fields
+
+        private static LoggingConfiguration _logConfig;
+        private static Target _target;
+        private static Logger _logger;
+
+        #endregion
+
     }
 }

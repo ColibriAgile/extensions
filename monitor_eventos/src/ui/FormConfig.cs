@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace PluginEventos.ui
 {
-    public partial class FormConfig: Form
+    public partial class FormConfig: DevExpress.XtraEditors.XtraForm
     {
         private const string MOSTRA_EVENTO = "MostrarEvento";
         private Configuracoes _config;
