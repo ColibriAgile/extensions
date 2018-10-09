@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 // O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
@@ -9,6 +11,7 @@ namespace PluginEventos
     {
 
         public static Dictionary<string, object> dictFuncoes;
+        private static string _pastaBase = "";
 
         #region Metodos
         public static void AssinarEvento(string evento) 
@@ -39,6 +42,26 @@ namespace PluginEventos
 
         public static void AtribuirFuncoes(Dictionary<string, object> dictFuncoes)
             => Colibri.dictFuncoes = dictFuncoes;
+
+        public static string ObterPastaDeLogs(string subpasta)
+        {
+            if (string.IsNullOrWhiteSpace(_pastaBase))
+            {
+                string s = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                while (true)
+                {
+                    if (Directory.Exists(Path.Combine(s, "logs\\")))
+                    {
+                        _pastaBase = Path.Combine(s, "logs");
+                        break;
+                    }
+                    s = Path.GetDirectoryName(s);
+                    if (s.Length < 4)
+                        throw new DirectoryNotFoundException(s);
+                }
+            }
+            return Path.Combine(_pastaBase, subpasta);
+        }
         #endregion
     }
 }

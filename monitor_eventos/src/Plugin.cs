@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
@@ -50,7 +51,7 @@ namespace PluginEventos
 
     public class Plugin
     {
-        private static readonly List<string> _ignoreList = new List<string>();
+        private static readonly Lazy<List<string>> _ignoreList = new Lazy<List<string>>(() => new List<string>());
         private static bool _modoServer;
         #region Metodos
         public static string ObterNome()
@@ -64,9 +65,10 @@ namespace PluginEventos
 
         public static void Configurar(string maquinas)
         {
-            var frmConfig = new FormConfig();
-            frmConfig.ShowDialog();
-            frmConfig.Dispose();
+            using (var frmConfig = new FormConfig())
+            {
+                frmConfig.ShowDialog();
+            }
         }
 
 
@@ -74,11 +76,11 @@ namespace PluginEventos
         {
             if (!_modoServer)
             {
-                if (!(_ignoreList is null) && _ignoreList.Contains(sEvento))
+                if (_ignoreList.Value.Contains(sEvento))
                     return string.Empty;
             }
 
-            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto, _modoServer);
+            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto, _modoServer, _ignoreList.Value);
 
             if (retorno is null)
                 return string.Empty;
@@ -86,13 +88,13 @@ namespace PluginEventos
             Retorno ret = retorno.Value;
 
             if ((!_modoServer) && ret.Ignorar)
-                _ignoreList?.Add(sEvento);
+                _ignoreList.Value.Add(sEvento);
 
             var json = JObject.Parse(ret.Modificadores);
-            if (!ret.Acao.IsEmptyOrNull())
+            if (!string.IsNullOrWhiteSpace(ret.Acao))
                 json["acao"] = ret.Acao;
 
-            if (!ret.Erro.IsEmptyOrNull())
+            if (!string.IsNullOrWhiteSpace(ret.Erro))
                 json["erro"] = ret.Erro;
 
             return json.ToString();

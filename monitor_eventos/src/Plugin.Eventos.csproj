@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Colibri.cs" />
     <Compile Include="Configuracoes.cs" />
-    <Compile Include="Extensoes.cs" />
     <Compile Include="TipoMensagem.cs" />
     <Compile Include="ui\FormConfig.cs">
       <SubType>Form</SubType>

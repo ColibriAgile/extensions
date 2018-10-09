@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -13,9 +14,16 @@ namespace PluginEventos.ui
 {
     public partial class FormNotificacao: Form
     {
+        #region Private static fields
+
         private static LoggingConfiguration _logConfig;
         private static Target _target;
         private static Logger _logger;
+
+        #endregion
+
+        #region Struct
+
         public struct Retorno
         {
             public bool Ignorar { get; set; }
@@ -24,12 +32,19 @@ namespace PluginEventos.ui
             public string Acao { get; set; }
         }
 
+        #endregion
+
         #region Propriedades
         public string Acao { get; set; }
         public string Erro { get; set; }
         #endregion
 
-        public FormNotificacao() => InitializeComponent();
+        #region Constructors
+
+        public FormNotificacao()
+            => InitializeComponent();
+
+        #endregion
 
         #region Metodos
         private static void Logar(string evento, string contexto, bool modoServer)
@@ -38,10 +53,11 @@ namespace PluginEventos.ui
             {
                 string arqNome = modoServer ? "eventos_server.log" : "eventos.log";
                 _logConfig = new LoggingConfiguration();
+                string pastaLog = Colibri.ObterPastaDeLogs(Assembly.GetExecutingAssembly().GetName().Name);
                 _target = new FileTarget
                 {
                     Name = "eventos",
-                    FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), arqNome),
+                    FileName = Path.Combine(pastaLog, arqNome),
                     ArchiveEvery = FileArchivePeriod.Day,
                     ArchiveNumbering = ArchiveNumberingMode.DateAndSequence,
                     ArchiveOldFileOnStartup = true,
@@ -56,29 +72,35 @@ namespace PluginEventos.ui
             _logger.Info($"{evento} -> {contexto}");
         }
 
-        public static Retorno? Executar(string evento, string contexto, bool modoServer)
+        public static Retorno? Executar(string evento, string contexto, bool modoServer, List<string> ignoreList)
         {
             Logar(evento, contexto, modoServer);
             var conf = new Configuracoes();
+
             if (modoServer || !conf.EstaAtivado("MostrarEvento"))
                 return null;
-            var frm = new FormNotificacao();
-            frm.CarregarEvento(evento, contexto);
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            DialogResult ret = frm.ShowDialog();
-            var retorno = new Retorno
+
+            using (var frm = new FormNotificacao())
             {
-                Ignorar = ret == DialogResult.Abort,
-                Modificadores = frm.ObterModificadores(),
-                Acao = frm.Acao,
-                Erro = frm.Erro
-            };
-            return retorno;
+
+                frm.CarregarEvento(evento, contexto);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.LstIgnoreList.DataSource = ignoreList;
+                DialogResult ret = frm.ShowDialog();
+                var retorno = new Retorno
+                {
+                    Ignorar = ret == DialogResult.Abort,
+                    Modificadores = frm.ObterModificadores(),
+                    Acao = frm.Acao,
+                    Erro = frm.Erro
+                };
+                return retorno;
+            }
         }
 
         private string ObterModificadores()
         {
-            if (TxtModificadores.Text.IsEmptyOrNull())
+            if (string.IsNullOrWhiteSpace(TxtModificadores.Text))
                 return "{}";
             else
             {
@@ -86,14 +108,6 @@ namespace PluginEventos.ui
                 json.Add("modificadores", JObject.Parse(TxtModificadores.Text));
                 return json.ToString();
             }
-        }
-
-        private void ValidarAbaErroSelecionada()
-        {
-            Tabs.SelectedTabPage = TabErro;
-            TxtMensagemErro.SelectAll();
-            TxtMensagemErro.Focus();
-            MessageBox.Show("Informe a mensagem de erro antes de enviar um erro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void CarregarEvento(string evento, string contexto)
@@ -118,13 +132,8 @@ namespace PluginEventos.ui
 
         private void BtnEnviarErro_Click(object sender, EventArgs e)
         {
-            if (Tabs.SelectedTabPage == TabErro)
-            {
-                Erro = TxtMensagemErro.Text;
-                DialogResult = DialogResult.OK;
-            }
-            else
-                ValidarAbaErroSelecionada();
+            Erro = TxtMensagemErro.Text;
+            DialogResult = DialogResult.OK;
         }
 
         private void TxtEvento_Properties_ButtonClick(object sender, ButtonPressedEventArgs e)
@@ -132,15 +141,9 @@ namespace PluginEventos.ui
 
         private void BtnEnviarErroInterromper_Click(object sender, EventArgs e)
         {
-            if (Tabs.SelectedTabPage == TabErro)
-            {
-                Acao = "abort";
-                Erro = TxtMensagemErro.Text;
-                DialogResult = DialogResult.Abort;
-            }
-            else
-                ValidarAbaErroSelecionada();
-
+            Acao = "abort";
+            Erro = TxtMensagemErro.Text;
+            DialogResult = DialogResult.OK;
         }
         #endregion
     }

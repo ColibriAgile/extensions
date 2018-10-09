@@ -29,7 +29,11 @@
     private void InitializeComponent()
     {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
-            this.label1 = new System.Windows.Forms.Label();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.PnlBotoes = new System.Windows.Forms.Panel();
             this.BtnDesmarcarTodos = new DevExpress.XtraEditors.SimpleButton();
             this.BtnMarcarTodos = new DevExpress.XtraEditors.SimpleButton();
@@ -42,17 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChkMostrarNotificacao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tree)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label1.Size = new System.Drawing.Size(911, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Selecione os eventos que deseja monitorar e clique em Aplicar.";
             // 
             // PnlBotoes
             // 
@@ -127,24 +120,41 @@
             this.ChkMostrarNotificacao.Properties.Caption = "Mostrar notificação";
             this.ChkMostrarNotificacao.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.ChkMostrarNotificacao.Size = new System.Drawing.Size(208, 19);
+            toolTipTitleItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Text = "Mostrar notificação";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Define se o plugin vai disparar uma notificação com o conteúdo do evento a cada e" +
+    "vento assinado.";
+            toolTipTitleItem2.LeftIndent = 6;
+            toolTipTitleItem2.Text = "Por padrão, o plugin SEMPRE grava um arquivo de log com o conteúdo do evento na p" +
+    "asta de log do sistema.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.Items.Add(toolTipSeparatorItem1);
+            superToolTip1.Items.Add(toolTipTitleItem2);
+            this.ChkMostrarNotificacao.SuperTip = superToolTip1;
             this.ChkMostrarNotificacao.TabIndex = 4;
             // 
             // Tree
             // 
+            this.Tree.Appearance.Caption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.Tree.Appearance.Caption.Options.UseFont = true;
             this.Tree.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.Tree.Caption = "Selecione os eventos que deseja monitorar e clique em Aplicar";
             this.Tree.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colValor});
             this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tree.Location = new System.Drawing.Point(0, 31);
+            this.Tree.Location = new System.Drawing.Point(0, 0);
             this.Tree.Name = "Tree";
             this.Tree.OptionsBehavior.ReadOnly = true;
             this.Tree.OptionsFind.AllowIncrementalSearch = true;
             this.Tree.OptionsFind.AlwaysVisible = true;
             this.Tree.OptionsFind.ExpandNodesOnIncrementalSearch = true;
             this.Tree.OptionsFind.FindNullPrompt = "Digite o nome ou parte do nome do evento...";
+            this.Tree.OptionsView.ShowCaption = true;
             this.Tree.OptionsView.ShowCheckBoxes = true;
             this.Tree.OptionsView.ShowFilterPanelMode = DevExpress.XtraTreeList.ShowFilterPanelMode.ShowAlways;
-            this.Tree.Size = new System.Drawing.Size(911, 652);
+            this.Tree.Size = new System.Drawing.Size(911, 683);
             this.Tree.TabIndex = 3;
             this.Tree.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.Tree_AfterCheckNode);
             // 
@@ -164,7 +174,6 @@
             this.ClientSize = new System.Drawing.Size(911, 736);
             this.Controls.Add(this.Tree);
             this.Controls.Add(this.PnlBotoes);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -180,7 +189,6 @@
     }
 
     #endregion
-    private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlBotoes;
         private DevExpress.XtraTreeList.TreeList Tree;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colValor;
