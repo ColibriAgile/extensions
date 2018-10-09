@@ -21,10 +21,10 @@ UsePreviousAppDir=no
 SourceDir=..
 
 [Files]
-Source: "client\*"; DestDir: "{app}\plugins\{#ExtensionName}\"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "leia-me.txt"
-Source: reports\*; DestDir: "{app}\plugins\{#ExtensionName}\reports"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
-Source: templates\*; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
-Source: extras\*; DestDir: "{app}\plugins\{#ExtensionName}"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
+Source: "client\*"; DestDir: "{app}\plugins\{#ExtensionName}\"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly; Excludes: "*.xml,*.pdb,\ru\*.dll,\de\*.dll,\es\*.dll,\ja\*.dll"
+Source: "reports\*"; DestDir: "{app}\plugins\{#ExtensionName}\reports"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
+Source: "templates\*"; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
+Source: "extras\*"; DestDir: "{app}\plugins\{#ExtensionName}"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
 
 [InstallDelete]
 Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}\templates"
