@@ -4,6 +4,7 @@
 #- Impressão dos combos
 #---------------------------------
 {%- macro imprimir_combo(combos) %}
+<zebraini>
 {%- for combo, itens in combos|groupby('descricao_do_combo') %}
 {%- set vl = itens|sum('valor')|valor %}
 <t1:b><div5:3>1 {{combo}}</div><div2><dir>{{vl}}</div><dir>{{vl}}</t1> </b>>
@@ -17,6 +18,7 @@
   {{item.descricao_extra}} {% endif %}
 {%- endfor %}
 {%- endfor %}
+<zebrafim>
 {%- endmacro %}
 
 {% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div with context-%}
@@ -55,24 +57,22 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {%- for item in itens if item %}
 {%- set preco, qtd = item.preco, item.quantidade %}
 {%- set indicadorNaoCobraServico = '*' if not item.cobra_servico else '' %}
+<zebraini>
 {%- if item.combo_id > 0 %}
 {%- if ns.combo_indice != item.indice and item.indice not in ns.combos_indices -%}
 {% set ns.combo_indice = item.indice -%}
 {% do ns.combos_indices.append(ns.combo_indice) -%}
 {%- set combos = venda.itens|consolidar(valido=True)|selectattr('indice', 'equalto', ns.combo_indice)|list %}
 <dec5/>
-<zebraini>
 {{-imprimir_combo(combos)}}
-<zebrafim>
 {%- endif %}
 {%- else %}
-<zebraini>
 <div5:3>{{qtd|quantidade}} {{item.descricao}}</div>{{-indicadorNaoCobraServico}}<div2><dir>{{preco|valor}}</div><dir>{{item.valor|valor}}
 {%- if item.descricao_extra %}
 {{item.descricao_extra}}
+{%- endif %}
+{%- endif %}
 <zebrafim>
-{%- endif %}
-{%- endif %}
 {%- endfor %}
 </zebra>
 #---------------------------------
