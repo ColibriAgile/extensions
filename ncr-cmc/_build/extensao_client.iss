@@ -65,7 +65,7 @@ var
 begin
 
   for i:= 0 to ParamCount - 1 do
-     if ParamStr(i) = '/SERIAL' then
+     if ParamStr(i) = '-serial' then
      begin
        if Result <> '' then
           Result := Result + ' ';
@@ -73,7 +73,7 @@ begin
        Result := Result + '/siteid 5899' + ParamStr(i+1);
        break;
      end
-     else if ParamStr(i) = '/SERVIDOR' then
+     else if ParamStr(i) = '-master_host' then
      begin
        if Result <> '' then
           Result := Result + ' ';
