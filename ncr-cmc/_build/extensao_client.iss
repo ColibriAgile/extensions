@@ -18,7 +18,7 @@ UninstallDisplayName=NCR Command Center
 DefaultDirName={code:PastaNCRColibri|c:\NCR Colibri}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
-OutputDir=_build\pacote
+OutputDir=pacote
 OutputBaseFilename={#ExtensionName}_{#AppVersion}
 Compression=lzma
 SolidCompression=yes
@@ -33,15 +33,6 @@ Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Files]
 Source: "..\bin\*.*"; DestDir: "{tmp}"; Flags: ignoreversion;
-
-[Run]
-; Para passar os parâmetros de banco para o DbUpdate deve ser passado no innosetup assim:
-; /DATABASE="-provedor provedor -servidor servidor -banco banco -usuario usuario -senha senha"
-Filename: "{tmp}\CMCInst.exe"; Parameters: "/uninstall"; WorkingDir: "{tmp}"; Flags: runhidden
-Filename: "{tmp}\CMCInst.exe"; Parameters: ObterParametros; WorkingDir: "{tmp}"; Flags: runhidden
-
-[InstallDelete]
-Type: dirifempty; Name: "C:\bootdrv\aloha\rdf\images"
 
 [Code]
 // Caminho config: {pf32}\NCR\CMC
@@ -59,14 +50,14 @@ Type: dirifempty; Name: "C:\bootdrv\aloha\rdf\images"
 // cmcinst /siteid 5899{SERIAL}
 
 {------------------------------------------------------------------------------}
-function ObterParametros(): String;
+function ObterParametros(s:string): String;
 var
   i: Integer;
 begin
-
   for i:= 0 to ParamCount - 1 do
      if ParamStr(i) = '-serial' then
      begin
+       Log('Encontrado parâmetro serial com valor ' + ParamStr(i+1));
        if Result <> '' then
           Result := Result + ' ';
   
@@ -75,10 +66,22 @@ begin
      end
      else if ParamStr(i) = '-master_host' then
      begin
+       Log('Encontrado parâmetro serial com valor ' + ParamStr(i+1));
        if Result <> '' then
           Result := Result + ' ';
   
-       Result := Result + '/ip' + ParamStr(i+1);
+       Result := Result + '/ip ' + ParamStr(i+1);
        break;
      end;
+   Log('Parametros: ' + Result);
 end;
+
+[Run]
+; Para passar os parâmetros de banco para o DbUpdate deve ser passado no innosetup assim:
+; /DATABASE="-provedor provedor -servidor servidor -banco banco -usuario usuario -senha senha"
+Filename: "{tmp}\CMCInst.exe"; Parameters: "/uninstall"; WorkingDir: "{tmp}"; Flags: runhidden
+Filename: "{tmp}\CMCInst.exe"; Parameters: "{code:ObterParametros}";WorkingDir: "{tmp}"; Flags: runhidden
+
+[InstallDelete]
+Type: dirifempty; Name: "C:\bootdrv\aloha\rdf\images"
+
