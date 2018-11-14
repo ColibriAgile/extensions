@@ -54,26 +54,34 @@ function ObterParametros(s:string): String;
 var
   i: Integer;
 begin
+  Result := ExpandConstant('/InstallPath "{app}\cmc"');
+
   for i:= 0 to ParamCount - 1 do
      if ParamStr(i) = '-serial' then
      begin
        Log('Encontrado parâmetro serial com valor ' + ParamStr(i+1));
-       if Result <> '' then
-          Result := Result + ' ';
-  
-       Result := Result + '/siteid 5899' + ParamStr(i+1);
+       Result := Result + ' /siteid 5899' + ParamStr(i+1);
        break;
      end
      else if ParamStr(i) = '-master_host' then
      begin
        Log('Encontrado parâmetro serial com valor ' + ParamStr(i+1));
-       if Result <> '' then
-          Result := Result + ' ';
-  
-       Result := Result + '/ip ' + ParamStr(i+1);
+       Result := Result + ' /ip ' + ParamStr(i+1);
        break;
      end;
    Log('Parametros: ' + Result);
+end;
+
+procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  if CurStep = ssDone then
+  begin
+    // Dessa forma apago só se estiverem vazios, o Deltree não serve
+    if RemoveDir('C:\bootdrv\aloha\rdf\images') then
+      if RemoveDir('C:\bootdrv\aloha\rdf') then
+        if RemoveDir('C:\bootdrv\aloha') then
+          RemoveDir('C:\bootdrv');
+  end;
 end;
 
 [Run]
@@ -81,7 +89,4 @@ end;
 ; /DATABASE="-provedor provedor -servidor servidor -banco banco -usuario usuario -senha senha"
 Filename: "{tmp}\CMCInst.exe"; Parameters: "/uninstall"; WorkingDir: "{tmp}"; Flags: runhidden
 Filename: "{tmp}\CMCInst.exe"; Parameters: "{code:ObterParametros}";WorkingDir: "{tmp}"; Flags: runhidden
-
-[InstallDelete]
-Type: dirifempty; Name: "C:\bootdrv\aloha\rdf\images"
 
