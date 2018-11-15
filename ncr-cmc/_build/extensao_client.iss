@@ -85,8 +85,6 @@ begin
 end;
 
 [Run]
-; Para passar os parâmetros de banco para o DbUpdate deve ser passado no innosetup assim:
-; /DATABASE="-provedor provedor -servidor servidor -banco banco -usuario usuario -senha senha"
 Filename: "{tmp}\CMCInst.exe"; Parameters: "/uninstall"; WorkingDir: "{tmp}"; Flags: runhidden
 Filename: "{tmp}\CMCInst.exe"; Parameters: "{code:ObterParametros}";WorkingDir: "{tmp}"; Flags: runhidden
 
