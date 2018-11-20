@@ -1,0 +1,21 @@
+{
+  "versao": "1.0.0.0", 
+  "arquivos": [
+    {
+      "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART {servidor_master} {serial}", 
+      "params_serv": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART {serial}", 
+      "destino": "shared", 
+      "_pattern_nome": "ncrlab-CMC_.*\\.exe\\b"
+    } 
+  ], 
+  "dependencias": {
+     "Dotnet": "*"
+   },
+  "nome": "ncrlab-CMC",
+  "nome_exibicao": "NCR Command Center",
+  "atualizacao_obrigatoria": true,
+  "produto": "master",
+  "empresa": "NCR Lab",
+  "sistema": true,
+  "sigla_empresa": "ncrlab"
+}
