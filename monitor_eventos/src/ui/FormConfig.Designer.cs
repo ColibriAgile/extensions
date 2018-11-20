@@ -45,7 +45,7 @@
             this.ItemFechar = new DevExpress.XtraLayout.LayoutControlItem();
             this.itemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
             this.itemMarcarTodos = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemMostrarNotif = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.styleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemEspaco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemMarcarTodos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemMostrarNotif)).BeginInit();
             this.SuspendLayout();
             // 
             // styleController
@@ -170,8 +170,8 @@
             this.Tree.OptionsFind.AlwaysVisible = true;
             this.Tree.OptionsFind.ExpandNodesOnIncrementalSearch = true;
             this.Tree.OptionsFind.FindNullPrompt = "Digite o nome ou parte do nome do evento...";
+            this.Tree.OptionsView.CheckBoxStyle = DevExpress.XtraTreeList.DefaultNodeCheckBoxStyle.Check;
             this.Tree.OptionsView.ShowCaption = true;
-            this.Tree.OptionsView.ShowCheckBoxes = true;
             this.Tree.OptionsView.ShowColumns = false;
             this.Tree.OptionsView.ShowFilterPanelMode = DevExpress.XtraTreeList.ShowFilterPanelMode.Never;
             this.Tree.OptionsView.ShowIndicator = false;
@@ -215,7 +215,7 @@
             this.LayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayoutControl.Location = new System.Drawing.Point(0, 0);
             this.LayoutControl.Name = "LayoutControl";
-            this.LayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1119, 128, 650, 400);
+            this.LayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1119, 128, 842, 727);
             this.LayoutControl.Root = this.LayoutControlGroup;
             this.LayoutControl.Size = new System.Drawing.Size(675, 644);
             this.LayoutControl.StyleController = this.styleController;
@@ -278,7 +278,7 @@
             this.ChkMostrarNotificacao.Location = new System.Drawing.Point(203, 609);
             this.ChkMostrarNotificacao.Name = "ChkMostrarNotificacao";
             this.ChkMostrarNotificacao.Properties.Caption = "Mostrar notificação";
-            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(122, 20);
+            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(122, 19);
             this.ChkMostrarNotificacao.StyleController = this.LayoutControl;
             this.ChkMostrarNotificacao.TabIndex = 5;
             // 
@@ -293,7 +293,7 @@
             this.ItemFechar,
             this.itemEspaco,
             this.itemMarcarTodos,
-            this.layoutControlItem1});
+            this.ItemMostrarNotif});
             this.LayoutControlGroup.Name = "Root";
             this.LayoutControlGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.LayoutControlGroup.Size = new System.Drawing.Size(675, 644);
@@ -381,20 +381,20 @@
             this.itemMarcarTodos.TextSize = new System.Drawing.Size(0, 0);
             this.itemMarcarTodos.TextVisible = false;
             // 
-            // layoutControlItem1
+            // ItemMostrarNotif
             // 
-            this.layoutControlItem1.Control = this.ChkMostrarNotificacao;
-            this.layoutControlItem1.ControlAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.layoutControlItem1.FillControlToClientArea = false;
-            this.layoutControlItem1.Location = new System.Drawing.Point(196, 594);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(136, 50);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(136, 50);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(136, 50);
-            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
+            this.ItemMostrarNotif.Control = this.ChkMostrarNotificacao;
+            this.ItemMostrarNotif.ControlAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ItemMostrarNotif.FillControlToClientArea = false;
+            this.ItemMostrarNotif.Location = new System.Drawing.Point(196, 594);
+            this.ItemMostrarNotif.MaxSize = new System.Drawing.Size(136, 50);
+            this.ItemMostrarNotif.MinSize = new System.Drawing.Size(136, 50);
+            this.ItemMostrarNotif.Name = "ItemMostrarNotif";
+            this.ItemMostrarNotif.Size = new System.Drawing.Size(136, 50);
+            this.ItemMostrarNotif.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.ItemMostrarNotif.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.ItemMostrarNotif.TextSize = new System.Drawing.Size(0, 0);
+            this.ItemMostrarNotif.TextVisible = false;
             // 
             // FormConfig
             // 
@@ -423,7 +423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemEspaco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemMarcarTodos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemMostrarNotif)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -445,6 +445,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem itemEspaco;
         private DevExpress.XtraLayout.LayoutControlItem itemMarcarTodos;
         private DevExpress.XtraEditors.CheckEdit ChkMostrarNotificacao;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ItemMostrarNotif;
     }
 }
