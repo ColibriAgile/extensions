@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using DevExpress.XtraEditors.Controls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
@@ -12,20 +11,24 @@ using NLog.Targets;
 
 namespace PluginEventos.ui
 {
-    public partial class FormNotificacao: Form
-    {        
+    public partial class FormNotificacao : DevExpress.XtraEditors.XtraForm
+    {
         public struct Retorno
         {
             #region Propriedades
             public string Acao { get; set; }
+
             public string Erro { get; set; }
+
             public bool Ignorar { get; set; }
+
             public string Modificadores { get; set; }
             #endregion
         }
 
         #region Propriedades
         public string Acao { get; set; }
+
         public string Erro { get; set; }
         #endregion
 
@@ -71,10 +74,9 @@ namespace PluginEventos.ui
 
             using (var frm = new FormNotificacao())
             {
-
                 frm.CarregarEvento(evento, contexto);
                 frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.LstIgnoreList.DataSource = ignoreList;
+                frm.LstIgnorados.DataSource = ignoreList;
                 DialogResult ret = frm.ShowDialog();
                 var retorno = new Retorno
                 {
@@ -110,27 +112,25 @@ namespace PluginEventos.ui
             TxtContexto.Text = ctx.ToString(Formatting.Indented);
             TxtContexto.ReadOnly = true;
             TxtModificadores.ReadOnly = false;
-            TxtEvento.Text = evento;
-
+            EdtEvento.Text = evento;
         }
+
         private void BtnCopiar_Click(object sender, EventArgs e)
             => Clipboard.SetText(TxtContexto.Text);
 
-        private void BtnEnviarErro_Click(object sender, EventArgs e)
+        private void BtnEnviar_Click(object sender, EventArgs e)
         {
-            Erro = TxtMensagemErro.Text;
+            Erro = MemoErro.Text;
             DialogResult = DialogResult.OK;
         }
 
-        private void TxtEvento_Properties_ButtonClick(object sender, ButtonPressedEventArgs e)
-            => Clipboard.SetText(TxtEvento.Text);
-
-        private void BtnEnviarErroInterromper_Click(object sender, EventArgs e)
+        private void BtnInterromper_Click(object sender, EventArgs e)
         {
             Acao = "abort";
-            Erro = TxtMensagemErro.Text;
+            Erro = MemoErro.Text;
             DialogResult = DialogResult.OK;
         }
+
         #endregion
 
         #region Private static fields
@@ -138,8 +138,6 @@ namespace PluginEventos.ui
         private static LoggingConfiguration _logConfig;
         private static Target _target;
         private static Logger _logger;
-
         #endregion
-
     }
 }
