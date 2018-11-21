@@ -28,6 +28,7 @@ namespace PluginEventos
             string dados = $"{{\"mensagem\":\"{mensagem}\", \"tipo\":\"{tipo.ToString()}\", \"titulo\":\"{titulo}\", \"alinhamento\": \"{alinhamento}\", \"id\": \"{id}\"}}";
             return MostrarMensagem(dados);
         }
+
         public static int MostrarMensagem(string dados) 
             => ((Func<string, int>) dictFuncoes["MostrarMensagem"])(dados);
 

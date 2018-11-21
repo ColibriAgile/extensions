@@ -94,6 +94,7 @@
             this.ItemContinuarIgnorar = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemContinuar = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StyleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
             this.LayoutControl.SuspendLayout();
@@ -230,11 +231,12 @@
             this.Tabs.AppearancePage.PageClient.Options.UseFont = true;
             this.Tabs.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.Tabs.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.Tabs.Location = new System.Drawing.Point(2, 32);
+            this.Tabs.Location = new System.Drawing.Point(0, 30);
             this.Tabs.Margin = new System.Windows.Forms.Padding(0);
             this.Tabs.Name = "Tabs";
+            this.Tabs.PaintStyleName = "Skin";
             this.Tabs.SelectedTabPage = this.TabContexto;
-            this.Tabs.Size = new System.Drawing.Size(691, 525);
+            this.Tabs.Size = new System.Drawing.Size(695, 529);
             this.Tabs.TabIndex = 4;
             this.Tabs.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabContexto,
@@ -256,7 +258,7 @@
             this.TabContexto.Appearance.PageClient.Options.UseFont = true;
             this.TabContexto.Controls.Add(this.TxtContexto);
             this.TabContexto.Name = "TabContexto";
-            this.TabContexto.Size = new System.Drawing.Size(689, 492);
+            this.TabContexto.Size = new System.Drawing.Size(693, 496);
             superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             toolTipTitleItem4.Text = "Contexto";
@@ -281,7 +283,7 @@
             this.TxtContexto.Name = "TxtContexto";
             this.TxtContexto.ReadOnly = true;
             this.TxtContexto.ShowVRuler = false;
-            this.TxtContexto.Size = new System.Drawing.Size(689, 492);
+            this.TxtContexto.Size = new System.Drawing.Size(693, 496);
             this.TxtContexto.TabIndex = 0;
             this.TxtContexto.Text = resources.GetString("TxtContexto.Text");
             this.TxtContexto.VRulerRow = 120;
@@ -290,7 +292,7 @@
             // 
             this.TabModificadores.Controls.Add(this.TxtModificadores);
             this.TabModificadores.Name = "TabModificadores";
-            this.TabModificadores.Size = new System.Drawing.Size(689, 492);
+            this.TabModificadores.Size = new System.Drawing.Size(693, 496);
             toolTipTitleItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             toolTipTitleItem6.Text = "Modificadores";
             toolTipItem4.LeftIndent = 6;
@@ -314,7 +316,7 @@
             this.TxtModificadores.Name = "TxtModificadores";
             this.TxtModificadores.ReadOnly = true;
             this.TxtModificadores.ShowVRuler = false;
-            this.TxtModificadores.Size = new System.Drawing.Size(689, 492);
+            this.TxtModificadores.Size = new System.Drawing.Size(693, 496);
             this.TxtModificadores.TabIndex = 1;
             this.TxtModificadores.Text = resources.GetString("TxtModificadores.Text");
             this.TxtModificadores.VRulerRow = 120;
@@ -324,7 +326,7 @@
             this.TabErro.Controls.Add(this.PnlErro);
             this.TabErro.Controls.Add(this.MemoErro);
             this.TabErro.Name = "TabErro";
-            this.TabErro.Size = new System.Drawing.Size(689, 492);
+            this.TabErro.Size = new System.Drawing.Size(693, 496);
             toolTipTitleItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             toolTipTitleItem11.Text = "Atribuir erro";
             toolTipItem7.LeftIndent = 6;
@@ -340,18 +342,18 @@
             this.PnlErro.Controls.Add(this.PnlEnviar);
             this.PnlErro.Controls.Add(this.PnlInterromper);
             this.PnlErro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlErro.Location = new System.Drawing.Point(0, 447);
+            this.PnlErro.Location = new System.Drawing.Point(0, 446);
             this.PnlErro.Margin = new System.Windows.Forms.Padding(0);
             this.PnlErro.Name = "PnlErro";
-            this.PnlErro.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.PnlErro.Size = new System.Drawing.Size(689, 45);
+            this.PnlErro.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.PnlErro.Size = new System.Drawing.Size(693, 50);
             this.PnlErro.TabIndex = 4;
             // 
             // PnlEnviar
             // 
             this.PnlEnviar.Controls.Add(this.BtnEnviar);
             this.PnlEnviar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlEnviar.Location = new System.Drawing.Point(449, 5);
+            this.PnlEnviar.Location = new System.Drawing.Point(453, 5);
             this.PnlEnviar.Name = "PnlEnviar";
             this.PnlEnviar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.PnlEnviar.Size = new System.Drawing.Size(90, 40);
@@ -390,7 +392,7 @@
             // 
             this.PnlInterromper.Controls.Add(this.BtnInterromper);
             this.PnlInterromper.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlInterromper.Location = new System.Drawing.Point(539, 5);
+            this.PnlInterromper.Location = new System.Drawing.Point(543, 5);
             this.PnlInterromper.Name = "PnlInterromper";
             this.PnlInterromper.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.PnlInterromper.Size = new System.Drawing.Size(150, 40);
@@ -435,7 +437,7 @@
             this.MemoErro.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.MemoErro.Properties.Appearance.Options.UseFont = true;
             this.MemoErro.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.MemoErro.Size = new System.Drawing.Size(689, 492);
+            this.MemoErro.Size = new System.Drawing.Size(693, 496);
             this.MemoErro.TabIndex = 3;
             // 
             // TabIgnorados
@@ -443,7 +445,7 @@
             this.TabIgnorados.Controls.Add(this.LstIgnorados);
             this.TabIgnorados.Name = "TabIgnorados";
             this.TabIgnorados.Padding = new System.Windows.Forms.Padding(5);
-            this.TabIgnorados.Size = new System.Drawing.Size(689, 492);
+            this.TabIgnorados.Size = new System.Drawing.Size(693, 496);
             toolTipTitleItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             toolTipTitleItem12.Text = "Ignore list";
             toolTipItem8.LeftIndent = 6;
@@ -465,7 +467,7 @@
             this.LstIgnorados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LstIgnorados.Location = new System.Drawing.Point(5, 5);
             this.LstIgnorados.Name = "LstIgnorados";
-            this.LstIgnorados.Size = new System.Drawing.Size(679, 482);
+            this.LstIgnorados.Size = new System.Drawing.Size(683, 486);
             this.LstIgnorados.TabIndex = 0;
             // 
             // EdtEvento
@@ -517,6 +519,7 @@
             this.ItemTabs.Location = new System.Drawing.Point(0, 30);
             this.ItemTabs.MinSize = new System.Drawing.Size(104, 24);
             this.ItemTabs.Name = "ItemTabs";
+            this.ItemTabs.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.ItemTabs.Size = new System.Drawing.Size(695, 529);
             this.ItemTabs.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.ItemTabs.TextSize = new System.Drawing.Size(0, 0);
@@ -569,6 +572,10 @@
             this.ItemEspaco.Name = "ItemEspaco";
             this.ItemEspaco.Size = new System.Drawing.Size(379, 50);
             this.ItemEspaco.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // defaultLookAndFeel
+            // 
+            this.defaultLookAndFeel.LookAndFeel.SkinName = "The Bezier";
             // 
             // FormNotificacao
             // 
@@ -636,5 +643,6 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemContinuarIgnorar;
         private DevExpress.XtraLayout.LayoutControlItem ItemContinuar;
         private DevExpress.XtraLayout.EmptySpaceItem ItemEspaco;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
     }
 }

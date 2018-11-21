@@ -46,6 +46,7 @@
             this.itemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
             this.itemMarcarTodos = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemMostrarNotif = new DevExpress.XtraLayout.LayoutControlItem();
+            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StyleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             // StyleController
             // 
-            this.StyleController.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.StyleController.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.StyleController.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.StyleController.Appearance.Options.UseFont = true;
             this.StyleController.Appearance.Options.UseForeColor = true;
@@ -83,7 +84,7 @@
             // 
             // Tree
             // 
-            this.Tree.Appearance.BandPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.BandPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.BandPanel.Options.UseFont = true;
             this.Tree.Appearance.Caption.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Tree.Appearance.Caption.ForeColor = System.Drawing.Color.Black;
@@ -91,52 +92,53 @@
             this.Tree.Appearance.Caption.Options.UseForeColor = true;
             this.Tree.Appearance.Caption.Options.UseTextOptions = true;
             this.Tree.Appearance.Caption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.Tree.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.CustomizationFormHint.Options.UseFont = true;
-            this.Tree.Appearance.Empty.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.Empty.Options.UseFont = true;
-            this.Tree.Appearance.EvenRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.EvenRow.Options.UseFont = true;
             this.Tree.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.FilterPanel.Options.UseFont = true;
-            this.Tree.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.FixedLine.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.FixedLine.Options.UseFont = true;
-            this.Tree.Appearance.FocusedCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.FocusedCell.Options.UseFont = true;
-            this.Tree.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.FocusedRow.Options.UseFont = true;
-            this.Tree.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.FooterPanel.Options.UseFont = true;
-            this.Tree.Appearance.GroupButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.GroupButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.GroupButton.Options.UseFont = true;
-            this.Tree.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.GroupFooter.Options.UseFont = true;
-            this.Tree.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.HeaderPanel.Options.UseFont = true;
-            this.Tree.Appearance.HeaderPanelBackground.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.HeaderPanelBackground.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.HeaderPanelBackground.Options.UseFont = true;
-            this.Tree.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.HideSelectionRow.Options.UseFont = true;
-            this.Tree.Appearance.HorzLine.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.HorzLine.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.HorzLine.Options.UseFont = true;
-            this.Tree.Appearance.OddRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.OddRow.Options.UseFont = true;
-            this.Tree.Appearance.Preview.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.Preview.Options.UseFont = true;
-            this.Tree.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Tree.Appearance.Row.Options.UseFont = true;
-            this.Tree.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.SelectedRow.Options.UseFont = true;
-            this.Tree.Appearance.Separator.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.Separator.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.Separator.Options.UseFont = true;
-            this.Tree.Appearance.TreeLine.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.TreeLine.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.TreeLine.Options.UseFont = true;
-            this.Tree.Appearance.VertLine.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tree.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tree.Appearance.VertLine.Options.UseFont = true;
             this.Tree.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.Tree.Caption = " Selecione os eventos que deseja monitorar e clique em Aplicar";
             this.Tree.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colValor});
+            this.Tree.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Tree.Location = new System.Drawing.Point(0, 0);
             this.Tree.MinWidth = 17;
             this.Tree.Name = "Tree";
@@ -184,22 +186,22 @@
             // BtnFechar
             // 
             this.BtnFechar.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.BtnFechar.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFechar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnFechar.Appearance.Options.UseBackColor = true;
             this.BtnFechar.Appearance.Options.UseFont = true;
-            this.BtnFechar.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFechar.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnFechar.AppearanceDisabled.Options.UseFont = true;
-            this.BtnFechar.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFechar.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnFechar.AppearanceHovered.Options.UseFont = true;
-            this.BtnFechar.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFechar.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnFechar.AppearancePressed.Options.UseFont = true;
             this.BtnFechar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnFechar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnFechar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnFechar.Location = new System.Drawing.Point(600, 603);
+            this.BtnFechar.Location = new System.Drawing.Point(600, 601);
             this.BtnFechar.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(78, 36);
+            this.BtnFechar.Size = new System.Drawing.Size(80, 40);
             this.BtnFechar.StyleController = this.LayoutControl;
             this.BtnFechar.TabIndex = 4;
             this.BtnFechar.Text = "Fechar";
@@ -224,15 +226,15 @@
             // BtnMarcarTodos
             // 
             this.BtnMarcarTodos.Appearance.BackColor = System.Drawing.Color.SkyBlue;
-            this.BtnMarcarTodos.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.BtnMarcarTodos.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnMarcarTodos.Appearance.Options.UseBackColor = true;
             this.BtnMarcarTodos.Appearance.Options.UseFont = true;
             this.BtnMarcarTodos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnMarcarTodos.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnMarcarTodos.Location = new System.Drawing.Point(7, 603);
+            this.BtnMarcarTodos.Location = new System.Drawing.Point(5, 601);
             this.BtnMarcarTodos.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMarcarTodos.Name = "BtnMarcarTodos";
-            this.BtnMarcarTodos.Size = new System.Drawing.Size(79, 36);
+            this.BtnMarcarTodos.Size = new System.Drawing.Size(81, 40);
             this.BtnMarcarTodos.StyleController = this.LayoutControl;
             this.BtnMarcarTodos.TabIndex = 1;
             this.BtnMarcarTodos.Text = "Marcar todos";
@@ -241,15 +243,15 @@
             // BtnDesmarcarTodos
             // 
             this.BtnDesmarcarTodos.Appearance.BackColor = System.Drawing.Color.SkyBlue;
-            this.BtnDesmarcarTodos.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.BtnDesmarcarTodos.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnDesmarcarTodos.Appearance.Options.UseBackColor = true;
             this.BtnDesmarcarTodos.Appearance.Options.UseFont = true;
             this.BtnDesmarcarTodos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnDesmarcarTodos.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnDesmarcarTodos.Location = new System.Drawing.Point(93, 603);
+            this.BtnDesmarcarTodos.Location = new System.Drawing.Point(91, 601);
             this.BtnDesmarcarTodos.Margin = new System.Windows.Forms.Padding(0);
             this.BtnDesmarcarTodos.Name = "BtnDesmarcarTodos";
-            this.BtnDesmarcarTodos.Size = new System.Drawing.Size(103, 36);
+            this.BtnDesmarcarTodos.Size = new System.Drawing.Size(105, 40);
             this.BtnDesmarcarTodos.StyleController = this.LayoutControl;
             this.BtnDesmarcarTodos.TabIndex = 0;
             this.BtnDesmarcarTodos.Text = "Desmarcar todos";
@@ -258,16 +260,16 @@
             // BtnAplicar
             // 
             this.BtnAplicar.Appearance.BackColor = System.Drawing.Color.YellowGreen;
-            this.BtnAplicar.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.BtnAplicar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnAplicar.Appearance.Options.UseBackColor = true;
             this.BtnAplicar.Appearance.Options.UseFont = true;
             this.BtnAplicar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnAplicar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAplicar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnAplicar.Location = new System.Drawing.Point(510, 603);
-            this.BtnAplicar.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.BtnAplicar.Location = new System.Drawing.Point(510, 601);
+            this.BtnAplicar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnAplicar.Name = "BtnAplicar";
-            this.BtnAplicar.Size = new System.Drawing.Size(83, 36);
+            this.BtnAplicar.Size = new System.Drawing.Size(85, 40);
             this.BtnAplicar.StyleController = this.LayoutControl;
             this.BtnAplicar.TabIndex = 3;
             this.BtnAplicar.Text = "Aplicar";
@@ -275,10 +277,10 @@
             // 
             // ChkMostrarNotificacao
             // 
-            this.ChkMostrarNotificacao.Location = new System.Drawing.Point(203, 611);
+            this.ChkMostrarNotificacao.Location = new System.Drawing.Point(206, 611);
             this.ChkMostrarNotificacao.Name = "ChkMostrarNotificacao";
             this.ChkMostrarNotificacao.Properties.Caption = "Mostrar notificação";
-            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(122, 20);
+            this.ChkMostrarNotificacao.Size = new System.Drawing.Size(126, 20);
             this.ChkMostrarNotificacao.StyleController = this.LayoutControl;
             this.ChkMostrarNotificacao.TabIndex = 5;
             // 
@@ -322,7 +324,7 @@
             this.ItemDesmarcarTodos.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.ItemDesmarcarTodos.Size = new System.Drawing.Size(110, 50);
             this.ItemDesmarcarTodos.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.ItemDesmarcarTodos.Spacing = new DevExpress.XtraLayout.Utils.Padding(7, 0, 7, 7);
+            this.ItemDesmarcarTodos.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 0, 5, 5);
             this.ItemDesmarcarTodos.TextSize = new System.Drawing.Size(0, 0);
             this.ItemDesmarcarTodos.TextVisible = false;
             // 
@@ -337,7 +339,7 @@
             this.ItemAplicar.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.ItemAplicar.Size = new System.Drawing.Size(90, 50);
             this.ItemAplicar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.ItemAplicar.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 7, 7, 7);
+            this.ItemAplicar.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 5, 5, 5);
             this.ItemAplicar.TextSize = new System.Drawing.Size(0, 0);
             this.ItemAplicar.TextVisible = false;
             // 
@@ -352,7 +354,7 @@
             this.ItemFechar.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.ItemFechar.Size = new System.Drawing.Size(85, 50);
             this.ItemFechar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.ItemFechar.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 7, 7, 7);
+            this.ItemFechar.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 5, 5, 5);
             this.ItemFechar.TextSize = new System.Drawing.Size(0, 0);
             this.ItemFechar.TextVisible = false;
             // 
@@ -377,7 +379,7 @@
             this.itemMarcarTodos.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.itemMarcarTodos.Size = new System.Drawing.Size(86, 50);
             this.itemMarcarTodos.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.itemMarcarTodos.Spacing = new DevExpress.XtraLayout.Utils.Padding(7, 0, 7, 7);
+            this.itemMarcarTodos.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 0, 5, 5);
             this.itemMarcarTodos.TextSize = new System.Drawing.Size(0, 0);
             this.itemMarcarTodos.TextVisible = false;
             // 
@@ -390,20 +392,24 @@
             this.ItemMostrarNotif.MaxSize = new System.Drawing.Size(136, 50);
             this.ItemMostrarNotif.MinSize = new System.Drawing.Size(136, 50);
             this.ItemMostrarNotif.Name = "ItemMostrarNotif";
+            this.ItemMostrarNotif.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 0, 0, 0);
             this.ItemMostrarNotif.Size = new System.Drawing.Size(136, 50);
             this.ItemMostrarNotif.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.ItemMostrarNotif.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.ItemMostrarNotif.TextSize = new System.Drawing.Size(0, 0);
             this.ItemMostrarNotif.TextVisible = false;
+            // 
+            // defaultLookAndFeel
+            // 
+            this.defaultLookAndFeel.LookAndFeel.SkinName = "The Bezier";
             // 
             // FormConfig
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 646);
             this.Controls.Add(this.LayoutControl);
-            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -446,5 +452,6 @@
         private DevExpress.XtraLayout.LayoutControlItem itemMarcarTodos;
         private DevExpress.XtraEditors.CheckEdit ChkMostrarNotificacao;
         private DevExpress.XtraLayout.LayoutControlItem ItemMostrarNotif;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
     }
 }
