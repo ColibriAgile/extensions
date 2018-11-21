@@ -65,6 +65,7 @@ namespace PluginEventos.ui
                 var json = (JObject) JToken.ReadFrom(reader)["eventos"];
                 var item = (JProperty) json.First;
 
+                Tree.ClearNodes();
                 while (!(item is null))
                 {
                     TreeListNode node = Tree.Nodes.Add(item.Name);
