@@ -70,8 +70,7 @@ namespace PluginEventos
                 frmConfig.ShowDialog();
             }
         }
-
-
+        
         public static string Notificar(string sEvento, string sContexto)
         {
             if (!_modoServer)
