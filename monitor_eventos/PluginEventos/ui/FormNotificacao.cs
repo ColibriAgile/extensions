@@ -11,7 +11,7 @@ using NLog.Targets;
 
 namespace PluginEventos.ui
 {
-    public partial class FormNotificacao : DevExpress.XtraEditors.XtraForm
+    public partial class FormNotificacao: DevExpress.XtraEditors.XtraForm
     {
         public struct Retorno
         {
