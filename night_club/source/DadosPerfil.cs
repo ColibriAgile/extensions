@@ -149,7 +149,6 @@ namespace PluginNightClub
     }
     public void IncrementarCheckin(int perfil)
     {
-      bool ret = true;
       _conexao.Open();
 
       try
