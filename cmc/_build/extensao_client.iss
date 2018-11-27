@@ -63,7 +63,7 @@ begin
        Result := Result + ' /siteid 5899' + ParamStr(i+1);
        break;
      end
-     else if ParamStr(i) = '-master_host' then
+     else if ParamStr(i) = '-masterhost' then
      begin
        Log('Encontrado parâmetro serial com valor ' + ParamStr(i+1));
        Result := Result + ' /ip ' + ParamStr(i+1);
