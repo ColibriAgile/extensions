@@ -10,6 +10,8 @@
   ], 
   "dependencias": {
      "Dotnet": "*",
+     "Master" : "2.6.*",
+     "Launcher": "2.4.*",
      "ColibriAgent": "1.1.*"
    },
   "nome": "ncrlab-CMC",
