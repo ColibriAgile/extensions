@@ -9,7 +9,8 @@
     } 
   ], 
   "dependencias": {
-     "Dotnet": "*"
+     "Dotnet": "*",
+     "ColibriAgent": "1.1.*"
    },
   "nome": "ncrlab-CMC",
   "nome_exibicao": "NCR Command Center",
