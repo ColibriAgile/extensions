@@ -48,6 +48,8 @@ Source: "..\bin\*.*"; DestDir: "{tmp}"; Flags: ignoreversion;
 // cmcinst /ip NOMEOUIPMASTER
 // Para instalar no servidor
 // cmcinst /siteid 5899{SERIAL}
+procedure ExitProcess(exitCode:integer);
+  external 'ExitProcess@kernel32.dll stdcall';
 
 {------------------------------------------------------------------------------}
 function ObterParametros(s:string): String;
@@ -73,8 +75,32 @@ begin
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
+var
+  ResultCode: integer;
 begin
-  if CurStep = ssDone then
+  if CurStep = ssPostInstall then
+  begin
+    Exec(ExpandConstant('{tmp}\CMCInst.exe'), '/uninstall', ExpandConstant('{tmp}'), 
+                                          SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    if ResultCode = 0 then
+      Log('CMC desinstalado com sucesso')
+    else
+    begin
+      Log(Format('Falhou a desinstalação do CMC abterior o erro %d.', [ResultCode]));
+      Log('Isso pode não ser um problema se não estava instalado.');
+    end;
+
+    Exec(ExpandConstant('{tmp}\CMCInst.exe'), ObterParametros(''), ExpandConstant('{tmp}'), 
+                                          SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    if ResultCode = 0 then
+      Log('CMC instalado com sucesso')
+    else
+    begin
+      Log(Format('Falhou a instalação do CMC com o erro %d', [ResultCode]));
+      ExitProcess(4);
+    end;
+  end
+  else if CurStep = ssDone then
   begin
     // Dessa forma apago só se estiverem vazios, o Deltree não serve
     if RemoveDir('C:\bootdrv\aloha\rdf\images') then
@@ -83,8 +109,3 @@ begin
           RemoveDir('C:\bootdrv');
   end;
 end;
-
-[Run]
-Filename: "{tmp}\CMCInst.exe"; Parameters: "/uninstall"; WorkingDir: "{tmp}"; Flags: runhidden
-Filename: "{tmp}\CMCInst.exe"; Parameters: "{code:ObterParametros}";WorkingDir: "{tmp}"; Flags: runhidden
-
