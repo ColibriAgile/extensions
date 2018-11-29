@@ -9,7 +9,7 @@
     } 
   ], 
   "dependencias": {
-     "Dotnet": "*",
+     "Dotnet": "4.6.1.10",
      "Master" : "2.6.*",
      "Launcher": "2.4.*",
      "ColibriAgent": "1.1.*"
