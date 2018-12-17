@@ -6,4 +6,4 @@
 {% endfor %}<l3:5></zebra>
 <dec5/>
 <t1:b>Total<dir>{{sangrias|sum('valor')|valor}}</t1>
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}

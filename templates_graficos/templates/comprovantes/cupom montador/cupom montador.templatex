@@ -1,4 +1,4 @@
-﻿% extends "_templatebase.templatex"
+﻿% extends "templates/_templatebase.templatex"
 % set ns = namespace(indices_impressos = [])
 #---------------------------------
 #- Impressão das observações
@@ -32,9 +32,9 @@
 #- Impressão do cabeçalho
 #---------------------------------
 {%- block cabecalho -%}
-{% include '_primeiracompra.template' %}
+{% include 'templates/_primeiracompra.template' %}
 
-{% include '_reimpressao.templatex' %}
+{% include 'templates/_reimpressao.templatex' %}
 <t3:b>CUPOM MONTADOR</t3>
 <l2>
 Mov.: {{movimento}} <dir>{{data}} {{hora}}h
@@ -44,7 +44,7 @@ Cxa: {{sessao.funcionario.nome}}
 <dir>Atendente: {{atendente|capitalize}} 
 {%- endif -%}
 <t2:b>{{operacao.consumos[0].ticket.modo_de_venda}} {{operacao.consumos[0].ticket.codigo}} <dir>Venda: {{operacao.consumos[0].venda.numero_venda}}</t2>
-{% include '_dados-cliente.templatex' %}
+{% include 'templates/_dados-cliente.templatex' %}
 {%- if usa_local_de_entrega and local_entrega -%}
 <dec5/>
 <t3:b>{{texto_para_local_de_entrega}} <dir><r> {{local_entrega}} </r></t3>

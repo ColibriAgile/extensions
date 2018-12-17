@@ -1,4 +1,4 @@
-﻿{% extends "_relatorio-base.templatex" %}
+﻿{% extends "templates/_relatorio-base.templatex" %}
 % do vars.update({'separa_por_combo': True})
 #---------------------------------
 #- Impressão dos combos
@@ -21,7 +21,7 @@
 <zebrafim>
 {%- endmacro %}
 
-{% from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div with context-%}
+{% from "templates/_imprime_texto_com_valor.templatex" import imprime_texto_valor_div with context-%}
 #---------------------------------
 #- Impressão do cabeçalho
 #---------------------------------
@@ -86,17 +86,17 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 {{'=' * col}}
 {{-imprime_texto_valor_div('Subtotal geral', operacao.totais.subtotal)}}
 {%- endif -%}
-{%- include '_totais.templatex' -%}
+{%- include 'templates/_totais.templatex' -%}
 % do vars.update({'separa_por_combo': False})
 #---------------------------------
 #- Impressão dos descontos
 #---------------------------------
-{%- include '_desconto_item.templatex'  with context %}
+{%- include 'templates/_desconto_item.templatex'  with context %}
 <dec2/>
 #---------------------------------
 #- Impressão dos pagamentos 
 #---------------------------------
-{%- include '_pagamentos_parciais.templatex' %}
+{%- include './_pagamentos_parciais.templatex' %}
 {%- if qtd_pessoas > 1 %}
 <dec1>
 {{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
@@ -104,7 +104,7 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 </dec1>
 {% endif %}
 <t1><center><r>   AGUARDE A EMISSÃO DO CUPOM FISCAL   </t1></r>
-{% include "_rodape-conferencia-RS.templatex" -%}
+{% include "templates/_rodape-conferencia-RS.templatex" -%}
 
 {%- endblock %}
 #---------------------------------

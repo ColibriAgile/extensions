@@ -60,8 +60,8 @@
 #- Impressão do cabeçalho
 #---------------------------------
 {%- block cabecalho scoped %}
-{%- include '_primeiracompra.templatex' %}
-{% include '_reimpressao.templatex' %}
+{%- include 'templates/_primeiracompra.templatex' %}
+{% include 'templates/_reimpressao.templatex' %}
 <l0>
 Mov:  {{data_contabil}} <dir>{{data}} {{hora}}h
 Term: {{maquina}}  <dir>Modo: {{modo_venda}}

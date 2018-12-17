@@ -1,5 +1,5 @@
-﻿{% include "fechamento\\_entrou_no_caixa.templatex" %}
-{% include "fechamento\\_saiu_do_caixa.templatex" %}
-{% include "fechamento\\_outros_movimentos.templatex" %}
-{% include "fechamento\\_totais.templatex" %}
+﻿{% include "plugins/ncrlab-templates_graficos/templates/fechamento/_entrou_no_caixa.templatex" %}
+{% include "plugins/ncrlab-templates_graficos/templates/fechamento/_saiu_do_caixa.templatex" %}
+{% include "plugins/ncrlab-templates_graficos/templates/fechamento/_outros_movimentos.templatex" %}
+{% include "plugins/ncrlab-templates_graficos/templates/fechamento/_totais.templatex" %}
 

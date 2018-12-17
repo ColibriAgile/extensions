@@ -31,4 +31,4 @@
 {% endfor -%}
 <l3:5>
 <t1:b>Qtde de itens: <dir>{{ns.qtd_total|quantidade}}</t1>
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}

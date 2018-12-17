@@ -11,4 +11,4 @@
 {% endfor -%}
 </zebra>
 {% endfor %}
-{% else -%} {%include '_no_data.templatex' %} {% endif %}
+{% else -%} {%include 'templates/_no_data.templatex' %} {% endif %}
