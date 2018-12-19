@@ -96,7 +96,7 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 #---------------------------------
 #- Impressão dos pagamentos 
 #---------------------------------
-{%- include './_pagamentos_parciais.templatex' %}
+{%- include '_pagamentos_parciais.templatex' %}
 {%- if qtd_pessoas > 1 %}
 <dec1>
 {{-imprime_texto_valor_div('Qtd. de pessoas ', qtd_pessoas, inteiro=True, prefixo='')}}
