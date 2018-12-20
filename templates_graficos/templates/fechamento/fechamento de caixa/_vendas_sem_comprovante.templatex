@@ -6,5 +6,5 @@
 <div2>{{item.ticket|capitalize}} ({{item.numero_venda}})</divv><div5:d:3>{{item.dt_hr_encerramento|data('%d/%m %H:%M', '%Y%m%d %H:%M:%S')}}</divv><dir>{{item.vl_total|valor}}
 {% endfor -%}
 </zebra>
-{% else %} {% include '_no_data.templatex' %} {% endif %}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif %}
 

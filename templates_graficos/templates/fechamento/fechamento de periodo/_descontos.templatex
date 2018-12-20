@@ -17,6 +17,6 @@
 {% for tot in descontos|groupby('total') -%}
 <t2:b>Total de descontos: <r><dir> {{tot.grouper|valor|capitalize}} </t2></r>
 {% endfor -%}
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}
 
 

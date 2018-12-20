@@ -1,4 +1,4 @@
-﻿% extends "_templatebase.templatex"
+﻿% extends "templates/_templatebase.templatex"
 % set ns = namespace(indices_impressos = [])
 #---------------------------------
 #- Impressão das observações
@@ -110,7 +110,7 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <t5:b><center>{{texto_numero_de_chamada|default(modo_de_venda, true)}}: {{venda.numero_chamada}}</t5>
 {%- endif %}
 {%- endfor %}
-{% include '_primeiracompra.templatex' -%}
+{% include 'templates/_primeiracompra.templatex' -%}
 {% endblock corpo %}
 {%- block rodape %}
 {% endblock rodape %}

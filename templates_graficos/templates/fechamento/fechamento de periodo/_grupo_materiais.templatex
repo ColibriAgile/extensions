@@ -6,4 +6,4 @@
 {% endfor -%}
 <l3:5>
 <t1:b><div2>Total</divv><div2:d>{{grupo_materiais|soma('qtde')|quantidade}}</divv><dir>{{grupo_materiais|soma('vl_total')|valor}}</t1>
-</zebra>{% else -%} {%include '_no_data.templatex' %} {% endif %}
+</zebra>{% else -%} {%include 'templates/_no_data.templatex' %} {% endif %}
