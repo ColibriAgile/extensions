@@ -1,4 +1,10 @@
-﻿% set ns = namespace(tem_nao_entra_consumacao=false, tem_nao_cobra_servico=false)
+﻿%- macro prefixo_item(item, padrao='')
+%- set prefixo = '*' if not item.cobra_servico else ' '
+%- set prefixo = prefixo|trim + '$' if not item.usa_consumacao else prefixo + ' '
+{{-prefixo|esq(2)|trim|default(padrao, true)}}
+%- endmacro
+
+% set ns = namespace(tem_nao_entra_consumacao=false, tem_nao_cobra_servico=false)
 %- for consumo in operacao.consumos
   %- set ns.tem_nao_entra_consumacao = ns.tem_nao_entra_consumacao or consumo.venda.itens|selectattr('usa_consumacao', 'eq', false)|list|length > 0
   %- set ns.tem_nao_cobra_servico = ns.tem_nao_cobra_servico or consumo.venda.itens|selectattr('cobra_servico', 'eq', false)|list|length > 0
