@@ -24,4 +24,4 @@
 {% set tk_medio = (ticket_médio_analítico|soma('total') / qtd_pessoas|int)|round(2,'floor')|valor %}
 <l3:5>
 <t1:b><div3>Total geral</divv><div2:d>{{tk_medio_total}}</divv><div3:d>{{qtd_pessoas}}</divv><dir>{{tk_medio}}</t1>
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}

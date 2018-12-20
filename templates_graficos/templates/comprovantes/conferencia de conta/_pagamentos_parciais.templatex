@@ -1,4 +1,4 @@
-﻿{%- from "_imprime_texto_com_valor.templatex" import imprime_texto_valor_div -%}
+﻿{%- from "templates/_imprime_texto_com_valor.templatex" import imprime_texto_valor_div -%}
 {%if pgto_parciais -%}
 {% block pgto_parcial -%}
 <t2:b>Pagamentos efetuados</t2>

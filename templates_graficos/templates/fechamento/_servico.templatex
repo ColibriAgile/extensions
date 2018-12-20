@@ -16,4 +16,4 @@
 {% endfor %}
 <l3:5>
 <t1:b><div7:2>Total</divv><div5:d:2>{{servico|soma('valor_venda')|valor}}</divv><div2:d>{{servico|soma('servico_calculado')|valor}}</divv><dir>{{servico|soma('servico_recebido')|valor}}</t1>
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}

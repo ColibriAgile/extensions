@@ -17,4 +17,4 @@
 {% endfor -%}
 {% endfor %}
 <t1:b>Total geral <dir><r> {{cancelamentos|sum('vl_total')|valor}} </r></t1>
-{% else %} {% include '_no_data.templatex' %} {% endif -%}
+{% else %} {% include 'templates/_no_data.templatex' %} {% endif -%}
