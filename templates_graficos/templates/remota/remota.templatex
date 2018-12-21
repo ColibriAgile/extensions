@@ -1,4 +1,4 @@
-﻿{% extends "_relatorio-base.templatex" -%}
+﻿{% extends "templates/_relatorio-base.templatex" -%}
 {% set pag = impressao_numero -%}
 {% set tot = impressao_total -%}
 {% set ns = namespace(indice_anterior = 0) -%}
