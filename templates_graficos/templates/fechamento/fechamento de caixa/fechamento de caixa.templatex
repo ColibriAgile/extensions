@@ -1,4 +1,4 @@
-﻿{% extends "_templatebase.templatex" -%}
+﻿{% extends "templates/_templatebase.templatex" -%}
 {% block cabecalho -%}
 <t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
 
