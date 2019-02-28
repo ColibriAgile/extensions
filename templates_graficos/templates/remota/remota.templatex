@@ -86,7 +86,7 @@ Cli: {{cliente.nome}}
 {% if loop.index > 1 -%}
 {{'\n'}}<l8><dec1>\n\n
 {%- endif -%}
-<t5:b:c>{{ticket}} - {{txtvenda}}<dir>{{pag}}/{{tot}}</t5>
+<t5:b:c>{{txtticket}} - {{txtvenda}}<dir>{{pag}}/{{tot}}</t5>
 {%- endif -%}
 {{render_itens(venda.list|rejectattr('marcha'))-}}
 {{render_itens(venda.list|selectattr('marcha'), marcha=True)-}}

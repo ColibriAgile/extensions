@@ -1,0 +1,24 @@
+﻿%- set usa_consumacao = operacao.totais.consumacao > 0
+%- macro prefixo_item(item, padrao='')
+%- set prefixo = '*' if not item.cobra_servico else ' '
+%- set prefixo = prefixo|trim + '$' if usa_consumacao and not item.usa_consumacao else prefixo + ' '
+{{-prefixo|esq(2)|trim|default(padrao, true)}}
+%- endmacro
+
+% set ns = namespace(tem_nao_entra_consumacao=false, tem_nao_cobra_servico=false)
+%- for consumo in operacao.consumos
+  %- set ns.tem_nao_entra_consumacao = ns.tem_nao_entra_consumacao or (usa_consumacao and consumo.venda.itens|selectattr('usa_consumacao', 'eq', false)|list|length > 0)
+  %- set ns.tem_nao_cobra_servico = ns.tem_nao_cobra_servico or consumo.venda.itens|selectattr('cobra_servico', 'eq', false)|list|length > 0
+%- endfor
+%- if ns.tem_nao_cobra_servico or ns.tem_nao_entra_consumacao
+%- if ns.tem_nao_cobra_servico
+  % set servico = '* = Não cobra serviço'
+%- endif
+%- if ns.tem_nao_entra_consumacao
+  % set consumacao = '$ = Não entra na consumação'
+%- endif
+<dec2>Legendas</dec2>
+<l0:5><dec2><b>
+<div2>{{servico}}</div>{{consumacao}}
+</b></dec2><l0:5>
+%- endif

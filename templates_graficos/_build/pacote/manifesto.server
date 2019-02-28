@@ -6,6 +6,11 @@
       "_pattern_nome": ".*client\\.exe\\b"
     }
   ],
+  "dependencias":
+  {
+    "Colibri": "8.10.*",
+    "ColibriScripts": "1.2.5.*"
+  },
   "nome": "ncrlab-templates_graficos",
   "produto": "pos",
   "sigla_empresa": "ncrlab",
