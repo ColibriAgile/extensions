@@ -52,7 +52,7 @@ Term: {{maquina}} <dir>Disp: {{dispositivo_utilizado|capitalize}}
 <dec3/>
 {% if consumos and consumos|length == 1 -%}
 {% set venda = consumos[0].venda -%}
-<t2:b>{{venda.nome_amigavel|capitalize}} <dir>Venda {{venda.numero_venda}}</t2>
+<t2:b>{{operacao.consumos[0].ticket.nome|capitalize}} <dir>Venda {{venda.numero_venda}}</t2>
 {% endif -%}
 {%- if usa_local_de_entrega and local_entrega -%}
 <dec5/>
