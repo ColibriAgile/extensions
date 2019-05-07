@@ -62,6 +62,9 @@ namespace PluginEventos
 
         public static string ObterDadosFabricante()
             => new DadosDoFabricante().ToJson();
+        
+        public static string ObterDadosLicenca(string info)
+            => "{\"chave_assinatura\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\"}";
 
         public static void Configurar(string maquinas)
         {

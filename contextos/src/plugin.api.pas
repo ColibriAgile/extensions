@@ -27,6 +27,7 @@ type
   function Notificar(evento, contexto: PChar): PChar; stdcall;
   function ObterCaminhoDoPlugin: string;
   function ObterDadosFabricante(): PChar; stdcall;
+  function ObterDadosLicenca(informacao: PChar): PChar; stdcall;
   function ObterMacro (umaMacro: PChar): PChar; stdcall;
   function ObterNome(): PChar; stdcall;
   function ObterVersao(): PChar; stdcall;
@@ -147,6 +148,12 @@ function ObterDadosFabricante(): PChar; stdcall; export;
 begin
   Result := AlocarBuffer(PChar(FABRICANTE));
 end;
+
+function ObterDadosLicenca(informacao: PChar): PChar; stdcall; export;
+begin
+  Result := AlocarBuffer('{"chave_assinatura": "891B1D48-A3E9-4976-BCED-480B07957578"}');
+end;
+
 
 procedure RegistrarAssinaturas(AssinarEvento: ProcAssinarEvento); stdcall; export;
 var
