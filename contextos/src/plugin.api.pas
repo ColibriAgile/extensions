@@ -151,7 +151,7 @@ end;
 
 function ObterDadosLicenca(informacao: PChar): PChar; stdcall; export;
 begin
-  Result := AlocarBuffer('{"chave_extensao": "891B1D48-A3E9-4976-BCED-480B07957578"}');
+  Result := AlocarBuffer('{"chave_extensao": "891B1D48-A3E9-4976-BCED-480B07957578", "sistema": true}');
 end;
 
 
