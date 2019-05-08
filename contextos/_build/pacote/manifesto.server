@@ -7,7 +7,7 @@
       "_pattern_nome": ".*shared\\.exe\\b"
     }
   ],
-  "nome": "ncrlab-Plugin_Contextos",
+  "nome": "ncrlab-plugin_contextos",
   "produto": "pos",
   "sigla_empresa": "ncrlab",
   "empresa": "NCR Lab",
