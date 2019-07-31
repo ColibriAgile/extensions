@@ -2,6 +2,7 @@
 {% set pag = impressao_numero -%}
 {% set tot = impressao_total -%}
 {% set ns = namespace(indice_anterior = 0) -%}
+{% set ns = namespace(nova_venda = False) -%}
 #---------------------------------
 #- Impressão dos itens cancelados
 #---------------------------------
@@ -32,16 +33,19 @@
 #- Impressão dos itens
 #---------------------------------
 {% macro render_itens(itens,marcha=False) -%}
-{% for item in itens|sort(attribute='indice') -%}
-{%- set charsep = (item.descricao_do_combo == '' or ns.indice_anterior != item.indice) %}
+{% set ns.nova_venda=True -%}
+{% set ns.indice_anterior = -1 -%}
+{% for item in itens|sort(attribute='indice') %}
+{%- set charsep = item.descricao_do_combo == '' or ns.indice_anterior != item.indice %}
 {%- if charsep %}
 <l2:20>
 {% endif -%}
-{% if item.descricao_do_combo != '' and ns.indice_anterior != item.indice -%}
+{% if item.descricao_do_combo != '' and (ns.nova_venda or ns.indice_anterior != item.indice) -%}
+{% set ns.nova_venda=False -%}
 <t8:b>{{item.descricao_do_combo}}</t8>
 {%- if item.descricao_do_combo_extra and item.descricao_do_combo_extra != item.descricao_do_combo %}
 <t3> {{item.descricao_do_combo_extra}} </t3> {% endif %}
-{{ render_obs(item.observacoes_do_combo) }}
+{{ render_obs(item.observacoes_do_combo) }}     
 {%- endif %}
 {{- render_item(item) }}
 {%- set ns.indice_anterior = item.indice -%}
@@ -84,11 +88,11 @@ Cli: {{cliente.nome}}
 {% set txtvenda = 'Venda ' + venda.list[0].venda + ' ' -%}
 {% set txtticket = ' ' + venda.grouper|capitalize -%}
 {% if loop.index > 1 -%}
-{{'\n'}}<l8><dec1>\n\n
+{{'\n'}}<l5><dec1>{{'\n\n'}}
 {%- endif -%}
 <t5:b:c>{{txtticket}} - {{txtvenda}}<dir>{{pag}}/{{tot}}</t5>
 {%- endif -%}
-{{render_itens(venda.list|rejectattr('marcha'))-}}
+{{render_itens(venda.list|rejectattr('marcha'))}}
 {{render_itens(venda.list|selectattr('marcha'), marcha=True)-}}
 {% endfor -%}
 {{- render_cancelado() }}
@@ -121,3 +125,4 @@ Cli: {{cliente.nome}}
 {% if copias > 1 and i < (copias-1) -%}{% filter eject %}{% endfilter %}{% endif -%}
 {%- endfor %}
 {% endblock relatorio %}
+
