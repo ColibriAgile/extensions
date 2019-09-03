@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json.Linq;
-using PluginEventos.ui;
-using static PluginEventos.ui.FormNotificacao;
-
-// O assembly do plugin deve ser Plugin.[NomeDoPlugin]
+﻿// O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
 namespace PluginEventos
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Web.Script.Serialization;
+    using Newtonsoft.Json.Linq;
+    using PluginEventos.ui;
+    using static PluginEventos.ui.FormNotificacao;
+
     internal class DadosDoFabricante
     {
-
         public Fabricante fabricante;
         public Suporte suporte;
 
@@ -32,28 +31,24 @@ namespace PluginEventos
             public string url = "www.colibri.com.br";
         }
 
-        #region Construtor
         public DadosDoFabricante()
         {
             fabricante = new Fabricante();
             suporte = new Suporte();
         }
-        #endregion
 
-        #region Metodos
         public string ToJson()
         {
             var serializer = new JavaScriptSerializer();
             return serializer.Serialize(this);
         }
-        #endregion
     }
 
-    public class Plugin
+    public static class Plugin
     {
         private static readonly Lazy<List<string>> _ignoreList = new Lazy<List<string>>(() => new List<string>());
         private static bool _modoServer;
-        #region Metodos
+
         public static string ObterNome()
             => "Monitor de eventos";
 
@@ -62,18 +57,17 @@ namespace PluginEventos
 
         public static string ObterDadosFabricante()
             => new DadosDoFabricante().ToJson();
-        
+
         public static string ObterDadosLicenca(string info)
             => "{\"chave_extensao\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\", \"sistema\": true}";
 
         public static void Configurar(string maquinas)
         {
-            using (var frmConfig = new FormConfig())
-            {
-                frmConfig.ShowDialog();
-            }
+            using var frmConfig = new FormConfig();
+
+            frmConfig.ShowDialog();
         }
-        
+
         public static string Notificar(string sEvento, string sContexto)
         {
             if (!_modoServer)
@@ -121,6 +115,5 @@ namespace PluginEventos
 
         public static string RegistrarPermissoes()
             => string.Empty;
-        #endregion
     }
 }
