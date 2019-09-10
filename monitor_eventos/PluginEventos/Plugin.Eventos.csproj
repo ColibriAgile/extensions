@@ -58,7 +58,13 @@
   <ItemGroup>
     <Compile Include="src\Colibri.cs" />
     <Compile Include="src\Configuracoes.cs" />
-    <Compile Include="src\TipoMensagem.cs" />
+    <Compile Include="src\DadosDoFabricante.cs" />
+    <Compile Include="ui\FormCallback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FormCallback.Designer.cs">
+      <DependentUpon>FormCallback.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\FormConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ui\FormCallback.resx">
+      <DependentUpon>FormCallback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\FormConfig.resx">
       <DependentUpon>FormConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +119,9 @@
     <None Include="eventos.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

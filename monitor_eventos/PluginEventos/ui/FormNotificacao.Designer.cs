@@ -87,6 +87,7 @@
             this.TabIgnorados = new DevExpress.XtraTab.XtraTabPage();
             this.LstIgnorados = new DevExpress.XtraEditors.ListBoxControl();
             this.EdtEvento = new DevExpress.XtraEditors.ButtonEdit();
+            this.BtnCallback = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemEvento = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemTabs = new DevExpress.XtraLayout.LayoutControlItem();
@@ -94,6 +95,7 @@
             this.ItemContinuarIgnorar = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemContinuar = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ItemCallback = new DevExpress.XtraLayout.LayoutControlItem();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StyleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
@@ -117,6 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemContinuarIgnorar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemContinuar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemEspaco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemCallback)).BeginInit();
             this.SuspendLayout();
             // 
             // StyleController
@@ -133,10 +136,9 @@
             this.BtnCopiar.Appearance.Options.UseBackColor = true;
             this.BtnCopiar.Appearance.Options.UseFont = true;
             this.BtnCopiar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.BtnCopiar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
             this.BtnCopiar.Location = new System.Drawing.Point(5, 564);
             this.BtnCopiar.Name = "BtnCopiar";
-            this.BtnCopiar.Size = new System.Drawing.Size(85, 40);
+            this.BtnCopiar.Size = new System.Drawing.Size(84, 40);
             this.BtnCopiar.StyleController = this.LayoutControl;
             toolTipTitleItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             toolTipTitleItem14.Text = "Copiar";
@@ -157,6 +159,7 @@
             this.LayoutControl.Controls.Add(this.Tabs);
             this.LayoutControl.Controls.Add(this.BtnCopiar);
             this.LayoutControl.Controls.Add(this.EdtEvento);
+            this.LayoutControl.Controls.Add(this.BtnCallback);
             this.LayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayoutControl.Location = new System.Drawing.Point(0, 0);
             this.LayoutControl.Name = "LayoutControl";
@@ -173,10 +176,10 @@
             this.BtnContinuar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnContinuar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnContinuar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnContinuar.Location = new System.Drawing.Point(595, 564);
+            this.BtnContinuar.Location = new System.Drawing.Point(618, 564);
             this.BtnContinuar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnContinuar.Name = "BtnContinuar";
-            this.BtnContinuar.Size = new System.Drawing.Size(95, 40);
+            this.BtnContinuar.Size = new System.Drawing.Size(72, 40);
             this.BtnContinuar.StyleController = this.LayoutControl;
             toolTipTitleItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             toolTipTitleItem1.Text = "Continuar";
@@ -195,10 +198,10 @@
             this.BtnContinuarIgnorar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BtnContinuarIgnorar.DialogResult = System.Windows.Forms.DialogResult.Abort;
             this.BtnContinuarIgnorar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
-            this.BtnContinuarIgnorar.Location = new System.Drawing.Point(469, 564);
+            this.BtnContinuarIgnorar.Location = new System.Drawing.Point(491, 564);
             this.BtnContinuarIgnorar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnContinuarIgnorar.Name = "BtnContinuarIgnorar";
-            this.BtnContinuarIgnorar.Size = new System.Drawing.Size(121, 40);
+            this.BtnContinuarIgnorar.Size = new System.Drawing.Size(122, 40);
             this.BtnContinuarIgnorar.StyleController = this.LayoutControl;
             toolTipTitleItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             toolTipTitleItem2.Text = "Continuar e ignorar";
@@ -485,6 +488,21 @@
             this.EdtEvento.StyleController = this.LayoutControl;
             this.EdtEvento.TabIndex = 4;
             // 
+            // BtnCallback
+            // 
+            this.BtnCallback.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.BtnCallback.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnCallback.Appearance.Options.UseBackColor = true;
+            this.BtnCallback.Appearance.Options.UseFont = true;
+            this.BtnCallback.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.BtnCallback.Location = new System.Drawing.Point(94, 564);
+            this.BtnCallback.Name = "BtnCallback";
+            this.BtnCallback.Size = new System.Drawing.Size(84, 40);
+            this.BtnCallback.StyleController = this.LayoutControl;
+            this.BtnCallback.TabIndex = 6;
+            this.BtnCallback.Text = "Callback";
+            this.BtnCallback.Click += new System.EventHandler(this.BtnCallback_Click);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -495,7 +513,8 @@
             this.ItemCopiar,
             this.ItemContinuarIgnorar,
             this.ItemContinuar,
-            this.ItemEspaco});
+            this.ItemEspaco,
+            this.ItemCallback});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root.Size = new System.Drawing.Size(695, 609);
@@ -533,7 +552,7 @@
             this.ItemCopiar.MinSize = new System.Drawing.Size(48, 50);
             this.ItemCopiar.Name = "ItemCopiar";
             this.ItemCopiar.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.ItemCopiar.Size = new System.Drawing.Size(90, 50);
+            this.ItemCopiar.Size = new System.Drawing.Size(89, 50);
             this.ItemCopiar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.ItemCopiar.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 0, 5, 5);
             this.ItemCopiar.TextSize = new System.Drawing.Size(0, 0);
@@ -542,12 +561,12 @@
             // ItemContinuarIgnorar
             // 
             this.ItemContinuarIgnorar.Control = this.BtnContinuarIgnorar;
-            this.ItemContinuarIgnorar.Location = new System.Drawing.Point(469, 559);
+            this.ItemContinuarIgnorar.Location = new System.Drawing.Point(491, 559);
             this.ItemContinuarIgnorar.MaxSize = new System.Drawing.Size(0, 50);
             this.ItemContinuarIgnorar.MinSize = new System.Drawing.Size(116, 50);
             this.ItemContinuarIgnorar.Name = "ItemContinuarIgnorar";
             this.ItemContinuarIgnorar.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 5, 5, 5);
-            this.ItemContinuarIgnorar.Size = new System.Drawing.Size(126, 50);
+            this.ItemContinuarIgnorar.Size = new System.Drawing.Size(127, 50);
             this.ItemContinuarIgnorar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.ItemContinuarIgnorar.TextSize = new System.Drawing.Size(0, 0);
             this.ItemContinuarIgnorar.TextVisible = false;
@@ -555,12 +574,12 @@
             // ItemContinuar
             // 
             this.ItemContinuar.Control = this.BtnContinuar;
-            this.ItemContinuar.Location = new System.Drawing.Point(595, 559);
+            this.ItemContinuar.Location = new System.Drawing.Point(618, 559);
             this.ItemContinuar.MaxSize = new System.Drawing.Size(0, 50);
             this.ItemContinuar.MinSize = new System.Drawing.Size(66, 50);
             this.ItemContinuar.Name = "ItemContinuar";
             this.ItemContinuar.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 5, 5, 5);
-            this.ItemContinuar.Size = new System.Drawing.Size(100, 50);
+            this.ItemContinuar.Size = new System.Drawing.Size(77, 50);
             this.ItemContinuar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.ItemContinuar.TextSize = new System.Drawing.Size(0, 0);
             this.ItemContinuar.TextVisible = false;
@@ -568,10 +587,24 @@
             // ItemEspaco
             // 
             this.ItemEspaco.AllowHotTrack = false;
-            this.ItemEspaco.Location = new System.Drawing.Point(90, 559);
+            this.ItemEspaco.Location = new System.Drawing.Point(178, 559);
             this.ItemEspaco.Name = "ItemEspaco";
-            this.ItemEspaco.Size = new System.Drawing.Size(379, 50);
+            this.ItemEspaco.Size = new System.Drawing.Size(313, 50);
             this.ItemEspaco.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // ItemCallback
+            // 
+            this.ItemCallback.Control = this.BtnCallback;
+            this.ItemCallback.Location = new System.Drawing.Point(89, 559);
+            this.ItemCallback.MaxSize = new System.Drawing.Size(0, 50);
+            this.ItemCallback.MinSize = new System.Drawing.Size(48, 50);
+            this.ItemCallback.Name = "ItemCallback";
+            this.ItemCallback.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.ItemCallback.Size = new System.Drawing.Size(89, 50);
+            this.ItemCallback.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.ItemCallback.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 0, 5, 5);
+            this.ItemCallback.TextSize = new System.Drawing.Size(0, 0);
+            this.ItemCallback.TextVisible = false;
             // 
             // defaultLookAndFeel
             // 
@@ -611,6 +644,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemContinuarIgnorar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemContinuar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemEspaco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemCallback)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +678,7 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemContinuar;
         private DevExpress.XtraLayout.EmptySpaceItem ItemEspaco;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
+        private DevExpress.XtraEditors.SimpleButton BtnCallback;
+        private DevExpress.XtraLayout.LayoutControlItem ItemCallback;
     }
 }

@@ -1,46 +1,78 @@
-﻿// O assembly do plugin deve ser Plugin.[NomeDoPlugin]
-// O namespace aqui deve ser Plugin[NomeDoPlugin]
-namespace PluginEventos
+﻿namespace PluginEventos
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
+    using Newtonsoft.Json.Linq;
 
-    public partial class Colibri
+    public static class Colibri
     {
-        public static Dictionary<string, object> dictFuncoes;
+        private static Dictionary<string, object> _dictFuncoes;
         private static string _pastaBase = "";
 
-        public static void AssinarEvento(string evento)
-            => ((Action<string>)dictFuncoes["AssinarEvento"])(evento);
-
-        public static void Callback(string evento, string contexto)
-            => ((Action<string, string>)dictFuncoes["Callback"])(evento, contexto);
-
-        public static void GravarConfig(string config, int maquinaId, string valor)
-            => ((Action<string, int, string>)dictFuncoes["GravarConfig"])(config, maquinaId, valor);
-
-        public static int MostrarMensagem(string mensagem, TipoMensagem tipo, string titulo = "", string alinhamento = "esquerda", string id = "")
+        public enum TipoMensagem
         {
-            string dados = $"{{\"mensagem\":\"{mensagem}\", \"tipo\":\"{tipo.ToString()}\", \"titulo\":\"{titulo}\", \"alinhamento\": \"{alinhamento}\", \"id\": \"{id}\"}}";
-            return MostrarMensagem(dados);
+            Aguarde,
+            Aviso,
+            Info,
+            Erro,
+            Sucesso,
+            Pergunta
         }
 
+        public static void AssinarEvento(string evento)
+            => ((Action<string>)_dictFuncoes["AssinarEvento"])(evento);
+
+        public static void AssinarEventos(params string[] eventos)
+        {
+            foreach (var evento in eventos)
+                AssinarEvento(evento);
+        }
+
+        public static void AtribuirFuncoes(Dictionary<string, object> dictDeFuncoes)
+            => _dictFuncoes = dictDeFuncoes;
+
+        public static void Callback(string evento, string contexto)
+            => ((Action<string, string>)_dictFuncoes["Callback"])(evento, contexto);
+
+        public static void GravarConfig(string config, int maquinaId, string valor)
+            => ((Action<string, int, string>)_dictFuncoes["GravarConfig"])(config, maquinaId, valor);
+
         public static int MostrarMensagem(string dados)
-            => ((Func<string, int>)dictFuncoes["MostrarMensagem"])(dados);
+            => ((Func<string, int>)_dictFuncoes["MostrarMensagem"])(dados);
+
+        public static int MostrarMensagem
+        (
+            string mensagem,
+            TipoMensagem tipo,
+            string titulo = "",
+            string botaoPadrao = "nao",
+            string alinhamento = "esquerda",
+            string id = ""
+        )
+        {
+            var dados = new JObject()
+            {
+                ["mensagem"] = mensagem,
+                ["tipo"] = tipo.ToString(),
+                ["titulo"] = titulo,
+                ["alinhamento"] = alinhamento,
+                ["id"] = id,
+                ["botao_padrao"] = botaoPadrao
+            };
+
+            return MostrarMensagem(dados.ToString());
+        }
 
         public static string MostrarTeclado(string dados)
-            => ((Func<string, string>)dictFuncoes["MostrarTeclado"])(dados);
+            => ((Func<string, string>)_dictFuncoes["MostrarTeclado"])(dados);
 
         public static string ObterConfigs(int maquina)
-            => ((Func<int, string>)dictFuncoes["ObterConfigs"])(maquina);
+            => ((Func<int, string>)_dictFuncoes["ObterConfigs"])(maquina);
 
-        public static int VerificarPermissao(string GUID, int elevar)
-            => ((Func<string, int, int>)dictFuncoes["VerificarPermissao"])(GUID, elevar);
-
-        public static void AtribuirFuncoes(Dictionary<string, object> dictFuncoes)
-            => Colibri.dictFuncoes = dictFuncoes;
+        public static int VerificarPermissao(string guid, int elevar)
+            => ((Func<string, int, int>)_dictFuncoes["VerificarPermissao"])(guid, elevar);
 
         public static string ObterPastaDeLogs(string subpasta)
         {

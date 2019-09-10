@@ -5,44 +5,9 @@ namespace PluginEventos
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using System.Web.Script.Serialization;
     using Newtonsoft.Json.Linq;
     using PluginEventos.ui;
     using static PluginEventos.ui.FormNotificacao;
-
-    internal class DadosDoFabricante
-    {
-        public Fabricante fabricante;
-        public Suporte suporte;
-
-        public class Fabricante
-        {
-            public string desenvolvedor = "NCR Colibri";
-            public string direitos_de_copia = string.Empty;
-            public string empresa = "NCR Labs";
-            public string marcas_registradas = string.Empty;
-            public string termos_da_licenca = string.Empty;
-        }
-
-        public class Suporte
-        {
-            public string email = "colibri.agile@ncr.com";
-            public string telefone = "";
-            public string url = "www.colibri.com.br";
-        }
-
-        public DadosDoFabricante()
-        {
-            fabricante = new Fabricante();
-            suporte = new Suporte();
-        }
-
-        public string ToJson()
-        {
-            var serializer = new JavaScriptSerializer();
-            return serializer.Serialize(this);
-        }
-    }
 
     public static class Plugin
     {
@@ -55,13 +20,20 @@ namespace PluginEventos
         public static string ObterVersao()
             => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        public static string ObterDadosFabricante()
-            => new DadosDoFabricante().ToJson();
+        public static bool ObterGlobal()
+            => false;
 
+        public static string ObterDadosFabricante()
+            => new DadosDoFabricante().ToString();
+
+        #pragma warning disable RCS1163 // Unused parameter.
+        #pragma warning disable IDE0060 // Remove unused parameter        
         public static string ObterDadosLicenca(string info)
             => "{\"chave_extensao\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\", \"sistema\": true}";
 
         public static void Configurar(string maquinas)
+        #pragma warning restore IDE0060 // Remove unused parameter
+        #pragma warning restore RCS1163 // Unused parameter.
         {
             using var frmConfig = new FormConfig();
 
@@ -99,8 +71,8 @@ namespace PluginEventos
         public static void RegistrarAssinaturas()
         {
             var config = new Configuracoes();
-            List<string> eventos = config.ObterEventosMarcados();
-            foreach (string evento in eventos)
+
+            foreach (string evento in config.ObterEventosMarcados())
             {
                 string nome = evento.Replace("_", ".");
                 Colibri.AssinarEvento(nome);

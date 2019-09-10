@@ -29,7 +29,6 @@
 
         public string Erro { get; set; }
 
-
         public FormNotificacao()
             => InitializeComponent();
 
@@ -68,21 +67,22 @@
             if (modoServer || (!conf.EstaAtivado("MostrarEvento")))
                 return null;
 
-            using (var frm = new FormNotificacao())
+            using var frm = new FormNotificacao();
+
+            frm.CarregarEvento(evento, contexto);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.LstIgnorados.DataSource = ignoreList;
+            DialogResult ret = frm.ShowDialog();
+
+            var retorno = new Retorno
             {
-                frm.CarregarEvento(evento, contexto);
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.LstIgnorados.DataSource = ignoreList;
-                DialogResult ret = frm.ShowDialog();
-                var retorno = new Retorno
-                {
-                    Ignorar = ret == DialogResult.Abort,
-                    Modificadores = frm.ObterModificadores(),
-                    Acao = frm.Acao,
-                    Erro = frm.Erro
-                };
-                return retorno;
-            }
+                Ignorar = ret == DialogResult.Abort,
+                Modificadores = frm.ObterModificadores(),
+                Acao = frm.Acao,
+                Erro = frm.Erro
+            };
+
+            return retorno;
         }
 
         private string ObterModificadores()
@@ -132,5 +132,8 @@
         private static LoggingConfiguration _logConfig;
         private static Target _target;
         private static Logger _logger;
+
+        private void BtnCallback_Click(object sender, EventArgs e)
+            => FormCallback.Executar();
     }
 }
