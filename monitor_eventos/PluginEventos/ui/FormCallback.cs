@@ -1,6 +1,5 @@
 ﻿namespace PluginEventos.ui
 {
-    using System;
     using System.Windows.Forms;
     using DevExpress.XtraEditors;
 
@@ -17,10 +16,6 @@
 
             if (frm.ShowDialog() == DialogResult.OK)
                 Colibri.Callback(frm.EdtEvento.Text, frm.TxtContexto.Text);
-        }
-
-        private void BtnContinuar_Click(object sender, EventArgs e)
-        {
         }
     }
 }
