@@ -1,14 +1,14 @@
 ﻿{% extends "templates/_templatebase.templatex" -%}
 {% block cabecalho -%}
 <t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
-{% if func_fechou %}
-<t1:b>Fechado por {{func_fechou}}</t1>
-{%- endif %}
-Turno : {{turno_id}} {{turno_operador|capitalize}} {% if usuario_virtual %}<i>(virtual)</i>{% endif %}
-Abert : {{dt_abertura|data('%d/%m/%Y %H:%M')}}
-Fech  : {{dt_fechamento|data('%d/%m/%Y %H:%M')}}
-Impr  : {{data}} {{hora}} {{operador|capitalize}}
-{% endblock %}
+
+<zebra><l2:5>
+<div6>Turno</divv>{{turno_id}} - {{turno_operador|capitalize}} {% if usuario_virtual %}<i>(virtual)</i>{% endif %}
+<div6>Aber. em</divv>{{dt_abertura|data('%d/%m/%Y %H:%M')}}
+<div6>Fech. em</divv>{{dt_fechamento|data('%d/%m/%Y %H:%M')}}{% if func_fechou %}<b> por {{func_fechou}}</b>{% endif %}
+<div6>Impr. em</divv>{{data}} {{hora}} <b>por {{operador|capitalize}}</b>
+<l2:5></zebra>
+{%- endblock %}
 {% block corpo %}
 {% for nome, template, sql in rel -%}
 <l3:80>
