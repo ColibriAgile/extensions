@@ -2,12 +2,15 @@
 {% block cabecalho -%}
 <t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
 
-<zebra><l2:5>
+<l2:5>
 <div6>Turno</divv>{{turno_id}} - {{turno_operador|capitalize}} {% if usuario_virtual %}<i>(virtual)</i>{% endif %}
+<l0>
 <div6>Aber. em</divv>{{dt_abertura|data('%d/%m/%Y %H:%M')}}
+<l0>
 <div6>Fech. em</divv>{{dt_fechamento|data('%d/%m/%Y %H:%M')}}{% if func_fechou %}<b> por {{func_fechou}}</b>{% endif %}
+<l0>
 <div6>Impr. em</divv>{{data}} {{hora}} <b>por {{operador|capitalize}}</b>
-<l2:5></zebra>
+<l2:5>
 {%- endblock %}
 {% block corpo %}
 {% for nome, template, sql in rel -%}
