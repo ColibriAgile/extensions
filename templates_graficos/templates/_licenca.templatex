@@ -1,0 +1,5 @@
+﻿{% if licenca.dias_restantes <= 10 -%}
+<l3:5>
+<t1><r>{{ licenca.mensagem }}</r></t1> 
+<l3:5>
+{% endif %}
