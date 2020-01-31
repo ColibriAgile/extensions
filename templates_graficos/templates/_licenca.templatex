@@ -1,5 +1,7 @@
-﻿{% if licenca.dias_restantes <= 10 -%}
-<l3:5>
-<t1><r>{{ licenca.mensagem }}</r></t1> 
-<l3:5>
-{% endif %}
+﻿% if licenca.dias_restantes <= 10       
+<l3>
+
+<t1><center><r>ATENÇÃO! Faltam {{licenca.dias_restantes}} dia(s) para o término da licença.</r></center></t1>
+
+<center>A licença termina em {{licenca.data_limite|data('%d/%m/%Y')}}. Após essa data o sistema será bloqueado. Solicite a liberação com antecedência para evitar transtornos.</center> 
+% endif
