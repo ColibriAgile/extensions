@@ -11,6 +11,7 @@
 <div6>Impr. em</divv>{{data}} {{hora}} <b>por {{operador|capitalize}}</b>
 <l2:5>
 {% include '_licenca.templatex' -%}
+{% include '_incompativeis.templatex' -%}
 {%- endblock -%}
 {%- block corpo %}
 {%- for nome, template, sql in rel -%}
