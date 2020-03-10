@@ -23,3 +23,17 @@ SourceDir=..
 [Files]
 Source: "_build\*.col"; DestDir: "{app}\plugins\{#ExtensionName}\"; Flags: skipifsourcedoesntexist ignoreversion restartreplace overwritereadonly
 Source: "extras\*"; DestDir: "{app}\plugins\{#ExtensionName}\"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
+
+[Code]
+
+procedure CurStepChanged(CurStep: TSetupStep);
+var
+  cam: string;
+begin
+  if CurStep = ssInstall then
+  begin
+    cam := ExpandConstant('{app}\plugins\Contextos');
+    if DirExists(cam) then
+      DelTree(cam, True, True, True);
+  end;
+end;

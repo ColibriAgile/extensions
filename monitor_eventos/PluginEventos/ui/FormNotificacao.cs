@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using NLog;
-using NLog.Config;
-using NLog.Targets;
-
-namespace PluginEventos.ui
+﻿namespace PluginEventos.ui
 {
-    public partial class FormNotificacao: DevExpress.XtraEditors.XtraForm
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
+    using System.Windows.Forms;
+    using DevExpress.XtraEditors;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using NLog;
+    using NLog.Config;
+    using NLog.Targets;
+
+    public partial class FormNotificacao: XtraForm
     {
         public struct Retorno
         {
-            #region Propriedades
             public string Acao { get; set; }
 
             public string Erro { get; set; }
@@ -23,22 +23,15 @@ namespace PluginEventos.ui
             public bool Ignorar { get; set; }
 
             public string Modificadores { get; set; }
-            #endregion
         }
 
-        #region Propriedades
         public string Acao { get; set; }
 
         public string Erro { get; set; }
-        #endregion
-
-        #region Construtores
 
         public FormNotificacao()
             => InitializeComponent();
-        #endregion
 
-        #region Metodos
         private static void Logar(string evento, string contexto, bool modoServer)
         {
             if (_logger is null)
@@ -46,6 +39,7 @@ namespace PluginEventos.ui
                 string arqNome = modoServer ? "eventos_server.log" : "eventos.log";
                 _logConfig = new LoggingConfiguration();
                 string pastaLog = Colibri.ObterPastaDeLogs(Assembly.GetExecutingAssembly().GetName().Name);
+
                 _target = new FileTarget
                 {
                     Name = "eventos",
@@ -56,6 +50,7 @@ namespace PluginEventos.ui
                     Layout = "${date}: ${message}${newline}",
                     CreateDirs = true
                 };
+
                 _logConfig.AddTarget(_target);
                 _logConfig.AddRuleForAllLevels(_target);
                 LogManager.Configuration = _logConfig;
@@ -72,21 +67,22 @@ namespace PluginEventos.ui
             if (modoServer || (!conf.EstaAtivado("MostrarEvento")))
                 return null;
 
-            using (var frm = new FormNotificacao())
+            using var frm = new FormNotificacao();
+
+            frm.CarregarEvento(evento, contexto);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.LstIgnorados.DataSource = ignoreList;
+            DialogResult ret = frm.ShowDialog();
+
+            var retorno = new Retorno
             {
-                frm.CarregarEvento(evento, contexto);
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.LstIgnorados.DataSource = ignoreList;
-                DialogResult ret = frm.ShowDialog();
-                var retorno = new Retorno
-                {
-                    Ignorar = ret == DialogResult.Abort,
-                    Modificadores = frm.ObterModificadores(),
-                    Acao = frm.Acao,
-                    Erro = frm.Erro
-                };
-                return retorno;
-            }
+                Ignorar = ret == DialogResult.Abort,
+                Modificadores = frm.ObterModificadores(),
+                Acao = frm.Acao,
+                Erro = frm.Erro
+            };
+
+            return retorno;
         }
 
         private string ObterModificadores()
@@ -107,8 +103,10 @@ namespace PluginEventos.ui
             bool temModificadores = ctx.ContainsKey("modificadores");
             TxtModificadores.Text = temModificadores ? ctx["modificadores"].ToString(Formatting.Indented) : string.Empty;
             TabModificadores.PageVisible = temModificadores;
+
             if (temModificadores)
                 ctx.Remove("modificadores");
+
             TxtContexto.Text = ctx.ToString(Formatting.Indented);
             TxtContexto.ReadOnly = true;
             TxtModificadores.ReadOnly = false;
@@ -131,13 +129,11 @@ namespace PluginEventos.ui
             DialogResult = DialogResult.OK;
         }
 
-        #endregion
-
-        #region Private static fields
-
         private static LoggingConfiguration _logConfig;
         private static Target _target;
         private static Logger _logger;
-        #endregion
+
+        private void BtnCallback_Click(object sender, EventArgs e)
+            => FormCallback.Executar();
     }
 }

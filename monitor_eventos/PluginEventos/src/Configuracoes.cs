@@ -1,27 +1,22 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-
-namespace PluginEventos
+﻿namespace PluginEventos
 {
+    using System.Collections.Generic;
+    using Newtonsoft.Json.Linq;
+
     public class Configuracoes
     {
-        #region Fields
         private readonly JObject config;
-        #endregion
 
-        #region Constructor
         public Configuracoes()
         {
             var arqConfig = JObject.Parse(Colibri.ObterConfigs(0));
             if (arqConfig != null && arqConfig.TryGetValue("configs", out JToken confs) && (confs is JObject))
                 config = (JObject) confs;
         }
-        #endregion
 
-        #region Metodos
         public bool EstaAtivado(string nome)
-            => config != null && config.TryGetValue(nome, out JToken token) &&
-                ((JObject) token).GetValue("valor").ToString().Equals("1");
+            => config != null && config.TryGetValue(nome, out JToken token)
+                && ((JObject)token).GetValue("valor").ToString().Equals("1");
 
         public void GravarConfiguracao(string nome, bool valor)
             => Colibri.GravarConfig(nome, 0, valor ? "1" : null);
@@ -42,6 +37,5 @@ namespace PluginEventos
             }
             return eventos;
         }
-        #endregion
     }
 }

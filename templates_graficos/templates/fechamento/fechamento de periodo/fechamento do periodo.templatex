@@ -5,6 +5,8 @@
 Abert : {{dt_abertura|data('%d/%m/%y %H:%M')}} {{operador_abriu}}
 Fech  : {{dt_fechamento|data('%d/%m/%y %H:%M')}} {{operador_fechou}}
 Impr  : {{data}} {{hora}} {{operador}}
+{% include '_licenca.templatex' -%}
+{% include '_incompativeis.templatex' -%}
 {% endblock %}
 {% block corpo -%}
 {% for nome, template, sql in rel -%}
@@ -12,4 +14,5 @@ Impr  : {{data}} {{hora}} {{operador}}
 <t3:b>{{nome}}</t3>
 {% include template ignore missing -%}
 {% endfor %}
+{% include '_licenca.templatex' -%}
 {% endblock %}

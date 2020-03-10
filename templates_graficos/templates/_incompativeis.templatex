@@ -1,0 +1,16 @@
+﻿% if incompativeis is defined and incompativeis.terminais|length > 0
+<imgc>{{"{ncr}\\images\\Comum\\sirene.png"}}</imgc:50>
+<center><t7:b><u>Alerta !</u></t7></center>
+
+% if incompativeis.bloqueado
+<center><t2><r>Seu ambiente está com atualizações suspensas.</r></t2></center>
+
+% endif 
+Identificamos que alguns terminais que se comunicaram com o Master nos últimos 90 dias utilizam um sistema operacional incompatível. Verifique na lista abaixo quais são estes terminais e qual sistema operacional utilizam. Atualize ou remova estes terminais para que as atualizações do sistema não sejam bloqueadas. 
+
+<b><u>Lista de terminais incompatíveis:</u></b>
+% for terminal in incompativeis.terminais 
+  » {{terminal}}
+{% endfor %}
+Se estes terminais não acessam mais o sistema, você pode removê-los pela página de terminais do NCR Master.
+% endif

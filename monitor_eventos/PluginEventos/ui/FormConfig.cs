@@ -1,27 +1,24 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using DevExpress.XtraTreeList;
-using DevExpress.XtraTreeList.Nodes;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-namespace PluginEventos.ui
+﻿namespace PluginEventos.ui
 {
+    using System;
+    using System.IO;
+    using System.Reflection;
+    using DevExpress.XtraTreeList;
+    using DevExpress.XtraTreeList.Nodes;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+
     public partial class FormConfig: DevExpress.XtraEditors.XtraForm
     {
         private const string MOSTRA_EVENTO = "MostrarEvento";
         private Configuracoes _config;
 
-        #region Constructor
         public FormConfig()
         {
             InitializeComponent();
             CarregarTreeList();
         }
-        #endregion
 
-        #region Eventos
         private void FormConfig_Shown(object sender, EventArgs e)
             => Tree.ExpandAll();
 
@@ -50,9 +47,7 @@ namespace PluginEventos.ui
             }
             _config.GravarConfiguracao(MOSTRA_EVENTO, ChkMostrarNotificacao.Checked);
         }
-        #endregion
 
-        #region Metodos
         private void CarregarTreeList()
         {
             string arquivoEventos = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "eventos.json");
@@ -87,6 +82,5 @@ namespace PluginEventos.ui
 
         private static string ObterNomeEvento(TreeListNode node)
             => $"{node.ParentNode.GetValue(0)}_{node.GetValue(0)}";
-        #endregion
     }
 }

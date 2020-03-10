@@ -1,79 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json.Linq;
-using PluginEventos.ui;
-using static PluginEventos.ui.FormNotificacao;
-
-// O assembly do plugin deve ser Plugin.[NomeDoPlugin]
+﻿// O assembly do plugin deve ser Plugin.[NomeDoPlugin]
 // O namespace aqui deve ser Plugin[NomeDoPlugin]
 namespace PluginEventos
 {
-    internal class DadosDoFabricante
-    {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using Newtonsoft.Json.Linq;
+    using PluginEventos.ui;
+    using static PluginEventos.ui.FormNotificacao;
 
-        public Fabricante fabricante;
-        public Suporte suporte;
-
-        public class Fabricante
-        {
-            public string desenvolvedor = "NCR Colibri";
-            public string direitos_de_copia = string.Empty;
-            public string empresa = "NCR Labs";
-            public string marcas_registradas = string.Empty;
-            public string termos_da_licenca = string.Empty;
-        }
-
-        public class Suporte
-        {
-            public string email = "colibri.agile@ncr.com";
-            public string telefone = "";
-            public string url = "www.colibri.com.br";
-        }
-
-        #region Construtor
-        public DadosDoFabricante()
-        {
-            fabricante = new Fabricante();
-            suporte = new Suporte();
-        }
-        #endregion
-
-        #region Metodos
-        public string ToJson()
-        {
-            var serializer = new JavaScriptSerializer();
-            return serializer.Serialize(this);
-        }
-        #endregion
-    }
-
-    public class Plugin
+    public static class Plugin
     {
         private static readonly Lazy<List<string>> _ignoreList = new Lazy<List<string>>(() => new List<string>());
         private static bool _modoServer;
-        #region Metodos
+
         public static string ObterNome()
             => "Monitor de eventos";
 
         public static string ObterVersao()
             => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
+        public static bool ObterGlobal()
+            => false;
+
         public static string ObterDadosFabricante()
-            => new DadosDoFabricante().ToJson();
-        
+            => new DadosDoFabricante().ToString();
+
+        #pragma warning disable RCS1163 // Unused parameter.
+        #pragma warning disable IDE0060 // Remove unused parameter        
         public static string ObterDadosLicenca(string info)
-            => "{\"chave_extensao\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\"}";
+            => "{\"chave_extensao\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\", \"sistema\": true}";
 
         public static void Configurar(string maquinas)
+        #pragma warning restore IDE0060 // Remove unused parameter
+        #pragma warning restore RCS1163 // Unused parameter.
         {
-            using (var frmConfig = new FormConfig())
-            {
-                frmConfig.ShowDialog();
-            }
+            using var frmConfig = new FormConfig();
+
+            frmConfig.ShowDialog();
         }
-        
+
         public static string Notificar(string sEvento, string sContexto)
         {
             if (!_modoServer)
@@ -105,8 +71,8 @@ namespace PluginEventos
         public static void RegistrarAssinaturas()
         {
             var config = new Configuracoes();
-            List<string> eventos = config.ObterEventosMarcados();
-            foreach (string evento in eventos)
+
+            foreach (string evento in config.ObterEventosMarcados())
             {
                 string nome = evento.Replace("_", ".");
                 Colibri.AssinarEvento(nome);
@@ -121,6 +87,5 @@ namespace PluginEventos
 
         public static string RegistrarPermissoes()
             => string.Empty;
-        #endregion
     }
 }

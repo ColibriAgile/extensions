@@ -1,7 +1,6 @@
 ﻿{% extends "templates/_templatebase.templatex" -%}
 {% block cabecalho -%}
 <t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
-
 <l2:5>
 <div6>Turno</divv>{{turno_id}} - {{turno_operador|capitalize}} {% if usuario_virtual %}<i>(virtual)</i>{% endif %}
 <l0>
@@ -11,11 +10,14 @@
 <l0>
 <div6>Impr. em</divv>{{data}} {{hora}} <b>por {{operador|capitalize}}</b>
 <l2:5>
-{%- endblock %}
-{% block corpo %}
-{% for nome, template, sql in rel -%}
+{% include '_licenca.templatex' -%}
+{% include '_incompativeis.templatex' -%}
+{%- endblock -%}
+{%- block corpo %}
+{%- for nome, template, sql in rel -%}
 <l3:80>
 <t3:b>{{nome}}</t3>
 {% include template ignore missing %}
-{% endfor %}
+{% endfor -%}
+{% include '_licenca.templatex' -%}
 {% endblock %}
