@@ -1,4 +1,4 @@
-﻿% if incompativeis.terminais|length > 0
+﻿% if incompativeis is defined and incompativeis.terminais|length > 0
 <imgc>{{"{ncr}\\images\\Comum\\sirene.png"}}</imgc:50>
 <center><t7:b><u>Alerta !</u></t7></center>
 
