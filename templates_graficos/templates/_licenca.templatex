@@ -1,5 +1,5 @@
 ﻿% if licenca is defined
-%if licenca.dias_restantes == 1      
+%if licenca.tipo_alerta == 3      
 <l3>
 
 <t1><center><r>ATENÇÃO!</center>
@@ -8,7 +8,7 @@
 
 <center>Contate seu revendedor ou a NCR (cobranca@ncr.com) para liberação.</center> 
 % else 
-% if licenca.dias_restantes <= 10 
+% if licenca.tipo_alerta > 0 
 <l3>
 
 <t1><center><r>ATENÇÃO!</center>
