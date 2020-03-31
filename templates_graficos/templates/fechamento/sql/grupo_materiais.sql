@@ -25,7 +25,7 @@ select
   i.*,
   percentual = cast((i.vl_total * 100/@total) as numeric(12,8))
 from #tmp_itens i
-/*macro:ordenacao*/
+order by grupo_descr
 
 
 /*mapeamentos
