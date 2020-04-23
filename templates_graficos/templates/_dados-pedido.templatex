@@ -1,0 +1,26 @@
+﻿%- set ns = namespace(indices_impressos = [])
+% import '_macros-pedido.templatex' as macros with context 
+<t2:b>Dados do pedido</t2>
+<l0>
+#---------------------------------
+#- Impressão dos combos
+#---------------------------------
+<zebra>
+% set itens = operacao.consumos[0].venda.itens
+% for item in itens if not item.indice in ns.indices_impressos
+% if item.descricao_do_combo != ''
+<zebraini>
+{{ macros.render_combo(item, itens) -}}
+<zebrafim>
+% else 
+#---------------------------------
+#- Impressão dos itens
+#---------------------------------
+<zebraini>
+{{ macros.render_item(item) }}
+<zebrafim>
+% endif
+% endfor
+</zebra>
+
+

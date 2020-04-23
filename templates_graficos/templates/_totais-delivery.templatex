@@ -1,0 +1,34 @@
+﻿% set vl_entrega = operacao.totais.taxa_de_entrega + operacao.totais.taxa_externa       
+% set vl_servico = operacao.totais.servico
+% set vl_arredondamento = operacao.totais.arredondamento
+% set tem_taxa = vl_servico or vl_entrega or vl_arredondamento
+% set origem = operacao.consumos[0].venda.origem
+% set txt_entrega = txt_entrega + ' (' + origem + ')' if origem != 'pdv' and operacao.totais.taxa_externa > 0 else txt_entrega                                                                                     
+<l2>
+<div2>Subtotal</div><div:d><b>{{operacao.totais.subtotal|valor}}</b><div>
+{% if not tem_taxa %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
+{% if vl_arredondamento %}<div2>{{txt_arredondamento}}</div><div:d><b>{{vl_arredondamento|valor}}</b></div>{{'\n'}}{% endif -%}
+{% if vl_entrega %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
+{% if vl_servico %}<div2>{{txt_servico}}</div><div:d><b>{{vl_servico|valor}}</b></div>{{'\n'}}{% endif -%}
+% if operacao.totais.desconto
+<div2>Desconto</div><div:d><b>{{(operacao.totais.desconto * -1)|valor}}</b></div>
+% endif  
+% if not intencao_pagamento
+<div2>Pago online</div><div:d>{{operacao.totais.pago|valor}}</div>
+% set txt_cobrar = 'NAO COBRAR DO CLIENTE'
+% else
+% set txt_cobrar = 'COBRAR DO CLIENTE ' + operacao.totais.total|valor
+% endif
+<l1:20>
+<b><center><r> {{txt_cobrar}} </r></center></b>
+% if operacao.totais.troco > 0
+% set txt_troco = 'Levar ' +operacao.totais.troco|valor + ' (troco para ' + operacao.totais.pago|valor + ')'  
+<b><center>{{txt_troco}}</center></b>
+% endif
+<l1:20>
+{{'FORMA DE PAGAMENTO'}}
+% for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') 
+%- set descricao = item.meio.descricao+' ('+item.identificacao+')' 
+%- set vlItem = item.valor + operacao.totais.taxa_externa if loop.last else item.valor
+<div2>{{item.meio.descricao}}</div><div:d><b>{{vlItem|valor}}</b></div>
+% endfor 

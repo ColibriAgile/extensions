@@ -1,0 +1,27 @@
+﻿% extends "templates/_templatebase.templatex"
+%- block cabecalho
+% include 'templates/_primeiracompra.templatex'  
+% include 'templates/_reimpressao.templatex'
+% set ticket = operacao.consumos[0].ticket
+<t3:b:c><center>PEDIDO DE ENTREGA</center></t3>
+<l2>
+<t2:b:c>{{loja}}</t2>
+Mov.: {{movimento}} <dir>{{data}} {{hora}}h
+<t1:b>{{ticket.nome|capitalize}}</t1>
+<div2>Caixa: {{sessao.funcionario.nome}}</div><div:d>Entreg: {{operacao.entregador.usuario|default('Nao Informado')}}</div>
+Hora pedido: {{hr_pedido|esquerda(5)}}
+<l0>
+%- include 'templates/_dados-cliente.templatex'
+%- endblock cabecalho
+% block corpo
+% include '_dados-pedido.templatex' 
+<inc1>
+% include 'templates/_taxas-delivery.templatex'
+<inc1>
+% include '_totais-delivery.templatex'
+% include 'templates/_reimpressao.templatex'
+% include 'templates/_primeiracompra.templatex'
+% if intencao_pagamento
+<center><t3:b><r> PEDIDO JA PAGO </r></t3></center>
+% endif
+% endblock corpo
