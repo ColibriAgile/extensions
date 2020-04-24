@@ -5,7 +5,7 @@
 % set origem = operacao.consumos[0].venda.origem
 % set txt_entrega = txt_entrega + ' (' + origem + ')' if origem != 'pdv' and operacao.totais.taxa_externa > 0 else txt_entrega                                                                                     
 <l2>
-<div2>Subtotal</div><div:d><b>{{operacao.totais.subtotal|valor}}</b><div>
+<div2>Total dos itens</div><div:d><b>{{operacao.totais.subtotal|valor}}</b><div>
 {% if not tem_taxa %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
 {% if vl_arredondamento %}<div2>{{txt_arredondamento}}</div><div:d><b>{{vl_arredondamento|valor}}</b></div>{{'\n'}}{% endif -%}
 {% if vl_entrega %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
@@ -20,11 +20,13 @@
 % set txt_cobrar = 'COBRAR DO CLIENTE ' + operacao.totais.total|valor
 % endif
 <l1:20>
-<b><center><r> {{txt_cobrar}} </r></center></b>
+<t2>
+<b><center> {{txt_cobrar}} </center></b>
 % if operacao.totais.troco > 0
 % set txt_troco = 'Levar ' +operacao.totais.troco|valor + ' (troco para ' + operacao.totais.pago|valor + ')'  
 <b><center>{{txt_troco}}</center></b>
 % endif
+</t2>
 <l1:20>
 {{'FORMA DE PAGAMENTO'}}
 % for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') 
