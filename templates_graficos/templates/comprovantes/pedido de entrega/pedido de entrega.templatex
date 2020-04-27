@@ -1,8 +1,8 @@
-﻿% extends "templates/_templatebase.templatex"
+﻿%- extends "templates/_templatebase.templatex"
 %- block cabecalho
-% include 'templates/_primeiracompra.templatex'  
-% include 'templates/_reimpressao.templatex'
-% set ticket = operacao.consumos[0].ticket
+%- include 'templates/_primeiracompra.templatex'  
+%- include 'templates/_reimpressao.templatex'
+%- set ticket = operacao.consumos[0].ticket
 <t3:b:c><center>PEDIDO DE ENTREGA</center></t3>
 <l2>
 <div2><t2:b:c>{{loja}}</t2></div><div:d><t2:b:c>{{ticket.nome|capitalize}}</t2></div>

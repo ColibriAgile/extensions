@@ -28,7 +28,7 @@
 {{- render_item(it, '  ', loop.first, mostrapreco=False) }}
 {% endfor %}
 {%- endmacro -%}
-<t2:b>Pedido</t2>
+<t2:b:c>Pedido</t2>
 <l0>
 #---------------------------------
 #- Impressão dos combos
