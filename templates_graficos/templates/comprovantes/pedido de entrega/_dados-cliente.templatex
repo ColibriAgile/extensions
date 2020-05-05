@@ -1,0 +1,37 @@
+﻿{%- if operacao.consumos and operacao.consumos[0].ticket.cliente -%}
+{%- set cliente = operacao.consumos[0].ticket.cliente-%}
+{% else -%}
+{%- set cliente = consumos[0].ticket.cliente if consumos and consumos[0].ticket.cliente else cliente -%}
+{% endif -%}
+{%- if operacao.consumos and operacao.consumos[0].venda.observacao != '' %}
+{% set obs = operacao.consumos[0].venda.observacao -%}
+{% else -%}
+{% set obs = consumos[0].venda.observacao if consumos else '' -%}
+{% endif -%}    
+{%- macro imprimir_linha(chave, valor, destaque) %}
+{{chave}}: {% if destaque %}<b>{{valor}}</b>{% else %}{{valor}}{% endif %}
+{%- endmacro -%}
+<t2:b:c>Cliente</t2>
+<l0> 
+{{-imprimir_linha('Identificação', cliente.identificacao|capitalize)}}
+{{-imprimir_linha('Nome', cliente.nome|capitalize)}}
+{{-imprimir_linha('Telefone', cliente.telefone)}}
+<l0>
+<t2:b:c>Entregar em</t2>
+<l0> 
+{{-imprimir_linha('Endereço', cliente.endereco|trim + ', ' + cliente.numero|trim, true)}}
+{%- if cliente.complemento != '' -%}
+{{-imprimir_linha('Complemento', cliente.complemento, true)}}
+{%- endif %}
+{{-imprimir_linha('Bairro', cliente.bairro, true)}}
+{%- if cliente.referencia != '' -%}
+{{-imprimir_linha('Referência', cliente.referencia)}}
+{%- endif %}
+{{-imprimir_linha('Região', regiao_nome)}}
+<l0>
+{%if obs -%}
+<dec2/>
+<t1:b:c>Obs.: {{obs}}</t1>
+<dec2/>
+<l0>
+{% endif %}

@@ -1,0 +1,54 @@
+﻿%- set ns = namespace(indices_impressos = [], mostrar_obs = False)
+#---------------------------------
+#- Impressão das observações
+#---------------------------------
+{%- macro render_obs(observacoes, indent) %}
+{%- for obs in observacoes if ns.mostrar_obs -%}
+{{'\n'}}{{indent}}<i>  » {{obs}}</i>
+{%- endfor %}
+{%- endmacro -%}
+#---------------------------------
+#- Impressão de um item
+#---------------------------------
+{%- macro render_item(item, indent, quebrarLinha, mostrapreco) %}
+{%- if item.cancelado %} (CANCELADO) {% endif -%}
+{% if quebrarLinha %}{{'\n'}}{% endif %}{{indent}}{{item.quantidade|fracao if item.combo_id else item.quantidade|quantidade}} {{item.descricao_producao}}
+{%- if mostrapreco %}<dir>{{item.valor|valor}}{% endif %}
+{{- render_obs(item.observacao, indent)}}
+{%- endmacro %}
+#---------------------------------
+#- Impressão de um combo
+#---------------------------------
+{%- macro render_combo(item, itens) %}
+{%- set valor = itens|selectattr('indice', 'eq', item.indice)|sum('valor') %}
+{%- do ns.indices_impressos.append(item.indice) -%}
+<t0:b:c>{{item.descricao_do_combo}}</t0> <dir>{{valor|valor}}
+{{- render_obs(item.observacoes_do_combo) }}
+{%- for it in itens|selectattr('indice', 'eq', item.indice) %}
+{{- render_item(it, '  ', loop.first, mostrapreco=False) }}
+{% endfor %}
+{%- endmacro -%}
+<t2:b:c>Pedido</t2>
+<l0>
+#---------------------------------
+#- Impressão dos combos
+#---------------------------------
+<zebra>
+{%- set itens = operacao.consumos[0].venda.itens %}
+{%- for item in itens if not item.indice in ns.indices_impressos %}
+{%- if item.descricao_do_combo != '' %}
+<zebraini>
+{{ render_combo(item, itens) -}}
+<zebrafim>
+{%- else %}
+#---------------------------------
+#- Impressão dos itens
+#---------------------------------
+<zebraini>
+{{ render_item(item, mostrapreco=True) }}
+<zebrafim>
+{%- endif %}
+{%- endfor %}
+</zebra>
+
+
