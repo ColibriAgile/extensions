@@ -11,12 +11,13 @@
 {%- macro imprimir_linha(chave, valor, destaque) %}
 {{chave}}: {% if destaque %}<b>{{valor}}</b>{% else %}{{valor}}{% endif %}
 {%- endmacro -%}
+<dec3/>
 <t2:b:c>Cliente</t2>
 <l0> 
 {{-imprimir_linha('Identificação', cliente.identificacao|capitalize)}}
 {{-imprimir_linha('Nome', cliente.nome|capitalize)}}
 {{-imprimir_linha('Telefone', cliente.telefone)}}
-<l0>
+<dec3/>
 <t2:b:c>Entregar em</t2>
 <l0> 
 {{-imprimir_linha('Endereço', cliente.endereco|trim + ', ' + cliente.numero|trim, true)}}
@@ -28,10 +29,9 @@
 {{-imprimir_linha('Referência', cliente.referencia)}}
 {%- endif %}
 {{-imprimir_linha('Região', regiao_nome)}}
+<dec3/>
 <l0>
 {%if obs -%}
-<dec2/>
-<t1:b:c>Obs.: {{obs}}</t1>
-<dec2/>
-<l0>
+<t1:b:c>OBS: {{obs}}</t1>
+<dec3/>
 {% endif %}
