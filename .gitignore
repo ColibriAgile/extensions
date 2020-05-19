@@ -2,6 +2,7 @@
 *.cmpkg
 *.exe
 *.dat
+*.dcu
 
 ## Ignora a pasta client pois esta pasta recebe os artefatos resultantes da compilacao.
 ## Se necessário inclua manualmente os arquivos que devem residir no repositorio. 
