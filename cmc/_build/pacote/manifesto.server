@@ -15,7 +15,7 @@
      "ColibriAgent": "1.1.*"
    },
   "nome": "ncrlab-CMC",
-  "nome_exibicao": "NCR Command Center",
+  "nome_exibicao": "Command Center",
   "atualizacao_obrigatoria": true,
   "produto": "master",
   "empresa": "NCR Lab",
