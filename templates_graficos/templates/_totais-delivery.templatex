@@ -28,7 +28,7 @@
 <t2>
 <b><center> {{txt_cobrar}} </center></b>
 % if operacao.totais.troco > 0
-% set txt_troco = 'Levar ' + operacao.totais.troco|valor + ' (troco para ' + operacao.totais.pago|valor + ')'  
+% set txt_troco = 'Levar ' + operacao.totais.troco|valor + ' (troco para ' + (operacao.totais.pago - ns.pago_online)|valor + ')'  
 <b><center>{{txt_troco}}</center></b>
 % endif
 % if operacao.caixa.tipo_de_itens == 'IntencaoPagamento' and operacao.caixa.itens[0].meio.tipo_tef != ''
