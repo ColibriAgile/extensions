@@ -17,7 +17,12 @@
 <div2>Pago online</div><div:d>{{operacao.totais.pago|valor}}</div>
 % set txt_cobrar = 'NAO COBRAR DO CLIENTE'
 % else
-% set txt_cobrar = 'COBRAR DO CLIENTE ' + operacao.totais.total|valor
+% set ns = namespace (pago_online = 0) 
+% for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') if item.dados_adicionais.online 
+% set ns.pago_online = ns.pago_online + item.valor
+% endfor
+% set cobrar = operacao.totais.total - ns.pago_online
+% set txt_cobrar = 'COBRAR DO CLIENTE ' + cobrar|valor 
 % endif
 <l1:20>
 <t2>

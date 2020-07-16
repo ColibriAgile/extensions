@@ -6,10 +6,9 @@
 <t3:b:c><center>PEDIDO DE ENTREGA</center></t3>
 <l2>
 <div2><t2:b:c>{{loja}}</t2></div><div:d><t2:b:c>{{ticket.nome|capitalize}}</t2></div>
-Mov.: {{movimento}} <dir>{{data}} {{hora}}h
-<div2>Caixa: {{sessao.funcionario.nome}}</div><div:d>Entreg: {{operacao.entregador.usuario|default('Nao Informado')}}</div>
-Hora pedido: {{hr_pedido|esquerda(5)}}
-<l0>
+Mov: {{movimento}} <dir>{{data}} {{hora}}h
+<div2>Caixa: {{sessao.funcionario.nome}}</div><div:d>Entreg: {{operacao.entregador.usuario|default('(nao informado)')}}</div>
+Pedido às {{hr_pedido|esquerda(5)}}h
 %- include '_dados-cliente.templatex'
 %- endblock cabecalho
 % block corpo

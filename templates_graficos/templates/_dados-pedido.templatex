@@ -11,8 +11,8 @@
 #- Impressão de um item
 #---------------------------------
 {%- macro render_item(item, indent, quebrarLinha, mostrapreco) %}
-{%- if item.cancelado %} (CANCELADO) {% endif -%}
-{% if quebrarLinha %}{{'\n'}}{% endif %}{{indent}}{{item.quantidade|fracao if item.combo_id else item.quantidade|quantidade}} {{item.descricao_producao}}
+{%- if item.cancelado %}(CANCELADO) {% endif -%}
+{%- if quebrarLinha %}{{'\n'}}{% endif %}{{indent}}{{item.quantidade|fracao if item.combo_id else item.quantidade|quantidade}} {{item.descricao_producao}}
 {%- if mostrapreco %}<dir>{{item.valor|valor}}{% endif %}
 {{- render_obs(item.observacao, indent)}}
 {%- endmacro %}
@@ -34,21 +34,20 @@
 #- Impressão dos combos
 #---------------------------------
 <zebra>
-{%- set itens = operacao.consumos[0].venda.itens %}
-{%- for item in itens if not item.indice in ns.indices_impressos %}
-{%- if item.descricao_do_combo != '' %}
+{%- set itens = operacao.consumos[0].venda.itens -%}
+{%- for item in itens if not item.indice in ns.indices_impressos and not item.cancelado %} 
+{%- if item.descricao_do_combo != '' -%}
 <zebraini>
 {{ render_combo(item, itens) -}}
 <zebrafim>
-{%- else %}
 #---------------------------------
 #- Impressão dos itens
 #---------------------------------
+{%- else %}
 <zebraini>
 {{ render_item(item, mostrapreco=True) }}
 <zebrafim>
 {%- endif %}
 {%- endfor %}
 </zebra>
-
 
