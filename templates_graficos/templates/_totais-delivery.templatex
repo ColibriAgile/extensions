@@ -3,6 +3,7 @@
 % set vl_arredondamento = operacao.totais.arredondamento
 % set tem_taxa = vl_servico or vl_entrega or vl_arredondamento
 % set origem = operacao.consumos[0].venda.origem
+% set ns = namespace (pago_online = 0) 
 % set txt_entrega = txt_entrega + ' (' + origem + ')' if origem != 'pdv' and operacao.totais.taxa_externa > 0 else txt_entrega                                                                                     
 <l2>
 <div2>Total dos itens</div><div:d><b>{{operacao.totais.subtotal|valor}}</b><div>
@@ -17,8 +18,7 @@
 <div2>Pago online</div><div:d>{{operacao.totais.pago|valor}}</div>
 % set txt_cobrar = 'NAO COBRAR DO CLIENTE'
 % else
-% set ns = namespace (pago_online = 0) 
-% for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') if item.dados_adicionais.online 
+% for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') if item.dados_adicionais and item.dados_adicionais.online 
 % set ns.pago_online = ns.pago_online + item.valor
 % endfor
 % set cobrar = operacao.totais.total - ns.pago_online
