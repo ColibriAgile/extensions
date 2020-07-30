@@ -2,13 +2,9 @@
   "arquivos": [
     {
       "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
-      "destino": "client",
-      "_pattern_nome": ".*client\\.exe\\b"
-    },
-    {
       "params_serv": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
-      "destino": "server",
-      "_pattern_nome": ".*client\\.exe\\b"
+      "destino": "shared",
+      "_pattern_nome": ".*templates_graficos*\\.exe\\b"
     }
   ],
   "dependencias":
