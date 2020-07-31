@@ -1,10 +1,10 @@
 {
   "arquivos": [
     {
-      "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
-      "params_serv": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
+      "_pattern_nome": ".*templates_graficos*\\.exe\\b",
       "destino": "shared",
-      "_pattern_nome": ".*templates_graficos*\\.exe\\b"
+      "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
+      "params_serv": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART"
     }
   ],
   "dependencias":
@@ -13,8 +13,8 @@
     "ColibriScripts": "1.2.5.*"
   },
   "nome": "ncrlab-templates_graficos",
+  "nome_exibicao": "Templates Gráficos",
   "produto": "pos",
   "sigla_empresa": "ncrlab",
-  "empresa": "NCR Lab",
-  "nome_exibicao": "Templates Gráficos"
+  "empresa": "NCR Lab"
 }
