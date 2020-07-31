@@ -18,5 +18,5 @@ Pedido às {{hr_pedido|esquerda(5)}}h
 % include 'templates/_reimpressao.templatex'
 % include 'templates/_primeiracompra.templatex'
 % endblock corpo
-{{ super() }}
+{%- filter eject %}{% endfilter %}{{super()}}
 % endblock relatorio
