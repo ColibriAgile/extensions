@@ -1,7 +1,7 @@
 {
   "arquivos": [
     {
-      "_pattern_nome": ".*templates_graficos*\\.exe\\b",
+      "_pattern_nome": ".*templates_graficos.*\\.exe\\b",
       "destino": "shared",
       "params_client": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART",
       "params_serv": "/SP- /SILENT /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART"
