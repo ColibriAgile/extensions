@@ -1,5 +1,6 @@
 ﻿{% extends "templates/_templatebase.templatex" -%}
 {% block cabecalho -%}
+<t2><center>{{loja}}</center></t2>
 <t3><b>Fechamento de caixa<dir>{{movimento}}</b></t3>
 <l2:5>
 <div6>Turno</divv>{{turno_id}} - {{turno_operador|capitalize}} {% if usuario_virtual %}<i>(virtual)</i>{% endif %}
