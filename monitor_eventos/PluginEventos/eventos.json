@@ -188,8 +188,11 @@
       "VendavelObtido",
       "VendendoItem"
     ],
-    "EventodeTransferencia": [
-      "FinalizandoTransferencia"
+    "EventoDeTransferencia": [
+	  "AoSelecionarTicketDestino",
+	  "TicketDestinoSelecionado",
+      "AoIniciarTransferencia",
+	  "TransferenciaFinalizada"
     ]
   }
 }
