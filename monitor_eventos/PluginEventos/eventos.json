@@ -189,10 +189,10 @@
       "VendendoItem"
     ],
     "EventoDeTransferencia": [
-	  "AoSelecionarTicketDestino",
-	  "TicketDestinoSelecionado",
+      "AoSelecionarTicketDestino",
+      "TicketDestinoSelecionado",
       "AoIniciarTransferencia",
-	  "TransferenciaFinalizada"
+      "TransferenciaFinalizada"
     ]
   }
 }
