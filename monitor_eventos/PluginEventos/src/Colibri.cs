@@ -26,7 +26,7 @@
 
         public static void AssinarEventos(params string[] eventos)
         {
-            foreach (var evento in eventos)
+            foreach (string evento in eventos)
                 AssinarEvento(evento);
         }
 
@@ -81,13 +81,13 @@
                 string s = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 while (true)
                 {
-                    if (Directory.Exists(Path.Combine(s, "logs\\")))
+                    if (Directory.Exists(Path.Combine(s!, "logs\\")))
                     {
                         _pastaBase = Path.Combine(s, "logs");
                         break;
                     }
                     s = Path.GetDirectoryName(s);
-                    if (s.Length < 4)
+                    if (s != null && s.Length < 4)
                         throw new DirectoryNotFoundException(s);
                 }
             }

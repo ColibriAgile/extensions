@@ -11,7 +11,7 @@ namespace PluginEventos
 
     public static class Plugin
     {
-        private static readonly Lazy<List<string>> _ignoreList = new Lazy<List<string>>(() => new List<string>());
+        private static readonly Lazy<List<string>> IgnoreList = new Lazy<List<string>>(() => new List<string>());
         private static bool _modoServer;
 
         public static string ObterNome()
@@ -26,14 +26,12 @@ namespace PluginEventos
         public static string ObterDadosFabricante()
             => new DadosDoFabricante().ToString();
 
-        #pragma warning disable RCS1163 // Unused parameter.
         #pragma warning disable IDE0060 // Remove unused parameter        
         public static string ObterDadosLicenca(string info)
             => "{\"chave_extensao\": \"79701D1D-FA1C-44CD-A789-6E867D8FBC23\", \"sistema\": true}";
 
         public static void Configurar(string maquinas)
         #pragma warning restore IDE0060 // Remove unused parameter
-        #pragma warning restore RCS1163 // Unused parameter.
         {
             using var frmConfig = new FormConfig();
 
@@ -44,11 +42,11 @@ namespace PluginEventos
         {
             if (!_modoServer)
             {
-                if (_ignoreList.Value.Contains(sEvento))
+                if (IgnoreList.Value.Contains(sEvento))
                     return string.Empty;
             }
 
-            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto, _modoServer, _ignoreList.Value);
+            Retorno? retorno = FormNotificacao.Executar(sEvento, sContexto, _modoServer, IgnoreList.Value);
 
             if (retorno is null)
                 return string.Empty;
@@ -56,7 +54,7 @@ namespace PluginEventos
             Retorno ret = retorno.Value;
 
             if ((!_modoServer) && ret.Ignorar)
-                _ignoreList.Value.Add(sEvento);
+                IgnoreList.Value.Add(sEvento);
 
             var json = JObject.Parse(ret.Modificadores);
             if (!string.IsNullOrWhiteSpace(ret.Acao))

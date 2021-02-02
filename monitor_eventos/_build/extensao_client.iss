@@ -7,13 +7,12 @@
 #define PastaIncludes ".\"
 #include PastaIncludes + "colibri_includes.iss"
 
-
 [Setup]
-AppCopyright=Copyright 2017
+AppCopyright=NCR Hospitality Intl, 2021
 AppName={#AppName}
 AppVersion={#AppVersion} 
-AppPublisher=NCR Corporation
-DefaultDirName={code:PastaNCRColibri|c:\NCR Colibri}
+AppPublisher=NCR Hospitality
+DefaultDirName={code:PastaNCRColibri|c:\NCR Solution}
 OutputDir=_build\pacote
 OutputBaseFilename={#ExtensionName}_{#AppVersion}_client
 Uninstallable=no
@@ -27,5 +26,4 @@ Source: "templates\*"; DestDir: "{app}\plugins\{#ExtensionName}\templates"; Flag
 Source: "extras\*"; DestDir: "{app}\plugins\{#ExtensionName}"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs restartreplace overwritereadonly
 
 [InstallDelete]
-Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}\templates"
-Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}\reports"
+Type: filesandordirs; Name: "{app}\plugins\{#ExtensionName}"
