@@ -10,6 +10,7 @@
 
     public partial class FormConfig: DevExpress.XtraEditors.XtraForm
     {
+        // ReSharper disable once InconsistentNaming
         private const string MOSTRA_EVENTO = "MostrarEvento";
         private Configuracoes _config;
 
@@ -50,33 +51,31 @@
 
         private void CarregarTreeList()
         {
-            string arquivoEventos = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "eventos.json");
+            string arquivoEventos = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, "eventos.json");
 
             _config = new Configuracoes();
             ChkMostrarNotificacao.Checked = _config.EstaAtivado(MOSTRA_EVENTO);
-            using (StreamReader file = File.OpenText(arquivoEventos))
-            using (var reader = new JsonTextReader(file))
-            {
-                var json = (JObject) JToken.ReadFrom(reader)["eventos"];
-                var item = (JProperty) json.First;
+            using StreamReader file = File.OpenText(arquivoEventos);
+            using var reader = new JsonTextReader(file);
+            var json = (JObject) JToken.ReadFrom(reader)["eventos"];
+            var item = (JProperty) json.First;
 
-                Tree.ClearNodes();
-                while (!(item is null))
+            Tree.ClearNodes();
+            while (!(item is null))
+            {
+                TreeListNode node = Tree.Nodes.Add(item.Name);
+                node.SetValue(0, item.Name);
+                var itens = (JArray) item.First;
+                string nome;
+                foreach (JToken filho in itens)
                 {
-                    TreeListNode node = Tree.Nodes.Add(item.Name);
-                    node.SetValue(0, item.Name);
-                    var itens = (JArray) item.First;
-                    string nome = "";
-                    foreach (JToken filho in itens)
-                    {
-                        nome = ((JValue) filho).Value.ToString();
-                        TreeListNode nodeEvento = node.Nodes.Add(nome);
-                        nodeEvento.SetValue(0, nome);
-                        bool selecionado = _config.EstaAtivado(ObterNomeEvento(nodeEvento));
-                        nodeEvento.Checked = selecionado;
-                    }
-                    item = (JProperty) item.Next;
+                    nome = ((JValue) filho).Value.ToString();
+                    TreeListNode nodeEvento = node.Nodes.Add(nome);
+                    nodeEvento.SetValue(0, nome);
+                    bool selecionado = _config.EstaAtivado(ObterNomeEvento(nodeEvento));
+                    nodeEvento.Checked = selecionado;
                 }
+                item = (JProperty) item.Next;
             }
         }
 

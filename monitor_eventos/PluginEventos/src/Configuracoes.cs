@@ -5,17 +5,17 @@
 
     public class Configuracoes
     {
-        private readonly JObject config;
+        private readonly JObject _config;
 
         public Configuracoes()
         {
             var arqConfig = JObject.Parse(Colibri.ObterConfigs(0));
             if (arqConfig != null && arqConfig.TryGetValue("configs", out JToken confs) && (confs is JObject))
-                config = (JObject) confs;
+                _config = (JObject) confs;
         }
 
         public bool EstaAtivado(string nome)
-            => config != null && config.TryGetValue(nome, out JToken token)
+            => _config != null && _config.TryGetValue(nome, out JToken token)
                 && ((JObject)token).GetValue("valor").ToString().Equals("1");
 
         public void GravarConfiguracao(string nome, bool valor)
@@ -24,10 +24,10 @@
         public List<string> ObterEventosMarcados()
         {
             var eventos = new List<string>();
-            if (config is null)
+            if (_config is null)
                 return eventos;
 
-            foreach (KeyValuePair<string, JToken> item in config)
+            foreach (KeyValuePair<string, JToken> item in _config)
             {
                 if (!item.Key.StartsWith("EventoDe"))
                     continue;
