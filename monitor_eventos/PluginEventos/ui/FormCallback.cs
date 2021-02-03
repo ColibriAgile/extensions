@@ -6,9 +6,7 @@
     public partial class FormCallback : XtraForm
     {
         public FormCallback()
-        {
-            InitializeComponent();
-        }
+            => InitializeComponent();
 
         public static void Executar()
         {

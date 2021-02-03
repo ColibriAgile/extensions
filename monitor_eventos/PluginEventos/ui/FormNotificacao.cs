@@ -1,4 +1,5 @@
-﻿namespace PluginEventos.ui
+﻿#nullable enable
+namespace PluginEventos.ui
 {
     using System;
     using System.Collections.Generic;
@@ -6,28 +7,30 @@
     using System.Reflection;
     using System.Windows.Forms;
     using DevExpress.XtraEditors;
+    using Ncr.Ui;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using NLog;
     using NLog.Config;
     using NLog.Targets;
 
-    public partial class FormNotificacao: XtraForm
+    public partial class FormNotificacao : XtraForm
     {
         public struct Retorno
         {
-            public string Acao { get; set; }
+            public string? Acao { get; set; }
 
-            public string Erro { get; set; }
+            public string? Erro { get; set; }
 
             public bool Ignorar { get; set; }
 
             public string Modificadores { get; set; }
         }
 
-        public string Acao { get; set; }
+        public string? Acao { get; set; }
 
-        public string Erro { get; set; }
+        public string? Erro { get; set; }
+        public bool PermiteInterromper { get; private set; }
 
         public FormNotificacao()
             => InitializeComponent();
@@ -56,6 +59,7 @@
                 LogManager.Configuration = _logConfig;
                 _logger = LogManager.GetLogger("eventos");
             }
+
             _logger.Info($"{evento} -> {contexto}");
         }
 
@@ -89,24 +93,25 @@
         {
             if (string.IsNullOrWhiteSpace(TxtModificadores.Text))
                 return "{}";
-            else
-            {
-                var json = JObject.Parse("{}");
-                json.Add("modificadores", JObject.Parse(TxtModificadores.Text));
-                return json.ToString();
-            }
+
+            var json = JObject.Parse("{}");
+            json.Add("modificadores", JObject.Parse(TxtModificadores.Text));
+            return json.ToString();
         }
 
         private void CarregarEvento(string evento, string contexto)
         {
             var ctx = JObject.Parse(contexto);
             bool temModificadores = ctx.ContainsKey("modificadores");
-            TxtModificadores.Text = temModificadores ? ctx["modificadores"].ToString(Formatting.Indented) : string.Empty;
+            TxtModificadores.Text = temModificadores ? ctx["modificadores"]?.ToString(Formatting.Indented) : string.Empty;
             TabModificadores.PageVisible = temModificadores;
 
             if (temModificadores)
                 ctx.Remove("modificadores");
 
+            PermiteInterromper = !ctx.ContainsKey("tolera_falhas") || !(bool)ctx["tolera_falhas"]!;
+
+            LblToleraFalhas.Visible = !PermiteInterromper;
             TxtContexto.Text = ctx.ToString(Formatting.Indented);
             TxtContexto.ReadOnly = true;
             TxtModificadores.ReadOnly = false;
@@ -118,20 +123,33 @@
 
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
+            VerificarSePodeInterromper();
             Erro = MemoErro.Text;
             DialogResult = DialogResult.OK;
         }
 
         private void BtnInterromper_Click(object sender, EventArgs e)
         {
+            VerificarSePodeInterromper();
             Acao = "abort";
             Erro = MemoErro.Text;
             DialogResult = DialogResult.OK;
         }
 
-        private static LoggingConfiguration _logConfig;
-        private static Target _target;
-        private static Logger _logger;
+        private void VerificarSePodeInterromper()
+        {
+            if (!PermiteInterromper)
+                DlgMsg.Avisar
+                (
+                    "Este evento está sinalizado como tolerante a falhas. " +
+                    "Isso significa que não é possível interromper este evento a partir de um plugin. " +
+                    "Você ainda pode enviar uma mensagem junto com o ABORT, mas ela será somente gravada nos logs sem alerta visual. "
+                );
+        }
+
+        private static LoggingConfiguration? _logConfig;
+        private static Target? _target;
+        private static Logger? _logger;
 
         private void BtnCallback_Click(object sender, EventArgs e)
             => FormCallback.Executar();

@@ -8,7 +8,7 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
-    public partial class FormConfig: DevExpress.XtraEditors.XtraForm
+    public partial class FormConfig : DevExpress.XtraEditors.XtraForm
     {
         // ReSharper disable once InconsistentNaming
         private const string MOSTRA_EVENTO = "MostrarEvento";

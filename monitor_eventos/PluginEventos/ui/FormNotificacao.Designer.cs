@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -52,21 +52,23 @@
             DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem3 = new DevExpress.Utils.ToolTipSeparatorItem();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem4 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem5 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem6 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
             this.StyleController = new DevExpress.XtraEditors.StyleController(this.components);
             this.BtnCopiar = new DevExpress.XtraEditors.SimpleButton();
             this.LayoutControl = new DevExpress.XtraLayout.LayoutControl();
@@ -97,6 +99,7 @@
             this.ItemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemCallback = new DevExpress.XtraLayout.LayoutControlItem();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.LblToleraFalhas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StyleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
             this.LayoutControl.SuspendLayout();
@@ -140,11 +143,11 @@
             this.BtnCopiar.Name = "BtnCopiar";
             this.BtnCopiar.Size = new System.Drawing.Size(84, 40);
             this.BtnCopiar.StyleController = this.LayoutControl;
-            toolTipTitleItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            toolTipTitleItem14.Text = "Copiar";
+            toolTipTitleItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            toolTipTitleItem15.Text = "Copiar";
             toolTipItem9.LeftIndent = 6;
             toolTipItem9.Text = "Copia o contexto atual para a área de transferência (clipboard) do Windows.";
-            superToolTip9.Items.Add(toolTipTitleItem14);
+            superToolTip9.Items.Add(toolTipTitleItem15);
             superToolTip9.Items.Add(toolTipItem9);
             this.BtnCopiar.SuperTip = superToolTip9;
             this.BtnCopiar.TabIndex = 3;
@@ -330,18 +333,20 @@
             this.TabErro.Controls.Add(this.MemoErro);
             this.TabErro.Name = "TabErro";
             this.TabErro.Size = new System.Drawing.Size(693, 496);
-            toolTipTitleItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            toolTipTitleItem11.Text = "Atribuir erro";
+            toolTipTitleItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            toolTipTitleItem12.Text = "Atribuir erro";
             toolTipItem7.LeftIndent = 6;
             toolTipItem7.Text = "Permite retornar uma mensagem de erro para o sistema e observar como é o comporta" +
-    "mento. Um erro pode ou não abortar a continuação da ação iniciada pelo evento.";
-            superToolTip7.Items.Add(toolTipTitleItem11);
+    "mento. Um erro pode ou não abortar a continuação da ação iniciada pelo evento de" +
+    "pendendo do tipo do evento.";
+            superToolTip7.Items.Add(toolTipTitleItem12);
             superToolTip7.Items.Add(toolTipItem7);
             this.TabErro.SuperTip = superToolTip7;
             this.TabErro.Text = "Atribuir erro";
             // 
             // PnlErro
             // 
+            this.PnlErro.Controls.Add(this.LblToleraFalhas);
             this.PnlErro.Controls.Add(this.PnlEnviar);
             this.PnlErro.Controls.Add(this.PnlInterromper);
             this.PnlErro.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -356,10 +361,10 @@
             // 
             this.PnlEnviar.Controls.Add(this.BtnEnviar);
             this.PnlEnviar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlEnviar.Location = new System.Drawing.Point(453, 5);
+            this.PnlEnviar.Location = new System.Drawing.Point(393, 5);
             this.PnlEnviar.Name = "PnlEnviar";
             this.PnlEnviar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.PnlEnviar.Size = new System.Drawing.Size(90, 40);
+            this.PnlEnviar.Size = new System.Drawing.Size(180, 40);
             this.PnlEnviar.TabIndex = 1;
             // 
             // BtnEnviar
@@ -375,30 +380,34 @@
             this.BtnEnviar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftTop;
             this.BtnEnviar.Location = new System.Drawing.Point(0, 0);
             this.BtnEnviar.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.BtnEnviar.MinimumSize = new System.Drawing.Size(120, 0);
             this.BtnEnviar.Name = "BtnEnviar";
             this.BtnEnviar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BtnEnviar.Size = new System.Drawing.Size(85, 40);
+            this.BtnEnviar.Size = new System.Drawing.Size(175, 40);
             this.BtnEnviar.StyleController = this.StyleController;
             toolTipTitleItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            toolTipTitleItem8.Text = "Enviar erro";
+            toolTipTitleItem8.Text = "Enviar erro com mensagem";
             toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "Envia a mensagem de erro para o sistema sem solicitar a interrupção da ação que d" +
-    "isparou o evento.";
+            toolTipItem5.Text = "Envia a mensagem de erro para ser exibida pelo sistema e solicita a interrupção d" +
+    "a ação que disparou o evento.";
+            toolTipTitleItem9.Text = "A mensagem será logada e exibida para o usuário.";
             superToolTip5.Items.Add(toolTipTitleItem8);
             superToolTip5.Items.Add(toolTipItem5);
+            superToolTip5.Items.Add(toolTipSeparatorItem4);
+            superToolTip5.Items.Add(toolTipTitleItem9);
             this.BtnEnviar.SuperTip = superToolTip5;
             this.BtnEnviar.TabIndex = 18;
-            this.BtnEnviar.Text = "Enviar erro";
+            this.BtnEnviar.Text = "Interromper com mensagem";
             this.BtnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
             // 
             // PnlInterromper
             // 
             this.PnlInterromper.Controls.Add(this.BtnInterromper);
             this.PnlInterromper.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlInterromper.Location = new System.Drawing.Point(543, 5);
+            this.PnlInterromper.Location = new System.Drawing.Point(573, 5);
             this.PnlInterromper.Name = "PnlInterromper";
             this.PnlInterromper.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.PnlInterromper.Size = new System.Drawing.Size(150, 40);
+            this.PnlInterromper.Size = new System.Drawing.Size(120, 40);
             this.PnlInterromper.TabIndex = 0;
             // 
             // BtnInterromper
@@ -414,21 +423,21 @@
             this.BtnInterromper.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.BtnInterromper.Name = "BtnInterromper";
             this.BtnInterromper.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BtnInterromper.Size = new System.Drawing.Size(147, 40);
+            this.BtnInterromper.Size = new System.Drawing.Size(117, 40);
             this.BtnInterromper.StyleController = this.StyleController;
-            toolTipTitleItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            toolTipTitleItem9.Text = "Enviar erro e interromper";
+            toolTipTitleItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            toolTipTitleItem10.Text = "Enviar erro e interromper";
             toolTipItem6.LeftIndent = 6;
             toolTipItem6.Text = "Envia a mensagem de erro para o sistema e solicita a interrupção da ação atual.";
-            toolTipTitleItem10.LeftIndent = 6;
-            toolTipTitleItem10.Text = "Nem todos os eventos permitem a interrupção da ação.";
-            superToolTip6.Items.Add(toolTipTitleItem9);
-            superToolTip6.Items.Add(toolTipItem6);
-            superToolTip6.Items.Add(toolTipSeparatorItem4);
+            toolTipTitleItem11.LeftIndent = 6;
+            toolTipTitleItem11.Text = "A mensagem será logada mas não será exibida para o usuário.";
             superToolTip6.Items.Add(toolTipTitleItem10);
+            superToolTip6.Items.Add(toolTipItem6);
+            superToolTip6.Items.Add(toolTipSeparatorItem5);
+            superToolTip6.Items.Add(toolTipTitleItem11);
             this.BtnInterromper.SuperTip = superToolTip6;
             this.BtnInterromper.TabIndex = 17;
-            this.BtnInterromper.Text = "Enviar erro e interromper";
+            this.BtnInterromper.Text = "Interromper";
             this.BtnInterromper.Click += new System.EventHandler(this.BtnInterromper_Click);
             // 
             // MemoErro
@@ -449,16 +458,16 @@
             this.TabIgnorados.Name = "TabIgnorados";
             this.TabIgnorados.Padding = new System.Windows.Forms.Padding(5);
             this.TabIgnorados.Size = new System.Drawing.Size(693, 496);
-            toolTipTitleItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
-            toolTipTitleItem12.Text = "Ignore list";
+            toolTipTitleItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            toolTipTitleItem13.Text = "Ignore list";
             toolTipItem8.LeftIndent = 6;
             toolTipItem8.Text = "Mostra a lista de eventos sendo ignorados durante a execução atual.";
-            toolTipTitleItem13.LeftIndent = 6;
-            toolTipTitleItem13.Text = "A lista reinicia a cada execução do sistema.";
-            superToolTip8.Items.Add(toolTipTitleItem12);
-            superToolTip8.Items.Add(toolTipItem8);
-            superToolTip8.Items.Add(toolTipSeparatorItem5);
+            toolTipTitleItem14.LeftIndent = 6;
+            toolTipTitleItem14.Text = "A lista reinicia a cada execução do sistema.";
             superToolTip8.Items.Add(toolTipTitleItem13);
+            superToolTip8.Items.Add(toolTipItem8);
+            superToolTip8.Items.Add(toolTipSeparatorItem6);
+            superToolTip8.Items.Add(toolTipTitleItem14);
             this.TabIgnorados.SuperTip = superToolTip8;
             this.TabIgnorados.Text = "Eventos ignorados";
             // 
@@ -610,15 +619,26 @@
             // 
             this.defaultLookAndFeel.LookAndFeel.SkinName = "The Bezier";
             // 
+            // LblToleraFalhas
+            // 
+            this.LblToleraFalhas.AutoSize = true;
+            this.LblToleraFalhas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblToleraFalhas.Location = new System.Drawing.Point(4, 19);
+            this.LblToleraFalhas.Name = "LblToleraFalhas";
+            this.LblToleraFalhas.Size = new System.Drawing.Size(368, 15);
+            this.LblToleraFalhas.TabIndex = 2;
+            this.LblToleraFalhas.Text = "Evento marcado como \"tolera falhas\" não pode ser interrompido.";
+            // 
             // FormNotificacao
             // 
+            this.AcceptButton = this.BtnContinuar;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 609);
             this.Controls.Add(this.LayoutControl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FormNotificacao.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNotificacao";
             this.Text = "Notificação de evento";
@@ -631,6 +651,7 @@
             this.TabModificadores.ResumeLayout(false);
             this.TabErro.ResumeLayout(false);
             this.PnlErro.ResumeLayout(false);
+            this.PnlErro.PerformLayout();
             this.PnlEnviar.ResumeLayout(false);
             this.PnlInterromper.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MemoErro.Properties)).EndInit();
@@ -680,5 +701,6 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
         private DevExpress.XtraEditors.SimpleButton BtnCallback;
         private DevExpress.XtraLayout.LayoutControlItem ItemCallback;
+        private System.Windows.Forms.Label LblToleraFalhas;
     }
 }

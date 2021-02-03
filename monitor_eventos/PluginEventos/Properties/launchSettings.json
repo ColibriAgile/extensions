@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Plugin.Eventos": {
+      "commandName": "Executable",
+      "executablePath": "C:\\ncr solution\\client\\colibriPOS.dll",
+      "commandLineArgs": "-banco pos_dconnect",
+      "workingDirectory": "C:\\ncr solution\\client\\"
+    }
+  }
+}
