@@ -1,0 +1,10 @@
+{
+  "FileVersion": 2,
+  "Id": "4f3d02f2-7ea5-45da-9ed3-10e034f939d0",
+  "Items": [
+    {
+      "Id": "b302c639-83cc-4aea-869a-ab7b0be12647",
+      "Command": "-banco pos_dconnect"
+    }
+  ]
+}
