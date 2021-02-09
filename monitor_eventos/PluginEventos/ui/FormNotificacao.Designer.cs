@@ -81,6 +81,7 @@
             this.TxtModificadores = new ICSharpCode.TextEditor.TextEditorControl();
             this.TabErro = new DevExpress.XtraTab.XtraTabPage();
             this.PnlErro = new System.Windows.Forms.Panel();
+            this.LblToleraFalhas = new System.Windows.Forms.Label();
             this.PnlEnviar = new System.Windows.Forms.Panel();
             this.BtnEnviar = new DevExpress.XtraEditors.SimpleButton();
             this.PnlInterromper = new System.Windows.Forms.Panel();
@@ -99,7 +100,6 @@
             this.ItemEspaco = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemCallback = new DevExpress.XtraLayout.LayoutControlItem();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.LblToleraFalhas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StyleController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl)).BeginInit();
             this.LayoutControl.SuspendLayout();
@@ -225,7 +225,7 @@
             // 
             this.Tabs.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tabs.Appearance.Options.UseFont = true;
-            this.Tabs.AppearancePage.Header.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Tabs.AppearancePage.Header.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tabs.AppearancePage.Header.Options.UseFont = true;
             this.Tabs.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Tabs.AppearancePage.HeaderActive.Options.UseFont = true;
@@ -264,7 +264,7 @@
             this.TabContexto.Appearance.PageClient.Options.UseFont = true;
             this.TabContexto.Controls.Add(this.TxtContexto);
             this.TabContexto.Name = "TabContexto";
-            this.TabContexto.Size = new System.Drawing.Size(693, 496);
+            this.TabContexto.Size = new System.Drawing.Size(693, 498);
             superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             toolTipTitleItem4.Text = "Contexto";
@@ -289,7 +289,7 @@
             this.TxtContexto.Name = "TxtContexto";
             this.TxtContexto.ReadOnly = true;
             this.TxtContexto.ShowVRuler = false;
-            this.TxtContexto.Size = new System.Drawing.Size(693, 496);
+            this.TxtContexto.Size = new System.Drawing.Size(693, 498);
             this.TxtContexto.TabIndex = 0;
             this.TxtContexto.Text = resources.GetString("TxtContexto.Text");
             this.TxtContexto.VRulerRow = 120;
@@ -298,7 +298,7 @@
             // 
             this.TabModificadores.Controls.Add(this.TxtModificadores);
             this.TabModificadores.Name = "TabModificadores";
-            this.TabModificadores.Size = new System.Drawing.Size(693, 496);
+            this.TabModificadores.Size = new System.Drawing.Size(693, 498);
             toolTipTitleItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             toolTipTitleItem6.Text = "Modificadores";
             toolTipItem4.LeftIndent = 6;
@@ -322,7 +322,7 @@
             this.TxtModificadores.Name = "TxtModificadores";
             this.TxtModificadores.ReadOnly = true;
             this.TxtModificadores.ShowVRuler = false;
-            this.TxtModificadores.Size = new System.Drawing.Size(693, 496);
+            this.TxtModificadores.Size = new System.Drawing.Size(693, 498);
             this.TxtModificadores.TabIndex = 1;
             this.TxtModificadores.Text = resources.GetString("TxtModificadores.Text");
             this.TxtModificadores.VRulerRow = 120;
@@ -332,7 +332,7 @@
             this.TabErro.Controls.Add(this.PnlErro);
             this.TabErro.Controls.Add(this.MemoErro);
             this.TabErro.Name = "TabErro";
-            this.TabErro.Size = new System.Drawing.Size(693, 496);
+            this.TabErro.Size = new System.Drawing.Size(693, 498);
             toolTipTitleItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             toolTipTitleItem12.Text = "Atribuir erro";
             toolTipItem7.LeftIndent = 6;
@@ -350,12 +350,22 @@
             this.PnlErro.Controls.Add(this.PnlEnviar);
             this.PnlErro.Controls.Add(this.PnlInterromper);
             this.PnlErro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlErro.Location = new System.Drawing.Point(0, 446);
+            this.PnlErro.Location = new System.Drawing.Point(0, 448);
             this.PnlErro.Margin = new System.Windows.Forms.Padding(0);
             this.PnlErro.Name = "PnlErro";
             this.PnlErro.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.PnlErro.Size = new System.Drawing.Size(693, 50);
             this.PnlErro.TabIndex = 4;
+            // 
+            // LblToleraFalhas
+            // 
+            this.LblToleraFalhas.AutoSize = true;
+            this.LblToleraFalhas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblToleraFalhas.Location = new System.Drawing.Point(4, 19);
+            this.LblToleraFalhas.Name = "LblToleraFalhas";
+            this.LblToleraFalhas.Size = new System.Drawing.Size(368, 15);
+            this.LblToleraFalhas.TabIndex = 2;
+            this.LblToleraFalhas.Text = "Evento marcado como \"tolera falhas\" não pode ser interrompido.";
             // 
             // PnlEnviar
             // 
@@ -446,10 +456,10 @@
             this.MemoErro.EditValue = "Mensagem de erro de teste.";
             this.MemoErro.Location = new System.Drawing.Point(0, 0);
             this.MemoErro.Name = "MemoErro";
-            this.MemoErro.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.MemoErro.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MemoErro.Properties.Appearance.Options.UseFont = true;
             this.MemoErro.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.MemoErro.Size = new System.Drawing.Size(693, 496);
+            this.MemoErro.Size = new System.Drawing.Size(693, 498);
             this.MemoErro.TabIndex = 3;
             // 
             // TabIgnorados
@@ -457,7 +467,7 @@
             this.TabIgnorados.Controls.Add(this.LstIgnorados);
             this.TabIgnorados.Name = "TabIgnorados";
             this.TabIgnorados.Padding = new System.Windows.Forms.Padding(5);
-            this.TabIgnorados.Size = new System.Drawing.Size(693, 496);
+            this.TabIgnorados.Size = new System.Drawing.Size(693, 498);
             toolTipTitleItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             toolTipTitleItem13.Text = "Ignore list";
             toolTipItem8.LeftIndent = 6;
@@ -473,13 +483,13 @@
             // 
             // LstIgnorados
             // 
-            this.LstIgnorados.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LstIgnorados.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LstIgnorados.Appearance.Options.UseFont = true;
             this.LstIgnorados.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.LstIgnorados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LstIgnorados.Location = new System.Drawing.Point(5, 5);
             this.LstIgnorados.Name = "LstIgnorados";
-            this.LstIgnorados.Size = new System.Drawing.Size(683, 486);
+            this.LstIgnorados.Size = new System.Drawing.Size(683, 488);
             this.LstIgnorados.TabIndex = 0;
             // 
             // EdtEvento
@@ -499,7 +509,7 @@
             // 
             // BtnCallback
             // 
-            this.BtnCallback.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.BtnCallback.Appearance.BackColor = System.Drawing.Color.SkyBlue;
             this.BtnCallback.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnCallback.Appearance.Options.UseBackColor = true;
             this.BtnCallback.Appearance.Options.UseFont = true;
@@ -618,16 +628,6 @@
             // defaultLookAndFeel
             // 
             this.defaultLookAndFeel.LookAndFeel.SkinName = "The Bezier";
-            // 
-            // LblToleraFalhas
-            // 
-            this.LblToleraFalhas.AutoSize = true;
-            this.LblToleraFalhas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblToleraFalhas.Location = new System.Drawing.Point(4, 19);
-            this.LblToleraFalhas.Name = "LblToleraFalhas";
-            this.LblToleraFalhas.Size = new System.Drawing.Size(368, 15);
-            this.LblToleraFalhas.TabIndex = 2;
-            this.LblToleraFalhas.Text = "Evento marcado como \"tolera falhas\" não pode ser interrompido.";
             // 
             // FormNotificacao
             // 
