@@ -40,7 +40,7 @@ def obter_parametros_delphi():
     return dict(
         dcc32="C:\\Program Files (x86)\\Embarcadero\\RAD Studio\\9.0\\bin\\dcc32.exe",
         delphi_lib='D:\\Vcl\\xe2bpl;D:\\Vcl\\xe2lib\\;D:\\Drive\\Vcl\\xe2bpl;D:\\Drive\\Vcl\\xe2lib\\;"C:\\Program Files (x86)\\Embarcadero\\RAD Studio\\9.0\\lib\\Win32\\release"',
-        colibri_lib='D:\\Vcl\\co2lib\\;D:\\Builder\\plugins\\',
+        colibri_lib='D:\\Vcl\\co2lib\\;D:\\Builder\\Colibri\\plugins\\',
         unit_scope='System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;Data.win;'
     )
 
