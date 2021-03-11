@@ -18,6 +18,10 @@
 {{-imprimir_linha('Nome', cliente.nome|capitalize)}}
 {{-imprimir_linha('Telefone', cliente.telefone)}}
 <dec3/>
+% if operacao.consumos[0].ticket.retirada
+<r><center><t3:b>     SERÁ RETIRADO PELO CLIENTE     </t3></r><center>
+<l0> 
+% else
 <t2:b:c>Entregar em</t2>
 <l0> 
 {{-imprimir_linha('Endereço', cliente.endereco|trim + ', ' + cliente.numero|trim, true)}}
@@ -31,6 +35,7 @@
 {{-imprimir_linha('Região', regiao_nome)}}
 <dec3/>
 <l0>
+% endif
 {%if obs -%}
 <t1:b:c>OBS: {{obs}}</t1>
 <dec3/>

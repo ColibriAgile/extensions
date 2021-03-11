@@ -7,14 +7,14 @@
 % set txt_entrega = txt_entrega + ' (' + origem + ')' if origem != 'pdv' and operacao.totais.taxa_externa > 0 else txt_entrega                                                                                     
 <l2>
 <div2>Total dos itens</div><div:d><b>{{operacao.totais.subtotal|valor}}</b><div>
-{% if not tem_taxa %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
+{% if not tem_taxa and not operacao.consumos[0].ticket.retirada %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
 {% if vl_arredondamento %}<div2>{{txt_arredondamento}}</div><div:d><b>{{vl_arredondamento|valor}}</b></div>{{'\n'}}{% endif -%}
 {% if vl_entrega %}<div2>{{txt_entrega}}</div><div:d><b>{{vl_entrega|valor}}</b></div>{{'\n'}}{% endif -%}
 {% if vl_servico %}<div2>{{txt_servico}}</div><div:d><b>{{vl_servico|valor}}</b></div>{{'\n'}}{% endif -%}
 % if operacao.totais.desconto
 <div2>Desconto</div><div:d><b>{{(operacao.totais.desconto * -1)|valor}}</b></div>
 % endif  
-% if not intencao_pagamento
+% if not intencao_pagamento and operacao.totais.pago > 0 
 <div2>Pago online</div><div:d>{{operacao.totais.pago|valor}}</div>
 % set txt_cobrar = 'NAO COBRAR DO CLIENTE'
 % else
@@ -36,9 +36,11 @@
 % endif
 </t2>
 <l1:20>
+% if operacao.totais.pago > 0
 {{'FORMA DE PAGAMENTO'}}
 % for item in operacao.caixa.itens|rejectattr('eh_troco')|rejectattr('cancelado') 
 %- set descricao = item.meio.descricao+' ('+item.identificacao+')' 
 %- set vlItem = item.valor + operacao.totais.taxa_externa if loop.last else item.valor
 <div2>{{item.meio.descricao}}</div><div:d><b>{{vlItem|valor}}</b></div>
 % endfor 
+% endif

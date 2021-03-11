@@ -1,14 +1,18 @@
 ﻿%- extends "templates/_templatebase.templatex"
+%- set ticket = operacao.consumos[0].ticket
 %- block relatorio
 %- block cabecalho
 %- include 'templates/_primeiracompra.templatex'  
 %- include 'templates/_reimpressao.templatex'
-%- set ticket = operacao.consumos[0].ticket
+% if ticket.retirada 
+<t3:b:c><center>PEDIDO DE RETIRADA</center></t3>
+% else
 <t3:b:c><center>PEDIDO DE ENTREGA</center></t3>
+% endif
 <l2>
 <div2><t2:b:c>{{loja}}</t2></div><div:d><t2:b:c>{{ticket.nome|capitalize}}</t2></div>
 Mov: {{movimento}} <dir>{{data}} {{hora}}h
-<div2>Caixa: {{sessao.funcionario.nome}}</div><div:d>Entreg: {{operacao.entregador.usuario|default('(nao informado)')}}</div>
+<div2>Caixa: {{sessao.funcionario.nome}}</div>{%if not ticket.retirada %} <div:d>Entreg: {{operacao.entregador.usuario|default('(nao informado)')}}</div> {%endif%}
 Pedido às {{hr_pedido|esquerda(5)}}h
 %- include '_dados-cliente.templatex'
 %- endblock cabecalho
